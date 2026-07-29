@@ -1,0 +1,36 @@
+{
+  "token": "<LF_TOKEN>",
+  "funnel_name": "HLTH — Sleep Recovery V3",
+  "slug": "hlth-sleep-recovery-v3",
+  "currency": "USD",
+  "lang": "en",
+  "publish": true,
+  "pages": [
+    {
+      "type": "squeeze_page",
+      "template": "squeeze_master",
+      "title": "Sleep Recovery Landing",
+      "slug": "sleep-recovery",
+      "tokens": {
+        "HEADLINE": "Unlock Better Sleep with HLTH",
+        "SUBHEAD": "Clinically-backed recovery tracking in one ring.",
+        "CTA": "Get My Plan",
+        "IMG": "hlth-hero-sleep",
+        "PRICE": "49"
+      }
+    },
+    {
+      "type": "checkout_page",
+      "template": "checkout_master",
+      "title": "Checkout",
+      "tokens": {
+        "PRODUCT_NAME": "HLTH Sleep Recovery Ring"
+      }
+    },
+    {
+      "type": "thank_you_page",
+      "template": "thankyou_master",
+      "title": "Thank You"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+.env
+.session_token
+templates/*.json
+__pycache__/
+*.pyc
+.lf_state.json
+.lf_account
+.cache/
+extracted/
