@@ -19,7 +19,8 @@ Commands:
   edit <funnel_id> --replace "old==new" [...]   patch copy via header_scripts
   patch <funnel_id>                      show current patch map
   patch-clear <funnel_id>                remove the copy patch
-  capture <funnel_id> <step_uid> <name>  archive step body -> templates/
+  capture <funnel_id> <step_uid> <name> [--out DIR]   archive step body
+                                         (default templates/; --out for a workspace)
   publish <funnel_id> [--off]            publish / unpublish
   rename <funnel_id> [--name N] [--slug S]
   delete <funnel_id> --yes               delete funnel (irreversible)
@@ -216,9 +217,17 @@ def cmd_patch_clear(args):
 
 def cmd_capture(args):
     step = lf_api.get_step_body(_token(args), args.funnel_id, args.step_uid)
-    os.makedirs(TEMPLATES_DIR, exist_ok=True)
-    path = os.path.join(TEMPLATES_DIR, f"{args.name}.json")
-    with open(path, "w") as f:
+    # --out lets a capture land in a funnel workspace (funnels/<ws>/<funnel>/steps/);
+    # without it, the legacy shared templates/ dir.
+    if args.out:
+        path = (os.path.join(args.out, f"{args.name}.json")
+                if os.path.isdir(args.out) or args.out.endswith(("/", "\\"))
+                else args.out)
+        os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    else:
+        os.makedirs(TEMPLATES_DIR, exist_ok=True)
+        path = os.path.join(TEMPLATES_DIR, f"{args.name}.json")
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(step, f, indent=2)
     _out({"captured": step["uid"], "type": step["type"], "saved_to": path})
 
@@ -317,6 +326,9 @@ def main():
 
     p = sub.add_parser("capture");  p.set_defaults(fn=cmd_capture)
     p.add_argument("funnel_id"); p.add_argument("step_uid"); p.add_argument("name")
+    p.add_argument("--out", help="target dir (or explicit .json path) — e.g. "
+                                 "funnels/<workspace>/<funnel>/steps/. "
+                                 "Default: tools/lf-agent-bridge/templates/")
 
     p = sub.add_parser("publish");  p.set_defaults(fn=cmd_publish)
     p.add_argument("funnel_id"); p.add_argument("--off", action="store_true")

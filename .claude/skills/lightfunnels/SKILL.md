@@ -5,8 +5,8 @@ description: Create, edit, and manage Lightfunnels funnels agentically via the G
 
 # Lightfunnels agent bridge
 
-Drive Lightfunnels with `lf.py` (project root). Every command prints JSON.
-Full API reference: `docs/LIGHTFUNNELS_API.md` (§ "Field-Verified Addendum"
+Drive Lightfunnels with `tools/lf-agent-bridge/lf.py`. Every command prints JSON.
+Full API reference: `tools/lf-agent-bridge/docs/LIGHTFUNNELS_API.md` (§ "Field-Verified Addendum"
 documents behavior discovered by live testing that the official docs omit).
 
 **Building or cloning page layouts?** Read
@@ -37,7 +37,7 @@ device-emulated Playwright shot cropped into sections.
   heavy/iterative inspection.** `.mcp.json` is already configured in this project; the
   human installs the plugin (repo's latest release → Figma → Plugins → Development →
   Import plugin from manifest…) and runs it with the file open (127.0.0.1:3055).
-- **Figma REST API** (`figma_rest.py`, `FIGMA_TOKEN` in `.env`, scope *File content =
+- **Figma REST API** (`tools/lf-agent-bridge/figma_rest.py`, `FIGMA_TOKEN` in `.env`, scope *File content =
   Read-only*): `get_nodes(key, ids)` = geometry/auto-layout/fills/typography;
   `export_images(key, ids, scale=2)` = render URLs for any frame. Then
   `lf_api.upload_local_image(session_token, path, HH)` hosts each in the LF library.
@@ -59,9 +59,36 @@ step-slug url `https://<store>/<funnel-slug>/<step-slug>?preview=true` (the
 funnel-root url caches hardest); renaming the step slug forces an instant fresh
 render. Publishing purges the cache.
 
-```bash
-python3 lf.py <command> ...        # run from the lf-agent-bridge directory
+## Layout
+
+The bridge lives in `tools/lf-agent-bridge/`; only the Claude/agent files
+(`.claude/`, `.mcp.json`, `AGENT.md`, `README.md`) sit at the project root.
+Funnel working copies live in `funnels/<workspace>/<funnel-slug>/` — see
+`funnels/README.md` for the convention, and **use it**: when you work on a
+funnel, that folder is where captured bodies, copy snapshots and edit sets go.
+
 ```
+funnels/<workspace>/<funnel-slug>/
+├─ funnel.json      LF id, slug, published, what it was cloned from
+├─ NOTES.md         intent + dated log
+├─ steps/*.json     `capture --out funnels/<ws>/<f>/steps/`
+├─ texts/*.json     `texts` output, saved before editing
+└─ edits/*.json     `{"old": "new"}` sets for `edit --file`
+```
+
+Start one by copying `funnels/_template/funnel/` (and
+`funnels/_template/workspace.json` for a new workspace). Everything in
+`funnels/` is committed — no tokens ever go there.
+
+```bash
+python3 tools/lf-agent-bridge/lf.py <command> ...   # run from the PROJECT ROOT
+```
+
+`lf.py`, `lf_session.py` and `get_token.py` resolve `.env`, `.session_token`,
+`.lf_state.json` and `.lf_account` next to themselves — i.e. inside
+`tools/lf-agent-bridge/` — so they work from any cwd. The ad-hoc scripts
+(`build_*.py`, `figma_rest.py`) read those files from the **current directory**,
+so `cd tools/lf-agent-bridge` before running one of those.
 
 ## TWO MODES — read first
 
@@ -81,9 +108,9 @@ This is how AI page-studio apps (e.g. Pixelier) work: you use the login session.
 Session tokens expire, so the bridge keeps one alive without re-copying:
 
 ```bash
-python3 lf.py login     # ONE-TIME: opens a real browser, you sign in (2FA ok).
+python3 tools/lf-agent-bridge/lf.py login     # ONE-TIME: opens a real browser, you sign in (2FA ok).
                         # Saves the session to .lf_state.json (no password stored).
-python3 lf.py refresh   # headless: reuses that session to write a fresh token.
+python3 tools/lf-agent-bridge/lf.py refresh   # headless: reuses that session to write a fresh token.
 ```
 
 After `login`, `edit --session` **auto-refreshes** the token if it expired
@@ -114,7 +141,7 @@ Token resolution: `--token` flag → `LF_ACCESS_TOKEN` env → `.env` file.
 If no token exists, the human runs the OAuth flow once:
 
 ```bash
-python3 get_token.py --client-id <ID> --client-secret <SECRET>   # from partners.lightfunnels.com → app → Configurations
+python3 tools/lf-agent-bridge/get_token.py --client-id <ID> --client-secret <SECRET>   # from partners.lightfunnels.com → app → Configurations
 ```
 
 Saves a **permanent** token to `.env`. Never print, log, or commit it.
@@ -124,8 +151,8 @@ Saves a **permanent** token to `.env`. Never print, log, or commit it.
 ### 1. Inspect
 
 ```bash
-python3 lf.py funnels                    # list funnels (id, name, slug, published)
-python3 lf.py funnel <funnel_id>         # one funnel + steps (uid, slug, title, type)
+python3 tools/lf-agent-bridge/lf.py funnels                    # list funnels (id, name, slug, published)
+python3 tools/lf-agent-bridge/lf.py funnel <funnel_id>         # one funnel + steps (uid, slug, title, type)
 ```
 
 `<funnel_id>` is the opaque id, e.g. `fun_UK-PeZ5kAFhnpBkWvo9jo`.
@@ -135,7 +162,7 @@ python3 lf.py funnel <funnel_id>         # one funnel + steps (uid, slug, title,
 **(a) Duplicate a master** — fastest when a good template exists:
 
 ```bash
-python3 lf.py duplicate <master_funnel_id> --name "Sleep V3" --slug sleep-v3
+python3 tools/lf-agent-bridge/lf.py duplicate <master_funnel_id> --name "Sleep V3" --slug sleep-v3
 ```
 
 Clones every page. Duplicates inherit `published` from the source — run
@@ -156,22 +183,32 @@ shell; prefer the recipe above or `build_*.py`-style scripts for real pages.)
 
 ### 3. Edit page copy (the agentic-editing loop)
 
+Save the `texts` output into the funnel's workspace first — it's the before-state
+you validate edits against, and the diff after editing:
+
 ```bash
-python3 lf.py texts <funnel_id>                        # all visible copy, per step
+python3 tools/lf-agent-bridge/lf.py texts <funnel_id> \
+  > funnels/<ws>/<funnel>/texts/current.json
+```
+
+```bash
+python3 tools/lf-agent-bridge/lf.py texts <funnel_id>                        # all visible copy, per step
 
 # REAL edit (recommended) — persists to the page, shows in the LF editor:
-python3 lf.py edit <funnel_id> --session --account-id <ACCT> \
+python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --session --account-id <ACCT> \
   --replace "Customer Reviews==Verified Buyer Reviews" \
   --replace "Get My Plan==Start Tonight"
 
 # Render-time-only fallback (app token, no session needed):
-python3 lf.py edit <funnel_id> --replace "Old==New"
-python3 lf.py patch <funnel_id>                        # show render-time patch
-python3 lf.py patch-clear <funnel_id>                  # remove render-time patch
+python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --replace "Old==New"
+python3 tools/lf-agent-bridge/lf.py patch <funnel_id>                        # show render-time patch
+python3 tools/lf-agent-bridge/lf.py patch-clear <funnel_id>                  # remove render-time patch
 ```
 
 - `--replace` is `"exact current text==new text"`, repeatable; bulk via
-  `--file edits.json` (`{"old": "new", ...}`).
+  `--file edits.json` (`{"old": "new", ...}`). For anything beyond a couple of
+  strings, write the set to `funnels/<ws>/<funnel>/edits/<label>.json` and pass
+  `--file` — reviewable before it hits the page, and reusable across variants.
 - **Run `texts` first and copy the exact string.** `edit` validates every
   target against the real page copy and fails loudly on no-match (`--force`
   to override, e.g. for text split across HTML tags).
@@ -185,19 +222,19 @@ python3 lf.py patch-clear <funnel_id>                  # remove render-time patc
 ### 4. Publish / manage
 
 ```bash
-python3 lf.py publish <funnel_id>          # go live  (confirm with user first)
-python3 lf.py publish <funnel_id> --off
-python3 lf.py rename <funnel_id> --name "New name" --slug new-slug
-python3 lf.py delete <funnel_id> --yes     # IRREVERSIBLE — explicit user confirmation required
+python3 tools/lf-agent-bridge/lf.py publish <funnel_id>          # go live  (confirm with user first)
+python3 tools/lf-agent-bridge/lf.py publish <funnel_id> --off
+python3 tools/lf-agent-bridge/lf.py rename <funnel_id> --name "New name" --slug new-slug
+python3 tools/lf-agent-bridge/lf.py delete <funnel_id> --yes     # IRREVERSIBLE — explicit user confirmation required
 ```
 
 ### Escape hatch
 
 Anything else (products, orders, discounts, …) via raw GraphQL — look up the
-shape in `docs/LIGHTFUNNELS_API.md` first:
+shape in `tools/lf-agent-bridge/docs/LIGHTFUNNELS_API.md` first:
 
 ```bash
-python3 lf.py gql --query 'query { products(first: 5, query: "") { edges { node { id title } } } }'
+python3 tools/lf-agent-bridge/lf.py gql --query 'query { products(first: 5, query: "") { edges { node { id title } } } }'
 ```
 
 Undocumented-but-working: `duplicateFunnel(funnel_id)`, `importFunnel(code)`.
@@ -216,4 +253,4 @@ GraphQL `__type` introspection works; `__schema` is blocked.
    The session token = being logged in as the user; treat it as sensitive.
 5. **Test destructive/body edits on a duplicate first**, not on a live funnel.
 6. On GraphQL errors read the `key` field (e.g. `errors_dup_slug` = slug taken).
-   Common keys: `docs/LIGHTFUNNELS_API.md` § Errors.
+   Common keys: `tools/lf-agent-bridge/docs/LIGHTFUNNELS_API.md` § Errors.

@@ -7,11 +7,25 @@ the same contract for Codex/Cursor/others).
 ## Interface
 
 ```bash
-python3 lf.py <command> ...      # from this directory; prints JSON
+python3 tools/lf-agent-bridge/lf.py <command> ...      # from the project root; prints JSON
 ```
 
+The bridge lives in `tools/lf-agent-bridge/`; the project root holds only the
+agent files (`.claude/`, `.mcp.json`, `AGENT.md`, `README.md`).
+
+Funnel working copies live in `funnels/<workspace>/<funnel-slug>/` (a workspace
+groups related funnels — one brand/store/campaign). Captured page bodies go in
+`steps/`, `texts` snapshots in `texts/`, edit sets in `edits/`. Start one by
+copying `funnels/_template/funnel/`. Convention: `funnels/README.md`.
+
 Token: `--token` flag > `LF_ACCESS_TOKEN` env > `.env`. One-time setup:
-`python3 get_token.py --client-id <ID> --client-secret <SECRET>`.
+`python3 tools/lf-agent-bridge/get_token.py --client-id <ID> --client-secret <SECRET>`.
+
+`lf.py`, `lf_session.py` and `get_token.py` read/write `.env`, `.session_token`,
+`.lf_state.json` and `.lf_account` **next to themselves** (inside
+`tools/lf-agent-bridge/`), so they work from any cwd. The ad-hoc scripts
+(`build_*.py`, `figma_rest.py`) read those from the current directory — `cd
+tools/lf-agent-bridge` first.
 
 ## TWO MODES (verified live 2026-07-22)
 
@@ -32,20 +46,20 @@ Therefore:
 ## Commands
 
 ```bash
-python3 lf.py funnels                                  # list
-python3 lf.py funnel <funnel_id>                       # detail + steps
-python3 lf.py duplicate <funnel_id> --name N --slug S  # clone incl. pages
-python3 lf.py texts <funnel_id> [step_uid]             # extract visible copy
-python3 lf.py edit <funnel_id> --session --account-id <id> --replace "old==new"   # REAL edit
-python3 lf.py edit <funnel_id> --replace "old==new"    # render-time patch (app token)
-python3 lf.py patch <funnel_id>                        # show render-time patch
-python3 lf.py patch-clear <funnel_id>                  # remove render-time patch
-python3 lf.py publish <funnel_id> [--off]
-python3 lf.py rename <funnel_id> --name N --slug S
-python3 lf.py delete <funnel_id> --yes                 # IRREVERSIBLE
-python3 lf.py create --name N --slug S                 # EMPTY shell only
-python3 lf.py capture <funnel_id> <step_uid> <name>    # archive body JSON
-python3 lf.py gql --query '...' [--variables '{}']     # escape hatch
+python3 tools/lf-agent-bridge/lf.py funnels                                  # list
+python3 tools/lf-agent-bridge/lf.py funnel <funnel_id>                       # detail + steps
+python3 tools/lf-agent-bridge/lf.py duplicate <funnel_id> --name N --slug S  # clone incl. pages
+python3 tools/lf-agent-bridge/lf.py texts <funnel_id> [step_uid]             # extract visible copy
+python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --session --account-id <id> --replace "old==new"   # REAL edit
+python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --replace "old==new"    # render-time patch (app token)
+python3 tools/lf-agent-bridge/lf.py patch <funnel_id>                        # show render-time patch
+python3 tools/lf-agent-bridge/lf.py patch-clear <funnel_id>                  # remove render-time patch
+python3 tools/lf-agent-bridge/lf.py publish <funnel_id> [--off]
+python3 tools/lf-agent-bridge/lf.py rename <funnel_id> --name N --slug S
+python3 tools/lf-agent-bridge/lf.py delete <funnel_id> --yes                 # IRREVERSIBLE
+python3 tools/lf-agent-bridge/lf.py create --name N --slug S                 # EMPTY shell only
+python3 tools/lf-agent-bridge/lf.py capture <funnel_id> <step_uid> <name> [--out DIR]   # archive body JSON
+python3 tools/lf-agent-bridge/lf.py gql --query '...' [--variables '{}']     # escape hatch
 ```
 
 ## HARD RULES
@@ -58,5 +72,5 @@ python3 lf.py gql --query '...' [--variables '{}']     # escape hatch
 3. Test body edits (`edit --session`) on a `duplicate` first, not a live funnel.
 4. Both tokens are secret: never log or commit the app token OR the session
    token (`.session_token` = logged in as the user). Keep them local.
-5. API reference: `docs/LIGHTFUNNELS_API.md` (incl. Field-Verified Addendum,
+5. API reference: `tools/lf-agent-bridge/docs/LIGHTFUNNELS_API.md` (incl. Field-Verified Addendum,
    which documents the app-token vs session-token difference).

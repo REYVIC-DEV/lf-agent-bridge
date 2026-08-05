@@ -34,10 +34,14 @@ it only shows on the live page, not in the editor.
 ## Setup
 
 ```bash
-cd lf-agent-bridge
-python3 get_token.py --client-id <ID> --client-secret <SECRET>   # one-time OAuth → .env
-python3 lf.py funnels                                            # smoke test
+python3 tools/lf-agent-bridge/get_token.py --client-id <ID> --client-secret <SECRET>   # one-time OAuth → .env
+python3 tools/lf-agent-bridge/lf.py funnels                                            # smoke test
 ```
+
+Run everything from the project root. The scripts resolve `.env` and the session
+files next to themselves (in `tools/lf-agent-bridge/`), so cwd doesn't matter —
+except for the ad-hoc `build_*.py` / `figma_rest.py` scripts, which read them
+from the current directory (`cd tools/lf-agent-bridge` first).
 
 Get `client_id`/`client_secret` from a [Partners area](https://partners.lightfunnels.com/)
 app (Configurations tab). The token is permanent — keep `.env` out of git.
@@ -49,21 +53,21 @@ app (Configurations tab). The token is permanent — keep `.env` out of git.
 3. Open that request → **Headers** → copy the value after `Authorization: bearer `,
    and note the `account-id` header.
 4. Save it locally (never commit): `echo 'PASTE_TOKEN' > .session_token`
-5. Use it: `python3 lf.py edit <funnel_id> --session --account-id <ACCT> --replace "old==new"`
+5. Use it: `python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --session --account-id <ACCT> --replace "old==new"`
 
 Session tokens expire — if `--session` starts failing with auth errors, re-grab it.
 
 ## Usage
 
 ```bash
-python3 lf.py duplicate fun_XXXX --name "Sleep V3" --slug sleep-v3   # new variant
-python3 lf.py publish <new_id> --off                                 # dups inherit published!
-python3 lf.py texts <new_id>                                         # read the copy
-python3 lf.py edit <new_id> --replace "Old headline==New headline"   # change it
-python3 lf.py publish <new_id>                                       # go live
+python3 tools/lf-agent-bridge/lf.py duplicate fun_XXXX --name "Sleep V3" --slug sleep-v3   # new variant
+python3 tools/lf-agent-bridge/lf.py publish <new_id> --off                                 # dups inherit published!
+python3 tools/lf-agent-bridge/lf.py texts <new_id>                                         # read the copy
+python3 tools/lf-agent-bridge/lf.py edit <new_id> --replace "Old headline==New headline"   # change it
+python3 tools/lf-agent-bridge/lf.py publish <new_id>                                       # go live
 ```
 
-Run `python3 lf.py --help` for all commands.
+Run `python3 tools/lf-agent-bridge/lf.py --help` for all commands.
 
 ## For the agentic coder
 
@@ -71,14 +75,28 @@ Run `python3 lf.py --help` for all commands.
   loads automatically when you ask for funnel work.
 - **Other agents**: point them at `AGENT.md`.
 
-## Files
+## Layout
 
-- `lf.py` — agent-facing CLI (all commands, JSON output)
-- `lf_api.py` — GraphQL client + primitives (duplicate, text extraction, patch engine)
-- `get_token.py` — one-command OAuth flow → `.env`
-- `docs/LIGHTFUNNELS_API.md` — full API knowledge base + **Field-Verified Addendum**
-  (platform limits, undocumented mutations, quirks found by live testing)
-- `.claude/skills/lightfunnels/SKILL.md` — the Claude Code skill
-- `templates/` — archived page bodies (`capture` output; read-only reference)
-- `legacy/` — the old HTTP-server bridge (its write path predates the platform
-  restriction and does not work)
+Root holds only the agent-facing files; the bridge itself lives in `tools/`.
+
+```
+.claude/skills/lightfunnels/   the Claude Code skill (SKILL.md + references/)
+.mcp.json                      figwright MCP server config
+AGENT.md                       same contract for non-Claude agents
+funnels/                       local funnel workspaces — see funnels/README.md
+├─ _template/                  skeletons: workspace.json + funnel/
+└─ <workspace>/<funnel-slug>/  funnel.json, NOTES.md, steps/, texts/, edits/
+tools/lf-agent-bridge/
+├─ lf.py                       agent-facing CLI (all commands, JSON output)
+├─ lf_api.py                   GraphQL client + primitives (duplicate, text extraction, patch engine)
+├─ lf_session.py               browser-session login/refresh (optional playwright)
+├─ get_token.py                one-command OAuth flow → .env
+├─ figma_rest.py               Figma REST helpers (get_nodes / export_images)
+├─ build_*.py                  ad-hoc page builders (run from this directory)
+├─ docs/LIGHTFUNNELS_API.md    full API knowledge base + Field-Verified Addendum
+│                              (platform limits, undocumented mutations, live-tested quirks)
+├─ SOP.md / SOP.pdf            operating procedure
+├─ templates/                  archived page bodies (capture output; gitignored)
+└─ legacy/                     old HTTP-server bridge (write path predates the
+                               platform restriction and does not work)
+```

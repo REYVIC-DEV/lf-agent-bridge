@@ -1,6 +1,6 @@
 .env
 .session_token
-templates/*.json
+**/templates/*.json
 __pycache__/
 *.pyc
 .lf_state.json
