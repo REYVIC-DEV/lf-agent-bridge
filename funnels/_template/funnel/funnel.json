@@ -1,0 +1,22 @@
+{
+  "id": "fun_",
+  "name": "",
+  "slug": "",
+  "workspace": "",
+  "published": false,
+  "store_url": "",
+  "source": {
+    "duplicated_from": null,
+    "note": "master funnel id this was cloned from, or null if built from scratch"
+  },
+  "steps": [
+    {
+      "uid": "",
+      "slug": "",
+      "title": "",
+      "type": "",
+      "captured": null
+    }
+  ],
+  "pulled_at": null
+}

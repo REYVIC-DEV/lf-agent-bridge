@@ -1,0 +1,10 @@
+{
+  "workspace": "channels",
+  "description": "Per-traffic-channel advertorial funnels for TechUnboxed / HLTH (UK)",
+  "store_url": "https://www.techunboxed.co",
+  "lf_account_id": "90380",
+  "master_funnel_id": null,
+  "funnels": [
+    "meta-uk"
+  ]
+}
