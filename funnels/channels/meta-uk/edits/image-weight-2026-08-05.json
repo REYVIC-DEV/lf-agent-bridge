@@ -1,0 +1,41 @@
+{
+  "funnel": "fun_Z78qnXtnsXIf619roFNNU",
+  "pass": "image weight optimisation",
+  "before_kb": 245.4,
+  "after_kb": 192.2,
+  "saved_kb": 53.2,
+  "changes": [
+    {
+      "what": "hero photo",
+      "from": {
+        "uid": "img_6J4unzBb1J9Fymp-l393Y",
+        "kb": 140.4,
+        "quality": 90
+      },
+      "to": {
+        "uid": "img_UIq5YdGcDTcvocw4BL3Z1",
+        "kb": 96.5,
+        "quality": 80
+      },
+      "dims": "1400x1128 unchanged"
+    },
+    {
+      "what": "avatar",
+      "from": {
+        "uid": "img_OwSMha6EndLKrnOisyn7-",
+        "kb": 16.9,
+        "dims": "589x546"
+      },
+      "to": {
+        "uid": "img_mNF51nc3FORNq9YW2ctGP",
+        "kb": 7.6,
+        "dims": "320x297"
+      },
+      "why": "95px box at DPR3 needs 285px; 589 was 3.1x oversized"
+    }
+  ],
+  "not_done": [
+    "loading=lazy (no such prop on LF Image blocks)",
+    "srcset/responsive (LF renders a bare <img>)"
+  ]
+}

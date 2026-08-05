@@ -124,6 +124,52 @@ Figma source of truth: file **99 Commerce** → page *Advertorials/Blogs* → fr
   13 `hlthtrack.co.uk` (LF's `iref`/PostHog tracking params preserved),
   1 Trustpilot URL intact.
 
+- `2026-08-05` — **image weight: 245.4K → 192.2K (22% lighter).** Prompted by a
+  PageSpeed "properly size images" report.
+
+  | asset | before | after | |
+  |---|---|---|---|
+  | hero photo | 140.4K | **96.5K** | q90 → q80, dims unchanged |
+  | avatar | 16.9K | **7.6K** | 589x546 → 320x297 |
+  | logo (svg) | 2.8K | 2.8K | fine |
+  | photo 2 (pre-existing) | 58.6K | 58.6K | untouched |
+  | photo 3 (pre-existing) | 26.7K | 26.7K | untouched |
+
+  The hero was **my** error: uploaded at q90, making it the heaviest asset on the
+  page and **2.4x a pre-existing image at identical dimensions** (140.4K vs
+  58.6K at 1400x1034). Re-encoded at q80 from the original Figma PNG, not by
+  recompressing the webp, to avoid generational loss. Mean pixel error 1.88/255.
+
+  The avatar was 3.1x oversized for a fixed 95px box. 320px covers DPR3 phones
+  (95x3 = 285); 256px would not, which is why it isn't smaller.
+
+  **The report's headline advice — resize the 1400px photos — is mobile-only and
+  was NOT followed.** On desktop these display at 700 CSS px, so 1400 is exactly
+  right for DPR2 (overshoot 1.00). Mobile shows them at 343 CSS px and needs
+  ~686-1029. With one file serving both, shrinking to mobile size would blur
+  desktop retina.
+
+## Speed: what's left, and what LF blocks
+
+Biggest remaining image lever is **responsive images**, and it is not reachable
+through the block schema:
+
+- **No `srcset`.** LF renders a bare `<img src>`. Mobile therefore downloads
+  desktop-sized photos — ~192K where ~60-70K would do at mobile dimensions.
+- **No `loading="lazy"`.** Verified across all 92 Image blocks in the account:
+  the only `p` keys are `src`/`src_id`/`src_uid`/`title`/`alt`/`widthOption`/
+  `heightOption` plus styles. Two of three photos sit below the fold, so lazy
+  loading would defer ~85K.
+- The dual-DOM `lfDisplay:none` breakpoint trick from `block-schema.md` does
+  **not** help here — browsers still fetch `<img src>` when the element is
+  `display:none`, so it would add DOM without saving bytes.
+
+Escape hatch if these are worth it: an `HtmlElement` block with raw
+`<img srcset loading="lazy">`. Costs editor-manageability for that block, so it's
+a deliberate trade, not a default. Also untested: whether further quality cuts
+are wanted — q75 would take the hero to 76.1K (mean error 2.11/255), closer to
+the pre-existing images, which appear to sit around q65-70.
+
 ## Account-wide scope (NOT done — needs a decision)
 
 `hlthtrack.com` appears **516 times across 17 funnels / 45 steps**. Only this
