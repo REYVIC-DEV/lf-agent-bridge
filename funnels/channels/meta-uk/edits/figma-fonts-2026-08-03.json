@@ -1,0 +1,20 @@
+{
+  "funnel": "fun_Z78qnXtnsXIf619roFNNU",
+  "step": "step_CtC9RNhvNF2YytxGNYEMj",
+  "family_swaps": {
+    "PT Serif": "Inter",
+    "Noto Serif Georgian": "Inter",
+    "Roboto": "Inter"
+  },
+  "h1_weight": "600 -> 700",
+  "letter_spacing": "1.9px/1.08px/0.58px -> 0px",
+  "counts": {
+    "family": 25,
+    "weight": 1,
+    "tracking": 16
+  },
+  "families_after": [
+    "Inter",
+    "JetBrains Mono"
+  ]
+}

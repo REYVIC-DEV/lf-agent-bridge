@@ -1,0 +1,37 @@
+{
+  "id": "fun_Z78qnXtnsXIf619roFNNU",
+  "name": "Meta funnels - UK",
+  "slug": "meta-uk",
+  "workspace": "channels",
+  "published": true,
+  "store_url": "https://www.techunboxed.co",
+  "source": {
+    "duplicated_from": null,
+    "note": "pre-existing funnel; step 0 rebuilt to match Figma"
+  },
+  "figma": {
+    "file": "99 Commerce",
+    "page": "Advertorials/Blogs",
+    "node": "537:458",
+    "frame": "Branded Hype Listicle"
+  },
+  "steps": [
+    {
+      "uid": "step_CtC9RNhvNF2YytxGNYEMj",
+      "slug": "v45g6ypE3",
+      "title": "Branded Hype Listicle",
+      "type": "article_page",
+      "live_url": "https://www.techunboxed.co/meta-uk/v45g6ypE3",
+      "captured": "steps/0-step_CtC9RNhvNF2YytxGNYEMj.backup-2026-08-03.json"
+    },
+    {
+      "uid": "step_uDfEAbm8OdEfDsKWY6r5k",
+      "slug": "XBz56y3Np",
+      "title": "Founders Funnel",
+      "type": "article_page",
+      "live_url": "https://www.techunboxed.co/meta-uk/XBz56y3Np",
+      "captured": "steps/1-step_uDfEAbm8OdEfDsKWY6r5k.backup-2026-08-03.json"
+    }
+  ],
+  "pulled_at": "2026-08-03"
+}

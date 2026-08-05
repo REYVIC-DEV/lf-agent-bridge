@@ -1,0 +1,33 @@
+{
+  "funnel": "fun_Z78qnXtnsXIf619roFNNU",
+  "rule": "rewrite hlthtrack.com only when it is the URL host",
+  "rewritten": 5,
+  "preserved_trustpilot_slugs": 7,
+  "log": [
+    {
+      "kind": "destination",
+      "from": "https://hlthtrack.com/",
+      "to": "https://hlthtrack.co.uk/"
+    },
+    {
+      "kind": "destination",
+      "from": "https://hlthtrack.com/",
+      "to": "https://hlthtrack.co.uk/"
+    },
+    {
+      "kind": "destination",
+      "from": "https://hlthtrack.com/",
+      "to": "https://hlthtrack.co.uk/"
+    },
+    {
+      "kind": "destination",
+      "from": "https://hlthtrack.com/",
+      "to": "https://hlthtrack.co.uk/"
+    },
+    {
+      "kind": "html href",
+      "from": "https://hlthtrack.com...",
+      "to": "->co.uk"
+    }
+  ]
+}

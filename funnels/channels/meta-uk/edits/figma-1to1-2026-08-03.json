@@ -1,0 +1,26 @@
+{
+  "funnel": "fun_Z78qnXtnsXIf619roFNNU",
+  "step": "step_CtC9RNhvNF2YytxGNYEMj",
+  "figma_node": "537:458 Branded Hype Listicle",
+  "images": [
+    {
+      "old_uid": "img_P84ZiG4gVSMPN5zLLHUdh",
+      "new_uid": "img_OwSMha6EndLKrnOisyn7-",
+      "note": "avatar: clean source, no black corners"
+    },
+    {
+      "old_uid": "img_PWBTesEwjjEOsLVFAZwaO",
+      "new_uid": "img_6J4unzBb1J9Fymp-l393Y",
+      "note": "photo 1: matches Figma section 1"
+    }
+  ],
+  "color_map": {
+    "#000000": "#191E2A",
+    "#4c4c4c": "#191E2A",
+    "#0075ff": "#E63946",
+    "#7b0323": "#E63946",
+    "#0f0f0f": "#191E2A",
+    "#28282b": "#191E2A"
+  },
+  "color_edits": 37
+}
