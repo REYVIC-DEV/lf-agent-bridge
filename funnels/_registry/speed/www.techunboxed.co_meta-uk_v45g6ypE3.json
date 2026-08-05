@@ -1,0 +1,112 @@
+[
+  {
+    "score": 95,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 837.56988,
+        "display": "0.8\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 993.3005199999999,
+        "display": "1.0\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.1068700317694025,
+        "display": "0.107"
+      },
+      "speed-index": {
+        "value": 837.56988,
+        "display": "0.8\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "display": "Est savings of 420\u00a0ms",
+        "savings_ms": 415,
+        "savings_bytes": null
+      },
+      {
+        "id": "uses-responsive-images",
+        "title": "Properly size images",
+        "display": "Est savings of 143\u00a0KiB",
+        "savings_ms": 70,
+        "savings_bytes": 146644
+      },
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 9.531000000000006,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 3642.5,
+    "runs": 2,
+    "scores_all": [
+      94,
+      95
+    ],
+    "form_factor": "desktop",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/meta-uk/v45g6ypE3"
+  },
+  {
+    "score": 78,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2940.9362999999994,
+        "display": "2.9\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 2940.9363,
+        "display": "2.9\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 311,
+        "display": "310\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.12235614560480834,
+        "display": "0.122"
+      },
+      "speed-index": {
+        "value": 2940.9362999999994,
+        "display": "2.9\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "display": "Est savings of 470\u00a0ms",
+        "savings_ms": 474,
+        "savings_bytes": null
+      },
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 10.25800000000001,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 3948.5,
+    "runs": 3,
+    "scores_all": [
+      67,
+      78,
+      80
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/meta-uk/v45g6ypE3"
+  }
+]
