@@ -1,0 +1,417 @@
+[
+  {
+    "score": 66,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2837.7238,
+        "display": "2.8\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3483.0802000000003,
+        "display": "3.5\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 539.5,
+        "display": "540\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.1506778952000775,
+        "display": "0.151"
+      },
+      "speed-index": {
+        "value": 2837.7238,
+        "display": "2.8\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "display": "Est savings of 430\u00a0ms",
+        "savings_ms": 428,
+        "savings_bytes": null
+      },
+      {
+        "id": "uses-rel-preconnect",
+        "title": "Preconnect to required origins",
+        "display": "Est savings of 360\u00a0ms",
+        "savings_ms": 360.5750001411438,
+        "savings_bytes": null
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "display": "Est savings of 324\u00a0KiB",
+        "savings_ms": 110,
+        "savings_bytes": 331453
+      },
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 6.690000000000005,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 3581.5,
+    "runs": 3,
+    "scores_all": [
+      52,
+      66,
+      72
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  },
+  {
+    "score": 99,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 692.5265599999999,
+        "display": "0.7\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 899.1107999999998,
+        "display": "0.9\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.007217983382929991,
+        "display": "0.007"
+      },
+      "speed-index": {
+        "value": 692.5265599999999,
+        "display": "0.7\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "display": "Est savings of 80\u00a0ms",
+        "savings_ms": 76,
+        "savings_bytes": null
+      },
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 7.190000000000005,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 3385,
+    "runs": 3,
+    "scores_all": [
+      97,
+      99,
+      99
+    ],
+    "form_factor": "desktop",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  },
+  {
+    "score": 70,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2710.8909999999996,
+        "display": "2.7\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3835.288,
+        "display": "3.8\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 359.5,
+        "display": "360\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.15074530016842497,
+        "display": "0.151"
+      },
+      "speed-index": {
+        "value": 2710.8909999999996,
+        "display": "2.7\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "display": "Est savings of 1,030\u00a0ms",
+        "savings_ms": 1033,
+        "savings_bytes": null
+      },
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 10.691000000000003,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 3997.5,
+    "runs": 3,
+    "scores_all": [
+      65,
+      70,
+      76
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  },
+  {
+    "score": 75,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2380.34714,
+        "display": "2.4\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3269.0123599999997,
+        "display": "3.3\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 356.5,
+        "display": "360\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.1500198012844915,
+        "display": "0.15"
+      },
+      "speed-index": {
+        "value": 2380.34714,
+        "display": "2.4\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "display": "Est savings of 323\u00a0KiB",
+        "savings_ms": 300,
+        "savings_bytes": 330818
+      },
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 8.628999999999998,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 4021,
+    "runs": 3,
+    "scores_all": [
+      73,
+      75,
+      80
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  },
+  {
+    "score": 68,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2451.3610000000003,
+        "display": "2.5\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 4273.220499999999,
+        "display": "4.3\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 343.4999999999991,
+        "display": "340\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.1506778952000775,
+        "display": "0.151"
+      },
+      "speed-index": {
+        "value": 2451.3610000000003,
+        "display": "2.5\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "uses-responsive-images",
+        "title": "Properly size images",
+        "display": "Est savings of 16\u00a0KiB",
+        "savings_ms": 150,
+        "savings_bytes": 16273
+      },
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 10.195999999999998,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 4067.5,
+    "runs": 3,
+    "scores_all": [
+      68,
+      68,
+      72
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  },
+  {
+    "score": 72,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2486.8543,
+        "display": "2.5\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3847.6328600000006,
+        "display": "3.8\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 327.5,
+        "display": "330\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.1506778952000775,
+        "display": "0.151"
+      },
+      "speed-index": {
+        "value": 2486.8543,
+        "display": "2.5\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 10.669000000000004,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 4034.5,
+    "runs": 5,
+    "scores_all": [
+      68,
+      70,
+      72,
+      75,
+      78
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  },
+  {
+    "score": 71,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2365.3304599999997,
+        "display": "2.4\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3983.164619999999,
+        "display": "4.0\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 344,
+        "display": "340\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.1506778952000775,
+        "display": "0.151"
+      },
+      "speed-index": {
+        "value": 2365.3304599999997,
+        "display": "2.4\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 7.324999999999989,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 3973.5,
+    "runs": 5,
+    "scores_all": [
+      66,
+      71,
+      71,
+      71,
+      74
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  },
+  {
+    "score": 68,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2330.15847,
+        "display": "2.3\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3948.0676749999993,
+        "display": "3.9\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 656.5,
+        "display": "660\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "speed-index": {
+        "value": 2330.15847,
+        "display": "2.3\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 8.082999999999998,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "12.8.2",
+    "benchmark_index": 3648.5,
+    "runs": 5,
+    "scores_all": [
+      65,
+      67,
+      68,
+      69,
+      72
+    ],
+    "form_factor": "mobile",
+    "backend": "local",
+    "url": "https://www.techunboxed.co/smartwatch-review/xI7j8mDEB"
+  }
+]

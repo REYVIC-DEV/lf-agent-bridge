@@ -1,0 +1,20 @@
+{
+  "id": "fun_XHwV9fd9Z3FFyXPPfNot0",
+  "name": "TEST \u2014 HLTH advertorial (Figma)",
+  "slug": "test-hlth-figma",
+  "published": true,
+  "starting_step_id": "step_YOQL2Poa2CEsaPD_D6pO4",
+  "steps": [
+    {
+      "id": "step_YOQL2Poa2CEsaPD_D6pO4",
+      "uid": "step_YOQL2Poa2CEsaPD_D6pO4",
+      "slug": "hlth-page",
+      "title": "HLTH advertorial",
+      "type": "article_page",
+      "visual": {
+        "x": 100,
+        "y": 100
+      }
+    }
+  ]
+}

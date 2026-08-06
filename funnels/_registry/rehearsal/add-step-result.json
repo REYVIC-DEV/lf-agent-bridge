@@ -1,0 +1,30 @@
+{
+  "new_step": {
+    "id": "step_sZ4IJDdYK8nRcezOcbvpF",
+    "uid": "step_sZ4IJDdYK8nRcezOcbvpF",
+    "slug": "zz-rehearsal",
+    "title": "ZZ REHEARSAL (delete me)",
+    "type": "article_page"
+  },
+  "after": {
+    "starting_step_id": "step_YOQL2Poa2CEsaPD_D6pO4",
+    "steps": [
+      {
+        "uid": "step_YOQL2Poa2CEsaPD_D6pO4",
+        "title": "HLTH advertorial",
+        "visual": {
+          "x": 100,
+          "y": 100
+        }
+      },
+      {
+        "uid": "step_sZ4IJDdYK8nRcezOcbvpF",
+        "title": "ZZ REHEARSAL (delete me)",
+        "visual": {
+          "x": 100,
+          "y": 420
+        }
+      }
+    ]
+  }
+}
