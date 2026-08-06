@@ -151,24 +151,48 @@ Figma source of truth: file **99 Commerce** → page *Advertorials/Blogs* → fr
 
 ## Speed: what's left, and what LF blocks
 
-Biggest remaining image lever is **responsive images**, and it is not reachable
-through the block schema:
+> **Correction (2026-08-06).** An earlier version of this section claimed "No
+> `srcset` — LF renders a bare `<img src>`". **That was wrong.** LF injects a
+> 15-candidate `srcset` client-side, pointing at
+> `https://assets.lightfunnels.com/cdn-cgi/image/width=N,quality=80,format=auto/<origin>`.
+> The candidates are absent from the server HTML, which is what misled me.
+> Two consequences worth knowing:
+>
+> - The Cloudflare resizer answers `format=auto` with **AVIF** for Chrome, so
+>   the delivered image is materially smaller than the origin file. Measured on
+>   the smartwatch-review hero: 33.6K AVIF at 750w from a 1400px WebP origin.
+>   Bypassing the resizer with a raw `<img src>` therefore *costs* bytes.
+> - Origin file size is largely invisible in a PageSpeed report, because
+>   visitors never fetch it. It still matters for storage and cache misses.
 
-- **No `srcset`.** LF renders a bare `<img src>`. Mobile therefore downloads
-  desktop-sized photos — ~192K where ~60-70K would do at mobile dimensions.
+Remaining image levers, and how reachable each one is:
+
+- **`sizes` is LF's, not yours.** The injected `sizes` is
+  `(min-width: 1280px) 50vw, 100vw`, which overstates the width whenever an
+  image is narrower than the viewport — that is what triggers "properly size
+  images". Not settable on an Image block.
 - **No `loading="lazy"`.** Verified across all 92 Image blocks in the account:
   the only `p` keys are `src`/`src_id`/`src_uid`/`title`/`alt`/`widthOption`/
   `heightOption` plus styles. Two of three photos sit below the fold, so lazy
   loading would defer ~85K.
+- **No `fetchpriority`.** Same reason — not in the schema.
 - The dual-DOM `lfDisplay:none` breakpoint trick from `block-schema.md` does
   **not** help here — browsers still fetch `<img src>` when the element is
   `display:none`, so it would add DOM without saving bytes.
 
-Escape hatch if these are worth it: an `HtmlElement` block with raw
-`<img srcset loading="lazy">`. Costs editor-manageability for that block, so it's
-a deliberate trade, not a default. Also untested: whether further quality cuts
-are wanted — q75 would take the hero to 76.1K (mean error 2.11/255), closer to
-the pre-existing images, which appear to sit around q65-70.
+Escape hatch for all three: an `HtmlElement` block with a hand-written `<img>`.
+Keep the `srcset` pointed at `/cdn-cgi/image/...` so you keep AVIF — see
+`funnels/tub/smartwatch-review/NOTES.md` for a worked example, including the
+measurement showing that serving the asset directly loses ~17K on an LCP image.
+Costs editor-manageability for that block, so it's a deliberate trade, not a
+default. Also untested: whether further quality cuts are wanted — q75 would take
+the hero to 76.1K (mean error 2.11/255), closer to the pre-existing images,
+which appear to sit around q65-70.
+
+**Per-step custom HTML exists** and is a second escape hatch:
+`Step.settings.custom_html.{header,footer}` (settings is a JSON scalar). An
+earlier note claiming there is no footer-scripts field anywhere was wrong — that
+is true only of the funnel-level fields, not of steps.
 
 ## Account-wide scope (NOT done — needs a decision)
 
