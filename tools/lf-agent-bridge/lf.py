@@ -146,8 +146,16 @@ def cmd_create(args):
 
 
 def cmd_texts(args):
-    tok = _token(args)
-    funnel = lf_api.get_funnel_steps(tok, args.funnel_id)
+    # `texts` is the documented before-state for `edit`, so it has to work in
+    # whichever mode the project actually has credentials for. With only a
+    # .session_token (no app token in .env) the plain path fails with
+    # `errors_fix_version`, because a session token also needs the dashboard
+    # headers from session_headers(). --session supplies them.
+    if getattr(args, "session", False):
+        funnel = _session_retry(args, lambda tok, hdrs: lf_api.get_funnel_steps(
+            tok, args.funnel_id, extra_headers=hdrs))
+    else:
+        funnel = lf_api.get_funnel_steps(_token(args), args.funnel_id)
     out = []
     for s in funnel["steps"]:
         if args.step_uid and s["uid"] != args.step_uid and s["id"] != args.step_uid:
@@ -173,7 +181,8 @@ def cmd_edit(args):
         # REAL edit: rewrite the actual page body (persists in the LF editor).
         # Auto-refreshes the session token if it expired mid-run.
         res = _session_retry(args, lambda tok, hdrs: lf_api.edit_step_bodies(
-            tok, args.funnel_id, pairs, extra_headers=hdrs, force=args.force))
+            tok, args.funnel_id, pairs, extra_headers=hdrs, force=args.force,
+            step_uids=args.step or None))
         res["mode"] = "session (real body edit — saved to the page)"
         _out(res)
         return
@@ -304,6 +313,11 @@ def main():
 
     p = sub.add_parser("texts");    p.set_defaults(fn=cmd_texts)
     p.add_argument("funnel_id"); p.add_argument("step_uid", nargs="?")
+    p.add_argument("--session", action="store_true",
+                   help="read via the browser session token (.session_token). "
+                        "Required when there is no app token in .env.")
+    p.add_argument("--account-id", dest="account_id",
+                   help="account-id header for --session (or set LF_ACCOUNT_ID)")
 
     p = sub.add_parser("edit");     p.set_defaults(fn=cmd_edit)
     p.add_argument("funnel_id")
@@ -312,6 +326,10 @@ def main():
     p.add_argument("--file", help='JSON file of {"old": "new", ...}')
     p.add_argument("--force", action="store_true",
                    help="skip validation against page bodies")
+    p.add_argument("--step", action="append",
+                   help="limit the edit to this step uid (repeatable). Use it on "
+                        "multi-market funnels — without it every step matching the "
+                        "string is rewritten, including other countries' pages.")
     p.add_argument("--session", action="store_true",
                    help="REAL body edit via browser session token (.session_token). "
                         "Persists to the page. Without this, uses the render-time patch.")

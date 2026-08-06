@@ -353,7 +353,7 @@ def update_step(access_token, funnel_id, step_uid, rendered_body, title=None,
 
 
 def edit_step_bodies(access_token, funnel_id, replacements, extra_headers=None,
-                     force=False):
+                     force=False, step_uids=None):
     """REAL page-copy edit (session token only). Reads every step, replaces
     text inside the actual page body JSON, and writes changed steps back via
     updateFunnel.steps. Unlike the header_scripts patch, this persists to the
@@ -365,6 +365,16 @@ def edit_step_bodies(access_token, funnel_id, replacements, extra_headers=None,
     """
     funnel = get_funnel_steps(access_token, funnel_id, extra_headers=extra_headers)
     steps = funnel["steps"]
+
+    # Scope to specific steps. Essential on a multi-market funnel: this account
+    # has one funnel holding UK/DE/AU/CA/TH advertorials as sibling steps, so a
+    # blanket domain or copy replace would rewrite the wrong market's links.
+    if step_uids:
+        want = set(step_uids)
+        steps = [s for s in steps if s["uid"] in want or s["id"] in want]
+        missing_steps = want - {s["uid"] for s in steps} - {s["id"] for s in steps}
+        if missing_steps:
+            raise RuntimeError(f"step(s) not in funnel {funnel_id}: {sorted(missing_steps)}")
 
     if not force:
         corpus = "\n".join(visible_corpus(s.get("body")) for s in steps)
