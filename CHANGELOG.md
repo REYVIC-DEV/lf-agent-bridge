@@ -180,3 +180,46 @@ could have both too — it already carries the same explicit `@font-face` block,
 removing the theme-bound `Inter` setting would keep real users on Inter while
 dropping the PSI-visible request to the unusable family. Untested; the theme font
 setting lives in the funnel/store design settings, not the page body.
+
+## Transferred onto step 3 (the live entry page)
+
+Step 12's body and `settings.custom_html` were copied onto **step 3**, which is
+`starting_step_id` — the page ad traffic lands on. Step 3 keeps its own identity:
+slug `xI7j8mDEB`, title, and `settings.seo` (step 12 has no seo block, and
+overwriting the live page's title/description would have been a real regression).
+Bodies are now byte-identical. Backup: `steps/03-PRE-STEP12-TRANSFER.2026-08-06.json`.
+
+Dropped by the swap, intentionally: step 3's `aff-*` classed buttons and their
+**stale** inline Amazon URLs. Step 12 carries the current URLs directly with no
+class, so the funnel header's replacer no longer participates.
+
+**Step 3 went 90 -> 98** (+8): FCP 2.9 -> 1.8 s (-1,025 ms), LCP 2.9 -> 2.1 s
+(-810 ms), CLS 0.001 -> 0, TBT 0.
+
+### Why — and it is not what I predicted
+
+I had said this would need editing funnel-level `styles` (`static_heading_font`
+etc.), which would have hit all 13 steps and stripped Inter from the 10 that carry
+no `@font-face` block of their own. **That turned out to be unnecessary.** LF derives
+the Google Fonts request from the fonts the *step's own blocks* use, so replacing the
+body changed the request by itself:
+
+    before  Inter,+InterFallback,+sans-serif:400,800,700,normal|Inter:800,400|JetBrains+Mono:700
+    after   Inter,+InterFallback,+sans-serif:400,800,900,700,600,500
+
+The clean `Inter:800,400` and `JetBrains+Mono:700` entries came from blocks that only
+existed in the old step 3 body — the JetBrains one being the footer "Disclaimer".
+Both left with the body. PSI now fetches **0 font bytes** on step 3, while real users
+still get real Inter from the `@font-face` block in `custom_html.header` (verified:
+`Inter` at 800 measures 191.4px vs 200.9 fallback vs 185.5 unavailable-control; faces
+Inter 400/500/600/700/800 loaded).
+
+So the funnel-level theme fonts were left untouched and the other 10 advertorials are
+unaffected.
+
+### Verified on the live URL
+
+Inter loads · 8 Amazon links all carrying `tag=techunboxed04-20` · 15 `.co.uk` store
+links, **0** `.com` · dashed card present · policy popup opens ("Terms of Use") ·
+**0** in-body `<style>` · breadcrumb linked · **0** social icons · 0 console errors ·
+13 steps, `starting_step_id` and `published` intact.
