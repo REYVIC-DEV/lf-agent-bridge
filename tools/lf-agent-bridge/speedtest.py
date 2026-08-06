@@ -73,6 +73,28 @@ def _chrome_path():
     return None
 
 
+def psi_key(explicit=None):
+    """Resolve the PageSpeed API key: --psi-key, then $PAGESPEED_KEY, then
+    PAGESPEED_KEY in the bridge's .env (which is gitignored).
+
+    The key is a secret — never print it, never write it into history files.
+    Without one, PSI answers 429 in practice: the keyless quota is shared and
+    permanently exhausted.
+    """
+    if explicit:
+        return explicit
+    if os.environ.get("PAGESPEED_KEY"):
+        return os.environ["PAGESPEED_KEY"]
+    env = os.path.join(HERE, ".env")
+    if os.path.exists(env):
+        with open(env, encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if line.startswith("PAGESPEED_KEY="):
+                    return line.split("=", 1)[1].strip().strip("'\"") or None
+    return None
+
+
 def _extract(lhr):
     """Pull the score, core metrics and opportunities out of a Lighthouse result."""
     audits = lhr.get("audits", {})
@@ -97,6 +119,41 @@ def _extract(lhr):
                 "savings_bytes": det.get("overallSavingsBytes"),
             })
     out["opportunities"].sort(key=lambda o: -(o.get("savings_ms") or 0))
+
+    # Diagnostics that actually explained things in practice. A score alone never
+    # says *why*; every real cause found on these funnels came from one of these:
+    #   styleLayout blew up          -> a <style> tag inside <body>
+    #   which element shifted        -> font swap, not the image PSI blames
+    #   font bytes/count             -> critical-path contention
+    diag = {}
+    mt = ((audits.get("mainthread-work-breakdown") or {}).get("details") or {})
+    if mt.get("items"):
+        diag["mainthread_ms"] = {i.get("group"): round(i.get("duration") or 0)
+                                 for i in mt["items"]}
+    ls = ((audits.get("layout-shifts") or {}).get("details") or {})
+    if ls.get("items"):
+        diag["shift_elements"] = [
+            {"selector": ((i.get("node") or {}).get("selector") or "")[:80],
+             "score": round(i.get("score") or 0, 4)} for i in ls["items"]]
+    nr = ((audits.get("network-requests") or {}).get("details") or {})
+    if nr.get("items"):
+        reqs = nr["items"]
+        fonts = [r for r in reqs if "woff" in (r.get("url") or "")]
+        imgs = [r for r in reqs if r.get("resourceType") == "Image"]
+        diag["requests"] = len(reqs)
+        diag["font_files"] = len(fonts)
+        diag["font_kib"] = round(sum(r.get("transferSize") or 0 for r in fonts) / 1024)
+        diag["image_kib"] = round(sum(r.get("transferSize") or 0 for r in imgs) / 1024)
+        # Everything racing the first paint. LF Image blocks have no loading=lazy,
+        # so this is usually the whole page.
+        diag["image_kib_before_400ms"] = round(sum(
+            r.get("transferSize") or 0 for r in imgs
+            if (r.get("networkRequestTime") or 0) < 400) / 1024)
+    tb = audits.get("total-byte-weight") or {}
+    if tb.get("numericValue"):
+        diag["total_kib"] = round(tb["numericValue"] / 1024)
+    if diag:
+        out["diagnostics"] = diag
     return out
 
 
@@ -140,6 +197,7 @@ def run_local(url, form_factor, runs):
 
 
 def run_psi(url, form_factor, key=None):
+    key = psi_key(key)
     params = {"url": url, "strategy": form_factor, "category": "performance"}
     if key:
         params["key"] = key
@@ -225,6 +283,22 @@ def report(label, url, res, prev=None):
         unit = "" if k == "cumulative-layout-shift" else "ms"
         d = _fmt_delta(m.get("value"), p, lower_is_better=True, unit=unit)
         print(f"    {k:26} {str(m.get('display')):>10}{d}")
+    d = res.get("diagnostics") or {}
+    if d:
+        bits = []
+        if d.get("total_kib") is not None:
+            bits.append(f"{d['total_kib']} KiB total")
+        if d.get("font_files") is not None:
+            bits.append(f"{d['font_files']} fonts/{d.get('font_kib', 0)} KiB")
+        if d.get("image_kib_before_400ms") is not None:
+            bits.append(f"{d['image_kib_before_400ms']} KiB imgs <400ms")
+        if bits:
+            print("    payload: " + "  ".join(bits))
+        if d.get("mainthread_ms"):
+            top = sorted(d["mainthread_ms"].items(), key=lambda x: -x[1])[:3]
+            print("    main-thread: " + "  ".join(f"{k} {v}ms" for k, v in top))
+        for s in (d.get("shift_elements") or [])[:3]:
+            print(f"    shift {s['score']:.4f}  {s['selector']}")
     if res["opportunities"]:
         print("    opportunities:")
         for o in res["opportunities"][:5]:
@@ -239,8 +313,12 @@ def main():
     ap.add_argument("urls", nargs="*")
     ap.add_argument("--from-workspace", action="store_true",
                     help="test every live_url in funnels/**/funnel.json")
-    ap.add_argument("--backend", default="local", choices=["local", "psi"])
-    ap.add_argument("--psi-key")
+    ap.add_argument("--backend", default=None, choices=["local", "psi"],
+                    help="default: psi when a key is resolvable (ground truth), "
+                         "else local")
+    ap.add_argument("--psi-key",
+                    help="overrides $PAGESPEED_KEY and PAGESPEED_KEY in "
+                         "tools/lf-agent-bridge/.env")
     ap.add_argument("--form-factor", default="mobile",
                     choices=["mobile", "desktop", "both"])
     ap.add_argument("--runs", type=int, default=None,
@@ -257,12 +335,27 @@ def main():
         sys.exit("Pass at least one URL, or --from-workspace "
                  "(needs live_url in a funnel.json).")
 
+    # Prefer PSI when a key is available: it runs on Google's hardware, so the
+    # number is comparable to what anyone else sees. Local Lighthouse throttles
+    # relative to this machine and is worthless while editors/browsers are open —
+    # measured here, TBT climbed 340 -> 660 -> 960ms across three consecutive runs
+    # purely from accumulated background load.
+    have_key = bool(psi_key(args.psi_key))
+    if args.backend is None:
+        args.backend = "psi" if have_key else "local"
+
     runs = args.runs if args.runs is not None else (3 if args.backend == "local" else 1)
     factors = ["mobile", "desktop"] if args.form_factor == "both" else [args.form_factor]
 
     if args.backend == "local":
         print("backend: local lighthouse — scores are calibrated to THIS machine; "
-              "compare deltas, not absolutes.", file=sys.stderr)
+              "compare deltas, not absolutes." +
+              ("" if have_key else " No PAGESPEED_KEY found; --backend psi would "
+                                  "otherwise give comparable absolute scores."),
+              file=sys.stderr)
+    else:
+        print(f"backend: PSI (Google's servers){'' if have_key else ' — NO KEY, expect 429'}",
+              file=sys.stderr)
 
     exit_code = 0
     for slug, url in targets:
