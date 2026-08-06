@@ -333,6 +333,52 @@ fail with a bare `"Oops! Something went wrong"`.
   breaks, same caption wrap), hero 664x371, 0 console errors, 12 steps,
   `starting_step_id` intact, `aff-` x9 / `trustpilot` x8 / `.co.uk` x15 unchanged.
 
+- `2026-08-06` (sixth pass) — **the lab score and the real page are not the same
+  page. Cloudflare Fonts skips its rewrite for `Chrome-Lighthouse`.**
+
+  This explains the 88-90 plateau that no font work would shift. Fetching the same
+  URL with different user agents:
+
+  | UA | font delivery |
+  |---|---|
+  | Chrome mobile / desktop (real users) | **same-origin** `/cf-fonts/` — 0 extra origins |
+  | **`Chrome-Lighthouse` (PSI)** | **Google** — googleapis CSS + gstatic woff2, 2 extra origins |
+
+  So PSI measures an un-rewritten page: two extra origins needing DNS+TCP+TLS,
+  which under Slow-4G at ~150ms RTT is ~450-600ms *each* — matching the observed
+  **bimodal** FCP of 2.87s (four runs) vs 1.85s (one run), a ~1.0s gap with nothing
+  in between. Gradual noise does not produce that shape; a discrete handshake does.
+  The "lucky 97" was simply a run where those handshakes stayed off the critical
+  path.
+
+  Worse, for that UA **both of our `<link>` tags are stripped** — no preconnect and
+  no font preload reach PSI, while real users do get the preloads. Every font
+  preload/preconnect measurement in the passes above was therefore invisible to the
+  lab. Two earlier conclusions were wrong for this reason:
+  - "preconnect made no difference" — the tag was never in the page.
+  - "the weight consolidation didn't help" — it did not move the *lab* score,
+    because PSI receives the **variable** Inter (one file, all weights) regardless
+    of how many weights we declare. It genuinely helped **real users**, who get
+    static per-weight files: 6 files -> 3, about **71 KiB saved**.
+
+  **Real-user field data (CrUX, 28-day) already passes Core Web Vitals**: LCP 0.9s,
+  INP 112ms, CLS 0. The lab number is the pessimistic one here, not the truthful one.
+
+  Weight consolidation applied to both steps (25 block declarations + 2 inline):
+  `500 -> 400` (3 elements, 26 chars — ~920 bytes of font per character),
+  `600 -> 700` (21 CTA labels), `900 -> 800` (the H1). Canvas-measured width deltas
+  all ~1.2%; invisible at 12-17px, perceptible on the 40px H1 only in a direct A/B.
+  The two stragglers at 600 were inline `<a style="font-weight:600">` inside
+  `Text.p.content` — a styles-based walker never sees those, and two elements were
+  holding a whole ~24 KiB file.
+
+  Rendered weights now 400/700/800 only, all real Inter. The six `@font-face`
+  declarations stay in `header_scripts` deliberately: they cost nothing unless used,
+  and removing them would make any missed weight silently render in Arial.
+
+  **Biggest remaining item that helps BOTH paths: JetBrains Mono — ~21 KiB and its
+  own origin fetch, for the single word "Disclaimer" in the footer.**
+
 ## Known remaining gaps
 
 1. ~~**CLS 0.151 on mobile.**~~ **Fixed** in the third pass above — it was the
