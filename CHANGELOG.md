@@ -88,6 +88,41 @@ Two bugs found and fixed while wiring the triggers:
   the theme's handler. Verified: all four open with the right heading, no jump, Esc
   closes, 0 console errors.
 
+**Step 12 — offer card rebuilt to Figma frame `557:6514`**
+
+Built from measured Figma values, not copied from another step and not eyeballed
+from the screenshot:
+
+| element | Figma | ours before |
+|---|---|---|
+| border `557:6515` | 2px **dashed** `#000`, `dashPattern [6,4]`, radius **6** | solid, radius 20 |
+| badge `557:6559` | `#E63A45`, radius 7, padding 7/16, Inter ExtraBold 16/28.8 → 43px tall | 5/14 padding, 33px tall |
+| badge `557:6558` | absolute, centred, `y = -22` | left-aligned, inside the padding |
+| image `557:6516` | at (2,2), fills the left half top-to-bottom | inset 22px, 300px tall, vertically centred |
+| TP text `557:6522` | per-run: "Excellent" **Bold + UNDERLINE**, all `#000`, lh 19.2 | all plain, `#111827`, lh 18 |
+
+Notes on the non-obvious parts:
+
+- **The badge takes zero flow height.** Figma marks its container
+  `layoutPositioning: ABSOLUTE`; LF has no `position` prop, so `margin
+  {top:-24px, bottom:-19px}` reproduces it — `-24 + 43 - 19 = 0`, so it straddles
+  the top edge without pushing the image down. Verified at 22px above the edge.
+- **`line-height` does nothing to an inline element**, so the badge stayed 33px
+  until the span became `display:inline-block` — then 43px, matching the frame.
+- **`<u>` is reset by LF's CSS.** The underline only took as an inline
+  `style="text-decoration:underline"`.
+- **The Trustpilot logo was a 1000×318 PNG (ratio 3.14) in a 70×17 box (ratio
+  4.12)**, so `objectFit:contain` letterboxed it — fitting by height to ~53px and
+  leaving ~17px of dead space, which is what made the logo look detached from the
+  text. Swapped to the SVG the frame actually specifies: exact ratio, gap now 6px,
+  and **71.5 KiB → 4.9 KiB**.
+- "Flush" needed three separate causes removed: the card's 22px padding, the row's
+  20px gap, and `alignItems:center` floating a fixed-height image in a taller row.
+  Verified: 2px on left/top/bottom — exactly Figma's (2,2) inside the 2px stroke.
+
+Still **98** after every step (measured twice each time); payload 1,066 → 1,073 KiB
+net of the 66 KiB logo saving and the added modal.
+
 **Step 12 — store-host links**
 
 `hlthtrack.com` → `hlthtrack.co.uk` on a UK page that was pointing at the .com
