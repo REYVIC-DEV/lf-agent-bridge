@@ -7,3 +7,6 @@ __pycache__/
 .lf_account
 .cache/
 extracted/
+
+# Playwright MCP session artifacts (console logs, page snapshots)
+.playwright-mcp/
