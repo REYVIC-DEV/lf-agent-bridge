@@ -123,6 +123,18 @@ Notes on the non-obvious parts:
 Still **98** after every step (measured twice each time); payload 1,066 → 1,073 KiB
 net of the 66 KiB logo saving and the added modal.
 
+- **The Trustpilot row is a link.** Figma names that node `557:6520` "Link -
+  Untitled link", which is also *why* "Excellent" is underlined in the frame — it
+  is the link affordance, not decoration. Implemented by converting the row
+  container to a `BlockLink`, not by wrapping the text in an inline `<a>`: the
+  logo is a **sibling `Image` block**, so an anchor inside the `Text` could never
+  have covered it. Children and flex styles preserved — still 314×19, centred,
+  6px gap, logo 70×17.
+  Target `https://www.trustpilot.com/review/hlthtrack.com`, `target=_blank`; LF
+  appends its own `?iref=` attribution. That `hlthtrack.com` is the review-page
+  **slug**, not a store host, which is why the UK domain pass left those 6
+  occurrences alone.
+
 **Step 12 — store-host links**
 
 `hlthtrack.com` → `hlthtrack.co.uk` on a UK page that was pointing at the .com
