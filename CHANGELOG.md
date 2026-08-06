@@ -135,6 +135,31 @@ net of the 66 KiB logo saving and the added modal.
   **slug**, not a store host, which is why the UK domain pass left those 6
   occurrences alone.
 
+- **Right-column styles matched to `557:6517`.** A side-by-side against the Figma
+  render showed the earlier pass had the structure right but the type wrong:
+
+  | element | was | Figma |
+  |---|---|---|
+  | heading | **`#7b0323`** (the retired maroon), 25/30, natural wrap → 2 lines | **`#E63A45`**, **24.7/29.61, letterSpacing -1.5**, hard `
+` breaks → **3 lines** |
+  | subtext | 13px / 400 / `#111827` | **10.5px / Medium 500 / `#000000`** |
+  | CTA | hugged its label (padding 11/14) | **FILL** the column, padding 12/32/16/32 |
+  | pill | inline span hugging its text | **full-width** block, radius 4, `#E1C6CB80`, 9px vertical |
+
+  The maroon is worth noting: `#7b0323` is the pre-rebrand red that the meta-uk
+  colour pass retired months earlier, still present here. The hard line breaks are
+  in Figma's `characters` as `
+` — a natural wrap can't reproduce them, which is
+  why ours was 2 lines and the design 3.
+
+  Verified desktop and mobile: at 390px the card is 351px, badge still centred and
+  22px above the edge without overflowing, image stacks flush at 2px, heading and
+  button inside with 30px inset, **no horizontal scroll**.
+
+  Not replicated, deliberately: Figma's two 5.19×1 `#0000001C` hairlines either
+  side of the Trustpilot line (invisible at render size) and its separate 24×24
+  arrow icon in the CTA (ours uses a text arrow).
+
 **Step 12 — store-host links**
 
 `hlthtrack.com` → `hlthtrack.co.uk` on a UK page that was pointing at the .com
