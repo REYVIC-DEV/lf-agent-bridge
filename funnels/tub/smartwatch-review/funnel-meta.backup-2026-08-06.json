@@ -1,0 +1,260 @@
+{
+  "id": "fun_vGqQYxn4H2i_traYYkh4w",
+  "uid": "fun_vGqQYxn4H2i_traYYkh4w",
+  "name": "TUB - Top 5 h trackers-v2 - META - LIVE",
+  "slug": "smartwatch-review",
+  "published": true,
+  "starting_step_id": "step_-42yvjxEYUC-1yAzL9TKy",
+  "header_scripts": "\n<!-- Google Tag Manager -->\r\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n})(window,document,'script','dataLayer','GTM-NP4N9577');</script>\r\n<!-- End Google Tag Manager -->\r\n\r\n<!-- Smooth scroll: anchor clicks (CSS) + momentum scroll (Lenis) -->\r\n<style>\r\n  /* Native smooth scroll ONLY when Lenis is NOT active (mobile/touch). Lenis adds a\r\n     `lenis` class to <html> on desktop; excluding it stops the native engine from\r\n     fighting Lenis \u2014 the intermittent \"can't reach the bottom\" glitch (esp. Mac trackpads). */\r\n  html:not(.lenis) { scroll-behavior: smooth; }\r\n  /* keep anchored sections clear of a sticky header \u2014 adjust 80px to header height */\r\n  [id] { scroll-margin-top: 80px; }\r\n  /* Lenis required CSS (normally shipped as lenis.css \u2014 it was MISSING, which let the\r\n     native smooth-scroll rule above fight Lenis). Inlined so no extra request. */\r\n  html.lenis, html.lenis body { height: auto; }\r\n  /* NOTE: this Lenis build only stamps class `lenis` on <html> (never `lenis-smooth`), so\r\n     target `html.lenis`. !important + specificity beats ANY html{scroll-behavior:smooth}\r\n     (incl. a leftover/old style block), forcing native smooth OFF whenever Lenis runs. */\r\n  html.lenis { scroll-behavior: auto !important; }\r\n  html.lenis [data-lenis-prevent] { overscroll-behavior: contain; }\r\n  html.lenis.lenis-stopped { overflow: hidden; }\r\n</style>\r\n<script src=\"https://unpkg.com/lenis@1/dist/lenis.min.js\"></script>\r\n<script>\r\n  window.addEventListener('DOMContentLoaded', function () {\r\n    // Lenis OFF on mobile/touch: its momentum scroll intermittently fails to reach the\r\n    // page bottom on mobile (dynamic browser-bar viewport + content resizing after load).\r\n    // Native scroll + CSS scroll-behavior:smooth handle anchor jumps fine there.\r\n    if (window.matchMedia('(max-width: 768px), (pointer: coarse)').matches) return;\r\n    if (typeof Lenis === 'undefined') return;\r\n    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });\r\n    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }\r\n    requestAnimationFrame(raf);\r\n    // Re-measure Lenis's max-scroll whenever the page GROWS (images without width/height\r\n    // reflow as they load, LF-injected blocks, \"Read more\" expanders). Belt-and-suspenders\r\n    // vs a stale, too-short scroll limit. rAF-debounced so it can't loop. Desktop only.\r\n    var _rz = false;\r\n    function resync() { if (_rz) return; _rz = true; requestAnimationFrame(function () { _rz = false; try { lenis.resize(); } catch (e) {} }); }\r\n    window.addEventListener('load', resync);\r\n    window.addEventListener('resize', resync);\r\n    try { if (window.ResizeObserver) new ResizeObserver(resync).observe(document.body); } catch (e) {}\r\n    document.addEventListener('click', function (e) { if (e.target && e.target.closest && e.target.closest('.read-more-btn,[data-toggle],summary')) setTimeout(resync, 60); }, true);\r\n    document.querySelectorAll('a[href^=\"#\"]').forEach(function (a) {\r\n      a.addEventListener('click', function (e) {\r\n        var target = document.querySelector(a.getAttribute('href'));\r\n        if (target) { e.preventDefault(); lenis.scrollTo(target); }\r\n      });\r\n    });\r\n  });\r\n</script>\r\n<script>\r\n/* ============================================================================\r\n   UNIVERSAL LightFunnels workspace HEAD tracking \u2014 single-script, no HTML comments\r\n   (HTML comments + multiple <script> blocks were rendering a stray \"null\" in LF's\r\n   custom-code field; everything is consolidated here to avoid that.)\r\n\r\n   Auto-detects source (google/taboola/outbrain/facebook/tiktok/bing/default),\r\n   routes to the matching PostHog project, sets ph_src, loads only the matching\r\n   network pixel, forwards attribution + ph_distinct_id (QUERY params) to store links,\r\n   and fires a standardized cta_clicked. Paste in Settings -> Custom code -> HEAD.\r\n   ============================================================================ */\r\n(function () {\r\n  /* ===================== CONFIG ===================== */\r\n  var PROJECTS = {\r\n    google:    \"phc_ux95aBRgRLNv4aDR6YCKgGbWKzin985kaHAQ7KPV99Uv\", // HTLH - GOOGLE (208779)\r\n    \"default\": \"phc_zeYhTnuJUvFG7bMUCEiYgFCMbxbAZo6AzekrBF2bt6E6\"   // HLTH - Native (194985) catch-all\r\n  };\r\n  var FORCE_SRC = \"auto\";        // \"auto\" = detect; or hardcode \"google\"/\"taboola\"/...\r\n  var NETWORK_PIXELS = \"match\";  // \"match\" | \"all\" | \"none\"\r\n  var PIXELS = {\r\n    taboola:  \"2062271\",\r\n    outbrain: \"0078f610489eeb2ce56af246aa79746a92\",\r\n    aimerce:  \"https://cdn.aimerce.ai/a.browser.umd.lightfunnels.js?gtagCid=AW-17959134159&domain=strhealthstore.myshopify.com\"\r\n  };\r\n  var LOAD_AIMERCE = true;\r\n  var SHOP_BRANDS = [\"hlthtrack\"];\r\n  var DECORATE_ALL_OUTBOUND = false;\r\n  // Affiliate buttons: add ONE of these classes to a LightFunnels button and the\r\n  // header REPLACES that button's link with the URL below (no params appended \u2014\r\n  // Amazon's own tag=/linkId= tracking is already in the URL). To add a product,\r\n  // add a line here and put the class on the button. Same button class can be\r\n  // reused on many buttons; all of them get the link.\r\n  var AFFILIATE = {\r\n    \"aff-whoop\":       \"https://www.amazon.com/WHOOP-Peak-Membership-Personalized-Healthspan/dp/B0DY2SWV16?adgrpid=174219888232&dib=eyJ2IjoiMSJ9.P1aPHBzJlMDHGngMq1Pj18fxBOaVBEZUxDiOLwWvVG05s0pBVU3wJludotT6rbNWNe_ovy8Thx7lJFwgIppqdFRfrG4MbAFQR8oQ_B-zJq-a74L0dJlvMuedEyGjHwAAPXeUcPxCdEM5q3NJblXt076_V3hDs8DNzsRqbss38Z2mbPMpxyHZ7_B7bmq4gBfjRrIX8Hi_FZUvEQM80K-5dx7zeqjtniSx1KtQEuQg7kw.I_tAVR80j80Ql8GOAYsRFYI52u1VInG_bKSVpDm2jlk&dib_tag=se&hvadid=729595223884&hvdev=c&hvlocphy=1011179&hvnetw=g&hvqmt=b&hvrand=4561546128580963913&hvtargid=kwd-302819005640&hydadcr=18964_13633071&keywords=whoop%2Bwristband&mcid=50130214b74f35bcbeda2566cd48c948&qid=1782891094&sr=8-1&th=1&linkCode=ll2&tag=techunboxed04-20&linkId=9e73817652d354b8e53a0e77d49ed0e7&language=en_US&ref_=as_li_ss_tl\",\r\n    \"aff-apple-watch\": \"https://www.amazon.com/Apple-Watch-Smartwatch-Aluminium-Always/dp/B0DGHQ2QH6?th=1&linkCode=ll2&tag=techunboxed04-20&linkId=57d4958295e301f6b340ed2c55012f06&language=en_US&ref_=as_li_ss_tl\",\r\n    \"aff-garmin\":      \"https://www.amazon.com/Garmin-v%C3%ADvoactive%C2%AE-Fitness-Smartwatch-Display/dp/B0F38FCHD2?th=1&linkCode=ll2&tag=techunboxed04-20&linkId=094eae890c996bc36fb09396691c9216&language=en_US&ref_=as_li_ss_tl\",\r\n    \"aff-fitbit\":      \"https://www.amazon.com/Fitbit-Charge-Fitness-Tracker-Google/dp/B0CC62ZG1M?adgrpid=142966087659&dib=eyJ2IjoiMSJ9.OExMU8od94lLouGFxwHzO57Mm99GE5Z-NDRGkpKnKBLltvuoTx_eCqz5hq6KM9AnP2VqaS0pK9lKyJr4IeVeZTL7vaKblk8PPJPY4mTc-JlVQEghaCHKVXwmLxhlUQkMOUiB3HFM-NnFojRow_qjEx2SomgQTi8HRvvdL0pZxmp5fyLF42HRHkltbSLIty4_EDReicMt8kw3osP_ORxlAIXk5P-yrFx-Wx2t261d0j0.R1dwtLSha3vp8IRPoPoeFFl6T_xQjEja8h6pJkcXSE8&dib_tag=se&hvadid=673504251724&hvdev=c&hvlocphy=1011179&hvnetw=g&hvqmt=e&hvrand=355140030175691062&hvtargid=kwd-2225387948761&hydadcr=11261_13472078&keywords=amazon%2Bfitbit%2Bcharge%2B6&mcid=6b8cd69ad5a83a93a6b980ee9a73e068&qid=1782891217&sr=8-1&th=1&linkCode=ll2&tag=techunboxed04-20&linkId=d8588e9b0a22da975af32ff278afb205&language=en_US&ref_=as_li_ss_tl\"\r\n  };\r\n  var DEBUG = true; // set false once verified\r\n  /* ================================================== */\r\n\r\n  function log(){ if(DEBUG) try{ console.log.apply(console,[\"[FF]\"].concat([].slice.call(arguments))); }catch(e){} }\r\n  function param(n){ try{ return new URLSearchParams(location.search).get(n); }catch(e){ return null; } }\r\n  function utm(){ return (param(\"utm_source\")||\"\").toLowerCase(); }\r\n\r\n  function detectSrc(){\r\n    var u = utm();\r\n    if (param(\"gclid\")||param(\"gbraid\")||param(\"wbraid\")||param(\"gad_source\")||/google|adwords|gads|youtube/.test(u)) return \"google\";\r\n    if (param(\"tblci\")||/taboola/.test(u)) return \"taboola\";\r\n    if (param(\"dicbo\")||/outbrain/.test(u)) return \"outbrain\";\r\n    if (param(\"fbclid\")||/facebook|meta|^fb$|instagram|^ig$/.test(u)) return \"facebook\";\r\n    if (param(\"ttclid\")||/tiktok/.test(u)) return \"tiktok\";\r\n    if (param(\"msclkid\")||/bing|microsoft/.test(u)) return \"bing\";\r\n    return \"default\";\r\n  }\r\n\r\n  var src = (FORCE_SRC && FORCE_SRC !== \"auto\") ? FORCE_SRC : detectSrc();\r\n  try {\r\n    var K = \"ff_src\";\r\n    if (src === \"default\") { var saved = localStorage.getItem(K); if (saved) src = saved; }\r\n    else localStorage.setItem(K, src);\r\n  } catch (e) {}\r\n  var FUNNEL_SRC = src;\r\n  var TOKEN = PROJECTS[src] || PROJECTS[\"default\"];\r\n  window.__FF_SRC = src;\r\n  log(\"source =\", src, \"| token =\", TOKEN.slice(0, 12));\r\n\r\n  /* ---- network pixels ---- */\r\n  function loadTaboola(id){\r\n    window._tfa = window._tfa || [];\r\n    window._tfa.push({ notify: \"event\", name: \"page_view\", id: Number(id) });\r\n    (function (t, f, a, x) {\r\n      if (!document.getElementById(x)) { t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f); }\r\n    })(document.createElement(\"script\"), document.getElementsByTagName(\"script\")[0],\r\n       \"//cdn.taboola.com/libtrc/unip/\" + id + \"/tfa.js\", \"tb_tfa_script\");\r\n  }\r\n  function loadOutbrain(advId){\r\n    (function (_window, _document) {\r\n      if (_window.obApi) {\r\n        var toArray = function (o){ return Object.prototype.toString.call(o) === \"[object Array]\" ? o : [o]; };\r\n        _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(advId)); return;\r\n      }\r\n      var api = (_window.obApi = function () { api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments); });\r\n      api.version = \"1.1\"; api.loaded = true; api.marketerId = advId; api.queue = [];\r\n      var tag = _document.createElement(\"script\"); tag.async = true;\r\n      tag.src = \"//amplify.outbrain.com/cp/obtp.js\"; tag.type = \"text/javascript\";\r\n      var s = _document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(tag, s);\r\n    })(window, document);\r\n    window.obApi(\"track\", \"PAGE_VIEW\");\r\n  }\r\n  if (NETWORK_PIXELS === \"all\") {\r\n    if (PIXELS.taboola) loadTaboola(PIXELS.taboola);\r\n    if (PIXELS.outbrain) loadOutbrain(PIXELS.outbrain);\r\n  } else if (NETWORK_PIXELS === \"match\") {\r\n    if (src === \"taboola\" && PIXELS.taboola) loadTaboola(PIXELS.taboola);\r\n    if (src === \"outbrain\" && PIXELS.outbrain) loadOutbrain(PIXELS.outbrain);\r\n  }\r\n  if (LOAD_AIMERCE && PIXELS.aimerce && !document.getElementById(\"aimerce-trackjs\")) {\r\n    var am = document.createElement(\"script\");\r\n    am.id = \"aimerce-trackjs\"; am.src = PIXELS.aimerce;\r\n    (document.head || document.documentElement).appendChild(am);\r\n  }\r\n\r\n  /* ---- PostHog loader + init (project chosen above) ---- */\r\n  (function (t, e) {\r\n    var o, n, p, r;\r\n    if (e.__SV || (window.posthog && window.posthog.__loaded)) return;\r\n    window.posthog = e; e._i = [];\r\n    e.init = function (i, s, a) {\r\n      function g(t, e) { var o = e.split(\".\"); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))); }; }\r\n      (p = t.createElement(\"script\")).type = \"text/javascript\"; p.crossOrigin = \"anonymous\"; p.async = !0;\r\n      p.src = s.api_host.replace(\".i.posthog.com\", \"-assets.i.posthog.com\") + \"/static/array.js\";\r\n      (r = t.getElementsByTagName(\"script\")[0]).parentNode.insertBefore(p, r);\r\n      var u = e;\r\n      for (void 0 !== a ? (u = e[a] = []) : (a = \"posthog\"), u.people = u.people || [],\r\n        u.toString = function (t) { var e = \"posthog\"; return \"posthog\" !== a && (e += \".\" + a), t || (e += \" (stub)\"), e; },\r\n        u.people.toString = function () { return u.toString(1) + \".people (stub)\"; },\r\n        o = \"init capture register register_once register_for_session unregister getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug\".split(\" \"),\r\n        n = 0; n < o.length; n++) g(u, o[n]);\r\n      e._i.push([i, s, a]);\r\n    };\r\n    e.__SV = 1;\r\n  })(document, window.posthog || []);\r\n\r\n  posthog.init(TOKEN, { api_host: \"https://eu.i.posthog.com\", defaults: \"2026-05-30\", capture_pageleave: true, request_batching: false });\r\n\r\n  /* ---- attribution capture + forwarding + cta_clicked ---- */\r\n  var ATTRIB_KEYS = [\r\n    \"utm_source\",\"utm_medium\",\"utm_campaign\",\"utm_term\",\"utm_content\",\"utm_id\",\r\n    \"gclid\",\"gbraid\",\"wbraid\",\"gad_source\",\"gclsrc\",\"dclid\",\r\n    \"fbclid\",\"ttclid\",\"msclkid\",\"twclid\",\"li_fat_id\",\"irclid\",\"tblci\",\"dicbo\"\r\n  ];\r\n  var LS_PARAMS = \"ff_params\";\r\n  var MAXAGE = 60 * 60 * 24 * 60;\r\n  function getLS(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }\r\n  function setLS(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }\r\n\r\n  var qs = new URLSearchParams(window.location.search);\r\n  var params = {};\r\n  qs.forEach(function (v, k) { params[k] = v; });\r\n  if (Object.keys(params).length) { setLS(LS_PARAMS, JSON.stringify(params)); }\r\n  else { try { var s = getLS(LS_PARAMS); if (s) params = JSON.parse(s) || {}; } catch (e) {} }\r\n\r\n  (function () {\r\n    var ids = [\"gclid\",\"gbraid\",\"wbraid\",\"gad_source\",\"fbclid\",\"ttclid\",\"msclkid\"];\r\n    for (var i = 0; i < ids.length; i++) if (params[ids[i]]) {\r\n      var c = ids[i] + \"=\" + encodeURIComponent(params[ids[i]]) + \";path=/;max-age=\" + MAXAGE + \";SameSite=Lax\";\r\n      if (location.protocol === \"https:\") c += \";Secure\";\r\n      try { document.cookie = c; } catch (e) {}\r\n    }\r\n  })();\r\n\r\n  (function () {\r\n    var attrib = {};\r\n    for (var i = 0; i < ATTRIB_KEYS.length; i++) if (params[ATTRIB_KEYS[i]]) attrib[ATTRIB_KEYS[i]] = params[ATTRIB_KEYS[i]];\r\n    attrib.funnel_src = FUNNEL_SRC;\r\n    try { posthog.register(attrib); } catch (e) {}\r\n    var initial = {}; for (var k in attrib) if (attrib.hasOwnProperty(k)) initial[\"initial_\" + k] = attrib[k];\r\n    try { posthog.register_once(initial); } catch (e) {}\r\n  })();\r\n\r\n  function matchesShop(host) {\r\n    host = (host || \"\").toLowerCase();\r\n    return SHOP_BRANDS.some(function (b) {\r\n      var esc = b.replace(/[.*+?^${}()|[\\]\\\\]/g, \"\\\\$&\");\r\n      return new RegExp(\"(^|\\\\.)\" + esc + \"\\\\.[a-z0-9.-]+$\").test(host);\r\n    });\r\n  }\r\n  function regDomain(host) { var p = host.split(\".\"); return p.slice(-2).join(\".\"); }\r\n  var SELF_BASE = regDomain(location.hostname);\r\n  function isInternal(host) { return regDomain(host) === SELF_BASE; }\r\n\r\n  // Derive a RECOGNIZABLE CTA name. LightFunnels sometimes builds icon/image buttons or\r\n  // wrappers with no direct text, so innerText comes back empty -> \"(none)\"/blank in PostHog.\r\n  // Priority: data-cta override -> aria-label/title -> visible text -> child img alt/aria ->\r\n  // input value -> derived from destination (product handle/host) -> position. Returns\r\n  // {name, src} so the dashboard can see WHERE the name came from (audit weak CTAs).\r\n  // To force a clean name on a key button in LightFunnels, add  data-cta=\"Hero \u2013 Buy now\".\r\n  function cleanTxt(s) { return (s || \"\").replace(/\\s+/g, \" \").trim(); }\r\n  function ctaName(el, url, pos) {\r\n    var v = cleanTxt(el.getAttribute(\"data-cta\") || el.getAttribute(\"data-cta-name\"));\r\n    if (v) return { name: v.slice(0, 80), src: \"data-cta\" };\r\n    v = cleanTxt(el.innerText || el.textContent);\r\n    if (v) return { name: v.split(\"\\n\")[0].slice(0, 80), src: \"text\" };\r\n    v = cleanTxt(el.getAttribute(\"aria-label\") || el.getAttribute(\"title\"));\r\n    if (v && !/^untitled\\b/i.test(v) && v.toLowerCase() !== \"link\") return { name: v.slice(0, 80), src: \"aria\" };\r\n    var media = el.querySelector && el.querySelector(\"img[alt],img[title],[aria-label],[title]\");\r\n    if (media) {\r\n      v = cleanTxt(media.getAttribute(\"alt\") || media.getAttribute(\"aria-label\") || media.getAttribute(\"title\"));\r\n      if (v) return { name: v.slice(0, 80), src: \"img\" };\r\n    }\r\n    v = cleanTxt(el.value || (el.getAttribute && el.getAttribute(\"value\")));\r\n    if (v) return { name: v.slice(0, 80), src: \"value\" };\r\n    try {\r\n      if (url) {\r\n        var seg = (url.pathname || \"\").split(\"/\").filter(Boolean).pop();\r\n        if (seg) return { name: (matchesShop(url.hostname) ? \"store:\" : url.hostname + \":\") + decodeURIComponent(seg), src: \"dest\" };\r\n        if (url.hostname) return { name: url.hostname, src: \"dest\" };\r\n      }\r\n    } catch (e) {}\r\n    return { name: \"CTA #\" + (pos || \"?\"), src: \"position\" };\r\n  }\r\n\r\n  function addParams(url) {\r\n    for (var k in params) if (params.hasOwnProperty(k) && !url.searchParams.has(k)) url.searchParams.set(k, params[k]);\r\n  }\r\n  function addPhIds(url) {\r\n    try {\r\n      url.searchParams.set(\"ph_src\", FUNNEL_SRC);\r\n      if (typeof posthog === \"undefined\" || !posthog.get_distinct_id) return;\r\n      var did = posthog.get_distinct_id(); if (did) url.searchParams.set(\"ph_distinct_id\", did);\r\n      var sid = (posthog.get_session_id ? posthog.get_session_id() : \"\") || \"\";\r\n      if (sid) url.searchParams.set(\"ph_session_id\", sid);\r\n    } catch (e) {}\r\n  }\r\n  function applyTo(el, attr) {\r\n    var raw = el.getAttribute(attr); if (!raw) return false;\r\n    var url; try { url = new URL(raw, window.location.href); } catch (e) { return false; }\r\n    var shop = matchesShop(url.hostname);\r\n    if (!shop && !(DECORATE_ALL_OUTBOUND && !isInternal(url.hostname))) return false;\r\n    addParams(url);\r\n    if (shop) addPhIds(url);\r\n    var out = url.toString();\r\n    if (out !== raw) { el.setAttribute(attr, out); return true; }\r\n    return false;\r\n  }\r\n  // Affiliate class -> URL. REPLACES the button's link (no params appended). Works\r\n  // whether the class is on the <a> itself, on a wrapper containing an <a>, or on a\r\n  // plain button/div (then we set data-dest so the cta_clicked handler still fires).\r\n  function setAffHref(el, u) {\r\n    var did = false;\r\n    if (el.tagName === \"A\" || el.hasAttribute(\"href\")) { el.setAttribute(\"href\", u); did = true; }\r\n    var inner = el.querySelectorAll ? el.querySelectorAll(\"a[href]\") : [];\r\n    for (var k = 0; k < inner.length; k++) { inner[k].setAttribute(\"href\", u); did = true; }\r\n    if (!did) el.setAttribute(\"data-dest\", u);\r\n  }\r\n  function applyAffiliates() {\r\n    for (var cls in AFFILIATE) {\r\n      if (!AFFILIATE.hasOwnProperty(cls)) continue;\r\n      var els = document.getElementsByClassName(cls);\r\n      for (var i = 0; i < els.length; i++) setAffHref(els[i], AFFILIATE[cls]);\r\n    }\r\n  }\r\n\r\n  function decorate() {\r\n    applyAffiliates();\r\n    var a = document.querySelectorAll(\"a[href]\"), d = document.querySelectorAll(\"[data-dest]\");\r\n    for (var i = 0; i < a.length; i++) applyTo(a[i], \"href\");\r\n    for (var j = 0; j < d.length; j++) applyTo(d[j], \"data-dest\");\r\n  }\r\n\r\n  decorate();\r\n  if (document.readyState === \"loading\") document.addEventListener(\"DOMContentLoaded\", decorate);\r\n  window.addEventListener(\"load\", decorate);\r\n  [400, 1200, 2500, 5000].forEach(function (ms) { setTimeout(decorate, ms); });\r\n  try {\r\n    var obs = new MutationObserver(function (m) {\r\n      if (m.some(function (x) { return x.addedNodes && x.addedNodes.length; })) decorate();\r\n    });\r\n    obs.observe(document.documentElement, { childList: true, subtree: true });\r\n    setTimeout(function () { obs.disconnect(); }, 15000);\r\n  } catch (e) {}\r\n\r\n  function jit(e) {\r\n    var el = e.target && e.target.closest ? e.target.closest(\"a[href],[data-dest]\") : null;\r\n    if (!el) return;\r\n    applyTo(el, \"data-dest\"); applyTo(el, \"href\");\r\n  }\r\n  window.addEventListener(\"mousedown\", jit, true);\r\n  window.addEventListener(\"auxclick\", jit, true);\r\n  window.addEventListener(\"keydown\", function (e) { if (e.key === \"Enter\" || e.key === \" \") jit(e); }, true);\r\n\r\n  window.addEventListener(\"click\", function (e) {\r\n    var el = e.target && e.target.closest ? e.target.closest(\"a[href],[data-dest]\") : null;\r\n    if (!el) return;\r\n    var raw = el.getAttribute(\"data-dest\") || el.getAttribute(\"href\"); if (!raw) return;\r\n    var url; try { url = new URL(raw, window.location.href); } catch (err) { return; }\r\n    if (isInternal(url.hostname)) return;\r\n    try {\r\n      if (typeof posthog !== \"undefined\" && posthog.capture) {\r\n        // CTA position: 1-based order among OUTBOUND CTAs (top->bottom) + how far down the\r\n        // page the button sits (0-100). Distinguishes the same button repeated hero/mid/footer.\r\n        var ctaPos = null, depthPct = null;\r\n        try {\r\n          var ctas = [].slice.call(document.querySelectorAll(\"a[href],[data-dest]\")).filter(function (x) {\r\n            var r = x.getAttribute(\"data-dest\") || x.getAttribute(\"href\"); if (!r) return false;\r\n            var u; try { u = new URL(r, window.location.href); } catch (er) { return false; }\r\n            return !isInternal(u.hostname);\r\n          });\r\n          var idx = ctas.indexOf(el); if (idx >= 0) ctaPos = idx + 1;\r\n          var rect = el.getBoundingClientRect();\r\n          var docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) || 1;\r\n          depthPct = Math.min(100, Math.max(0, Math.round(100 * (rect.top + window.scrollY) / docH)));\r\n        } catch (ep) {}\r\n        var nm = ctaName(el, url, ctaPos);\r\n        posthog.capture(\"cta_clicked\", {\r\n          cta_text: nm.name,\r\n          cta_label_source: nm.src, // data-cta | aria | text | img | value | dest | position\r\n          cta_position: ctaPos,\r\n          cta_depth_pct: depthPct,\r\n          dest: url.toString(),\r\n          dest_host: url.hostname,\r\n          goes_to_store: matchesShop(url.hostname),\r\n          via: el.getAttribute(\"data-dest\") ? \"data-dest\" : \"href\",\r\n          funnel_src: FUNNEL_SRC\r\n        }, { transport: \"sendBeacon\" });\r\n      }\r\n    } catch (e1) {}\r\n  }, true);\r\n})();\r\n</script>\r\n",
+  "styles": [
+    {
+      "key": "static_page_background",
+      "name": "Page Background",
+      "type": "color",
+      "value": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_section_background",
+      "name": "Section Background",
+      "type": "color",
+      "value": {
+        "r": 244,
+        "g": 245,
+        "b": 247,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_title_text",
+      "name": "Title Text",
+      "type": "color",
+      "value": {
+        "r": 25,
+        "g": 30,
+        "b": 42,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_body_text",
+      "name": "Body Text",
+      "type": "color",
+      "value": {
+        "r": 87,
+        "g": 99,
+        "b": 122,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_primary_color_buttons_links",
+      "name": "Primary Color (Buttons & Links)",
+      "type": "color",
+      "value": {
+        "r": 0,
+        "g": 124,
+        "b": 249,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_light_primary_background",
+      "name": "Light Primary Background",
+      "type": "color",
+      "value": {
+        "r": 0,
+        "g": 124,
+        "b": 249,
+        "a": 0.3
+      }
+    },
+    {
+      "key": "static_buttons_text",
+      "name": "Buttons Text",
+      "type": "color",
+      "value": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_secondary_color",
+      "name": "Secondary Color",
+      "type": "color",
+      "value": {
+        "r": 255,
+        "g": 193,
+        "b": 7,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_outline",
+      "name": "Outline",
+      "type": "color",
+      "value": {
+        "r": 172,
+        "g": 185,
+        "b": 210,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_primary_links_hover",
+      "name": "Primary links hover",
+      "type": "color",
+      "value": {
+        "r": 0,
+        "g": 114,
+        "b": 235,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_secondary_links_hover",
+      "name": "Secondary links hover",
+      "type": "color",
+      "value": {
+        "r": 231,
+        "g": 233,
+        "b": 238,
+        "a": 0.4
+      }
+    },
+    {
+      "key": "static_divider_color",
+      "name": "Divider color",
+      "type": "color",
+      "value": {
+        "r": 214,
+        "g": 220,
+        "b": 233,
+        "a": 1
+      }
+    },
+    {
+      "key": "static_heading_font",
+      "name": "Heading Font",
+      "type": "fontFamily",
+      "value": "Inter"
+    },
+    {
+      "key": "static_subheading_font",
+      "name": "Subheading Font",
+      "type": "fontFamily",
+      "value": "Inter"
+    },
+    {
+      "key": "static_heading_size",
+      "name": "Heading Size",
+      "type": "fontSize",
+      "value": "54px"
+    },
+    {
+      "key": "static_subheading_size",
+      "name": "Subheading Size",
+      "type": "fontSize",
+      "value": "18px"
+    },
+    {
+      "key": "static_body_text_font",
+      "name": "Body Text Font",
+      "type": "fontFamily",
+      "value": "Inter"
+    },
+    {
+      "key": "static_body_text_size",
+      "name": "Body Text Size",
+      "type": "fontSize",
+      "value": "16px"
+    },
+    {
+      "key": "zXJmfsxci",
+      "name": "Merriweather",
+      "type": "fontFamily",
+      "value": "Merriweather"
+    },
+    {
+      "key": "loU3wz5DL",
+      "name": "Sidebar Text",
+      "type": "color",
+      "value": {
+        "r": 86,
+        "g": 88,
+        "b": 92,
+        "a": 1
+      }
+    },
+    {
+      "key": "OMaOl2cfS",
+      "name": "Poppins",
+      "type": "fontFamily",
+      "value": "Poppins"
+    },
+    {
+      "key": "Kc0Vb7vAP",
+      "name": "Dosis",
+      "type": "fontFamily",
+      "value": "Dosis"
+    },
+    {
+      "key": "v1_qIv9W_",
+      "name": "h2 dosis",
+      "type": "fontSize",
+      "value": "21px"
+    },
+    {
+      "key": "_7uN6wk-t",
+      "name": "30 lh",
+      "type": "lineHeight",
+      "value": "30px"
+    },
+    {
+      "key": "C_qBz9_UU",
+      "name": "26 lh",
+      "type": "lineHeight",
+      "value": "27px"
+    },
+    {
+      "key": "JgR02x9Jm",
+      "name": "h2 color",
+      "type": "color",
+      "value": {
+        "r": 43,
+        "g": 45,
+        "b": 50,
+        "a": 1
+      }
+    },
+    {
+      "key": "W8DXSe1AA",
+      "name": "lime 1",
+      "type": "color",
+      "value": {
+        "r": 167,
+        "g": 209,
+        "b": 41,
+        "a": 1
+      }
+    },
+    {
+      "key": "DLlrKdLxy",
+      "name": "2nd bg",
+      "type": "color",
+      "value": {
+        "r": 248,
+        "g": 248,
+        "b": 248,
+        "a": 1
+      }
+    }
+  ],
+  "smart_sections": []
+}

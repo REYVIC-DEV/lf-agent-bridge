@@ -1,0 +1,15 @@
+{
+  "trustpilot": {
+    "hlth": "https://www.trustpilot.com/review/hlthtrack.com",
+    "whoop": "https://www.trustpilot.com/review/whoop.com",
+    "apple": "https://au.trustpilot.com/review/applewatch.com",
+    "garmin": "https://www.trustpilot.com/review/www.garmin.com",
+    "fitbit": "https://www.trustpilot.com/review/community.fitbit.com"
+  },
+  "aff": {
+    "whoop": "aff-whoop",
+    "apple": "aff-apple-watch",
+    "garmin": "aff-garmin",
+    "fitbit": "aff-fitbit"
+  }
+}
