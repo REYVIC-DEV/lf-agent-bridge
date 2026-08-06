@@ -160,6 +160,43 @@ net of the 66 KiB logo saving and the added modal.
   side of the Trustpilot line (invisible at render size) and its separate 24×24
   arrow icon in the CTA (ours uses a text arrow).
 
+- **Flush image was covering the rounded corners.** Measured: card border-box left
+  16.0 with a 2px border → inner edge 18.0, and the panel started at exactly 18.0,
+  so it was never over the border's straight edges. Only the corners were wrong —
+  panel `borderRadius 0` against the card's `6px`, so its square corner filled the
+  area where the dashed border curves. The inner radius of a 6px radius with a 2px
+  border is **4px**; set that on the panel and image and the curve matches.
+  `overflow:hidden` on the card would also have clipped it, but it would equally
+  clip the badge that deliberately extends 22px above — rejected for that reason.
+
+### ⚠ Step 12 is not rendering Inter at all (undecided)
+
+The "fonts look thin" observation is real and has a specific cause. **The only
+`@font-face` family declared on the page is `InterFallback`** — there is no `Inter`
+face — so every character renders in the Arial-metric fallback, and at weight 800
+Arial has no ExtraBold, so the browser synthesises it.
+
+Proof by canvas measurement: `Inter` at 800 measures **185.5px, identical to a
+nonsense font name** (control 185.5), while `InterFallback` measures 200.9.
+
+Meanwhile the page **still downloads 3 Inter woff2 (~71 KiB) it cannot use**,
+because the stack makes LF request
+`family=Inter,+InterFallback,+sans-serif:400,800,900,700,600,500` and the returned
+faces are declared under that whole string, which the stack's `Inter` token never
+matches. **Paying for the fonts, getting Arial.**
+
+Same latent bug as test3 — so *both* of those 98 scores are measured on pages that
+are not rendering Inter. Steps 3/11 avoid it only because they carry explicit
+`Inter` `@font-face` declarations in `custom_html.header`.
+
+The fix is those same declarations. The trade, which is why it is still undecided:
+
+| | now | fixed |
+|---|---|---|
+| renders in | Arial-metric fallback | **real Inter** |
+| font bytes | 71 KiB **wasted** | ~119 KiB, used |
+| likely PSI | 98 | **~90**, as step 3 went |
+
 **Step 12 — store-host links**
 
 `hlthtrack.com` → `hlthtrack.co.uk` on a UK page that was pointing at the .com
