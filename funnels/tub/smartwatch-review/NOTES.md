@@ -20,7 +20,11 @@ before it goes to 3.
 omission — but a malformed payload can still damage what it does touch. After
 every write, confirm:
 
-- `len(steps) == 12`
+- **Do NOT assert a step count.** This funnel is shared: a colleague added
+  step 12 `TECHUNBOXED-UK-V4` (`randell-build`) mid-session and a hardcoded
+  `== 12` started failing. Assert instead that the steps you intend to touch
+  still exist. `updateFunnel(steps:[...])` is a partial update, so unlisted
+  siblings — including new ones — survive by omission.
 - `starting_step_id == step_-42yvjxEYUC-1yAzL9TKy`, `published == True`
 - per step 3 and 11: `aff-` ×9, `trustpilot` ×8, `hlthtrack.co.uk` ×15
 
@@ -378,6 +382,36 @@ fail with a bare `"Oops! Something went wrong"`.
 
   **Biggest remaining item that helps BOTH paths: JetBrains Mono — ~21 KiB and its
   own origin fetch, for the single word "Disclaimer" in the footer.**
+
+- `2026-08-06` (seventh pass) — **scoped the perf CSS to step level.**
+  `header_scripts` is FUNNEL-level, so five blocks added during the passes above
+  were live on all 12 steps — 10 of which are separate live advertorials that were
+  explicitly out of scope. They turned out to be harmless (step 7 TH verified
+  rendering identically, 0 console errors; the block CSS is id-scoped, the Inter
+  `@font-face` rules point at the same `/cf-fonts/` URLs Cloudflare already emits,
+  and `InterFallback` is referenced only by steps 3/11). But the blast radius was
+  wrong and shouldn't have been left that way.
+
+  **Moved into `settings.custom_html.header` on steps 3 and 11 only:** the six
+  `Inter` `@font-face` declarations, the `InterFallback` `@font-face`, and the
+  block CSS. Verified placement *before* moving — `custom_html.header` renders
+  inside `<head>` (the pre-existing `.read-more-content` style from it sits at char
+  30153, `</head>` at 440153). That check mattered: if it landed in `<body>` the
+  move would have reintroduced the full-document style recalc worth 2,703ms.
+  Both steps already had a `custom_html.header` and `footer`, so this appends.
+
+  **Dropped entirely, both proven inert:** the font preloads (stripped before
+  reaching Lighthouse; real users already get these same-origin) and the
+  preconnects to `fonts.googleapis.com`/`fonts.gstatic.com` (stripped by
+  Cloudflare Fonts, never in the served HTML).
+
+  **Kept funnel-level** because genuinely shared: GTM, PostHog, aimerce, and the
+  desktop-only Lenis loader. `header_scripts` 28,582 -> 22,721 chars.
+
+  Verified after: steps 3/11 have the block in `<head>`, 1 in-body `<style>` (the
+  pre-existing modal), boxes 664x371 @10px, weights 400/700/800 all real Inter;
+  steps 0/4/7 show **zero** of these additions. PSI unchanged at 90, CLS 0.001.
+  Backup of the combined header: `header_scripts.backup-before-split-2026-08-06.html`.
 
 ## Known remaining gaps
 
