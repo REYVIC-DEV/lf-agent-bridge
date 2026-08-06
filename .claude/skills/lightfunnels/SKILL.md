@@ -31,6 +31,15 @@ measure/verify checklist: `figma-inspect.md` ("Long/tall mobile frames", "Per-br
 differences") and `block-schema.md` ("Mobile build checklist"). Verify at 390px with a
 device-emulated Playwright shot cropped into sections.
 
+**Optimizing PageSpeed / Core Web Vitals / Agentic Browsing?** Read
+[references/performance.md](references/performance.md). The mobile score's usual sole
+drag is **CLS from Inter's `font-display:swap` reflow** — fix it with a font preload +
+**metric-matched `InterFallback` `@font-face`** and route block text through the
+`Inter, InterFallback, sans-serif` stack (verified 89→98 mobile, CLS 0.151→0, Agentic
+Browsing 2/2). Also covers the hero LCP preload/`fetchpriority`, lazy media, `aria-label`s,
+and — critically — **how to measure right** (PSI API / real Lighthouse / a delayed-font
+harness; a naive Playwright observer under-reports).
+
 **Figma access is seat-limited — know the options.** All three official-ish paths:
 - **figwright MCP** (`@figwright/mcp` + its Figma plugin) — reads the file you have
   **open** via the Plugin API, **no seat cap**, effectively unlimited. **Preferred for
