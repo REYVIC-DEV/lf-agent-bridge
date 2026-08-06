@@ -2,7 +2,7 @@
 
 How to make a Lightfunnels page score well on PageSpeed Insights (PSI) / Lighthouse,
 including the new **Agentic Browsing** category. All numbers below are from the
-techunboxed smartwatch advertorial (`build_test3.py`), measured against Google's real
+techunboxed smartwatch advertorial (`tools/lf-agent-bridge/build_test3.py`), measured against Google's real
 PSI servers. Net result of this playbook: **mobile Performance 89 → 98, CLS 0.151 → 0,
 Agentic Browsing 1/2 → 2/2**, desktop 100.
 
@@ -61,7 +61,7 @@ reflow**.
      ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;size-adjust:107.12%}</style>
    ```
    Then author every text/title block with the stack **`Inter, InterFallback, sans-serif`**
-   instead of `Inter` (in `build_test3.py` this is the `FONT` constant used by
+   instead of `Inter` (in `tools/lf-agent-bridge/build_test3.py` this is the `FONT` constant used by
    `title()`/`text()` and the score helper). `local('Arial')` resolves to Liberation
    Sans on PSI's Linux env (metric-compatible), so the overrides hold there too.
 
