@@ -125,31 +125,58 @@ inset, **no horizontal scroll**, 0 console errors.
 Step 12 carries **2.7x the payload** of step 3 and still scores 8 points higher —
 bytes are not the constraint on these pages, fonts on the critical path are.
 
-## Open: step 12 is not rendering Inter at all
+## Inter now loads (and PageSpeed cannot see it)
 
-The "fonts look thin" observation is real and has a specific cause. **The only
-`@font-face` family declared on the page is `InterFallback`** — there is no `Inter`
-face — so every character renders in the Arial-metric fallback, and at weight 800
-Arial has no ExtraBold, so the browser synthesises it.
+Fixed by declaring the `Inter` `@font-face` rules in step 12's own
+`settings.custom_html.header`, weights 400/500/600/700/800/900, pointing at the
+same-origin `/cf-fonts/s/inter/5.2.8/latin/<w>/normal.woff2` URLs.
 
-Proof by canvas measurement: `Inter` at 800 measures **185.5px, identical to a
-nonsense font name** (control 185.5), while `InterFallback` measures 200.9.
+Verified in a real browser: `Inter` at 800 now measures **191.4px**, distinct from
+both the Arial-metric fallback (200.9) and an unavailable control (185.5). Loaded
+faces: Inter 400/500/600/700/800. Rendered weights 400 x298, 500 x1, 600 x24,
+700 x156, 800 x37 — all real Inter. Font payload 142 KiB.
 
-Meanwhile the page **still downloads 3 Inter woff2 (~71 KiB) it cannot use**, because
-the stack makes LF request
-`family=Inter,+InterFallback,+sans-serif:400,800,900,700,600,500` and the returned
-faces are declared under that whole string, which the stack's `Inter` token never
-matches. **Paying for the fonts, getting Arial.**
+### The big caveat: LF strips all custom code for Lighthouse
 
-`test3-smartwatch/article-v10` has the same bug, so **both of those 98 scores are
-measured on pages that are not rendering Inter.** Steps 3/11 avoid it only because
-they carry explicit `Inter` `@font-face` declarations in `custom_html.header`.
+PSI stayed at **98** after this change, and that is not a verdict on the fix — it
+is because **PageSpeed never sees it.** Lightfunnels serves a different page to the
+`Chrome-Lighthouse` user agent:
 
-The fix is those same declarations, for weights 400/600/700/800/900. The trade, which
-is why it is still undecided:
-
-| | now | fixed |
+| marker | real Chrome | Chrome-Lighthouse |
 |---|---|---|
-| renders in | Arial-metric fallback | **real Inter** |
-| font bytes | 71 KiB **wasted** | ~119 KiB, used |
-| likely PSI | 98 | **~90**, the way step 3 went |
+| HTML size | **900 K** | **282 K** |
+| our Inter `@font-face` | 6 | **0** |
+| `InterFallback` face | 1 | **0** |
+| policy popup CSS | 1 | **0** |
+| GTM | 1 | **0** |
+| PostHog | 21 | **0** |
+| Lenis | 2 | **0** |
+| AFFILIATE map | 1 | **0** |
+
+Not CDN staleness — there is no `cf-cache-status` or `age` header, and it is stable
+across repeated fetches. The origin varies its output by UA. The font files
+themselves serve fine to both UAs (200, valid `wOF2`), so the declarations are what
+is missing, not the assets.
+
+**Consequence: every PSI score on an LF page is measured on a page real users never
+receive** — no tracking, no custom CSS, no custom fonts. Treat CrUX field data as
+the truth. For this origin it already passes: LCP 0.9 s, INP 112 ms, CLS 0.
+
+### What actually causes the step 3 vs step 12 gap
+
+The theme-level Google Fonts request is LF-generated, so it **survives** stripping:
+
+| | request PSI sees | PSI fonts | score |
+|---|---|---|---|
+| step 3 | `...sans-serif:...` **+ `Inter:800,400`** | 70 KiB | 90 |
+| step 12 | `...sans-serif:400,800,900,700,600,500` only | **0 KiB** | 98 |
+
+Step 3's theme-bound font setting leaks a *usable* `Inter:` entry into that request,
+so PSI fetches real Inter and pays ~8 points for it. Step 12's request contains only
+the unusable garbage family, so PSI fetches nothing.
+
+**So step 12 now has both: real Inter for users, and 98 in the lab.** And step 3
+could have both too — it already carries the same explicit `@font-face` block, so
+removing the theme-bound `Inter` setting would keep real users on Inter while
+dropping the PSI-visible request to the unusable family. Untested; the theme font
+setting lives in the funnel/store design settings, not the page body.

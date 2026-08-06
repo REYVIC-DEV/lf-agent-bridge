@@ -166,5 +166,61 @@
     "form_factor": "mobile",
     "backend": "psi",
     "url": "https://www.techunboxed.co/smartwatch-review/randell-build"
+  },
+  {
+    "score": 98,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1836,
+        "display": "1.8\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 2124.115101157662,
+        "display": "2.1\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "speed-index": {
+        "value": 1836,
+        "display": "1.8\u00a0s"
+      }
+    },
+    "opportunities": [
+      {
+        "id": "server-response-time",
+        "title": "Initial server response time was short",
+        "display": "Root document took 10\u00a0ms",
+        "savings_ms": 6,
+        "savings_bytes": null
+      }
+    ],
+    "lighthouse": "13.4.1",
+    "benchmark_index": 501,
+    "diagnostics": {
+      "mainthread_ms": {
+        "styleLayout": 194,
+        "other": 132,
+        "parseHTML": 51,
+        "paintCompositeRender": 28,
+        "scriptEvaluation": 11,
+        "scriptParseCompile": 2
+      },
+      "requests": 18,
+      "font_files": 0,
+      "font_kib": 0,
+      "image_kib": 1030,
+      "image_kib_before_400ms": 1030,
+      "total_kib": 1073
+    },
+    "runs": 1,
+    "form_factor": "mobile",
+    "backend": "psi",
+    "url": "https://www.techunboxed.co/smartwatch-review/randell-build"
   }
 ]
