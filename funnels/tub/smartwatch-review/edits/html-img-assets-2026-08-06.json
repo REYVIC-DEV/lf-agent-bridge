@@ -1,0 +1,38 @@
+{
+  "tub-hero": {
+    "800": {
+      "src_id": 9918849,
+      "src_uid": "img_tCPQ-_cDd_XwVSdeoD0f1",
+      "src": "https://assets.lightfunnels.com/account-90380/images_library/a875d8e5-bf9e-4e9b-909c-1202d27dc96a.webp"
+    },
+    "1400": {
+      "src_id": 9918852,
+      "src_uid": "img_5jYfQF6EobCVZuiU85PzN",
+      "src": "https://assets.lightfunnels.com/account-90380/images_library/2e657800-e4af-424a-befa-1e8cd1ab534b.webp"
+    }
+  },
+  "tub-sec1": {
+    "800": {
+      "src_id": 9918850,
+      "src_uid": "img_V_AjIh4_lgHQhx0EVwJZ8",
+      "src": "https://assets.lightfunnels.com/account-90380/images_library/4fa0d467-9bf6-4a3e-bc90-aae114a5bd89.webp"
+    },
+    "1400": {
+      "src_id": 9918853,
+      "src_uid": "img_LUmacal9yOfKjrwJXNiGc",
+      "src": "https://assets.lightfunnels.com/account-90380/images_library/7cc03385-3cb5-453b-804e-0d7d15d38ed8.webp"
+    }
+  },
+  "tub-sec2": {
+    "800": {
+      "src_id": 9918851,
+      "src_uid": "img_qKQDFMpjkGy4z3gL4Y1Oo",
+      "src": "https://assets.lightfunnels.com/account-90380/images_library/159e176e-ce67-4f62-a2fb-1deb44614183.webp"
+    },
+    "1400": {
+      "src_id": 9918854,
+      "src_uid": "img_CS8c0hkFC8kuX8-K6FHH6",
+      "src": "https://assets.lightfunnels.com/account-90380/images_library/a6fa18c4-1782-4bb1-bd2d-6e130937768f.webp"
+    }
+  }
+}
