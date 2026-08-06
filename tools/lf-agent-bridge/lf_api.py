@@ -468,11 +468,17 @@ def image_block_from(img):
     return {"src_id": img["_id"], "src_uid": img["uid"], "src": img["path"]}
 
 
-def duplicate_funnel(access_token, funnel_id):
+def duplicate_funnel(access_token, funnel_id, extra_headers=None):
     """Full server-side clone of a funnel INCLUDING all pages/content.
     This is the only way an app token can produce a funnel with real pages —
     the platform forbids apps from writing step bodies (see PLATFORM LIMITS
-    in SKILL.md)."""
+    in SKILL.md).
+
+    `extra_headers` must be passed in session mode (`session_headers(account_id)`);
+    without it a session token is rejected with `errors_fix_version`.
+
+    NOTE: the clone inherits `published` from the source, so unpublish it right
+    away unless you mean it to be live."""
     mutation = """
     mutation Dup($fid: ID!) {
       duplicateFunnel(funnel_id: $fid) {
@@ -481,7 +487,8 @@ def duplicate_funnel(access_token, funnel_id):
       }
     }
     """
-    return gql(access_token, mutation, {"fid": funnel_id})["duplicateFunnel"]
+    return gql(access_token, mutation, {"fid": funnel_id},
+               extra_headers=extra_headers)["duplicateFunnel"]
 
 
 # ---------------------------------------------------------------------------
