@@ -55,6 +55,39 @@ Detail: [`funnels/tub/smartwatch-review/NOTES.md`](funnels/tub/smartwatch-review
    advertorials (verified unharmed). Now in `settings.custom_html.header` on steps
    3 and 11 only. Font preloads and preconnects **dropped** — proven inert.
 
+**Step 12 — content wiring** (all measured at **98 before and after**, every time)
+
+| change | detail |
+|---|---|
+| 8 Amazon buttons | were `href="#"` — dead. Wired to the real affiliate URLs, 2 per product (Whoop / Apple Watch / Garmin / Fitbit), all carrying `tag=techunboxed04-20`. |
+| no `aff-*` class | owner's call: with the URL on the button there is nothing for the header's replacer to do, so it gets no hook. One less runtime DOM mutation. |
+| breadcrumb | `Home` → `blog.techunboxed.co`, `Wearables` → `/category/wearables`. Trailing crumb left unlinked (it is the current page). |
+| social icons | removed — four `<a href="#">`+`<svg>` with no visible text, 1,885 chars of dead links. |
+| footer policy links | given the popup trigger ids (`terms`/`priv`/`edit`/`aff`) and the policy modal added. |
+| footer alignment | centred; it was `left` because it used to share a flex row with the social icons. |
+
+**URLs came from the live `AFFILIATE` map, not from step 3.** Step 3's inline
+destinations are **stale** — verified, all 8 differ from the live map — because the
+header script overwrites them at runtime, so nobody notices they rot. Step 12
+having no class means its URLs must stay correct on their own; the mitigation is
+that `tag=` is embedded, so attribution survives even if a deep link ages.
+
+**The popup improves on step 3's copy.** Step 3 ships the modal's `<style>` inside
+the body — the same in-body-stylesheet pattern that cost it 2,703 ms of style
+recalc. Here the 1,019-char `<style>` went into `settings.custom_html.header` and
+only markup + script are in the body, so **step 12 still has 0 in-body `<style>`
+tags.**
+
+Two bugs found and fixed while wiring the triggers:
+- The theme registers a click handler on every anchor and runs
+  `document.querySelector(href)`, so a bare `href="#"` throws *"'#' is not a valid
+  selector"*. Pre-existing (the page shipped 9 such links) but now on a path users
+  click. Repointed each href at its overlay id.
+- That alone made the theme **scroll to the overlay**. Fixed by moving the popup's
+  own listener to the **capture phase** with `stopPropagation`, so it runs before
+  the theme's handler. Verified: all four open with the right heading, no jump, Esc
+  closes, 0 console errors.
+
 **Step 12 — store-host links**
 
 `hlthtrack.com` → `hlthtrack.co.uk` on a UK page that was pointing at the .com
