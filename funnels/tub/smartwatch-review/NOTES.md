@@ -433,3 +433,52 @@ fail with a bare `"Oops! Something went wrong"`.
    addressable from the page body.
 4. **Stale `b221e6c8` preloads still on steps 8 and 9.** Pre-existing, and those
    steps are untouched — no authorisation to edit them.
+
+## Tooling (moved here from CHANGELOG.md, which now covers step 12 only)
+
+New in `tools/lf-agent-bridge/`:
+
+- **`image_prep.py`** — resize + compress before upload. Codec by content type:
+  `--mode photo` (lossy WebP) / `--mode graphic` (lossless). Reports measured
+  mean/max pixel error; enforces the 5 MB presigned cap.
+- **`image_registry.py`** — `build`/`match` an account-wide image index
+  (sha256 exact + dhash perceptual) so a near-identical asset is reused rather
+  than re-uploaded.
+- **`speedtest.py`** — Lighthouse/PSI runner with history and `--compare`.
+  Resolves `PAGESPEED_KEY` from `--psi-key` → `$PAGESPEED_KEY` → `.env`, and
+  **defaults to PSI whenever a key resolves**, because local Lighthouse throttles
+  relative to this machine: TBT measured 340 → 660 → 960 ms across three
+  consecutive runs of an unchanged page, purely from background load. Extracts the
+  diagnostics that actually explain things — main-thread breakdown, layout-shift
+  selectors, font/image bytes.
+
+Changed:
+
+- **`lf.py texts --session`** — `texts` is the documented before-state for `edit`,
+  but it could not run in this project at all: there is no app token in `.env`, and
+  a session token additionally needs the dashboard headers, so it failed with
+  `errors_fix_version`.
+- **`lf.py edit --step <uid>`** (+ `lf_api.edit_step_bodies(step_uids=…)`) —
+  **essential on a multi-market funnel.** Without it, `edit` rewrites every step
+  containing the string, which here would have pushed UK links onto the DE, AU, CA
+  and TH advertorials.
+- **`lf_api.duplicate_funnel(extra_headers=…)`** — the last mutation that could not
+  take session headers. Also documents that a clone inherits `published`.
+- **`lf.py capture --out DIR`** — archive a step body into a workspace instead of
+  `templates/`.
+
+## Conventions worth keeping
+
+- **Never assert a step *count*.** This funnel is shared; a colleague added step 12
+  mid-session and a hardcoded `== 12` failed on a healthy funnel. Assert that the
+  steps you intend to touch exist — `updateFunnel` is a partial update, so unlisted
+  siblings survive by omission.
+- **`body` comes back parsed, not a string.** Echo it back in the same shape;
+  `json.dumps`-ing it first makes `updateFunnel` fail with a bare
+  `"Oops! Something went wrong"`.
+- **Never bare-string-replace a domain.** Classify each occurrence by role first —
+  host vs review slug — and match structurally.
+- **Never put a `<style>` inside an LF block.** Block CSS goes in
+  `settings.custom_html.header`, which renders in `<head>`.
+- **Prove it on step 11 before step 3.** Every change in this log that reached the
+  live page went there first; three real regressions were caught that way.
