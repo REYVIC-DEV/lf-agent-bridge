@@ -283,6 +283,56 @@ fail with a bare `"Oops! Something went wrong"`.
     Inter throughout.
   - Metric-matched fallback via `size-adjust`.
 
+- `2026-08-06` (fifth pass) — **adopted upstream's metric-matched InterFallback.
+  CLS 0 for real this time; step 3 stops swinging.**
+
+  Merged `upstream/main` (`1c70fa0`), which added
+  `.claude/skills/lightfunnels/references/performance.md`. It independently reached
+  the same diagnosis recorded in the third/fourth passes above — the +36px H1
+  reflow, the caption wrapping 1->2 lines, "PSI blames the hero but the hero is
+  just the biggest thing that *moved*", and "preload alone is NOT enough" — and
+  supplied the piece that was missing here: a **metric-matched fallback**.
+
+  Two halves, both required:
+  1. `@font-face{font-family:InterFallback; src:local('Arial')...;
+     ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;
+     size-adjust:107.12%}` in `header_scripts`.
+  2. Every block's `fontFamily` routed through **`Inter, InterFallback,
+     sans-serif`** (313 declarations per step). The fallback then occupies Inter's
+     exact box, so the swap reflows nothing rather than racing first paint.
+
+  **A retrofit hazard upstream does not hit, caught on step 11 first.** LF derives
+  its Google Fonts request from block `fontFamily` values. With the stack in place
+  it asked Google for a family literally named `Inter, InterFallback, sans-serif`,
+  and real Inter collapsed to weights 400/500/800 only — **600 and 700 stopped
+  loading and ~52 blocks silently rendered in Arial.** Fixed by declaring the Inter
+  faces ourselves in `header_scripts` against the same-origin
+  `/cf-fonts/s/inter/5.2.8/latin/<w>/normal.woff2` URLs. Upstream builds pages with
+  the stack from the start, so their request never went through this transition.
+
+  **Unexpected bonus:** the non-rewritten request returns Google's **variable**
+  Inter — one 48 KiB file covering every weight, replacing five 24 KiB static
+  files. Fonts **186 KiB -> 70 KiB**, page **521 KiB -> 403 KiB**.
+
+  **Measured on PSI (step 11 as the A/B twin, three runs):**
+
+  | | step 3 before | step 11 with fallback |
+  |---|---|---|
+  | score | 84 / 87 / 92 / 93 | **90 / 90 / 90** |
+  | CLS | 0.158-0.163 | **0 / 0.001** |
+  | FCP, SI | 1.8-2.4 s | 2.9 s |
+  | bytes | 521 KiB | 403 KiB |
+
+  The trade is explicit: FCP/SI lose a few points because the font now comes from
+  a third origin, CLS gains the full 25, and **the score stops swinging**. A
+  `preconnect` to `fonts.gstatic.com` was tried to win the FCP back and made **no
+  difference** — the handshake was not the bottleneck. The hint is left in place as
+  harmless.
+
+  Verified on step 3 after applying: rendering pixel-identical (same H1 line
+  breaks, same caption wrap), hero 664x371, 0 console errors, 12 steps,
+  `starting_step_id` intact, `aff-` x9 / `trustpilot` x8 / `.co.uk` x15 unchanged.
+
 ## Known remaining gaps
 
 1. ~~**CLS 0.151 on mobile.**~~ **Fixed** in the third pass above — it was the
