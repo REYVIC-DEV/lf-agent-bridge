@@ -1,0 +1,3612 @@
+{
+ "id": "step_0J0wlCl2Z6O6Hfg1S-wkY",
+ "uid": "step_0J0wlCl2Z6O6Hfg1S-wkY",
+ "_id": 4094522,
+ "slug": "bh-advertorial-v1",
+ "title": "The Screenless Health Tracker That's Outselling Smartwatches in the UK",
+ "type": "article_page",
+ "body": {
+  "id": "e73e4dff-40e1-4a42-a5e2-e62d0faaaf05",
+  "t": "Root",
+  "version": 11,
+  "styles": [
+   {
+    "prop": "pageWidth",
+    "value": "700px"
+   },
+   {
+    "prop": "backgroundColor",
+    "value": {
+     "r": 255,
+     "g": 255,
+     "b": 255,
+     "a": 1
+    }
+   }
+  ],
+  "p": {
+   "children": [
+    {
+     "t": "Section",
+     "id": "fdf31c57-518c-40da-805b-a25b1131bc2c",
+     "styles": [
+      {
+       "prop": "backgroundColor",
+       "value": {
+        "r": 25,
+        "g": 30,
+        "b": 42,
+        "a": 1
+       }
+      },
+      {
+       "prop": "padding",
+       "value": {
+        "top": "7px",
+        "bottom": "7px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "Text",
+        "id": "3c637a75-dea9-4858-888a-270b01fb33bc",
+        "p": {
+         "content": "SPONSORED ARTICLE"
+        },
+        "styles": [
+         {
+          "prop": "fontFamily",
+          "value": "Inter, InterFallback, sans-serif"
+         },
+         {
+          "prop": "color",
+          "value": {
+           "r": 189,
+           "g": 189,
+           "b": 189,
+           "a": 1
+          }
+         },
+         {
+          "prop": "fontSize",
+          "value": "11px"
+         },
+         {
+          "prop": "lineHeight",
+          "value": "17.6px"
+         },
+         {
+          "prop": "fontWeight",
+          "value": "400"
+         },
+         {
+          "prop": "textAlign",
+          "value": "center"
+         },
+         {
+          "prop": "maxWidth",
+          "value": "100%"
+         },
+         {
+          "prop": "width",
+          "value": "100%"
+         },
+         {
+          "prop": "letterSpacing",
+          "value": "1px"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "e6587ce0-5c76-4a15-910e-b82fc0e47951",
+     "styles": [
+      {
+       "prop": "backgroundColor",
+       "value": {
+        "r": 25,
+        "g": 30,
+        "b": 42,
+        "a": 1
+       }
+      },
+      {
+       "prop": "padding",
+       "value": {
+        "top": "14px",
+        "bottom": "14px",
+        "left": "24px",
+        "right": "24px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "Container",
+        "id": "091d1d89-5dfc-47a6-96fe-ff51b718c018",
+        "styles": [
+         {
+          "prop": "width",
+          "value": "200px"
+         },
+         {
+          "prop": "lfDisplay",
+          "value": "flex"
+         },
+         {
+          "prop": "justifyContent",
+          "value": "center"
+         },
+         {
+          "prop": "margin",
+          "value": {
+           "left": "auto",
+           "right": "auto"
+          }
+         }
+        ],
+        "p": {
+         "children": [
+          {
+           "t": "Image",
+           "id": "547a5d2d-9ad3-4256-bc37-4096bb524356",
+           "p": {
+            "src": "https://assets.lightfunnels.com/account-90380/images_library/a71db2af-954c-489e-967d-ce229944b9c4.png",
+            "alt": "TechUnboxed"
+           },
+           "styles": [
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "borderRadius",
+             "value": "0px"
+            },
+            {
+             "prop": "objectFit",
+             "value": "contain"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            },
+            {
+             "prop": "height",
+             "value": "50px"
+            }
+           ]
+          }
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "e8f2023c-7283-4708-83f5-1a372259b552",
+     "styles": [
+      {
+       "prop": "backgroundColor",
+       "value": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 1
+       }
+      },
+      {
+       "prop": "padding",
+       "value": {
+        "top": "76px",
+        "bottom": "76px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "boxed",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "Container",
+        "id": "42b32ffb-4e29-45c6-be76-5aaf0e2e92c9",
+        "styles": [
+         {
+          "prop": "maxWidth",
+          "value": "700px"
+         },
+         {
+          "prop": "width",
+          "value": "100%"
+         },
+         {
+          "prop": "margin",
+          "value": {
+           "left": "auto",
+           "right": "auto"
+          }
+         },
+         {
+          "prop": "padding",
+          "value": {
+           "left": "32px",
+           "right": "32px"
+          },
+          "media": 767
+         },
+         {
+          "prop": "lfDisplay",
+          "value": "flex"
+         },
+         {
+          "prop": "flexDirection",
+          "value": "column"
+         },
+         {
+          "prop": "gap",
+          "value": "18px"
+         }
+        ],
+        "p": {
+         "children": [
+          {
+           "t": "Title",
+           "id": "81d0540c-1d67-4b37-9a7e-7e331d0d01d5",
+           "p": {
+            "size": "1",
+            "content": "The Screenless Health Tracker That's Outselling Smartwatches in the UK",
+            "widthOption": "fill"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "40px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "52px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "700"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "fontSize",
+             "value": "28px",
+             "media": 767
+            },
+            {
+             "prop": "lineHeight",
+             "value": "36px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Container",
+           "id": "e22f47cc-f7a6-4580-bba8-bbdedd499fd3",
+           "styles": [
+            {
+             "prop": "lfDisplay",
+             "value": "flex"
+            },
+            {
+             "prop": "flexDirection",
+             "value": "row"
+            },
+            {
+             "prop": "gap",
+             "value": "10px"
+            },
+            {
+             "prop": "alignItems",
+             "value": "flex-start"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "margin",
+             "value": {
+              "top": "6px"
+             }
+            }
+           ],
+           "p": {
+            "children": [
+             {
+              "t": "Container",
+              "id": "fa833920-bec4-4e85-a821-e50c70413dfd",
+              "styles": [
+               {
+                "prop": "width",
+                "value": "95px"
+               },
+               {
+                "prop": "height",
+                "value": "95px"
+               },
+               {
+                "prop": "flexShrink",
+                "value": "0"
+               },
+               {
+                "prop": "width",
+                "value": "64px",
+                "media": 767
+               },
+               {
+                "prop": "height",
+                "value": "64px",
+                "media": 767
+               }
+              ],
+              "p": {
+               "children": [
+                {
+                 "t": "Image",
+                 "id": "ad2494ea-350f-43e4-9581-24839b1c4f2c",
+                 "p": {
+                  "src_id": 9994332,
+                  "src_uid": "img_t8zY9vabi0u8bdCPIkk4Q",
+                  "src": "https://assets.lightfunnels.com/account-90380/images_library/f9f18ee5-18ad-4f89-8af6-004aee9634d4.png",
+                  "alt": ""
+                 },
+                 "styles": [
+                  {
+                   "prop": "maxWidth",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "borderRadius",
+                   "value": "50%"
+                  },
+                  {
+                   "prop": "objectFit",
+                   "value": "cover"
+                  },
+                  {
+                   "prop": "lfDisplay",
+                   "value": "block"
+                  },
+                  {
+                   "prop": "height",
+                   "value": "95px"
+                  },
+                  {
+                   "prop": "height",
+                   "value": "64px",
+                   "media": 767
+                  }
+                 ]
+                }
+               ]
+              }
+             },
+             {
+              "t": "Container",
+              "id": "0908d5de-bdfa-4385-8513-e8b902e2f82f",
+              "styles": [
+               {
+                "prop": "lfDisplay",
+                "value": "flex"
+               },
+               {
+                "prop": "flexDirection",
+                "value": "column"
+               },
+               {
+                "prop": "gap",
+                "value": "0px"
+               },
+               {
+                "prop": "width",
+                "value": "100%"
+               },
+               {
+                "prop": "flex",
+                "value": "1"
+               },
+               {
+                "prop": "minWidth",
+                "value": "0"
+               }
+              ],
+              "p": {
+               "children": [
+                {
+                 "t": "Text",
+                 "id": "b6e23adb-c401-4c15-8011-cf376c29f0d8",
+                 "p": {
+                  "content": "By"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 25,
+                    "g": 30,
+                    "b": 42,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "14px"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "20px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "300"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "left"
+                  },
+                  {
+                   "prop": "maxWidth",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "letterSpacing",
+                   "value": "1px"
+                  }
+                 ]
+                },
+                {
+                 "t": "Text",
+                 "id": "a954423a-26d9-4f63-b37d-902c6a6f18cd",
+                 "p": {
+                  "content": "CHRIS KOWALSKI"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 25,
+                    "g": 30,
+                    "b": 42,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "13.8px"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "20px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "700"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "left"
+                  },
+                  {
+                   "prop": "maxWidth",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "letterSpacing",
+                   "value": "3.3px"
+                  }
+                 ]
+                },
+                {
+                 "t": "Text",
+                 "id": "914ccc6e-2acf-40e6-8397-b7b94d3495a1",
+                 "p": {
+                  "content": "June 28, 2026"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 25,
+                    "g": 30,
+                    "b": 42,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "13.5px"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "20px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "400"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "left"
+                  },
+                  {
+                   "prop": "maxWidth",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "letterSpacing",
+                   "value": "1px"
+                  }
+                 ]
+                },
+                {
+                 "t": "Text",
+                 "id": "86c52aa3-e54e-4e04-9546-5aa1f3f1445c",
+                 "p": {
+                  "content": "In Partnership With HLTH"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 25,
+                    "g": 30,
+                    "b": 42,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "13.2px"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "20px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "300"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "left"
+                  },
+                  {
+                   "prop": "maxWidth",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "letterSpacing",
+                   "value": "1px"
+                  }
+                 ]
+                }
+               ]
+              }
+             }
+            ]
+           }
+          },
+          {
+           "t": "Text",
+           "id": "9b41c0dc-8f26-43d9-a2d0-51ddf074a4c5",
+           "p": {
+            "content": "As a longevity optimiser who\u2019s always on the hunt for smarter, more <span style=\"font-weight:600;color:#191E2A\">affordable ways to take care of my body</span>, the search for a trusted tracker almost never stops. I've been wearing a smartwatch every day for the last four years and was never able to fully trust the data. But the <a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH band</a> \u2013 a <span style=\"font-weight:600\">screenless wearable</span> that only tracks health, is the first one to change that. It's rated 4.6 on <a href=\"https://www.trustpilot.com/review/hlthtrack.com\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">Trustpilot</a> and has sold out three times since its release in the UK this April."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 76,
+              "g": 76,
+              "b": 76,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "270df87e-49b3-40e3-a6f1-4807576f9279",
+           "p": {
+            "content": "Here's why I'm putting my <span style=\"font-weight:600\">smartwatch in the drawer</span> \u2014 and why you might want to do the same."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 76,
+              "g": 76,
+              "b": 76,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "d289c398-b83d-4ca4-bfd5-78b748e88ce2",
+           "p": {
+            "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7"
+           },
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "height",
+             "value": "18px"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            }
+           ]
+          },
+          {
+           "t": "Title",
+           "id": "a0f8c3f1-b306-4252-998e-33d103568e8e",
+           "p": {
+            "size": "2",
+            "content": "1. It takes 288 readings a day",
+            "widthOption": "fill"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "30px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "39px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "700"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "fontSize",
+             "value": "22px",
+             "media": 767
+            },
+            {
+             "prop": "lineHeight",
+             "value": "30px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "285229c8-f701-487e-a21d-d047c18d0d35",
+           "p": {
+            "src_id": 9994329,
+            "src_uid": "img_wPP6GgfXvf8Hox9Ljz6Q0",
+            "src": "https://assets.lightfunnels.com/account-90380/images_library/0af6e2fb-7eb8-47ed-a508-cb3b66d3f254.jpg",
+            "alt": "The HLTH companion app showing a day of blood pressure readings, with the band worn on the wrist"
+           },
+           "styles": [
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "borderRadius",
+             "value": "0px"
+            },
+            {
+             "prop": "objectFit",
+             "value": "cover"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            },
+            {
+             "prop": "height",
+             "value": "517px"
+            },
+            {
+             "prop": "height",
+             "value": "240px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "9c5d67bb-306a-4432-b555-e52b820b0927",
+           "p": {
+            "content": "Most wearables take a few readings an hour, then fill the gaps with estimates. <a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH Band</a> takes <span style=\"font-weight:600\">288 readings </span>a day across <span style=\"font-weight:600\">blood pressure, heart rate, HRV, sleep and more.</span> Plus its algorithm filters out noise automatically, so only clean data reaches your trends.<br><br><span style=\"font-weight:600\">More readings means more accuracy. And more accuracy means you're seeing what's actually happening in your body.</span>"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "6c5d5807-cc24-4c11-8569-1ba7e01005a5",
+           "p": {
+            "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7"
+           },
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "height",
+             "value": "18px"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            }
+           ]
+          },
+          {
+           "t": "Title",
+           "id": "e838c7ba-ad25-4ced-b089-f7b9ef414ad8",
+           "p": {
+            "size": "2",
+            "content": "2. No slimy subscriptions or hidden fees",
+            "widthOption": "fill"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "30px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "39px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "700"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "fontSize",
+             "value": "22px",
+             "media": 767
+            },
+            {
+             "prop": "lineHeight",
+             "value": "30px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "5eda7971-bfc6-4888-a3cc-3c7a4ea645eb",
+           "p": {
+            "content": "This is the one that made me <span style=\"font-weight:600\">double-take.</span> While most trackers charge you to rent your own health data and bury it in fine print, <a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH band</a> is a one-time purchase. The app is <span style=\"font-weight:600\">completely free</span>, and all your data \u2013 blood pressure trends, heart rate, HRV, sleep stages \u2013 is accessible from day one.<br><br>When you see the quality of the device and the data, the price genuinely feels like they've made a mistake."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 76,
+              "g": 76,
+              "b": 76,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "BlockLink",
+           "id": "bfd58e8e-3c4d-4e88-a57f-78894f95eec7",
+           "p": {
+            "destination": {
+             "type": "static",
+             "value": "https://hlthtrack.co.uk/products/wearable-hlth-band"
+            },
+            "target": "_blank",
+            "widthOption": "fill",
+            "children": [
+             {
+              "t": "Container",
+              "id": "cfff7911-04a2-475d-8030-56000bb66696",
+              "styles": [
+               {
+                "prop": "lfDisplay",
+                "value": "flex"
+               },
+               {
+                "prop": "alignItems",
+                "value": "center"
+               },
+               {
+                "prop": "justifyContent",
+                "value": "center"
+               }
+              ],
+              "p": {
+               "children": [
+                {
+                 "t": "Text",
+                 "id": "996c5360-9db3-4acd-9582-c57e9df50af9",
+                 "p": {
+                  "content": "GET UP TO \u00a379 OFF HLTH BAND"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "17px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "700"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "31px"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "center"
+                  },
+                  {
+                   "prop": "textTransform",
+                   "value": "uppercase"
+                  },
+                  {
+                   "prop": "whiteSpace",
+                   "value": "nowrap"
+                  },
+                  {
+                   "prop": "whiteSpace",
+                   "value": "normal",
+                   "media": 767
+                  }
+                 ]
+                }
+               ]
+              }
+             }
+            ]
+           },
+           "styles": [
+            {
+             "prop": "backgroundColor",
+             "value": {
+              "r": 230,
+              "g": 57,
+              "b": 70,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderRadius",
+             "value": "10px"
+            },
+            {
+             "prop": "borderStyle",
+             "value": "solid"
+            },
+            {
+             "prop": "borderColor",
+             "value": {
+              "r": 246,
+              "g": 246,
+              "b": 246,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderWidth",
+             "value": "2px"
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "16px",
+              "bottom": "16px",
+              "left": "37px",
+              "right": "37px"
+             }
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "16px",
+              "bottom": "16px",
+              "left": "12px",
+              "right": "12px"
+             },
+             "media": 767
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "350px"
+            },
+            {
+             "prop": "margin",
+             "value": {
+              "left": "auto",
+              "right": "auto",
+              "top": "30px",
+              "bottom": "10px"
+             }
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "flex"
+            },
+            {
+             "prop": "alignItems",
+             "value": "center"
+            },
+            {
+             "prop": "justifyContent",
+             "value": "center"
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "01d9b920-4436-449d-aed7-4ec415165678",
+           "p": {
+            "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7"
+           },
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "height",
+             "value": "18px"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            }
+           ]
+          },
+          {
+           "t": "Title",
+           "id": "53d24abf-b3d5-4459-bd0b-62ee85bfa877",
+           "p": {
+            "size": "2",
+            "content": "3. Comfortable design you actually sleep in",
+            "widthOption": "fill"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "30px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "39px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "700"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "fontSize",
+             "value": "22px",
+             "media": 767
+            },
+            {
+             "prop": "lineHeight",
+             "value": "30px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "8d1044fd-d70f-42b4-8dc2-42380c4f5a20",
+           "p": {
+            "src_id": 9994330,
+            "src_uid": "img_aDlLHE3sMNt5Dp0jYxsvC",
+            "src": "https://assets.lightfunnels.com/account-90380/images_library/76ba04d4-44c7-47c6-8a3c-1992846a7c15.jpg",
+            "alt": "The HLTH Band worn on a wrist, showing its screenless fabric strap"
+           },
+           "styles": [
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "borderRadius",
+             "value": "0px"
+            },
+            {
+             "prop": "objectFit",
+             "value": "cover"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            },
+            {
+             "prop": "height",
+             "value": "517px"
+            },
+            {
+             "prop": "height",
+             "value": "240px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "67b39825-335e-470a-aedc-9c61b445ac3a",
+           "p": {
+            "content": "<a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH Band</a> weighs under <span style=\"font-weight:600\">18 grams (less than 30 pence!)</span>, and uses non-itchy flexible material for the band that feels like nothing. That makes it easy to <span style=\"font-weight:600\">sleep with or wear for any occasion</span> without looking like you\u2019re sick or even wearing a health tracker. This isn\u2019t just a cool design choice; it\u2019s <span style=\"font-weight:600\">scientifically proven</span> that most heart events and health issues happen at night. So nightly tracking is even more important than day time tracking."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 76,
+              "g": 76,
+              "b": 76,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "75af8844-fcfe-4dfe-b9d6-0f77b17c4921",
+           "p": {
+            "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7"
+           },
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "height",
+             "value": "18px"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            }
+           ]
+          },
+          {
+           "t": "Title",
+           "id": "79934e29-4530-4bc2-8256-e76bd5a9c796",
+           "p": {
+            "size": "2",
+            "content": "4. Proven 30 day battery life",
+            "widthOption": "fill"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "30px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "39px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "700"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "fontSize",
+             "value": "22px",
+             "media": 767
+            },
+            {
+             "prop": "lineHeight",
+             "value": "30px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "3c6d42e3-c630-4391-8c1f-f8583e6af2fe",
+           "p": {
+            "content": "We all know that daily wear is key to finding our real baseline and avoiding health issues, but keeping trackers on is tricky when the battery dies daily. Enter <a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH Band\u2019s</a> <span style=\"font-weight:600\">Flow Sense Intelligent routing feature.</span> Their advanced sensor watches your vitals and provides real-time adjustment to battery power, to prevent it from draining too fast."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Container",
+           "id": "d4749c02-3793-4f98-9f56-dd35e8d1abfe",
+           "styles": [
+            {
+             "prop": "borderStyle",
+             "value": "solid"
+            },
+            {
+             "prop": "borderColor",
+             "value": {
+              "r": 230,
+              "g": 57,
+              "b": 70,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderWidth",
+             "value": "0px 0px 0px 3px"
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "0px",
+              "bottom": "20px",
+              "left": "19px",
+              "right": "16px"
+             }
+            }
+           ],
+           "p": {
+            "children": [
+             {
+              "t": "Text",
+              "id": "00c4ef1a-17bf-4e7e-ab55-bf511baa69b9",
+              "p": {
+               "content": "<span style=\"font-style:italic;font-weight:700;color:#191E2A\">The result?</span> <span style=\"font-style:italic;font-weight:500;color:#7C7C7C\">Battery life that lasts up to 30 days on a single charge. Whether you\u2019re a busy professional, new parent, or retiree, I think we can all appreciate this feature.</span>"
+              },
+              "styles": [
+               {
+                "prop": "fontFamily",
+                "value": "Inter, InterFallback, sans-serif"
+               },
+               {
+                "prop": "color",
+                "value": {
+                 "r": 25,
+                 "g": 30,
+                 "b": 42,
+                 "a": 1
+                }
+               },
+               {
+                "prop": "fontSize",
+                "value": "17px"
+               },
+               {
+                "prop": "lineHeight",
+                "value": "31px"
+               },
+               {
+                "prop": "fontWeight",
+                "value": "400"
+               },
+               {
+                "prop": "textAlign",
+                "value": "left"
+               },
+               {
+                "prop": "maxWidth",
+                "value": "100%"
+               },
+               {
+                "prop": "width",
+                "value": "100%"
+               }
+              ]
+             }
+            ]
+           }
+          },
+          {
+           "t": "BlockLink",
+           "id": "a0ea6165-e1cc-408d-a97e-2d7d852b8d75",
+           "p": {
+            "destination": {
+             "type": "static",
+             "value": "https://hlthtrack.co.uk/products/wearable-hlth-band"
+            },
+            "target": "_blank",
+            "widthOption": "fill",
+            "children": [
+             {
+              "t": "Container",
+              "id": "6de18022-348a-4910-8e29-a901b59f450b",
+              "styles": [
+               {
+                "prop": "lfDisplay",
+                "value": "flex"
+               },
+               {
+                "prop": "alignItems",
+                "value": "center"
+               },
+               {
+                "prop": "justifyContent",
+                "value": "center"
+               }
+              ],
+              "p": {
+               "children": [
+                {
+                 "t": "Text",
+                 "id": "36f554a1-7ad2-41be-b617-002fe290bc12",
+                 "p": {
+                  "content": "GET UP TO \u00a379 OFF HLTH BAND"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "17px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "700"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "31px"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "center"
+                  },
+                  {
+                   "prop": "textTransform",
+                   "value": "uppercase"
+                  },
+                  {
+                   "prop": "whiteSpace",
+                   "value": "nowrap"
+                  },
+                  {
+                   "prop": "whiteSpace",
+                   "value": "normal",
+                   "media": 767
+                  }
+                 ]
+                }
+               ]
+              }
+             }
+            ]
+           },
+           "styles": [
+            {
+             "prop": "backgroundColor",
+             "value": {
+              "r": 230,
+              "g": 57,
+              "b": 70,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderRadius",
+             "value": "10px"
+            },
+            {
+             "prop": "borderStyle",
+             "value": "solid"
+            },
+            {
+             "prop": "borderColor",
+             "value": {
+              "r": 246,
+              "g": 246,
+              "b": 246,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderWidth",
+             "value": "2px"
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "16px",
+              "bottom": "16px",
+              "left": "37px",
+              "right": "37px"
+             }
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "16px",
+              "bottom": "16px",
+              "left": "12px",
+              "right": "12px"
+             },
+             "media": 767
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "350px"
+            },
+            {
+             "prop": "margin",
+             "value": {
+              "left": "auto",
+              "right": "auto",
+              "top": "30px",
+              "bottom": "10px"
+             }
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "flex"
+            },
+            {
+             "prop": "alignItems",
+             "value": "center"
+            },
+            {
+             "prop": "justifyContent",
+             "value": "center"
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "673fe5ab-a8d2-4df4-ad26-e175f1592977",
+           "p": {
+            "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7"
+           },
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "height",
+             "value": "18px"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            }
+           ]
+          },
+          {
+           "t": "Title",
+           "id": "5d37fdc2-bbb2-4d35-97f5-619546072eea",
+           "p": {
+            "size": "2",
+            "content": "5. Trend readings every 5 minutes",
+            "widthOption": "fill"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "30px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "39px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "700"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "fontSize",
+             "value": "22px",
+             "media": 767
+            },
+            {
+             "prop": "lineHeight",
+             "value": "30px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "BlockLink",
+           "id": "76f35b8b-9048-442a-b5ab-175645275547",
+           "p": {
+            "destination": {
+             "type": "static",
+             "value": "https://hlthtrack.co.uk/products/wearable-hlth-band"
+            },
+            "target": "_blank",
+            "widthOption": "fill",
+            "className": "s5-offer-link",
+            "children": [
+             {
+              "t": "Image",
+              "id": "a8776aaf-d5f6-41ba-9215-90c2e6103869",
+              "p": {
+               "src_id": 9994331,
+               "src_uid": "img_4Temm9hitVdlr3o70LWsk",
+               "src": "https://assets.lightfunnels.com/account-90380/images_library/8798d3a5-210e-4803-8886-5e4e9f0c498a.jpg",
+               "alt": "An exploded view of the HLTH Band showing its sensor board and battery"
+              },
+              "styles": [
+               {
+                "prop": "maxWidth",
+                "value": "100%"
+               },
+               {
+                "prop": "width",
+                "value": "100%"
+               },
+               {
+                "prop": "borderRadius",
+                "value": "0px"
+               },
+               {
+                "prop": "objectFit",
+                "value": "cover"
+               },
+               {
+                "prop": "lfDisplay",
+                "value": "block"
+               },
+               {
+                "prop": "height",
+                "value": "467px"
+               },
+               {
+                "prop": "height",
+                "value": "250px",
+                "media": 767
+               }
+              ]
+             }
+            ]
+           },
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "26221467-9b66-4662-aa86-4dca0fbff9d4",
+           "p": {
+            "content": "Many devices on the market only take some readings at night or space them hours apart to save battery for screens. <a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH Band's</a> continuous <span style=\"font-weight:600\">tracking spaces out readings as low as every 5 minutes,</span> making it easier than ever to see how your <span style=\"font-weight:600\">food, sleep, workouts, and lifestyle habits</span> impact your health. So any changes you make can be seen quickly in your numbers."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "BlockLink",
+           "id": "69b98057-88bf-4271-b7ab-47b96fd17035",
+           "p": {
+            "destination": {
+             "type": "static",
+             "value": "https://hlthtrack.co.uk/products/wearable-hlth-band"
+            },
+            "target": "_blank",
+            "widthOption": "fill",
+            "children": [
+             {
+              "t": "Container",
+              "id": "687c1c53-924d-4984-abda-9d80be400b45",
+              "styles": [
+               {
+                "prop": "lfDisplay",
+                "value": "flex"
+               },
+               {
+                "prop": "alignItems",
+                "value": "center"
+               },
+               {
+                "prop": "justifyContent",
+                "value": "center"
+               }
+              ],
+              "p": {
+               "children": [
+                {
+                 "t": "Text",
+                 "id": "d406f83c-2727-4fae-9024-54bd8efcd41a",
+                 "p": {
+                  "content": "GET UP TO \u00a379 OFF HLTH BAND"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "17px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "700"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "31px"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "center"
+                  },
+                  {
+                   "prop": "textTransform",
+                   "value": "uppercase"
+                  },
+                  {
+                   "prop": "whiteSpace",
+                   "value": "nowrap"
+                  },
+                  {
+                   "prop": "whiteSpace",
+                   "value": "normal",
+                   "media": 767
+                  }
+                 ]
+                }
+               ]
+              }
+             }
+            ]
+           },
+           "styles": [
+            {
+             "prop": "backgroundColor",
+             "value": {
+              "r": 230,
+              "g": 57,
+              "b": 70,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderRadius",
+             "value": "10px"
+            },
+            {
+             "prop": "borderStyle",
+             "value": "solid"
+            },
+            {
+             "prop": "borderColor",
+             "value": {
+              "r": 246,
+              "g": 246,
+              "b": 246,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderWidth",
+             "value": "2px"
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "16px",
+              "bottom": "16px",
+              "left": "37px",
+              "right": "37px"
+             }
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "16px",
+              "bottom": "16px",
+              "left": "12px",
+              "right": "12px"
+             },
+             "media": 767
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "350px"
+            },
+            {
+             "prop": "margin",
+             "value": {
+              "left": "auto",
+              "right": "auto",
+              "top": "30px",
+              "bottom": "10px"
+             }
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "flex"
+            },
+            {
+             "prop": "alignItems",
+             "value": "center"
+            },
+            {
+             "prop": "justifyContent",
+             "value": "center"
+            }
+           ]
+          },
+          {
+           "t": "Image",
+           "id": "9169c7f6-b8f9-4355-935c-ddf3be132624",
+           "p": {
+            "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7"
+           },
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "height",
+             "value": "18px"
+            },
+            {
+             "prop": "lfDisplay",
+             "value": "block"
+            }
+           ]
+          },
+          {
+           "t": "Title",
+           "id": "791c81ae-88df-441b-b8b9-b1656fe23eb2",
+           "p": {
+            "size": "2",
+            "content": "Ready to keep better watch of your health with HLTH Band?",
+            "widthOption": "fill"
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "30px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "39px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "700"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "fontSize",
+             "value": "22px",
+             "media": 767
+            },
+            {
+             "prop": "lineHeight",
+             "value": "30px",
+             "media": 767
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "86a65a9b-2da5-475b-bcc8-a76889a900ee",
+           "p": {
+            "content": "From the continuous tracking and tight intervals to 30 day battery and comfortable design, <a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH Band</a> is packed with features that make health tracking smarter, more accurate, and more affordable."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Text",
+           "id": "609ae922-d076-4424-948e-acb54d8f83eb",
+           "p": {
+            "content": "If you\u2019re ready to keep a better eye on your health, protect your heart, and save money doing it. <a href=\"https://hlthtrack.co.uk/products/wearable-hlth-band\" style=\"color:#E63946;font-weight:700;text-decoration:underline\">HLTH Band</a> is the partner you\u2019ve been waiting for. Now, THIS is one launch worth getting excited about."
+           },
+           "styles": [
+            {
+             "prop": "fontFamily",
+             "value": "Inter, InterFallback, sans-serif"
+            },
+            {
+             "prop": "color",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "fontSize",
+             "value": "18px"
+            },
+            {
+             "prop": "lineHeight",
+             "value": "31px"
+            },
+            {
+             "prop": "fontWeight",
+             "value": "400"
+            },
+            {
+             "prop": "textAlign",
+             "value": "left"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "100%"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ]
+          },
+          {
+           "t": "Container",
+           "id": "8c2d6a09-cd1c-433f-9a4b-a8f8d0451b09",
+           "styles": [
+            {
+             "prop": "lfDisplay",
+             "value": "flex"
+            },
+            {
+             "prop": "flexDirection",
+             "value": "column"
+            },
+            {
+             "prop": "gap",
+             "value": "8px"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            }
+           ],
+           "p": {
+            "children": [
+             {
+              "t": "BlockLink",
+              "id": "0f21b61b-3479-4f5b-ab61-8b6b74f5f0f7",
+              "p": {
+               "destination": {
+                "type": "static",
+                "value": "https://hlthtrack.co.uk/products/wearable-hlth-band"
+               },
+               "target": "_blank",
+               "widthOption": "fill",
+               "children": [
+                {
+                 "t": "Container",
+                 "id": "2959679d-ef50-467b-9c40-585ffc4ef034",
+                 "styles": [
+                  {
+                   "prop": "lfDisplay",
+                   "value": "flex"
+                  },
+                  {
+                   "prop": "alignItems",
+                   "value": "center"
+                  },
+                  {
+                   "prop": "justifyContent",
+                   "value": "center"
+                  }
+                 ],
+                 "p": {
+                  "children": [
+                   {
+                    "t": "Text",
+                    "id": "bf6c60dc-b91d-4fed-afe7-a485b9c428fc",
+                    "p": {
+                     "content": "GET UP TO \u00a379 OFF HLTH BAND"
+                    },
+                    "styles": [
+                     {
+                      "prop": "fontFamily",
+                      "value": "Inter, InterFallback, sans-serif"
+                     },
+                     {
+                      "prop": "color",
+                      "value": {
+                       "r": 255,
+                       "g": 255,
+                       "b": 255,
+                       "a": 1
+                      }
+                     },
+                     {
+                      "prop": "fontSize",
+                      "value": "17px"
+                     },
+                     {
+                      "prop": "fontWeight",
+                      "value": "700"
+                     },
+                     {
+                      "prop": "lineHeight",
+                      "value": "31px"
+                     },
+                     {
+                      "prop": "textAlign",
+                      "value": "center"
+                     },
+                     {
+                      "prop": "textTransform",
+                      "value": "uppercase"
+                     },
+                     {
+                      "prop": "whiteSpace",
+                      "value": "nowrap"
+                     },
+                     {
+                      "prop": "whiteSpace",
+                      "value": "normal",
+                      "media": 767
+                     }
+                    ]
+                   }
+                  ]
+                 }
+                }
+               ]
+              },
+              "styles": [
+               {
+                "prop": "backgroundColor",
+                "value": {
+                 "r": 230,
+                 "g": 57,
+                 "b": 70,
+                 "a": 1
+                }
+               },
+               {
+                "prop": "borderRadius",
+                "value": "10px"
+               },
+               {
+                "prop": "borderStyle",
+                "value": "solid"
+               },
+               {
+                "prop": "borderColor",
+                "value": {
+                 "r": 246,
+                 "g": 246,
+                 "b": 246,
+                 "a": 1
+                }
+               },
+               {
+                "prop": "borderWidth",
+                "value": "2px"
+               },
+               {
+                "prop": "padding",
+                "value": {
+                 "top": "16px",
+                 "bottom": "16px",
+                 "left": "37px",
+                 "right": "37px"
+                }
+               },
+               {
+                "prop": "padding",
+                "value": {
+                 "top": "16px",
+                 "bottom": "16px",
+                 "left": "12px",
+                 "right": "12px"
+                },
+                "media": 767
+               },
+               {
+                "prop": "width",
+                "value": "100%"
+               },
+               {
+                "prop": "maxWidth",
+                "value": "350px"
+               },
+               {
+                "prop": "margin",
+                "value": {
+                 "left": "auto",
+                 "right": "auto",
+                 "top": "30px",
+                 "bottom": "10px"
+                }
+               },
+               {
+                "prop": "lfDisplay",
+                "value": "flex"
+               },
+               {
+                "prop": "alignItems",
+                "value": "center"
+               },
+               {
+                "prop": "justifyContent",
+                "value": "center"
+               }
+              ]
+             },
+             {
+              "t": "Text",
+              "id": "154cde5a-4e1e-40f6-b474-9b6644be5d32",
+              "p": {
+               "content": "<span style=\"font-style:italic;text-decoration:underline\">Special </span><span style=\"font-style:italic;font-weight:700;text-decoration:underline\">50% off coupon</span><span style=\"font-style:italic;text-decoration:underline\"> valid for UK customers only while supplies last</span>"
+              },
+              "styles": [
+               {
+                "prop": "fontFamily",
+                "value": "Inter, InterFallback, sans-serif"
+               },
+               {
+                "prop": "color",
+                "value": {
+                 "r": 25,
+                 "g": 30,
+                 "b": 42,
+                 "a": 1
+                }
+               },
+               {
+                "prop": "fontSize",
+                "value": "18px"
+               },
+               {
+                "prop": "lineHeight",
+                "value": "28px"
+               },
+               {
+                "prop": "fontWeight",
+                "value": "400"
+               },
+               {
+                "prop": "textAlign",
+                "value": "center"
+               },
+               {
+                "prop": "maxWidth",
+                "value": "542px"
+               },
+               {
+                "prop": "width",
+                "value": "100%"
+               },
+               {
+                "prop": "margin",
+                "value": {
+                 "left": "auto",
+                 "right": "auto"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "9a9128ad-46d3-4f6e-ab4c-b009ca8e1b9a",
+     "styles": [
+      {
+       "prop": "backgroundColor",
+       "value": {
+        "r": 25,
+        "g": 30,
+        "b": 42,
+        "a": 1
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "Container",
+        "id": "934afc23-bfe5-4c00-b52a-f8a3eb79d339",
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ],
+        "p": {
+         "children": [
+          {
+           "t": "Container",
+           "id": "1b8df1ba-7fe2-47a9-adf7-b0f32c9b23b9",
+           "styles": [
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "borderStyle",
+             "value": "solid"
+            },
+            {
+             "prop": "borderColor",
+             "value": {
+              "r": 25,
+              "g": 30,
+              "b": 42,
+              "a": 1
+             }
+            },
+            {
+             "prop": "borderWidth",
+             "value": "1px 0px 0px 0px"
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "top": "72px",
+              "bottom": "31px",
+              "left": "0px",
+              "right": "0px"
+             }
+            }
+           ],
+           "p": {
+            "children": [
+             {
+              "t": "Image",
+              "id": "79cf68b4-0c29-426c-80ce-43b08681aa4b",
+              "p": {
+               "src": "https://assets.lightfunnels.com/account-90380/images_library/a71db2af-954c-489e-967d-ce229944b9c4.png",
+               "alt": "TechUnboxed"
+              },
+              "styles": [
+               {
+                "prop": "maxWidth",
+                "value": "100%"
+               },
+               {
+                "prop": "width",
+                "value": "100%"
+               },
+               {
+                "prop": "borderRadius",
+                "value": "0px"
+               },
+               {
+                "prop": "objectFit",
+                "value": "contain"
+               },
+               {
+                "prop": "lfDisplay",
+                "value": "block"
+               },
+               {
+                "prop": "height",
+                "value": "50px"
+               },
+               {
+                "prop": "width",
+                "value": "200px"
+               },
+               {
+                "prop": "margin",
+                "value": {
+                 "top": "0px",
+                 "right": "auto",
+                 "bottom": "0px",
+                 "left": "auto"
+                }
+               }
+              ]
+             }
+            ]
+           }
+          },
+          {
+           "t": "Container",
+           "id": "9a55e040-e4aa-495a-b420-1e7432ab5929",
+           "styles": [
+            {
+             "prop": "lfDisplay",
+             "value": "flex"
+            },
+            {
+             "prop": "flexDirection",
+             "value": "column"
+            },
+            {
+             "prop": "gap",
+             "value": "35px"
+            },
+            {
+             "prop": "width",
+             "value": "100%"
+            },
+            {
+             "prop": "maxWidth",
+             "value": "1320px"
+            },
+            {
+             "prop": "margin",
+             "value": {
+              "left": "auto",
+              "right": "auto"
+             }
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "left": "20px",
+              "right": "20px"
+             }
+            },
+            {
+             "prop": "padding",
+             "value": {
+              "left": "36px",
+              "right": "36px"
+             },
+             "media": 767
+            }
+           ],
+           "p": {
+            "children": [
+             {
+              "t": "Container",
+              "id": "e1a7b1ca-76bc-4a45-b9c8-c7397e4dba7e",
+              "styles": [
+               {
+                "prop": "lfDisplay",
+                "value": "flex"
+               },
+               {
+                "prop": "flexDirection",
+                "value": "column"
+               },
+               {
+                "prop": "gap",
+                "value": "6px"
+               },
+               {
+                "prop": "width",
+                "value": "100%"
+               },
+               {
+                "prop": "maxWidth",
+                "value": "852px"
+               },
+               {
+                "prop": "margin",
+                "value": {
+                 "left": "auto",
+                 "right": "auto"
+                }
+               },
+               {
+                "prop": "padding",
+                "value": {
+                 "top": "16px",
+                 "bottom": "16px",
+                 "left": "18px",
+                 "right": "18px"
+                }
+               }
+              ],
+              "p": {
+               "children": [
+                {
+                 "t": "Text",
+                 "id": "6a6a0d6d-b2c2-4efc-b383-80d6d4da58bc",
+                 "p": {
+                  "content": "DISCLAIMER"
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "JetBrains Mono, monospace"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "10.5px"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "10.5px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "700"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "center"
+                  },
+                  {
+                   "prop": "maxWidth",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "letterSpacing",
+                   "value": "2.31px"
+                  }
+                 ]
+                },
+                {
+                 "t": "Text",
+                 "id": "8ffa9c51-a070-48fd-a98c-bdc874eee049",
+                 "p": {
+                  "content": "This product is a general wellness and fitness device. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease or health condition, including any heart condition. Its readings (including heart rate, heart rate variability, blood pressure, and blood oxygen) are estimates for general wellness purposes only, are not clinically validated, and should not be relied upon for any medical decision. Do not use this device to detect, monitor, or manage any medical condition. It is not a substitute for professional medical advice, examination, diagnosis, or treatment, or for medical-grade monitoring equipment. Always consult a qualified physician or healthcare provider with any questions about your health, before making health decisions, and if you experience symptoms such as chest pain, shortness of breath, or dizziness \u2014 seek emergency care immediately. Individual results may vary."
+                 },
+                 "styles": [
+                  {
+                   "prop": "fontFamily",
+                   "value": "Inter, InterFallback, sans-serif"
+                  },
+                  {
+                   "prop": "color",
+                   "value": {
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1
+                   }
+                  },
+                  {
+                   "prop": "fontSize",
+                   "value": "13px"
+                  },
+                  {
+                   "prop": "lineHeight",
+                   "value": "20.15px"
+                  },
+                  {
+                   "prop": "fontWeight",
+                   "value": "400"
+                  },
+                  {
+                   "prop": "textAlign",
+                   "value": "center"
+                  },
+                  {
+                   "prop": "maxWidth",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  }
+                 ]
+                }
+               ]
+              }
+             },
+             {
+              "t": "Container",
+              "id": "510ebfa7-fb8f-45a9-8bf3-f905de512aef",
+              "styles": [
+               {
+                "prop": "width",
+                "value": "100%"
+               },
+               {
+                "prop": "borderStyle",
+                "value": "solid"
+               },
+               {
+                "prop": "borderColor",
+                "value": {
+                 "r": 255,
+                 "g": 255,
+                 "b": 255,
+                 "a": 0.14
+                }
+               },
+               {
+                "prop": "borderWidth",
+                "value": "1px 0px 1px 0px"
+               },
+               {
+                "prop": "padding",
+                "value": {
+                 "top": "27px",
+                 "bottom": "27px",
+                 "left": "27px",
+                 "right": "27px"
+                }
+               },
+               {
+                "prop": "padding",
+                "value": {
+                 "top": "20px",
+                 "bottom": "20px",
+                 "left": "16px",
+                 "right": "16px"
+                },
+                "media": 767
+               },
+               {
+                "prop": "margin",
+                "value": {
+                 "left": "-36px",
+                 "right": "-36px"
+                },
+                "media": 767
+               },
+               {
+                "prop": "width",
+                "value": "calc(100% + 72px)",
+                "media": 767
+               }
+              ],
+              "p": {
+               "children": [
+                {
+                 "t": "Container",
+                 "id": "031c9aaf-16ef-42e8-becd-9019d52c842c",
+                 "styles": [
+                  {
+                   "prop": "lfDisplay",
+                   "value": "flex"
+                  },
+                  {
+                   "prop": "flexDirection",
+                   "value": "row"
+                  },
+                  {
+                   "prop": "gap",
+                   "value": "18px"
+                  },
+                  {
+                   "prop": "alignItems",
+                   "value": "center"
+                  },
+                  {
+                   "prop": "width",
+                   "value": "100%"
+                  },
+                  {
+                   "prop": "justifyContent",
+                   "value": "space-between"
+                  },
+                  {
+                   "prop": "flexDirection",
+                   "value": "column",
+                   "media": 767
+                  },
+                  {
+                   "prop": "gap",
+                   "value": "14px",
+                   "media": 767
+                  }
+                 ],
+                 "p": {
+                  "children": [
+                   {
+                    "t": "Container",
+                    "id": "86116225-1d4b-41f3-ac27-f48ad4991d61",
+                    "styles": [
+                     {
+                      "prop": "lfDisplay",
+                      "value": "flex"
+                     },
+                     {
+                      "prop": "flexDirection",
+                      "value": "column"
+                     },
+                     {
+                      "prop": "gap",
+                      "value": "18px"
+                     },
+                     {
+                      "prop": "width",
+                      "value": "100%"
+                     },
+                     {
+                      "prop": "width",
+                      "value": "fit-content"
+                     },
+                     {
+                      "prop": "alignItems",
+                      "value": "center",
+                      "media": 767
+                     },
+                     {
+                      "prop": "gap",
+                      "value": "14px",
+                      "media": 767
+                     }
+                    ],
+                    "p": {
+                     "children": [
+                      {
+                       "t": "Text",
+                       "id": "60251b3f-cf70-4582-bc28-63f93aabf693",
+                       "p": {
+                        "content": "\u00a9 2026 TechUnboxed."
+                       },
+                       "styles": [
+                        {
+                         "prop": "fontFamily",
+                         "value": "Inter, InterFallback, sans-serif"
+                        },
+                        {
+                         "prop": "color",
+                         "value": {
+                          "r": 255,
+                          "g": 255,
+                          "b": 255,
+                          "a": 1
+                         }
+                        },
+                        {
+                         "prop": "fontSize",
+                         "value": "12px"
+                        },
+                        {
+                         "prop": "lineHeight",
+                         "value": "12px"
+                        },
+                        {
+                         "prop": "fontWeight",
+                         "value": "400"
+                        },
+                        {
+                         "prop": "textAlign",
+                         "value": "left"
+                        },
+                        {
+                         "prop": "maxWidth",
+                         "value": "100%"
+                        },
+                        {
+                         "prop": "width",
+                         "value": "100%"
+                        }
+                       ]
+                      },
+                      {
+                       "t": "Container",
+                       "id": "19d66c69-9a5a-4d7e-ad26-068497b7ccbb",
+                       "styles": [
+                        {
+                         "prop": "lfDisplay",
+                         "value": "flex"
+                        },
+                        {
+                         "prop": "flexDirection",
+                         "value": "row"
+                        },
+                        {
+                         "prop": "gap",
+                         "value": "18px"
+                        },
+                        {
+                         "prop": "alignItems",
+                         "value": "center"
+                        },
+                        {
+                         "prop": "width",
+                         "value": "100%"
+                        },
+                        {
+                         "prop": "justifyContent",
+                         "value": "flex-start"
+                        },
+                        {
+                         "prop": "width",
+                         "value": "fit-content"
+                        },
+                        {
+                         "prop": "justifyContent",
+                         "value": "center",
+                         "media": 767
+                        }
+                       ],
+                       "p": {
+                        "children": [
+                         {
+                          "t": "Text",
+                          "id": "43f400f8-c7fa-4f2d-8019-5825b79a149b",
+                          "p": {
+                           "content": "<a href=\"#tu-terms\" id=\"terms\" style=\"color:#BCD9E4;text-decoration:none\">Terms</a>"
+                          },
+                          "styles": [
+                           {
+                            "prop": "fontFamily",
+                            "value": "Inter, InterFallback, sans-serif"
+                           },
+                           {
+                            "prop": "color",
+                            "value": {
+                             "r": 188,
+                             "g": 217,
+                             "b": 228,
+                             "a": 1
+                            }
+                           },
+                           {
+                            "prop": "fontSize",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "lineHeight",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "fontWeight",
+                            "value": "400"
+                           },
+                           {
+                            "prop": "textAlign",
+                            "value": "left"
+                           },
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "auto"
+                           }
+                          ]
+                         },
+                         {
+                          "t": "Text",
+                          "id": "49dead85-068f-41b1-91db-8d56fa86ab00",
+                          "p": {
+                           "content": "<a href=\"#tu-priv\" id=\"priv\" style=\"color:#BCD9E4;text-decoration:none\">Privacy</a>"
+                          },
+                          "styles": [
+                           {
+                            "prop": "fontFamily",
+                            "value": "Inter, InterFallback, sans-serif"
+                           },
+                           {
+                            "prop": "color",
+                            "value": {
+                             "r": 188,
+                             "g": 217,
+                             "b": 228,
+                             "a": 1
+                            }
+                           },
+                           {
+                            "prop": "fontSize",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "lineHeight",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "fontWeight",
+                            "value": "400"
+                           },
+                           {
+                            "prop": "textAlign",
+                            "value": "left"
+                           },
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "auto"
+                           }
+                          ]
+                         },
+                         {
+                          "t": "Text",
+                          "id": "6e46c97b-6471-45d3-aed9-7dab787cb31a",
+                          "p": {
+                           "content": "<a href=\"#tu-edit\" id=\"edit\" style=\"color:#BCD9E4;text-decoration:none\">Editorial standards</a>"
+                          },
+                          "styles": [
+                           {
+                            "prop": "fontFamily",
+                            "value": "Inter, InterFallback, sans-serif"
+                           },
+                           {
+                            "prop": "color",
+                            "value": {
+                             "r": 188,
+                             "g": 217,
+                             "b": 228,
+                             "a": 1
+                            }
+                           },
+                           {
+                            "prop": "fontSize",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "lineHeight",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "fontWeight",
+                            "value": "400"
+                           },
+                           {
+                            "prop": "textAlign",
+                            "value": "left"
+                           },
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "auto"
+                           }
+                          ]
+                         },
+                         {
+                          "t": "Text",
+                          "id": "1224265b-0a87-43bb-bdf1-0469ac912a7c",
+                          "p": {
+                           "content": "<a href=\"#tu-aff\" id=\"aff\" style=\"color:#BCD9E4;text-decoration:none\">Affiliate policy</a>"
+                          },
+                          "styles": [
+                           {
+                            "prop": "fontFamily",
+                            "value": "Inter, InterFallback, sans-serif"
+                           },
+                           {
+                            "prop": "color",
+                            "value": {
+                             "r": 188,
+                             "g": 217,
+                             "b": 228,
+                             "a": 1
+                            }
+                           },
+                           {
+                            "prop": "fontSize",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "lineHeight",
+                            "value": "12px"
+                           },
+                           {
+                            "prop": "fontWeight",
+                            "value": "400"
+                           },
+                           {
+                            "prop": "textAlign",
+                            "value": "left"
+                           },
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "auto"
+                           }
+                          ]
+                         }
+                        ]
+                       }
+                      }
+                     ]
+                    }
+                   },
+                   {
+                    "t": "Container",
+                    "id": "1f5711cd-2f4b-48f3-9319-dfe30474917e",
+                    "styles": [
+                     {
+                      "prop": "lfDisplay",
+                      "value": "flex"
+                     },
+                     {
+                      "prop": "flexDirection",
+                      "value": "row"
+                     },
+                     {
+                      "prop": "gap",
+                      "value": "13px"
+                     },
+                     {
+                      "prop": "alignItems",
+                      "value": "center"
+                     },
+                     {
+                      "prop": "width",
+                      "value": "100%"
+                     },
+                     {
+                      "prop": "justifyContent",
+                      "value": "flex-start"
+                     },
+                     {
+                      "prop": "width",
+                      "value": "fit-content"
+                     }
+                    ],
+                    "p": {
+                     "children": [
+                      {
+                       "t": "Container",
+                       "id": "72242130-59bc-426e-88e3-e2486851dbb8",
+                       "p": {
+                        "children": [
+                         {
+                          "t": "Image",
+                          "id": "868584d9-8d4b-4e7e-bded-a3dabf4fa2ad",
+                          "p": {
+                           "src_id": 9994333,
+                           "src_uid": "img_V_XmaVu6QdG1aiZ-zyimt",
+                           "src": "https://assets.lightfunnels.com/account-90380/images_library/5e48950e-4c18-4f75-ac01-943b8bb4aa53.png",
+                           "alt": ""
+                          },
+                          "styles": [
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "borderRadius",
+                            "value": "0px"
+                           },
+                           {
+                            "prop": "objectFit",
+                            "value": "contain"
+                           },
+                           {
+                            "prop": "lfDisplay",
+                            "value": "block"
+                           },
+                           {
+                            "prop": "height",
+                            "value": "26px"
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       "styles": [
+                        {
+                         "prop": "width",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "height",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "flexShrink",
+                         "value": "0"
+                        }
+                       ]
+                      },
+                      {
+                       "t": "Container",
+                       "id": "2bf9b3ee-c0a7-4765-8d84-bdcd4c89a6e6",
+                       "p": {
+                        "children": [
+                         {
+                          "t": "Image",
+                          "id": "67fdada1-d674-4aa5-a567-86c18189e5fd",
+                          "p": {
+                           "src_id": 9994334,
+                           "src_uid": "img_bxfNPH-FMWtDJPLYLTyq9",
+                           "src": "https://assets.lightfunnels.com/account-90380/images_library/47be8ff4-1fc8-440b-8fdb-17d3534a631f.png",
+                           "alt": ""
+                          },
+                          "styles": [
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "borderRadius",
+                            "value": "0px"
+                           },
+                           {
+                            "prop": "objectFit",
+                            "value": "contain"
+                           },
+                           {
+                            "prop": "lfDisplay",
+                            "value": "block"
+                           },
+                           {
+                            "prop": "height",
+                            "value": "26px"
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       "styles": [
+                        {
+                         "prop": "width",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "height",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "flexShrink",
+                         "value": "0"
+                        }
+                       ]
+                      },
+                      {
+                       "t": "Container",
+                       "id": "177f56fe-bd37-4528-ad8c-54fadaacd866",
+                       "p": {
+                        "children": [
+                         {
+                          "t": "Image",
+                          "id": "55aad81e-deee-4642-97ec-d6ea7b63d288",
+                          "p": {
+                           "src_id": 9994335,
+                           "src_uid": "img_6X1s7NQ8vT4jE7UPjSHOG",
+                           "src": "https://assets.lightfunnels.com/account-90380/images_library/c4ce232f-3df9-43c0-8e2b-7aae25cad0d0.png",
+                           "alt": ""
+                          },
+                          "styles": [
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "borderRadius",
+                            "value": "0px"
+                           },
+                           {
+                            "prop": "objectFit",
+                            "value": "contain"
+                           },
+                           {
+                            "prop": "lfDisplay",
+                            "value": "block"
+                           },
+                           {
+                            "prop": "height",
+                            "value": "26px"
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       "styles": [
+                        {
+                         "prop": "width",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "height",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "flexShrink",
+                         "value": "0"
+                        }
+                       ]
+                      },
+                      {
+                       "t": "Container",
+                       "id": "09a721cc-8fe7-4edc-9656-8454a76c72b8",
+                       "p": {
+                        "children": [
+                         {
+                          "t": "Image",
+                          "id": "bbd048f1-237e-426c-a5f5-3634e3e161eb",
+                          "p": {
+                           "src_id": 9994336,
+                           "src_uid": "img_nMxxj6EC0IY6lHVfDIQnz",
+                           "src": "https://assets.lightfunnels.com/account-90380/images_library/fcf584d5-5858-4abd-a594-ddeac221c01a.png",
+                           "alt": ""
+                          },
+                          "styles": [
+                           {
+                            "prop": "maxWidth",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "width",
+                            "value": "100%"
+                           },
+                           {
+                            "prop": "borderRadius",
+                            "value": "0px"
+                           },
+                           {
+                            "prop": "objectFit",
+                            "value": "contain"
+                           },
+                           {
+                            "prop": "lfDisplay",
+                            "value": "block"
+                           },
+                           {
+                            "prop": "height",
+                            "value": "26px"
+                           }
+                          ]
+                         }
+                        ]
+                       },
+                       "styles": [
+                        {
+                         "prop": "width",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "height",
+                         "value": "26px"
+                        },
+                        {
+                         "prop": "flexShrink",
+                         "value": "0"
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   }
+                  ]
+                 }
+                }
+               ]
+              }
+             }
+            ]
+           }
+          }
+         ]
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ },
+ "settings": {
+  "seo": {
+   "title": "The Screenless Tracker Outselling Smartwatches in the UK",
+   "keywords": "HLTH Band, screenless health tracker, smart ring alternative, health tracker no subscription, continuous blood pressure tracker, best health tracker UK 2026, wearable without screen",
+   "description": "It takes 288 readings a day, has no subscription, and lasts 30 days on a charge. Here's why the HLTH Band is outselling smartwatches in the UK.",
+   "social_image_uid": "img_WaepEIr76KlOJZMKrVIaH"
+  },
+  "custom_html": {
+   "footer": "<script>(function(){var v=document.querySelector(\"meta[name=viewport]\");if(v&&/maximum-scale/.test(v.content))v.setAttribute(\"content\",\"width=device-width, initial-scale=1\");document.querySelectorAll(\"a.s5-offer-link\").forEach(function(a){a.setAttribute(\"aria-label\",\"See the HLTH Band offer\")});})();</script>\n<style>\n  .tu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;\n    align-items:flex-start;justify-content:center;z-index:2147483600;padding:24px;\n    overflow-y:auto;-webkit-overflow-scrolling:touch;}\n  .tu-overlay.tu-open{display:flex;}\n  .tu-modal{position:relative;background:#fff;color:#222;max-width:720px;width:100%;\n    margin:auto;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.3);\n    padding:32px 28px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;\n    line-height:1.6;font-size:15px;max-height:500px;overflow-y:auto;}\n  .tu-modal h2{margin:0 0 4px;font-size:22px;}\n  .tu-modal h3{font-size:16px;margin:18px 0 6px;}\n  .tu-modal p{margin:0 0 14px;}\n  .tu-modal ul{margin:0 0 12px;padding-left:20px;}\n  .tu-date{color:#888;font-size:13px;margin:0 0 16px;}\n  .tu-close{position:absolute;top:12px;right:14px;border:0;background:transparent;\n    font-size:26px;line-height:1;cursor:pointer;color:#999;padding:4px 8px;}\n  .tu-close:hover{color:#333;}\n</style>\n<!-- TERMS -->\n<div class=\"tu-overlay\" id=\"tu-terms\" role=\"dialog\" aria-modal=\"true\">\n  <div class=\"tu-modal\">\n    <button class=\"tu-close\" data-tu-close aria-label=\"Close\">&times;</button>\n    <h2>Terms of Use</h2>\n    <p class=\"tu-date\">Last updated: 23 June 2026</p>\n    <p>Welcome to TechUnboxed (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;the Site&rdquo;). By accessing or using this Site you agree to these Terms. If you don&rsquo;t agree, please don&rsquo;t use the Site.</p>\n    <p><strong>What this Site is.</strong> TechUnboxed publishes reviews, comparisons, and advertorial articles about consumer tech and wellness products, and may link to third-party retailers where featured products are sold. Some articles are paid promotional content (see our Affiliate Disclosure).</p>\n    <p><strong>Informational purpose only.</strong> Our content is for general information and is <strong>not</strong> professional, financial, or medical advice.</p>\n    <p><strong>Health &amp; wellness disclaimer.</strong> Where we feature wellness or fitness devices, those products are general wellness devices and are <strong>not medical devices</strong>. They are not intended to diagnose, treat, cure, or prevent any disease or health condition, and any readings they provide are general wellness estimates only, are not clinically validated, and should not be relied upon for medical decisions. Always consult a qualified healthcare professional.</p>\n    <p><strong>Prices, offers &amp; availability.</strong> Any prices, discounts, sale offers, or stock/urgency messaging shown are set by the retailer and confirmed only on the retailer&rsquo;s own website at the time of purchase. They may change or end at any time.</p>\n    <p><strong>Third-party links &amp; retailers.</strong> We don&rsquo;t own or control the stores we link to. Any purchase is a transaction between you and that retailer, under their terms.</p>\n    <p><strong>Intellectual property.</strong> All Site content is owned by us or our licensors and may not be copied or reused without permission.</p>\n    <p><strong>Limitation of liability.</strong> To the fullest extent permitted by law, we are not liable for any loss arising from your use of the Site or reliance on its content.</p>\n    <p style=\"margin-bottom:0;\"><strong>Changes &amp; governing law.</strong> We may update these Terms at any time; continued use means you accept them. These Terms are governed by applicable law.</p>\n  </div>\n</div>\n\n<!-- PRIVACY -->\n<div class=\"tu-overlay\" id=\"tu-priv\" role=\"dialog\" aria-modal=\"true\">\n  <div class=\"tu-modal\">\n    <button class=\"tu-close\" data-tu-close aria-label=\"Close\">&times;</button>\n    <h2>Privacy Policy</h2>\n    <p class=\"tu-date\">Last updated: 23 June 2026</p>\n    <p>This policy explains how TechUnboxed (&ldquo;we&rdquo;) handles your information when you use this Site. We comply with the UK GDPR and the Data Protection Act 2018.</p>\n    <h3>What we collect</h3>\n    <ul>\n      <li><strong>Usage &amp; device data:</strong> pages viewed, clicks (including clicks through to retailers), time on page, browser, device, approximate location (from IP), and which ad/referral source you arrived from.</li>\n      <li><strong>Cookies &amp; tracking IDs</strong> set by us and our partners (see below).</li>\n      <li>We do <strong>not</strong> collect health data or sensitive personal data on this Site.</li>\n    </ul>\n    <h3>Cookies &amp; tracking</h3>\n    <p>We and our advertising/analytics partners use cookies and pixels to measure article performance and attribute ad campaigns, including Meta (Facebook) Pixel, Taboola, Outbrain, Google, and our analytics provider. These may set their own cookies and process data under their own privacy policies.</p>\n    <h3>How we use it &amp; legal basis</h3>\n    <p>To operate and improve the Site, measure content, and attribute/optimise advertising. We rely on legitimate interests (analytics/Site operation) and your consent (advertising/marketing cookies), which you can withdraw at any time.</p>\n    <h3>Sharing</h3>\n    <p>We share limited data with the analytics and advertising partners listed above and, when you click through, your visit continues on the retailer&rsquo;s site under their own privacy policy. We do not sell your personal data.</p>\n    <h3>Your rights</h3>\n    <p>You may request access, correction, deletion, or restriction of your data, object to processing, or withdraw consent.</p>\n    <h3>Retention &amp; cookie control</h3>\n    <p style=\"margin-bottom:0;\">We keep data only as long as needed for the purposes above. You can control cookies via your browser settings or our cookie banner. To exercise any of your rights, contact us via the details on this site.</p>\n  </div>\n</div>\n\n<!-- EDITORIAL -->\n<div class=\"tu-overlay\" id=\"tu-edit\" role=\"dialog\" aria-modal=\"true\">\n  <div class=\"tu-modal\">\n    <button class=\"tu-close\" data-tu-close aria-label=\"Close\">&times;</button>\n    <h2>Editorial Standards</h2>\n    <p class=\"tu-date\">Last updated: 23 June 2026</p>\n    <p>TechUnboxed publishes reviews, comparisons, and first-person opinion articles about consumer tech and wellness products.</p>\n    <p><strong>Advertorial content.</strong> Some articles are <strong>advertorials</strong>: promotional content published as part of paid advertising campaigns. They are written to inform and may encourage you to view or buy a product. We disclose this in our Affiliate Disclosure.</p>\n    <p><strong>Opinions &amp; bylines.</strong> Articles are written in a personal voice by our contributors and reflect that writer&rsquo;s experience and research, including comparisons between competing products.</p>\n    <p><strong>How we form views.</strong> We draw on publicly available information, manufacturer specifications, hands-on impressions where applicable, and comparison with alternatives.</p>\n    <p><strong>Affiliate relationships.</strong> Some links earn us a commission and we run paid campaigns for the products we feature. This funds the Site but does not change the price you pay &mdash; see our Affiliate Disclosure.</p>\n    <p><strong>Not medical advice.</strong> Any wellness or fitness products we feature are general wellness devices, <strong>not medical devices</strong>. Any readings they provide are wellness estimates, are not clinically validated, and should not be used for medical decisions. Nothing on this Site is medical, health, or financial advice.</p>\n    <p style=\"margin-bottom:0;\"><strong>Accuracy &amp; corrections.</strong> Prices, offers, specs, and availability change frequently and are confirmed on the retailer&rsquo;s site. If we get something wrong, we&rsquo;ll correct it.</p>\n  </div>\n</div>\n\n<!-- AFFILIATE -->\n<div class=\"tu-overlay\" id=\"tu-aff\" role=\"dialog\" aria-modal=\"true\">\n  <div class=\"tu-modal\">\n    <button class=\"tu-close\" data-tu-close aria-label=\"Close\">&times;</button>\n    <h2>Affiliate Disclosure</h2>\n    <p class=\"tu-date\">Last updated: 23 June 2026</p>\n    <p>TechUnboxed is an advertising-supported publisher.</p>\n    <p><strong>This is advertorial content.</strong> Some articles are promotional/advertorial and are published as part of paid advertising campaigns. They are designed to inform and may encourage you to view or purchase featured products at third-party retailers.</p>\n    <p><strong>We earn commissions.</strong> Some links on this Site are affiliate or advertising links. If you click through and make a purchase, we may earn a commission or fee <strong>at no extra cost to you</strong>.</p>\n    <p><strong>It doesn&rsquo;t change your price.</strong> Commissions are paid by the retailer/advertiser, not by you. Your price is the same whether or not you use our links.</p>\n    <p><strong>Pricing &amp; urgency claims.</strong> Any prices, discounts, sale offers, stock levels, or urgency messaging are set and controlled by the retailer, not by us, and are confirmed only on the retailer&rsquo;s website at checkout. They may change or end at any time.</p>\n    <p><strong>Our recommendations.</strong> Affiliate and advertising relationships help fund the Site but do not change the genuine opinions expressed in our articles (see Editorial Standards).</p>\n    <p style=\"margin-bottom:0;\"><strong>Not medical advice.</strong> Any wellness products we feature are general wellness devices, not medical devices; any readings are wellness estimates only and are not clinically validated.</p>\n  </div>\n</div>\n\n<script>\n(function () {\n  var MAP = { terms: \"tu-terms\", priv: \"tu-priv\", edit: \"tu-edit\", aff: \"tu-aff\" };\n\n  function open(id) {\n    var ov = document.getElementById(id);\n    if (!ov) return;\n    ov.classList.add(\"tu-open\");\n    document.body.style.overflow = \"hidden\";\n  }\n  function closeAll() {\n    var list = document.querySelectorAll(\".tu-overlay.tu-open\");\n    for (var i = 0; i < list.length; i++) list[i].classList.remove(\"tu-open\");\n    document.body.style.overflow = \"\";\n  }\n\n  document.addEventListener(\"click\", function (e) {\n    var trig = e.target.closest && e.target.closest(\"#terms,#priv,#edit,#aff\");\n    if (trig && MAP[trig.id]) { e.preventDefault(); closeAll(); open(MAP[trig.id]); return; }\n    if (e.target.closest && e.target.closest(\"[data-tu-close]\")) { closeAll(); return; }\n    if (e.target.classList && e.target.classList.contains(\"tu-overlay\")) { closeAll(); }\n  });\n\n  document.addEventListener(\"keydown\", function (e) {\n    if (e.key === \"Escape\") closeAll();\n  });\n})();\n</script>",
+   "header": "<style>@font-face{font-family:Inter;font-style:normal;font-weight:300;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/300/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/400/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/500/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/600/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/700/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:800;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/800/normal.woff2) format('woff2')}</style>\n<style>@font-face{font-family:InterFallback;src:local('Arial'),local('Liberation Sans'),local('Helvetica Neue');ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;size-adjust:107.12%}</style>\n<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"/cf-fonts/s/inter/5.2.8/latin/400/normal.woff2\">\n<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"/cf-fonts/s/inter/5.2.8/latin/600/normal.woff2\">\n<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"/cf-fonts/s/inter/5.2.8/latin/700/normal.woff2\">\n<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"/cf-fonts/s/inter/5.2.8/latin/800/normal.woff2\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"The Screenless Tracker Outselling Smartwatches in the UK\">\n<meta name=\"twitter:description\" content=\"It takes 288 readings a day, has no subscription, and lasts 30 days on a charge. Here's why the HLTH Band is outselling smartwatches in the UK.\">\n<meta name=\"twitter:image\" content=\"https://assets.lightfunnels.com/account-90380/images_library/0d3c5717-cba5-4166-b3de-4bc7a242cbbf.jpg\">\n"
+  }
+ },
+ "visual": {
+  "x": 100,
+  "y": 100
+ },
+ "thumbnail": {
+  "key": "account-90380/generated-thumbnails/step-98bcdb8d-03b0-47d4-9ce7-f4e8b7e296d8.jpeg",
+  "url": "https://assets.lightfunnels.com/account-90380/generated-thumbnails/step-98bcdb8d-03b0-47d4-9ce7-f4e8b7e296d8.jpeg"
+ }
+}

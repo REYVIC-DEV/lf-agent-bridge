@@ -1,0 +1,161 @@
+<!-- ============================================================================
+     DYNAMIC CURRENCY — paste into LightFunnels custom code (HEAD).
+     Build/QA guide: DYNAMIC-CURRENCY-SETUP.md
+
+     Two independent feeds, deliberately kept apart:
+
+       OUR PRODUCT   hlthtrack.com/api/prices   real Shopify per-market price.
+                     Drives [data-price]. Uses the API's own `formatted` string,
+                     so we never format our own money.
+
+       COMPETITORS   app.hlthtrack.com/api/fx   mid-market FX. Drives [data-fx-gbp].
+                     Indicative ONLY - Shopify checkout converts at its own rate
+                     and price-list overrides ignore FX entirely. Fine for
+                     "about EUR 269" on a rival's RRP; NEVER for our price.
+
+     Fail-safe by construction: every tagged element already contains the GBP
+     text and this script only ever overwrites it. Any failure - offline, CORS,
+     503, unknown country, missing rate - leaves the GBP text standing.
+
+     BOTH endpoints are (or are becoming) restricted to the techunboxed.co
+     origin. On the LightFunnels preview domain the fetches are CORS-blocked and
+     the page correctly shows GBP. QA on the techunboxed URL, not the preview.
+============================================================================ -->
+<script>
+(function () {
+  "use strict";
+  var PRICES = "https://hlthtrack.com/api/prices";
+  var FX     = "https://app.hlthtrack.com/api/fx";
+  var DEFAULT_CC = "GB";
+  var REVEAL_MS = 2500;
+
+  var TZ_CC = {
+    "Europe/London":"GB","Europe/Dublin":"IE","Europe/Berlin":"DE","Europe/Vienna":"AT",
+    "Europe/Zurich":"CH","Europe/Paris":"FR","Europe/Brussels":"BE","Europe/Amsterdam":"NL",
+    "Europe/Madrid":"ES","Europe/Rome":"IT","Europe/Lisbon":"PT","Europe/Stockholm":"SE",
+    "Europe/Oslo":"NO","Europe/Copenhagen":"DK","Europe/Helsinki":"FI","Europe/Warsaw":"PL",
+    "Europe/Prague":"CZ","Europe/Budapest":"HU","Europe/Bucharest":"RO","Europe/Athens":"GR",
+    "Europe/Zagreb":"HR","Europe/Ljubljana":"SI","Europe/Bratislava":"SK","Europe/Tallinn":"EE",
+    "Europe/Riga":"LV","Europe/Vilnius":"LT","Europe/Luxembourg":"LU","Europe/Malta":"MT",
+    "Europe/Nicosia":"CY","Atlantic/Reykjavik":"IS",
+    "America/Toronto":"CA","America/Vancouver":"CA","America/Edmonton":"CA",
+    "America/Winnipeg":"CA","America/Halifax":"CA","America/St_Johns":"CA",
+    "Australia/Sydney":"AU","Australia/Melbourne":"AU","Australia/Brisbane":"AU",
+    "Australia/Perth":"AU","Australia/Adelaide":"AU","Pacific/Auckland":"NZ",
+    "Asia/Singapore":"SG","Asia/Hong_Kong":"HK","Asia/Tokyo":"JP","Asia/Seoul":"KR",
+    "Asia/Bangkok":"TH","Asia/Jakarta":"ID","Asia/Kuala_Lumpur":"MY","Asia/Manila":"PH",
+    "Asia/Dubai":"AE","Asia/Riyadh":"SA","Africa/Johannesburg":"ZA"
+  };
+  function pickCountry() {
+    try {
+      var q = new URLSearchParams(location.search).get("country");
+      if (q && /^[A-Za-z]{2}$/.test(q)) return q.toUpperCase();
+    } catch (e) {}
+    try {
+      var tz = (Intl.DateTimeFormat().resolvedOptions() || {}).timeZone;
+      if (tz && TZ_CC[tz]) return TZ_CC[tz];
+    } catch (e) {}
+    return DEFAULT_CC;
+  }
+  var CC = pickCountry();
+
+  // Only hide when we might actually change something: a GB visitor already
+  // sees the right text, so give them no flash at all.
+  var hiding = CC !== DEFAULT_CC;
+  var styleEl = null;
+  if (hiding) {
+    styleEl = document.createElement("style");
+    styleEl.textContent = "[data-price],[data-fx-gbp]{visibility:hidden}";
+    (document.head || document.documentElement).appendChild(styleEl);
+  }
+  var revealed = false;
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    if (styleEl && styleEl.parentNode) styleEl.parentNode.removeChild(styleEl);
+  }
+  setTimeout(reveal, REVEAL_MS);
+  if (hiding) window.addEventListener("error", reveal);
+
+  function setText(sel, value) {
+    if (value == null || value === "") return 0;
+    var els = document.querySelectorAll(sel), i;
+    for (i = 0; i < els.length; i++) els[i].textContent = value;
+    return els.length;
+  }
+
+  function fmt(n, cur) {
+    if (!isFinite(n) || n <= 0) return null;   // a 0 renders a free product
+    try {
+      return new Intl.NumberFormat(navigator.language || "en-GB",
+        { style: "currency", currency: cur, maximumFractionDigits: 2 }).format(n);
+    } catch (e) { return null; }
+  }
+
+  function applyPrices(data) {
+    var mk = (data && data.markets) || [], m = null, i;
+    for (i = 0; i < mk.length; i++) if (mk[i].country === CC) { m = mk[i]; break; }
+    if (!m || m.available === false) return null;   // unknown/draft -> keep GBP
+
+    var amount = parseFloat(m.amount), compare = parseFloat(m.compareAt);
+    setText('[data-price="price"]', m.formatted);
+    if (isFinite(compare)) {
+      setText('[data-price="compare"]', fmt(compare, m.currency));
+      // savings = compareAt - amount, COMPUTED not assumed: it only equals the
+      // price while every market sits at exactly 50% off, which is true today
+      // but is not a promise.
+      if (isFinite(amount) && compare > amount) {
+        setText('[data-price="savings"]', fmt(compare - amount, m.currency));
+      }
+    }
+    if (m.discountPct) setText('[data-price="discount"]', m.discountPct + "%");
+    return m;
+  }
+
+  function applyFx(fxData, cur) {
+    if (!fxData || !fxData.rates || !cur || cur === "GBP") return;
+    var rate = fxData.rates[cur];
+    // A currency with no rate is OMITTED by the API, never sent as 0 or null.
+    // undefined would give NaN and a 0 would render a free product - bail.
+    if (typeof rate !== "number" || !isFinite(rate) || rate <= 0) return;
+    var els = document.querySelectorAll("[data-fx-gbp]"), i, gbp, out;
+    for (i = 0; i < els.length; i++) {
+      gbp = parseFloat(els[i].getAttribute("data-fx-gbp"));
+      if (!isFinite(gbp) || gbp <= 0) continue;
+      out = fmt(Math.round(gbp * rate), cur);   // whole units: it is indicative
+      if (out) els[i].textContent = out;
+    }
+  }
+
+  function getJSON(url) {
+    return fetch(url, { mode: "cors", credentials: "omit" }).then(function (r) {
+      if (!r.ok) throw new Error(url + " " + r.status);
+      return r.json();
+    });
+  }
+
+  function run() {
+    getJSON(PRICES).then(function (p) {
+      var m = applyPrices(p);
+      var cur = m && m.currency;
+      if (window.posthog && typeof posthog.register === "function") {
+        try { posthog.register({ funnel_country: CC, funnel_currency: cur || "GBP" }); } catch (e) {}
+      }
+      reveal();
+      // Only reach for FX if a competitor figure actually exists on the page.
+      // Skipping it saves a cross-origin request on every non-GB pageview, and
+      // avoids a console CORS error on domains /api/fx does not allow.
+      var wantFx = document.querySelector("[data-fx-gbp]");
+      if (wantFx && cur && cur !== "GBP") {
+        // competitors are a separate, weaker feed - its failure must not undo
+        // the product price already applied
+        return getJSON(FX).then(function (f) { applyFx(f, cur); }).catch(function () {});
+      }
+    }).catch(function () { reveal(); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else { run(); }
+})();
+</script>

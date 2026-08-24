@@ -1,0 +1,12 @@
+{
+  "lf_id": "fun_f1IsXx3YnEA2UD2g91dAv",
+  "name": "randell testing",
+  "slug": "randell-testing",
+  "published": true,
+  "starting_step_id": "step_0J0wlCl2Z6O6Hfg1S-wkY",
+  "domains": ["www.techunboxed.co", "99commerce.myecomsite.net"],
+  "steps": {
+    "step_0J0wlCl2Z6O6Hfg1S-wkY": "bh-advertorial-v1 (entry, untouched)",
+    "step_SmIVoc258ZchgIHKzFlo-": "bh-advertorial-v1-dyn (copy + dynamic currency)"
+  }
+}
