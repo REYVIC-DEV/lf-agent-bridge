@@ -1,0 +1,122 @@
+<style>
+  .tu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;
+    align-items:flex-start;justify-content:center;z-index:2147483600;padding:24px;
+    overflow-y:auto;-webkit-overflow-scrolling:touch;}
+  .tu-overlay.tu-open{display:flex;}
+  .tu-modal{position:relative;background:#fff;color:#222;max-width:720px;width:100%;
+    margin:auto;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.3);
+    padding:32px 28px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6;font-size:15px;max-height:500px;overflow-y:auto;}
+  .tu-modal h2{margin:0 0 4px;font-size:22px;}
+  .tu-modal h3{font-size:16px;margin:18px 0 6px;}
+  .tu-modal p{margin:0 0 14px;}
+  .tu-modal ul{margin:0 0 12px;padding-left:20px;}
+  .tu-date{color:#888;font-size:13px;margin:0 0 16px;}
+  .tu-close{position:absolute;top:12px;right:14px;border:0;background:transparent;
+    font-size:26px;line-height:1;cursor:pointer;color:#999;padding:4px 8px;}
+  .tu-close:hover{color:#333;}
+</style>
+<!-- TERMS -->
+<div class="tu-overlay" id="tu-terms" role="dialog" aria-modal="true">
+  <div class="tu-modal">
+    <button class="tu-close" data-tu-close aria-label="Close">&times;</button>
+    <h2>Terms of Use</h2>
+    <p class="tu-date">Last updated: 23 June 2026</p>
+    <p>Welcome to TechUnboxed (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;the Site&rdquo;). By accessing or using this Site you agree to these Terms. If you don&rsquo;t agree, please don&rsquo;t use the Site.</p>
+    <p><strong>What this Site is.</strong> TechUnboxed publishes reviews, comparisons, and advertorial articles about consumer tech and wellness products, and may link to third-party retailers where featured products are sold. Some articles are paid promotional content (see our Affiliate Disclosure).</p>
+    <p><strong>Informational purpose only.</strong> Our content is for general information and is <strong>not</strong> professional, financial, or medical advice.</p>
+    <p><strong>Health &amp; wellness disclaimer.</strong> Where we feature wellness or fitness devices, those products are general wellness devices and are <strong>not medical devices</strong>. They are not intended to diagnose, treat, cure, or prevent any disease or health condition, and any readings they provide are general wellness estimates only, are not clinically validated, and should not be relied upon for medical decisions. Always consult a qualified healthcare professional.</p>
+    <p><strong>Prices, offers &amp; availability.</strong> Any prices, discounts, sale offers, or stock/urgency messaging shown are set by the retailer and confirmed only on the retailer&rsquo;s own website at the time of purchase. They may change or end at any time.</p>
+    <p><strong>Third-party links &amp; retailers.</strong> We don&rsquo;t own or control the stores we link to. Any purchase is a transaction between you and that retailer, under their terms.</p>
+    <p><strong>Intellectual property.</strong> All Site content is owned by us or our licensors and may not be copied or reused without permission.</p>
+    <p><strong>Limitation of liability.</strong> To the fullest extent permitted by law, we are not liable for any loss arising from your use of the Site or reliance on its content.</p>
+    <p style="margin-bottom:0;"><strong>Changes &amp; governing law.</strong> We may update these Terms at any time; continued use means you accept them. These Terms are governed by applicable law.</p>
+  </div>
+</div>
+
+<!-- PRIVACY -->
+<div class="tu-overlay" id="tu-priv" role="dialog" aria-modal="true">
+  <div class="tu-modal">
+    <button class="tu-close" data-tu-close aria-label="Close">&times;</button>
+    <h2>Privacy Policy</h2>
+    <p class="tu-date">Last updated: 23 June 2026</p>
+    <p>This policy explains how TechUnboxed (&ldquo;we&rdquo;) handles your information when you use this Site. We comply with the UK GDPR and the Data Protection Act 2018.</p>
+    <h3>What we collect</h3>
+    <ul>
+      <li><strong>Usage &amp; device data:</strong> pages viewed, clicks (including clicks through to retailers), time on page, browser, device, approximate location (from IP), and which ad/referral source you arrived from.</li>
+      <li><strong>Cookies &amp; tracking IDs</strong> set by us and our partners (see below).</li>
+      <li>We do <strong>not</strong> collect health data or sensitive personal data on this Site.</li>
+    </ul>
+    <h3>Cookies &amp; tracking</h3>
+    <p>We and our advertising/analytics partners use cookies and pixels to measure article performance and attribute ad campaigns, including Meta (Facebook) Pixel, Taboola, Outbrain, Google, and our analytics provider. These may set their own cookies and process data under their own privacy policies.</p>
+    <h3>How we use it &amp; legal basis</h3>
+    <p>To operate and improve the Site, measure content, and attribute/optimise advertising. We rely on legitimate interests (analytics/Site operation) and your consent (advertising/marketing cookies), which you can withdraw at any time.</p>
+    <h3>Sharing</h3>
+    <p>We share limited data with the analytics and advertising partners listed above and, when you click through, your visit continues on the retailer&rsquo;s site under their own privacy policy. We do not sell your personal data.</p>
+    <h3>Your rights</h3>
+    <p>You may request access, correction, deletion, or restriction of your data, object to processing, or withdraw consent.</p>
+    <h3>Retention &amp; cookie control</h3>
+    <p style="margin-bottom:0;">We keep data only as long as needed for the purposes above. You can control cookies via your browser settings or our cookie banner. To exercise any of your rights, contact us via the details on this site.</p>
+  </div>
+</div>
+
+<!-- EDITORIAL -->
+<div class="tu-overlay" id="tu-edit" role="dialog" aria-modal="true">
+  <div class="tu-modal">
+    <button class="tu-close" data-tu-close aria-label="Close">&times;</button>
+    <h2>Editorial Standards</h2>
+    <p class="tu-date">Last updated: 23 June 2026</p>
+    <p>TechUnboxed publishes reviews, comparisons, and first-person opinion articles about consumer tech and wellness products.</p>
+    <p><strong>Advertorial content.</strong> Some articles are <strong>advertorials</strong>: promotional content published as part of paid advertising campaigns. They are written to inform and may encourage you to view or buy a product. We disclose this in our Affiliate Disclosure.</p>
+    <p><strong>Opinions &amp; bylines.</strong> Articles are written in a personal voice by our contributors and reflect that writer&rsquo;s experience and research, including comparisons between competing products.</p>
+    <p><strong>How we form views.</strong> We draw on publicly available information, manufacturer specifications, hands-on impressions where applicable, and comparison with alternatives.</p>
+    <p><strong>Affiliate relationships.</strong> Some links earn us a commission and we run paid campaigns for the products we feature. This funds the Site but does not change the price you pay &mdash; see our Affiliate Disclosure.</p>
+    <p><strong>Not medical advice.</strong> Any wellness or fitness products we feature are general wellness devices, <strong>not medical devices</strong>. Any readings they provide are wellness estimates, are not clinically validated, and should not be used for medical decisions. Nothing on this Site is medical, health, or financial advice.</p>
+    <p style="margin-bottom:0;"><strong>Accuracy &amp; corrections.</strong> Prices, offers, specs, and availability change frequently and are confirmed on the retailer&rsquo;s site. If we get something wrong, we&rsquo;ll correct it.</p>
+  </div>
+</div>
+
+<!-- AFFILIATE -->
+<div class="tu-overlay" id="tu-aff" role="dialog" aria-modal="true">
+  <div class="tu-modal">
+    <button class="tu-close" data-tu-close aria-label="Close">&times;</button>
+    <h2>Affiliate Disclosure</h2>
+    <p class="tu-date">Last updated: 23 June 2026</p>
+    <p>TechUnboxed is an advertising-supported publisher.</p>
+    <p><strong>This is advertorial content.</strong> Some articles are promotional/advertorial and are published as part of paid advertising campaigns. They are designed to inform and may encourage you to view or purchase featured products at third-party retailers.</p>
+    <p><strong>We earn commissions.</strong> Some links on this Site are affiliate or advertising links. If you click through and make a purchase, we may earn a commission or fee <strong>at no extra cost to you</strong>.</p>
+    <p><strong>It doesn&rsquo;t change your price.</strong> Commissions are paid by the retailer/advertiser, not by you. Your price is the same whether or not you use our links.</p>
+    <p><strong>Pricing &amp; urgency claims.</strong> Any prices, discounts, sale offers, stock levels, or urgency messaging are set and controlled by the retailer, not by us, and are confirmed only on the retailer&rsquo;s website at checkout. They may change or end at any time.</p>
+    <p><strong>Our recommendations.</strong> Affiliate and advertising relationships help fund the Site but do not change the genuine opinions expressed in our articles (see Editorial Standards).</p>
+    <p style="margin-bottom:0;"><strong>Not medical advice.</strong> Any wellness products we feature are general wellness devices, not medical devices; any readings are wellness estimates only and are not clinically validated.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var MAP = { terms: "tu-terms", priv: "tu-priv", edit: "tu-edit", aff: "tu-aff" };
+
+  function open(id) {
+    var ov = document.getElementById(id);
+    if (!ov) return;
+    ov.classList.add("tu-open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeAll() {
+    var list = document.querySelectorAll(".tu-overlay.tu-open");
+    for (var i = 0; i < list.length; i++) list[i].classList.remove("tu-open");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", function (e) {
+    var trig = e.target.closest && e.target.closest("#terms,#priv,#edit,#aff");
+    if (trig && MAP[trig.id]) { e.preventDefault(); closeAll(); open(MAP[trig.id]); return; }
+    if (e.target.closest && e.target.closest("[data-tu-close]")) { closeAll(); return; }
+    if (e.target.classList && e.target.classList.contains("tu-overlay")) { closeAll(); }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeAll();
+  });
+})();
+</script>

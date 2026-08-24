@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Build the HLTH advertorial (from Figma node 387:201) as native LF blocks
 and write it into the starting step of fun_XHwV9fd9Z3FFyXPPfNot0 (session)."""
-import json, uuid, lf_api
+import sys, json, uuid
+sys.path.insert(0, '.')
+import lf_api
 
 tok = open('.session_token').read().strip()
 ACCT = open('.lf_account').read().strip()

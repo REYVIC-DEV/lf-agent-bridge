@@ -73,12 +73,25 @@ Run `python3 lf.py --help` for all commands.
 
 ## Files
 
+The bridge itself lives at the repo root; everything built on top of it is
+grouped into its own directory. See `docs/ARCHITECTURE.md` for the full map.
+
 - `lf.py` — agent-facing CLI (all commands, JSON output)
 - `lf_api.py` — GraphQL client + primitives (duplicate, text extraction, patch engine)
+- `lf_session.py` — keeps a browser session alive for page-body writes
 - `get_token.py` — one-command OAuth flow → `.env`
+- `server.py` — legacy HTTP wrapper around the bridge (see `legacy/`)
 - `docs/LIGHTFUNNELS_API.md` — full API knowledge base + **Field-Verified Addendum**
   (platform limits, undocumented mutations, quirks found by live testing)
+- `docs/ARCHITECTURE.md` — map of every subsystem in this repo
 - `.claude/skills/lightfunnels/SKILL.md` — the Claude Code skill
 - `templates/` — archived page bodies (`capture` output; read-only reference)
 - `legacy/` — the old HTTP-server bridge (its write path predates the platform
   restriction and does not work)
+- `pagescore/` — the autonomous page-performance-tuning loop (`benchmark.py`
+  ground-truth harness + `build_*.py` iteration scripts), run from the repo
+  root, e.g. `python3 pagescore/benchmark.py <url>`
+- `content/` — scraped source material (`extract_techunboxed.py` +
+  `extracted/`) used as raw copy/structure input when building new pages
+- `autoresearch/` — an unrelated external reference project (its own git repo)
+  that `pagescore/program.md`'s autonomous-loop design is modeled on

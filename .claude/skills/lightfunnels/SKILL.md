@@ -13,14 +13,14 @@ documents behavior discovered by live testing that the official docs omit).
 `references/block-schema.md` FIRST. It is the verified Lightfunnels block
 vocabulary (node types, style props, the `lfDisplay:flex` layout model, image
 hosting) plus a design→LF mapping table. Author page bodies from it — never
-guess builder props. When translating a Figma design, pull structure via the
-Figma MCP (auto-layout maps directly to LF's flex model), then map to LF blocks
-using that reference.
+guess builder props. When translating a Figma design, pull structure via
+**figwright** (auto-layout maps directly to LF's flex model), then map to LF
+blocks using that reference.
 
 **Inspecting a design in full detail?** Read
 [references/figma-inspect.md](references/figma-inspect.md) — the measure-don't-guess
 method (walk nodes for exact colors/fonts/geometry/auto-layout, deep-read the specific
-element, export assets) plus the three ways to read a Figma file and their limits.
+element, export assets) and how to read the file through figwright.
 
 **Doing mobile responsiveness from a separate mobile Figma frame?** The mobile frame is
 tall — parse the whole node in a subagent, then match it (don't eyeball). Mobile is NOT
@@ -40,19 +40,21 @@ Browsing 2/2). Also covers the hero LCP preload/`fetchpriority`, lazy media, `ar
 and — critically — **how to measure right** (PSI API / real Lighthouse / a delayed-font
 harness; a naive Playwright observer under-reports).
 
-**Figma access is seat-limited — know the options.** All three official-ish paths:
-- **figwright MCP** (`@figwright/mcp` + its Figma plugin) — reads the file you have
-  **open** via the Plugin API, **no seat cap**, effectively unlimited. **Preferred for
-  heavy/iterative inspection.** `.mcp.json` is already configured in this project; the
-  human installs the plugin (repo's latest release → Figma → Plugins → Development →
-  Import plugin from manifest…) and runs it with the file open (127.0.0.1:3055).
-- **Figma REST API** (`figma_rest.py`, `FIGMA_TOKEN` in `.env`, scope *File content =
-  Read-only*): `get_nodes(key, ids)` = geometry/auto-layout/fills/typography;
-  `export_images(key, ids, scale=2)` = render URLs for any frame. Then
-  `lf_api.upload_local_image(session_token, path, HH)` hosts each in the LF library.
-  **But a View seat gets only ~6/month on Tier-1 (file/nodes/images)** — 429 `Retry-After`
-  seen at ~4.6 days. Batch ids into one call; spend sparingly.
-- **Figma MCP** (`get_design_context`) — rich but its per-seat tool-call cap hits fast.
+**Figma access: figwright, and nothing else.** This project reads Figma through the
+**figwright MCP** (`@figwright/mcp` + its Figma plugin) — it reads the file the human
+has **open** via the Plugin API, has **no seat cap**, and is effectively unlimited, so
+there is no budget to ration. `.mcp.json` is already configured; the human installs the
+plugin (repo's latest release → Figma → Plugins → Development → Import plugin from
+manifest…) and runs it with the file open (127.0.0.1:3055). Preflight with
+`mcp__figwright__ping`.
+
+The **Figma MCP connector** (`mcp__claude_ai_Figma__*`) and the **Figma REST API**
+(`FIGMA_TOKEN`, `pagescore/figma_rest.py`) are **retired here — do not use either**.
+Both are per-seat rate-limited: a View seat gets ~6 REST calls a month on Tier-1
+endpoints (429 `Retry-After` observed at ~4.6 days) and the connector's tool-call cap
+hits within a session, so a build would stall halfway through with no way to finish.
+If figwright is not responding, the fix is for the human to open the file with the
+plugin running — **not** to switch to another Figma path. Say what is needed and stop.
 
 fileKey + nodeId come from the design URL (`?node-id=1640-2196` → `1640:2196`).
 
@@ -161,7 +163,7 @@ building a fresh page (e.g. from a Figma design), no master needed:
 
 Full mechanics + copy-paste example: `references/block-schema.md` §
 "Brand-new funnel from scratch". (The bare `create` command still makes an empty
-shell; prefer the recipe above or `build_*.py`-style scripts for real pages.)
+shell; prefer the recipe above or `pagescore/build_*.py`-style scripts for real pages.)
 
 ### 3. Edit page copy (the agentic-editing loop)
 

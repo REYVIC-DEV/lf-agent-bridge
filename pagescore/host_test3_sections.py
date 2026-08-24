@@ -1,4 +1,7 @@
-import json, os, lf_api
+import sys, json, os
+sys.path.insert(0, '.')
+import lf_api
+CACHE = os.path.join(os.path.dirname(__file__), ".cache")
 tok=open('.session_token').read().strip()
 ACCT=open('.lf_account').read().strip()
 HH={"account-id":ACCT,"version":"1","Origin":"https://app.lightfunnels.com","Referer":"https://app.lightfunnels.com/"}
@@ -11,5 +14,5 @@ for key,fn,ct in jobs:
     m[key]=rec
     print("hosted",key)
 json.dump(m, open("/tmp/test3_img_map.json","w"))
-json.dump(m, open(".cache/test3_img_map.json","w"))
+json.dump(m, open(os.path.join(CACHE, "test3_img_map.json"),"w"))
 print("map keys:", list(m.keys()))
