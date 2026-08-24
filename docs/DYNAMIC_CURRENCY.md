@@ -4,8 +4,10 @@ Handoff for whoever builds the funnel page. Goal: **one funnel serves every
 country** — the displayed price auto-switches to the visitor's local currency,
 pulled live from Shopify. No duplicate pages per country, no feature flag.
 
-- **Script:** [`dynamic-currency-header-block.html`](dynamic-currency-header-block.html)
-- **Price source:** `https://hlthtrack.com/api/prices` (see [`../../API-PRICES.md`](../../API-PRICES.md))
+- **Script:** [`dynamic-currency-header-block.html`](../dynamic-currency-header-block.html)
+- **Price source:** `https://hlthtrack.com/api/prices` (documented in
+  `API-PRICES.md`, which lives with the dashboard app and is **not in this
+  repo**; the `/api/fx` half is in [`HLTHTRACK_API.md`](HLTHTRACK_API.md))
 
 ---
 
@@ -126,4 +128,6 @@ field.
 | `funnel_country` missing in PostHog | PostHog not initialised on the page / script ran before init. |
 
 ---
-_Price feed and market list: [`../../API-PRICES.md`](../../API-PRICES.md). Script: [`dynamic-currency-header-block.html`](dynamic-currency-header-block.html)._
+_Price feed and market list: `API-PRICES.md` (not in this repo). FX contract:
+[`HLTHTRACK_API.md`](HLTHTRACK_API.md). Script:
+[`dynamic-currency-header-block.html`](../dynamic-currency-header-block.html)._

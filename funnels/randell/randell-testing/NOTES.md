@@ -36,7 +36,7 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
 
   **`dynamic-currency-header-block.html` did not exist in the repo** — the setup
   guide references it and `API-PRICES.md`, neither of which is here. Written from
-  the guide's spec plus `API.md`'s safety rules, and installed in the step's own
+  the guide's spec plus `docs/HLTHTRACK_API.md`'s safety rules, and installed in the step's own
   `settings.custom_html.header` (per-step, not funnel-level `header_scripts`).
 
   **Two feeds, deliberately separate:**
@@ -101,7 +101,7 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
   **Two feeds, and which figure belongs to which is the whole design.** Ours comes
   from `hlthtrack.com/api/prices` (real Shopify, must match checkout, uses the
   API's own `formatted` string). Everything else goes through
-  `app.hlthtrack.com/api/fx`, which is mid-market and, per `API.md`, "correct for
+  `app.hlthtrack.com/api/fx`, which is mid-market and, per `docs/HLTHTRACK_API.md`, "correct for
   'about EUR89'; wrong as a promise of what the customer will be charged" — so
   those render with a leading `~`. Our own price never gets the prefix.
 
@@ -182,7 +182,7 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
 - ⚠️ **The comparison table overstates our price advantage in override markets.**
   Found from a PH pageview showing `~PHP133,070`. Our price is a real Shopify
   figure and in several markets that is a **price-list override**, not an FX
-  conversion — `API.md` warns there are 29 of them. Competitor figures, by
+  conversion — `docs/HLTHTRACK_API.md` warns there are 29 of them. Competitor figures, by
   contrast, are converted from GBP at full mid-market. Where the override is much
   cheaper than the FX equivalent, the rival is converted at full price while we
   are not, and the gap on the page stops matching the gap in the UK:

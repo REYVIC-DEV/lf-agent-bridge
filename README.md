@@ -88,6 +88,10 @@ grouped into its own directory. See `docs/ARCHITECTURE.md` for the full map.
 - `docs/LIGHTFUNNELS_API.md` — full API knowledge base + **Field-Verified Addendum**
   (platform limits, undocumented mutations, quirks found by live testing)
 - `docs/ARCHITECTURE.md` — map of every subsystem in this repo
+- `docs/HLTHTRACK_API.md` — the hlthtrack app's routes, incl. the `/api/fx`
+  feed a page calls for currency conversion (public by design; mid-market)
+- `docs/DYNAMIC_CURRENCY.md` — how a page switches currency: tag elements
+  with `data-price` / `data-fx-gbp`, install the header script, QA per market
 - `.claude/skills/lightfunnels/SKILL.md` — the Claude Code skill
 - `funnels/` — local funnel workspaces (funnel.json, NOTES.md, steps/, texts/,
   edits/); see `funnels/README.md`
