@@ -200,3 +200,73 @@ Filled daily at **01:15 UTC** by the `fx-sync` Edge Function (pg_cron `fx-sync-d
 the currency list from Shopify Markets and the rates from `open.er-api.com`. Health lives in
 `public.dash_shop_currency_coverage`: `missing_rate > 0` means the advertorial is offering a
 currency it cannot convert.
+---
+
+## How a Lightfunnels page uses this
+
+Everything above describes the dashboard app. From a funnel page we consume
+**exactly one route from this file** — `/api/fx` — plus `/api/prices`, which is
+documented separately in `API-PRICES.md` (not in this repo). The build guide is
+[`DYNAMIC_CURRENCY.md`](DYNAMIC_CURRENCY.md).
+
+**The split is the important part:**
+
+| | `/api/prices` | `/api/fx` (this file) |
+|---|---|---|
+| what it is | our product's **real Shopify price** per market | a **mid-market currency converter** |
+| page tag | `data-price="…"` | `data-fx-gbp="79"` |
+| exact? | **yes — it is what checkout charges** | **no. indicative only** |
+| used for | our price, RRP, saving, discount % | competitor prices, editorial sums, `£0` cells |
+
+`/api/fx` is **only ever a converter**. It must never drive our own product
+price: the note in `/api/fx in particular` above — mid-market, per-market
+rounding, 29 price-list overrides where the override *is* the price — is exactly
+why. A page that converted its own price with it would quote figures checkout
+does not charge.
+
+### The consumer rules, as they land on a page
+
+The guarantees stated above are what let the page fail safe, so the page-side code
+mirrors each one:
+
+- **A currency with no rate is omitted, never `0` or `null`.** The page bails on a
+  non-number instead of multiplying — `undefined` gives `NaN`, and a `0` renders a
+  free product.
+- **`GBP` is present and exactly `1`.** The page skips the whole FX pass when the
+  market currency is GBP, so a UK visitor triggers no request and sees no change.
+- **An empty result answers `503`, not `200 {}`.** The page treats any failure as
+  "leave the GBP text alone", which is why every tagged element ships with its GBP
+  figure as visible fallback text.
+- **`as_of` is the provider's date.** A stale date means the sync is stale even
+  though the endpoint answers — worth checking before blaming the page.
+
+Only fetched when a `[data-fx-gbp]` element exists on the page. Otherwise it is a
+cross-origin request on every pageview for nothing, and a console CORS error on
+any non-allowlisted host.
+
+### CORS, measured
+
+The `Allow every host the visitor might actually be on` rule above has a
+consequence worth writing down, because it decides where QA is valid:
+
+| endpoint | `techunboxed.co` | apex | preview domain (`*.myecomsite.net`) |
+|---|---|---|---|
+| `/api/prices` | `*` | `*` | `*` |
+| `/api/fx` | echoed | echoed | **no header — blocked** |
+
+So competitor conversion works **only** on the techunboxed origins. On a preview
+domain it is blocked and fails safe to GBP, which looks identical to "the script
+is broken". **QA on the real host.** `/api/prices` is slated to become restricted
+the same way, at which point the preview domain stops converting anything.
+
+### The one thing the contract cannot protect against
+
+Both feeds are individually correct and still combine into a misleading
+**comparison**. Our price is real and often an override; competitor figures are
+converted at full mid-market. Where the override is much cheaper than its FX
+equivalent, the page overstates our advantage — PH by 2.7x, ZA 1.8x, PL and HR
+1.5x, against a 2.9x gap in GBP. This is not an API bug and cannot be fixed by
+arithmetic: our price has to stay the real checkout figure, and we do not hold
+rivals' actual local prices. See the caveats in
+[`DYNAMIC_CURRENCY.md`](DYNAMIC_CURRENCY.md); an exact per-market figure would
+need the Storefront API with `@inContext(country:)`, as noted above.
