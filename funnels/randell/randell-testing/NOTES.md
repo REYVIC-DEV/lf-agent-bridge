@@ -134,9 +134,9 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
 
   | `?country=` | ours | compare | everything else |
   |---|---|---|---|
-  | GB | `GBP79`, never hidden at 0ms | `GBP158` | **untouched** — 0 tildes, GBP1,581 and GBP0 as authored |
-  | DE | `EUR79` | `EUR158` | `~EUR1,847` `~EUR466` `~EUR268` `~EUR419`, `EUR0` |
-  | AU | `A$147` | `A$294` | `~A$436` `~A$684` `~A$417` |
+  | GB | `GBP79`, never hidden at 0ms | `GBP158` | **untouched** — GBP1,581 and GBP0 as authored |
+  | DE | `EUR79` | `EUR158` | `EUR1,847` `EUR466` `EUR268` `EUR419`, `EUR0` |
+  | AU | `A$147` | `A$294` | `A$436` `A$684` `A$417` |
   | HR | `EUR60.65` | `EUR121.30` | decimals preserved |
 
   DE/AU/HR match the setup guide's expected figures exactly. 0 console errors, no
@@ -171,10 +171,13 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
   figures now convert. Still true of `bh-advertorial-v1`, where any comparison
   table is baked into artwork.
 
-- **The `~` prefix is an editorial call, not a technical one.** It is there so a
-  mid-market conversion cannot read as a firm quote, and it now appears in the H1
-  ("We Spent ~EUR1,847 Testing..."). Dropping it would read cleaner; doing that
-  knowingly is fine, doing it by accident is not.
+- ~~**The `~` prefix is an editorial call.**~~ **Removed on request 2026-08-25**,
+  deployed to both steps and verified live: 0 tildes on the page. The figures are
+  still mid-market conversions, so they remain indicative and will not match what
+  a rival charges locally — the page simply no longer says so, and rounding to
+  whole units is the only remaining signal. This makes the distortion item below
+  matter more, not less, because a converted rival RRP now reads as a firm price.
+  Restore the prefix at the `applyFx` write site if that ever needs stating.
 
 - ⚠️ **The comparison table overstates our price advantage in override markets.**
   Found from a PH pageview showing `~PHP133,070`. Our price is a real Shopify

@@ -148,10 +148,12 @@
         continue;
       }
       out = fmt(Math.round(gbp * rate), cur);   // whole units: it is indicative
-      // "~" on purpose. This is a MID-MARKET conversion of a rival's GBP RRP,
-      // not a quote they would be charged, so it must not read as an exact
-      // price. Drop the prefix only if someone decides that trade knowingly.
-      if (out) els[i].textContent = "~" + out;
+      // No "~" prefix: removed deliberately on request 2026-08-25. These are
+      // still MID-MARKET conversions of GBP figures, so they are indicative and
+      // will not match what a rival actually charges locally - the figure now
+      // simply does not say so. Rounding to whole units is the only remaining
+      // signal. Restore the prefix here if that ever needs stating again.
+      if (out) els[i].textContent = out;
     }
   }
 
