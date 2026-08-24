@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Drop the "~" prefix from FX-converted figures. Requested by the user.
 
-Recorded rather than silently removed, because docs/HLTHTRACK_API.md is explicit that /api/fx is
+Recorded rather than silently removed, because docs/CURRENCY_CONVERTER.md is explicit that /api/fx is
 mid-market and "correct for 'about EUR89'; wrong as a promise of what the customer
 will be charged". Without the prefix a converted rival RRP and the converted test
 spend both read as exact figures. That is a knowing editorial trade, which is the
