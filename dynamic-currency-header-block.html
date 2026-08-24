@@ -84,11 +84,21 @@
     return els.length;
   }
 
+  // Trailing ".00" costs 3 characters and carries no information. The
+  // comparison table gives a price cell 44px on a 390px screen, where
+  // "~EUR268.00" overran its column by ~21px and collided with the cell
+  // beside it. Trimming restores our own price to the "79" width the design
+  // was built around, and leaves a genuinely fractional price (HR 60.65)
+  // alone. Handles "268.00" and the de-DE "268,00 EUR" ordering both.
+  function trimZeros(t) {
+    return typeof t === "string" ? t.replace(/([.,])00(?=[^0-9]*$)/, "") : t;
+  }
+
   function fmt(n, cur) {
     if (!isFinite(n) || n <= 0) return null;   // a 0 renders a free product
     try {
-      return new Intl.NumberFormat(navigator.language || "en-GB",
-        { style: "currency", currency: cur, maximumFractionDigits: 2 }).format(n);
+      return trimZeros(new Intl.NumberFormat(navigator.language || "en-GB",
+        { style: "currency", currency: cur, maximumFractionDigits: 2 }).format(n));
     } catch (e) { return null; }
   }
 
@@ -98,7 +108,7 @@
     if (!m || m.available === false) return null;   // unknown/draft -> keep GBP
 
     var amount = parseFloat(m.amount), compare = parseFloat(m.compareAt);
-    setText('[data-price="price"]', m.formatted);
+    setText('[data-price="price"]', trimZeros(m.formatted));
     if (isFinite(compare)) {
       setText('[data-price="compare"]', fmt(compare, m.currency));
       // savings = compareAt - amount, COMPUTED not assumed: it only equals the
@@ -121,9 +131,27 @@
     var els = document.querySelectorAll("[data-fx-gbp]"), i, gbp, out;
     for (i = 0; i < els.length; i++) {
       gbp = parseFloat(els[i].getAttribute("data-fx-gbp"));
-      if (!isFinite(gbp) || gbp <= 0) continue;
+      if (!isFinite(gbp) || gbp < 0) continue;
+      if (gbp === 0) {
+        // A "GBP0" subscription cell means "none". It still has to change
+        // currency or the row reads "EUR79 / GBP0 / EUR79", and it takes no
+        // "~" because there is nothing approximate about zero. Formatted
+        // directly rather than through fmt(), whose <= 0 guard must stay in
+        // force for data-price, where a 0 would render a free product.
+        out = null;
+        try {
+          out = new Intl.NumberFormat(navigator.language || "en-GB",
+            { style: "currency", currency: cur,
+              maximumFractionDigits: 0 }).format(0);
+        } catch (e) { out = null; }
+        if (out) els[i].textContent = out;
+        continue;
+      }
       out = fmt(Math.round(gbp * rate), cur);   // whole units: it is indicative
-      if (out) els[i].textContent = out;
+      // "~" on purpose. This is a MID-MARKET conversion of a rival's GBP RRP,
+      // not a quote they would be charged, so it must not read as an exact
+      // price. Drop the prefix only if someone decides that trade knowingly.
+      if (out) els[i].textContent = "~" + out;
     }
   }
 
