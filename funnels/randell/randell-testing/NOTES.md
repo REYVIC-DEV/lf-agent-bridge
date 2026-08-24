@@ -176,6 +176,33 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
   ("We Spent ~EUR1,847 Testing..."). Dropping it would read cleaner; doing that
   knowingly is fine, doing it by accident is not.
 
+- ⚠️ **The comparison table overstates our price advantage in override markets.**
+  Found from a PH pageview showing `~PHP133,070`. Our price is a real Shopify
+  figure and in several markets that is a **price-list override**, not an FX
+  conversion — `API.md` warns there are 29 of them. Competitor figures, by
+  contrast, are converted from GBP at full mid-market. Where the override is much
+  cheaper than the FX equivalent, the rival is converted at full price while we
+  are not, and the gap on the page stops matching the gap in the UK:
+
+  | market | our price | as % of its mid-market equivalent | table shows | UK reality | overstated by |
+  |---|---|---|---|---|---|
+  | PH | PHP2,450 | 37% | 7.9x | 2.9x | **2.7x** |
+  | ZA | ZAR980 | 57% | 5.1x | 2.9x | **1.8x** |
+  | PL | PLN260 | 65% | 4.4x | 2.9x | **1.5x** |
+  | HR | EUR60.65 | 66% | 4.4x | 2.9x | **1.5x** |
+
+  The other 26 markets sit at 1.0-1.3x, which is noise. EC runs the other way
+  (USD135 = 125% of mid-market, so it *understates* at 0.8x).
+
+  Every individual figure is defensible — a GBP229 Whoop really is about
+  PHP19,275 at mid-market, and it is marked `~`. The distortion is in the
+  **comparison**, which is a claim about relative price, so this is an
+  advertising-accuracy question rather than a display bug. It cannot be fixed by
+  arithmetic: our price has to stay the real checkout figure, and the rivals' real
+  local prices are not something we hold. The options are to disclose, to leave
+  competitor figures in GBP labelled as UK RRP, or not to run these four markets
+  against this table. **Decide before spending in PH, ZA, PL or HR.**
+
 - **Competitor GBP figures are hardcoded in `data-fx-gbp`.** They are a snapshot of
   what rivals charged when the page was written, and nothing re-checks them. If a
   rival cuts its price the table is wrong in GBP first and in every currency after.
