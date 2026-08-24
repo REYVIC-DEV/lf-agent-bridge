@@ -10,3 +10,13 @@ extracted/
 
 # Playwright MCP session artifacts (console logs, page snapshots)
 .playwright-mcp/
+benchmark_results.tsv
+pagescore/runs/
+# read-only prior art, has its own .git -- never a submodule of this repo
+autoresearch/
+# scratch media, not project assets
+*.mp4
+chart_recheck.png
+
+# holds a live Lightfunnels client_secret — never commit
+.claude/settings.local.json

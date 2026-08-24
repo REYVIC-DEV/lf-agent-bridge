@@ -21,7 +21,7 @@ Expected cost, stated up front: this is the change that took step 3 from
 71 KiB already being wasted becomes useful, and 600/700 additionally load.
 """
 import json, sys
-sys.path.insert(0, "tools/lf-agent-bridge")
+sys.path.insert(0, ".")
 import lf_api
 
 FUNNEL = "fun_vGqQYxn4H2i_traYYkh4w"
@@ -50,8 +50,8 @@ BLOCK = """
 </style>
 """ % faces
 
-tok = open("tools/lf-agent-bridge/.session_token").read().strip()
-acct = open("tools/lf-agent-bridge/.lf_account").read().strip()
+tok = open(".session_token").read().strip()
+acct = open(".lf_account").read().strip()
 h = lf_api.session_headers(acct)
 node = lf_api.get_funnel_steps(tok, FUNNEL, extra_headers=h)
 s = {x["uid"]: x for x in node["steps"]}[STEP]

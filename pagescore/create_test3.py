@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Create the 'Test 3' funnel from scratch (session recipe) and save its ids.
 Writes an empty article_page shell; build_test3.py fills the body."""
-import json, os, uuid, lf_api
+import sys, json, os, uuid
+sys.path.insert(0, '.')
+import lf_api
 
 tok = open('.session_token').read().strip()
 ACCT = open('.lf_account').read().strip()
@@ -40,6 +42,7 @@ print("attached:", u["updateFunnel"]["steps"])
 
 ids = {"funnel": FID, "step": SID, "step_uid": step["uid"], "slug": FSLUG}
 json.dump(ids, open("/tmp/test3_ids.json", "w"))
-os.makedirs(".cache", exist_ok=True)
-json.dump(ids, open(".cache/test3_ids.json", "w"))
+CACHE = os.path.join(os.path.dirname(__file__), ".cache")
+os.makedirs(CACHE, exist_ok=True)
+json.dump(ids, open(os.path.join(CACHE, "test3_ids.json"), "w"))
 print("saved ids:", ids)

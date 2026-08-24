@@ -3,7 +3,9 @@
 Text/layout + exact styles reconstructed from the Figma REST API. Real photos +
 Trustpilot logo exported via REST and hosted in LF. Writes to the from-scratch
 funnel fun_0xxSP4vzvsYLXJJ1Ap3wP."""
-import json, uuid, lf_api
+import sys, json, uuid
+sys.path.insert(0, '.')
+import lf_api
 
 tok = open('.session_token').read().strip()
 ACCT = open('.lf_account').read().strip()

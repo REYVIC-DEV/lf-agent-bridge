@@ -16,22 +16,29 @@ and export the assets you can't recreate. This is the method used to build the H
 advertorial and the "top-5 fitness trackers" listicle. Pair it with
 [block-schema.md](block-schema.md) (the LF target vocabulary).
 
-## Three ways to read a Figma file — pick by seat/limits
+## Reading the file: figwright only
 
-| Source | How | Limit reality |
-|---|---|---|
-| **figwright MCP** (preferred for heavy/iterative work) | Figma **Plugin API** via a local plugin + `@figwright/mcp`. Reads the file you have **open** in the desktop app. | **No seat cap** — local, effectively unlimited. Works on Figma free tier. Needs the plugin running + file open. |
-| **Figma REST API** (`figma_rest.py`) | `X-Figma-Token` PAT. `get_nodes` (styles/geometry) + `export_images` (render any frame). | **Seat-capped.** A **View/Collab seat** gets only ~**6/month** on Tier-1 endpoints (GET file / nodes / images). 429 returns `Retry-After` — observed **~4.6 days**. Dev/Full seat = 10–20/min. |
-| **Figma MCP** (`get_design_context`/`get_metadata`) | Official Anthropic Figma connector. Rich reference code + screenshot. | **Seat-capped tool calls** — a View seat hits `reached the Figma MCP tool call limit` fast. |
+`mcp__figwright__*` is the one supported way to read a Figma file in this project. It
+talks to the **Figma Plugin API** through a local plugin, reads whatever file the human
+has **open** in the desktop app, and has **no seat cap** — it is local, effectively
+unlimited, and works on Figma's free tier. That is exactly what detailed inspection
+needs, because a real build is dozens of node reads plus asset exports.
 
-Practical rule: **use figwright for the detailed, back-and-forth inspection** (dozens of
-node reads + asset exports). Fall back to REST only for a few precise reads when
-figwright isn't set up, and spend that tiny budget carefully (batch ids into one call).
+The two alternatives are **retired in this project and must not be used**:
+
+| Retired path | Why it is out |
+|---|---|
+| **Figma MCP connector** (`mcp__claude_ai_Figma__*`) | Per-seat tool-call cap. A View seat hits `reached the Figma MCP tool call limit` partway through a build, leaving the page half-measured. |
+| **Figma REST API** (`FIGMA_TOKEN`, `pagescore/figma_rest.py`) | A View/Collab seat gets only ~6 Tier-1 calls **per month** (GET file / nodes / images). Observed 429 with `Retry-After` ≈ 4.6 days — a single wasted call can block work for the rest of the week. |
+
+If figwright will not connect, that is a human task, not a reason to fall back: the file
+has to be open in Figma with **Plugins → Development → Figwright** running (it connects
+on 127.0.0.1:3055 and shows *Connected*). Reload the agent and test with
+`mcp__figwright__ping`. Stop and say so rather than guessing at the design.
 
 **figwright setup:** `.mcp.json` → `{"mcpServers":{"figwright":{"command":"npx","args":["-y","@figwright/mcp@latest"]}}}`;
 install the plugin from the repo's latest GitHub release (Figma desktop → Menu → Plugins →
-Development → Import plugin from manifest…), run **Plugins → Development → Figwright** with the
-target file open (it connects on `127.0.0.1:3055` and shows *Connected*), reload the agent, test with `ping`.
+Development → Import plugin from manifest…), then run it with the target file open.
 
 ## What to extract for every element
 
@@ -53,7 +60,7 @@ Order of operations: **structure first** (metadata/shallow walk to get node ids 
 grouping), then **deep-read the specific element** you're matching (the star strip, the
 table wrapper, one card, one review). Verify values *before* building.
 
-## Compact node inspector (REST or figwright JSON)
+## Compact node inspector (figwright JSON)
 
 ```python
 def rgba(c): return "#%02x%02x%02x"%(round(c['r']*255),round(c['g']*255),round(c['b']*255)) if c else None
@@ -144,9 +151,9 @@ only styling. Confirmed on the HLTH listicle (desktop node `2:108` vs mobile `3:
 
 ## Assets: export, don't recreate
 
-Logos, product shots, screenshots, gifs, icon lockups → export the node
-(`figma_rest.export_images(key,[id],scale=2)` or figwright's screenshot/asset export),
-download, then `lf_api.upload_local_image(session_token, path, session_headers)` to host it
+Logos, product shots, screenshots, gifs, icon lockups → export the node with
+figwright (`save_image_fills` for a node's real image fills, `save_screenshots` to
+render any frame), then `lf_api.upload_local_image(session_token, path, session_headers)` to host it
 in the LF library and get `{src_id,src_uid,src}` for an `Image` block. Resize >5 MB first
 (`sips -Z 1400`). Small recreatable marks (colored star boxes, pills) can be HTML in a
 `Text`, but match the measured color/size exactly.

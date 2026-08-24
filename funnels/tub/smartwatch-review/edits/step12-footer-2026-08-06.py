@@ -25,7 +25,7 @@ Three changes:
    works regardless of where the block sits and href="#" will not jump the page.
 """
 import json, re, sys, uuid
-sys.path.insert(0, "tools/lf-agent-bridge")
+sys.path.insert(0, ".")
 import lf_api
 
 FUNNEL = "fun_vGqQYxn4H2i_traYYkh4w"
@@ -43,8 +43,8 @@ popup_rest = (popup[:m.start()] + popup[m.end():]).strip()
 assert ".tu-overlay" in popup_css and "tu-overlay" in popup_rest
 assert "<style" not in popup_rest, "style left in the body part"
 
-tok = open("tools/lf-agent-bridge/.session_token").read().strip()
-acct = open("tools/lf-agent-bridge/.lf_account").read().strip()
+tok = open(".session_token").read().strip()
+acct = open(".lf_account").read().strip()
 h = lf_api.session_headers(acct)
 node = lf_api.get_funnel_steps(tok, FUNNEL, extra_headers=h)
 s = {x["uid"]: x for x in node["steps"]}[STEP]

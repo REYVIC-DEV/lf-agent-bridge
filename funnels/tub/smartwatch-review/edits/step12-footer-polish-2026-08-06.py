@@ -16,7 +16,7 @@
    verified after.
 """
 import json, sys
-sys.path.insert(0, "tools/lf-agent-bridge")
+sys.path.insert(0, ".")
 import lf_api
 
 FUNNEL = "fun_vGqQYxn4H2i_traYYkh4w"
@@ -24,8 +24,8 @@ STEP = "step_0hL9bV7NUmyESdgkwY4Ih"
 BLOCK = "5eeedf5b"
 OVERLAY = {"terms": "tu-terms", "priv": "tu-priv", "edit": "tu-edit", "aff": "tu-aff"}
 
-tok = open("tools/lf-agent-bridge/.session_token").read().strip()
-acct = open("tools/lf-agent-bridge/.lf_account").read().strip()
+tok = open(".session_token").read().strip()
+acct = open(".lf_account").read().strip()
 h = lf_api.session_headers(acct)
 node = lf_api.get_funnel_steps(tok, FUNNEL, extra_headers=h)
 s = {x["uid"]: x for x in node["steps"]}[STEP]

@@ -232,9 +232,9 @@ Biggest offenders if a wider pass is wanted: `hlthbandreviews` + its duplicate
 ```bash
 python3 - <<'EOF'
 import json, sys
-sys.path.insert(0, "tools/lf-agent-bridge"); import lf_api
-tok=open("tools/lf-agent-bridge/.session_token").read().strip()
-acct=open("tools/lf-agent-bridge/.lf_account").read().strip()
+sys.path.insert(0, "."); import lf_api
+tok=open(".session_token").read().strip()
+acct=open(".lf_account").read().strip()
 h=lf_api.session_headers(acct)
 s=json.load(open("funnels/channels/meta-uk/steps/0-step_CtC9RNhvNF2YytxGNYEMj.backup-2026-08-03.json"))
 lf_api.gql(tok, "mutation($id:ID!,$node:InputFunnel!){updateFunnel(id:$id,node:$node){id}}",

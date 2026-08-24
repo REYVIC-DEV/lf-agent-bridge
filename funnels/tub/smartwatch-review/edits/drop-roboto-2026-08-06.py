@@ -15,7 +15,7 @@ removed from that window makes the good outcome more likely.
 Same fix already applied to meta-uk, where the identical pattern was 9 wrappers.
 """
 import json, sys
-sys.path.insert(0, "tools/lf-agent-bridge")
+sys.path.insert(0, ".")
 import lf_api
 
 FUNNEL = "fun_vGqQYxn4H2i_traYYkh4w"
@@ -42,8 +42,8 @@ def convert(body):
     return hit
 
 
-tok = open("tools/lf-agent-bridge/.session_token").read().strip()
-acct = open("tools/lf-agent-bridge/.lf_account").read().strip()
+tok = open(".session_token").read().strip()
+acct = open(".lf_account").read().strip()
 h = lf_api.session_headers(acct)
 node = lf_api.get_funnel_steps(tok, FUNNEL, extra_headers=h)
 by_uid = {s["uid"]: s for s in node["steps"]}

@@ -3,7 +3,9 @@
 blocks. Content + exact styles measured from figwright. Real images exported from
 the design and hosted in LF. Writes to the from-scratch funnel test3-smartwatch.
 Mobile (node 5:979) is a later pass."""
-import json, uuid, lf_api
+import sys, os, json, uuid
+sys.path.insert(0, '.')
+import lf_api
 
 tok = open('.session_token').read().strip()
 ACCT = open('.lf_account').read().strip()
@@ -16,7 +18,7 @@ ids = json.load(open("/tmp/test3_ids.json"))
 FUNNEL, STEP = ids["funnel"], ids["step"]
 IMG = json.load(open("/tmp/test3_img_map.json"))
 # header/footer custom-HTML scripts copied verbatim from the live TUB page (fun_vGqQYxn4H2i.../pb/9)
-CUSTOM_HTML = json.load(open("test3_custom_html.json"))
+CUSTOM_HTML = json.load(open(os.path.join(os.path.dirname(__file__), "test3_custom_html.json")))
 # --- performance: preload the LCP hero (matches LF's responsive srcset/sizes so no double-download)
 #     + reserve its box inline so it doesn't shift after paint (kills the 0.151 CLS from the hero).
 _HERO = IMG["hero"]["src"]
@@ -30,10 +32,20 @@ _FONT_PRELOAD = "".join(
     '<link rel="preload" as="font" type="font/woff2" crossorigin '
     'href="/cf-fonts/s/inter/5.2.8/latin/%d/normal.woff2">\n' % w for w in (400, 800, 900)
 )
-# Metric-matched fallback: before Inter loads (or if it swaps in late under slow networks), text is
+# Real Inter faces. LF only emits these when a block's font is the PLAIN "Inter" token (a picked font);
+# once we author the stack "Inter, InterFallback, sans-serif" LF stops recognising it and drops the Inter
+# @font-face rules entirely -> the page would render forever in the fallback (Arial), never real Inter.
+# So we declare the Inter faces ourselves (font-display:swap), matching the live V3 page's weight set.
+_INTER_WEIGHTS = (400, 500, 600, 700, 800, 900)
+_INTER_FACE = "<style>" + "".join(
+    "@font-face{font-family:Inter;font-style:normal;font-weight:%d;font-display:swap;"
+    "src:url(/cf-fonts/s/inter/5.2.8/latin/%d/normal.woff2) format('woff2')}" % (w, w)
+    for w in _INTER_WEIGHTS
+) + "</style>\n"
+# Metric-matched fallback: before Inter loads (or while it swaps in under slow networks), text is
 # rendered with local Arial/Liberation Sans SIZED to match Inter's metrics (Next.js Inter/Arial overrides).
-# Text then wraps identically and line-boxes are the same height, so the swap causes ZERO reflow.
-# This is what actually kills the mobile CLS on Google's servers -- preload alone wasn't enough there.
+# Text then wraps identically and line-boxes are the same height, so the Inter swap causes ZERO reflow.
+# Inter faces (swap) + this fallback + the stack below = real Inter rendering AND ~0 CLS (matches V3).
 _FALLBACK_FACE = (
     "<style>@font-face{font-family:InterFallback;src:local('Arial'),local('Liberation Sans'),local('Helvetica Neue');"
     "ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;size-adjust:107.12%}</style>\n"
@@ -43,6 +55,7 @@ PERF = (
     'imagesrcset="%s" imagesizes="(min-width: 1280px) 50vw, 100vw">\n'
     '<style>img[title="hero"]{height:371px!important;width:100%%!important;object-fit:cover;aspect-ratio:auto}'
     '@media (max-width:767px){img[title="hero"]{height:210px!important}}</style>\n' % _SRCSET
+    + _INTER_FACE
     + _FALLBACK_FACE
     + _FONT_PRELOAD
 )

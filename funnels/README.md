@@ -46,15 +46,15 @@ Run from the **project root**:
 
 ```bash
 # structure: ids, slugs, step uids
-python3 tools/lf-agent-bridge/lf.py funnel <funnel_id> \
+python3 lf.py funnel <funnel_id> \
   > funnels/<ws>/<funnel>/funnel.live.json
 
 # copy, per step — read this before writing any `edit`
-python3 tools/lf-agent-bridge/lf.py texts <funnel_id> \
+python3 lf.py texts <funnel_id> \
   > funnels/<ws>/<funnel>/texts/current.json
 
 # a page body, for cloning or diffing layout
-python3 tools/lf-agent-bridge/lf.py capture <funnel_id> <step_uid> <step-slug> \
+python3 lf.py capture <funnel_id> <step_uid> <step-slug> \
   --out funnels/<ws>/<funnel>/steps/
 ```
 
@@ -71,7 +71,7 @@ page, and repeatable across variants:
 ```
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --session \
+python3 lf.py edit <funnel_id> --session \
   --file funnels/<ws>/<funnel>/edits/<label>.json
 ```
 
@@ -82,10 +82,10 @@ Order of operations that avoids surprises: `texts` → write the edit set →
 
 - **Everything here is committed**, including captured bodies — the diff of a
   page body across variants is the point. No tokens or secrets in this folder;
-  those stay in `tools/lf-agent-bridge/.env` (gitignored).
+  those stay in `.env` (gitignored).
 - **A funnel folder is never authoritative over LF.** If they disagree, re-pull.
   Note the pull date in `NOTES.md` when it matters.
 - **Duplicates inherit `published`.** New variant → `publish --off` immediately,
   and say so in `NOTES.md`.
-- `tools/lf-agent-bridge/templates/` is the old shared capture dir (gitignored).
+- `templates/` is the old shared capture dir (gitignored).
   Prefer `capture --out` into a workspace; keep templates/ for scratch.

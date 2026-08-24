@@ -53,7 +53,7 @@ import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(os.path.dirname(HERE))
+ROOT = os.path.dirname(HERE)   # pagescore/ -> repo root
 HISTORY_DIR = os.path.join(ROOT, "funnels", "_registry", "speed")
 FUNNELS_DIR = os.path.join(ROOT, "funnels")
 
@@ -75,7 +75,7 @@ def _chrome_path():
 
 def psi_key(explicit=None):
     """Resolve the PageSpeed API key: --psi-key, then $PAGESPEED_KEY, then
-    PAGESPEED_KEY in the bridge's .env (which is gitignored).
+    PAGESPEED_KEY in the repo-root .env (which is gitignored).
 
     The key is a secret — never print it, never write it into history files.
     Without one, PSI answers 429 in practice: the keyless quota is shared and
@@ -85,7 +85,7 @@ def psi_key(explicit=None):
         return explicit
     if os.environ.get("PAGESPEED_KEY"):
         return os.environ["PAGESPEED_KEY"]
-    env = os.path.join(HERE, ".env")
+    env = os.path.join(ROOT, ".env")   # secrets live at the repo root
     if os.path.exists(env):
         with open(env, encoding="utf-8") as fh:
             for line in fh:
@@ -318,7 +318,7 @@ def main():
                          "else local")
     ap.add_argument("--psi-key",
                     help="overrides $PAGESPEED_KEY and PAGESPEED_KEY in "
-                         "tools/lf-agent-bridge/.env")
+                         ".env")
     ap.add_argument("--form-factor", default="mobile",
                     choices=["mobile", "desktop", "both"])
     ap.add_argument("--runs", type=int, default=None,

@@ -5,22 +5,22 @@ description: Create, edit, and manage Lightfunnels funnels agentically via the G
 
 # Lightfunnels agent bridge
 
-Drive Lightfunnels with `tools/lf-agent-bridge/lf.py`. Every command prints JSON.
-Full API reference: `tools/lf-agent-bridge/docs/LIGHTFUNNELS_API.md` (§ "Field-Verified Addendum"
+Drive Lightfunnels with `lf.py`. Every command prints JSON.
+Full API reference: `docs/LIGHTFUNNELS_API.md` (§ "Field-Verified Addendum"
 documents behavior discovered by live testing that the official docs omit).
 
 **Building or cloning page layouts?** Read
 `references/block-schema.md` FIRST. It is the verified Lightfunnels block
 vocabulary (node types, style props, the `lfDisplay:flex` layout model, image
 hosting) plus a design→LF mapping table. Author page bodies from it — never
-guess builder props. When translating a Figma design, pull structure via the
-Figma MCP (auto-layout maps directly to LF's flex model), then map to LF blocks
-using that reference.
+guess builder props. When translating a Figma design, pull structure via
+**figwright** (auto-layout maps directly to LF's flex model), then map to LF
+blocks using that reference.
 
 **Inspecting a design in full detail?** Read
 [references/figma-inspect.md](references/figma-inspect.md) — the measure-don't-guess
 method (walk nodes for exact colors/fonts/geometry/auto-layout, deep-read the specific
-element, export assets) plus the three ways to read a Figma file and their limits.
+element, export assets) and how to read the file through figwright.
 
 **Doing mobile responsiveness from a separate mobile Figma frame?** The mobile frame is
 tall — parse the whole node in a subagent, then match it (don't eyeball). Mobile is NOT
@@ -40,19 +40,21 @@ Browsing 2/2). Also covers the hero LCP preload/`fetchpriority`, lazy media, `ar
 and — critically — **how to measure right** (PSI API / real Lighthouse / a delayed-font
 harness; a naive Playwright observer under-reports).
 
-**Figma access is seat-limited — know the options.** All three official-ish paths:
-- **figwright MCP** (`@figwright/mcp` + its Figma plugin) — reads the file you have
-  **open** via the Plugin API, **no seat cap**, effectively unlimited. **Preferred for
-  heavy/iterative inspection.** `.mcp.json` is already configured in this project; the
-  human installs the plugin (repo's latest release → Figma → Plugins → Development →
-  Import plugin from manifest…) and runs it with the file open (127.0.0.1:3055).
-- **Figma REST API** (`tools/lf-agent-bridge/figma_rest.py`, `FIGMA_TOKEN` in `.env`, scope *File content =
-  Read-only*): `get_nodes(key, ids)` = geometry/auto-layout/fills/typography;
-  `export_images(key, ids, scale=2)` = render URLs for any frame. Then
-  `lf_api.upload_local_image(session_token, path, HH)` hosts each in the LF library.
-  **But a View seat gets only ~6/month on Tier-1 (file/nodes/images)** — 429 `Retry-After`
-  seen at ~4.6 days. Batch ids into one call; spend sparingly.
-- **Figma MCP** (`get_design_context`) — rich but its per-seat tool-call cap hits fast.
+**Figma access: figwright, and nothing else.** This project reads Figma through the
+**figwright MCP** (`@figwright/mcp` + its Figma plugin) — it reads the file the human
+has **open** via the Plugin API, has **no seat cap**, and is effectively unlimited, so
+there is no budget to ration. `.mcp.json` is already configured; the human installs the
+plugin (repo's latest release → Figma → Plugins → Development → Import plugin from
+manifest…) and runs it with the file open (127.0.0.1:3055). Preflight with
+`mcp__figwright__ping`.
+
+The **Figma MCP connector** (`mcp__claude_ai_Figma__*`) and the **Figma REST API**
+(`FIGMA_TOKEN`, `pagescore/figma_rest.py`) are **retired here — do not use either**.
+Both are per-seat rate-limited: a View seat gets ~6 REST calls a month on Tier-1
+endpoints (429 `Retry-After` observed at ~4.6 days) and the connector's tool-call cap
+hits within a session, so a build would stall halfway through with no way to finish.
+If figwright is not responding, the fix is for the human to open the file with the
+plugin running — **not** to switch to another Figma path. Say what is needed and stop.
 
 fileKey + nodeId come from the design URL (`?node-id=1640-2196` → `1640:2196`).
 
@@ -70,11 +72,17 @@ render. Publishing purges the cache.
 
 ## Layout
 
-The bridge lives in `tools/lf-agent-bridge/`; only the Claude/agent files
-(`.claude/`, `.mcp.json`, `AGENT.md`, `README.md`) sit at the project root.
+See [`docs/ARCHITECTURE.md`](../../../docs/ARCHITECTURE.md) for the full map. In short:
+the **bridge is the repo root** (`lf.py`, `lf_api.py`, `lf_session.py`,
+`get_token.py`, `server.py`, `legacy/`, `templates/`), `pagescore/` is the
+performance/QA loop, `content/` is extraction. **Every script is written to be run
+from the repo root** — `python3 pagescore/build_test3.py`, not `cd pagescore && ...`.
+Secrets and caches resolve against the working directory, so running from elsewhere
+silently looks in the wrong place.
+
 Funnel working copies live in `funnels/<workspace>/<funnel-slug>/` — see
-`funnels/README.md` for the convention, and **use it**: when you work on a
-funnel, that folder is where captured bodies, copy snapshots and edit sets go.
+`funnels/README.md`, and **use it**: when you work on a funnel, that folder is where
+captured bodies, copy snapshots and edit sets go.
 
 ```
 funnels/<workspace>/<funnel-slug>/
@@ -82,22 +90,16 @@ funnels/<workspace>/<funnel-slug>/
 ├─ NOTES.md         intent + dated log
 ├─ steps/*.json     `capture --out funnels/<ws>/<f>/steps/`
 ├─ texts/*.json     `texts` output, saved before editing
-└─ edits/*.json     `{"old": "new"}` sets for `edit --file`
+└─ edits/*.json     `{"old": "new"}` sets for `edit --file`, or an edit script
 ```
 
 Start one by copying `funnels/_template/funnel/` (and
-`funnels/_template/workspace.json` for a new workspace). Everything in
-`funnels/` is committed — no tokens ever go there.
+`funnels/_template/workspace.json` for a new workspace). Everything in `funnels/` is
+committed — no tokens ever go there.
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py <command> ...   # run from the PROJECT ROOT
+python3 lf.py <command> ...        # from the repo root
 ```
-
-`lf.py`, `lf_session.py` and `get_token.py` resolve `.env`, `.session_token`,
-`.lf_state.json` and `.lf_account` next to themselves — i.e. inside
-`tools/lf-agent-bridge/` — so they work from any cwd. The ad-hoc scripts
-(`build_*.py`, `figma_rest.py`) read those files from the **current directory**,
-so `cd tools/lf-agent-bridge` before running one of those.
 
 ## TWO MODES — read first
 
@@ -117,9 +119,9 @@ This is how AI page-studio apps (e.g. Pixelier) work: you use the login session.
 Session tokens expire, so the bridge keeps one alive without re-copying:
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py login     # ONE-TIME: opens a real browser, you sign in (2FA ok).
+python3 lf.py login     # ONE-TIME: opens a real browser, you sign in (2FA ok).
                         # Saves the session to .lf_state.json (no password stored).
-python3 tools/lf-agent-bridge/lf.py refresh   # headless: reuses that session to write a fresh token.
+python3 lf.py refresh   # headless: reuses that session to write a fresh token.
 ```
 
 After `login`, `edit --session` **auto-refreshes** the token if it expired
@@ -150,7 +152,7 @@ Token resolution: `--token` flag → `LF_ACCESS_TOKEN` env → `.env` file.
 If no token exists, the human runs the OAuth flow once:
 
 ```bash
-python3 tools/lf-agent-bridge/get_token.py --client-id <ID> --client-secret <SECRET>   # from partners.lightfunnels.com → app → Configurations
+python3 get_token.py --client-id <ID> --client-secret <SECRET>   # from partners.lightfunnels.com → app → Configurations
 ```
 
 Saves a **permanent** token to `.env`. Never print, log, or commit it.
@@ -160,8 +162,8 @@ Saves a **permanent** token to `.env`. Never print, log, or commit it.
 ### 1. Inspect
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py funnels                    # list funnels (id, name, slug, published)
-python3 tools/lf-agent-bridge/lf.py funnel <funnel_id>         # one funnel + steps (uid, slug, title, type)
+python3 lf.py funnels                    # list funnels (id, name, slug, published)
+python3 lf.py funnel <funnel_id>         # one funnel + steps (uid, slug, title, type)
 ```
 
 `<funnel_id>` is the opaque id, e.g. `fun_UK-PeZ5kAFhnpBkWvo9jo`.
@@ -171,7 +173,7 @@ python3 tools/lf-agent-bridge/lf.py funnel <funnel_id>         # one funnel + st
 **(a) Duplicate a master** — fastest when a good template exists:
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py duplicate <master_funnel_id> --name "Sleep V3" --slug sleep-v3
+python3 lf.py duplicate <master_funnel_id> --name "Sleep V3" --slug sleep-v3
 ```
 
 Clones every page. Duplicates inherit `published` from the source — run
@@ -188,7 +190,7 @@ building a fresh page (e.g. from a Figma design), no master needed:
 
 Full mechanics + copy-paste example: `references/block-schema.md` §
 "Brand-new funnel from scratch". (The bare `create` command still makes an empty
-shell; prefer the recipe above or `build_*.py`-style scripts for real pages.)
+shell; prefer the recipe above or `pagescore/build_*.py`-style scripts for real pages.)
 
 ### 3. Edit page copy (the agentic-editing loop)
 
@@ -196,22 +198,22 @@ Save the `texts` output into the funnel's workspace first — it's the before-st
 you validate edits against, and the diff after editing:
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py texts <funnel_id> \
+python3 lf.py texts <funnel_id> \
   > funnels/<ws>/<funnel>/texts/current.json
 ```
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py texts <funnel_id>                        # all visible copy, per step
+python3 lf.py texts <funnel_id>                        # all visible copy, per step
 
 # REAL edit (recommended) — persists to the page, shows in the LF editor:
-python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --session --account-id <ACCT> \
+python3 lf.py edit <funnel_id> --session --account-id <ACCT> \
   --replace "Customer Reviews==Verified Buyer Reviews" \
   --replace "Get My Plan==Start Tonight"
 
 # Render-time-only fallback (app token, no session needed):
-python3 tools/lf-agent-bridge/lf.py edit <funnel_id> --replace "Old==New"
-python3 tools/lf-agent-bridge/lf.py patch <funnel_id>                        # show render-time patch
-python3 tools/lf-agent-bridge/lf.py patch-clear <funnel_id>                  # remove render-time patch
+python3 lf.py edit <funnel_id> --replace "Old==New"
+python3 lf.py patch <funnel_id>                        # show render-time patch
+python3 lf.py patch-clear <funnel_id>                  # remove render-time patch
 ```
 
 - `--replace` is `"exact current text==new text"`, repeatable; bulk via
@@ -231,19 +233,19 @@ python3 tools/lf-agent-bridge/lf.py patch-clear <funnel_id>                  # r
 ### 4. Publish / manage
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py publish <funnel_id>          # go live  (confirm with user first)
-python3 tools/lf-agent-bridge/lf.py publish <funnel_id> --off
-python3 tools/lf-agent-bridge/lf.py rename <funnel_id> --name "New name" --slug new-slug
-python3 tools/lf-agent-bridge/lf.py delete <funnel_id> --yes     # IRREVERSIBLE — explicit user confirmation required
+python3 lf.py publish <funnel_id>          # go live  (confirm with user first)
+python3 lf.py publish <funnel_id> --off
+python3 lf.py rename <funnel_id> --name "New name" --slug new-slug
+python3 lf.py delete <funnel_id> --yes     # IRREVERSIBLE — explicit user confirmation required
 ```
 
 ### Escape hatch
 
 Anything else (products, orders, discounts, …) via raw GraphQL — look up the
-shape in `tools/lf-agent-bridge/docs/LIGHTFUNNELS_API.md` first:
+shape in `docs/LIGHTFUNNELS_API.md` first:
 
 ```bash
-python3 tools/lf-agent-bridge/lf.py gql --query 'query { products(first: 5, query: "") { edges { node { id title } } } }'
+python3 lf.py gql --query 'query { products(first: 5, query: "") { edges { node { id title } } } }'
 ```
 
 Undocumented-but-working: `duplicateFunnel(funnel_id)`, `importFunnel(code)`.
@@ -262,4 +264,23 @@ GraphQL `__type` introspection works; `__schema` is blocked.
    The session token = being logged in as the user; treat it as sensitive.
 5. **Test destructive/body edits on a duplicate first**, not on a live funnel.
 6. On GraphQL errors read the `key` field (e.g. `errors_dup_slug` = slug taken).
-   Common keys: `tools/lf-agent-bridge/docs/LIGHTFUNNELS_API.md` § Errors.
+   Common keys: `docs/LIGHTFUNNELS_API.md` § Errors.
+7. **`edit` is FUNNEL-wide — pass `--step <uid>` on a multi-market funnel.** One
+   funnel here holds the UK/DE/AU/CA/TH advertorials as sibling steps, so an
+   unscoped domain or copy replace rewrites the wrong country's links.
+8. **`body` comes back from `get_funnel_steps` as a parsed object, not a string.**
+   Echo it back in the same shape; `json.dumps`-ing it first makes `updateFunnel`
+   fail with a bare `"Oops! Something went wrong"`.
+9. **Never assert a step COUNT.** These funnels are shared and colleagues add
+   steps mid-session; a hardcoded count fails on a healthy funnel. Assert that the
+   steps you intend to touch still exist — `updateFunnel(steps:[...])` is a partial
+   update, so unlisted siblings (including new ones) survive by omission.
+10. **Never bare-string-replace a domain.** Classify each occurrence by role first:
+   `hlthtrack.com` as a URL **host** is a store link, but in
+   `trustpilot.com/review/hlthtrack.com` it is the review-page **slug**. Match the
+   host structurally — `(https?://(?:www\.)?)host\.com(?![a-zA-Z0-9-])`.
+11. **`header_scripts` is FUNNEL-level; `settings.custom_html` is per step.** Put
+   step-specific CSS/JS in the step, or it ships to every advertorial in the funnel.
+12. **PSI cannot see custom code on this platform** — see
+   `references/performance.md` § Traps. Validate custom-HTML changes in a real
+   browser, not by the score.

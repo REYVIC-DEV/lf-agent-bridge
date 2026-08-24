@@ -1,4 +1,7 @@
-import json, os, lf_api
+import sys, json, os
+sys.path.insert(0, '.')
+import lf_api
+CACHE = os.path.join(os.path.dirname(__file__), ".cache")
 tok=open('.session_token').read().strip()
 ACCT=open('.lf_account').read().strip()
 HH={"account-id":ACCT,"version":"1","Origin":"https://app.lightfunnels.com","Referer":"https://app.lightfunnels.com/"}
@@ -13,9 +16,9 @@ for key,fn,ct in jobs:
     m[key]=rec
     print("hosted",key,"->",rec["src"][:60])
 # reuse cached logo + trustpilot images
-logo=json.load(open(".cache/hlth_img_map.json"))["logo"]
-t2=json.load(open(".cache/test2_img_map.json"))
+logo=json.load(open(os.path.join(CACHE, "hlth_img_map.json")))["logo"]
+t2=json.load(open(os.path.join(CACHE, "test2_img_map.json")))
 m["logo"]=logo; m["tp_logo"]=t2["tp_logo"]; m["tp_small"]=t2["tp_small"]
 json.dump(m, open("/tmp/test3_img_map.json","w"))
-json.dump(m, open(".cache/test3_img_map.json","w"))
+json.dump(m, open(os.path.join(CACHE, "test3_img_map.json"),"w"))
 print("saved test3_img_map.json keys:", list(m.keys()))

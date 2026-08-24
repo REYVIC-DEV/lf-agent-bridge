@@ -42,7 +42,7 @@ import urllib.request
 import lf_api
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(os.path.dirname(HERE))          # project root
+ROOT = os.path.dirname(HERE)                          # pagescore/ -> repo root
 DEFAULT_OUT = os.path.join(ROOT, "funnels", "_registry")
 
 try:
@@ -93,8 +93,8 @@ def fingerprint_bytes(data):
 
 # ------------------------------------------------------------------ build
 def _session():
-    tok = open(os.path.join(HERE, ".session_token")).read().strip()
-    acct = open(os.path.join(HERE, ".lf_account")).read().strip()
+    tok = open(os.path.join(ROOT, ".session_token")).read().strip()
+    acct = open(os.path.join(ROOT, ".lf_account")).read().strip()
     return tok, acct, lf_api.session_headers(acct)
 
 

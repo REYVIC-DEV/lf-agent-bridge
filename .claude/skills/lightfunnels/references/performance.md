@@ -2,7 +2,7 @@
 
 How to make a Lightfunnels page score well on PageSpeed Insights (PSI) / Lighthouse,
 including the new **Agentic Browsing** category. All numbers below are from the
-techunboxed smartwatch advertorial (`tools/lf-agent-bridge/build_test3.py`), measured against Google's real
+techunboxed smartwatch advertorial (`pagescore/build_test3.py`), measured against Google's real
 PSI servers. Net result of this playbook: **mobile Performance 89 → 98, CLS 0.151 → 0,
 Agentic Browsing 1/2 → 2/2**, desktop 100.
 
@@ -61,7 +61,7 @@ reflow**.
      ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;size-adjust:107.12%}</style>
    ```
    Then author every text/title block with the stack **`Inter, InterFallback, sans-serif`**
-   instead of `Inter` (in `tools/lf-agent-bridge/build_test3.py` this is the `FONT` constant used by
+   instead of `Inter` (in `pagescore/build_test3.py` this is the `FONT` constant used by
    `title()`/`text()` and the score helper). `local('Arial')` resolves to Liberation
    Sans on PSI's Linux env (metric-compatible), so the overrides hold there too.
 
@@ -135,3 +135,76 @@ input and excludes shifts; unthrottled loads batch everything before paint). Use
   + font request priority (`VeryHigh` = preload honored) confirm Google saw your update.
 - Keep the **URL/slug stable** once shared with teammates — these fixes never require a
   slug change.
+
+## ⚠ Traps found the hard way (verified live 2026-08-06, techunboxed smartwatch-review)
+
+**LF serves a STRIPPED page to the `Chrome-Lighthouse` UA — so a PSI score is not
+your page.** Same URL, two user agents:
+
+| marker | real Chrome | Chrome-Lighthouse |
+|---|---|---|
+| HTML size | 900 K | **282 K** |
+| our `@font-face` block | 6 | **0** |
+| GTM / PostHog / Lenis | present | **0** |
+| custom CSS (`custom_html.header`) | present | **0** |
+
+Not CDN staleness — no `cf-cache-status`/`age` headers and stable across repeated
+fetches. Consequence: **anything you put in `header_scripts` or
+`settings.custom_html` is invisible to PSI**, so a change there cannot be validated
+by the score, in either direction. Treat **CrUX field data as the truth** and use
+PSI only for the LF-generated part of the page. (Contradicts "Ground truth — PSI
+API" above; both are true — PSI is the right harness for what it can see.)
+
+**Cloudflare Fonts also varies by UA.** It rewrites Google Fonts to same-origin
+`/cf-fonts/…` for real browsers but **skips the rewrite for `Chrome-Lighthouse`**,
+and strips `preconnect`/`preload` tags for it. Two consequences: a font
+`preconnect` you add will not appear in the page PSI measures, and PSI sees two
+extra origins (googleapis → gstatic) that real users never pay for.
+
+**The `Inter, InterFallback, sans-serif` stack silently breaks real Inter.** LF
+derives its Google Fonts request from block `fontFamily` values, so the stack makes
+it ask Google for a family *literally named* `Inter, InterFallback, sans-serif`. The
+returned faces carry that whole string as their family name, which the stack's
+`Inter` token never matches. Symptom: the page downloads Inter woff2 it **cannot
+use** and renders everything in the Arial-metric fallback — weight 800 gets
+synthesised, which reads as "fonts look thin".
+
+Detect it with a canvas measurement, not `document.fonts` (blind to cross-origin
+stylesheets) and not `document.fonts.check()` (returns `true` for undeclared
+families):
+
+```js
+const c = document.createElement('canvas').getContext('2d');
+const w = f => { c.font = f; return c.measureText('UP TO 50% OFF').width; };
+w('800 24.7px Inter') === w('800 24.7px NoSuchFontZZZ')   // true => Inter is NOT loaded
+```
+
+Fix: declare the faces yourself in `settings.custom_html.header`, against the
+same-origin URLs LF/CF already emit so the browser dedupes:
+
+```css
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;
+  src:url('/cf-fonts/s/inter/5.2.8/latin/700/normal.woff2') format('woff2')}
+```
+
+**Never put a `<style>` inside a block.** A stylesheet inserted mid-body
+invalidates and recomputes styles for the whole document parsed so far. Four of
+them on a 1,393-element page cost **2,703 ms of `styleLayout`** and 430 ms TBT
+(PSI 81). Moving the same CSS to `settings.custom_html.header` — which renders in
+`<head>`, verified — took it to ~190 ms and PSI 92. Note `overflow:hidden` on a
+card is not a substitute fix if anything (a badge) is meant to overhang it.
+
+**The asset library cannot host webfonts.** `upload_local_image` accepts a `.woff2`
+and returns it byte-intact, but `assets.lightfunnels.com` sends **no
+`Access-Control-Allow-Origin`**, and fonts are always fetched in CORS mode — so it
+is blocked on a custom domain. MP4 uploads *do* work, though served as
+`content-type: image/mp4` (Chromium sniffs the container; WebKit is stricter, so
+keep a correctly-typed `<source>` as a fallback).
+
+**Style props that silently do nothing:** `zIndex` (not supported — computes to
+`auto`); `line-height` on an inline element (make the span `display:inline-block`);
+`<u>` (reset by LF's CSS — use an inline `style="text-decoration:underline"`).
+
+**`objectFit:contain` letterboxes a mismatched ratio.** A 1000×318 logo (3.14) in a
+70×17 box (4.12) fits by height to ~53px and leaves ~17px of dead space that reads
+as a spacing bug. Check the asset ratio against the box before adjusting gaps.

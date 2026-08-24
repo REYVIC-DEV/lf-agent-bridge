@@ -346,7 +346,7 @@ def main():
     p.add_argument("funnel_id"); p.add_argument("step_uid"); p.add_argument("name")
     p.add_argument("--out", help="target dir (or explicit .json path) — e.g. "
                                  "funnels/<workspace>/<funnel>/steps/. "
-                                 "Default: tools/lf-agent-bridge/templates/")
+                                 "Default: templates/")
 
     p = sub.add_parser("publish");  p.set_defaults(fn=cmd_publish)
     p.add_argument("funnel_id"); p.add_argument("--off", action="store_true")

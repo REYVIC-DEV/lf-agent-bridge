@@ -26,7 +26,7 @@ any weight this script misses silently render in Arial — the regression caught
 step 11 earlier.
 """
 import json, sys
-sys.path.insert(0, "tools/lf-agent-bridge")
+sys.path.insert(0, ".")
 import lf_api
 
 FUNNEL = "fun_vGqQYxn4H2i_traYYkh4w"
@@ -55,8 +55,8 @@ def convert(body):
     return hits
 
 
-tok = open("tools/lf-agent-bridge/.session_token").read().strip()
-acct = open("tools/lf-agent-bridge/.lf_account").read().strip()
+tok = open(".session_token").read().strip()
+acct = open(".lf_account").read().strip()
 h = lf_api.session_headers(acct)
 only = sys.argv[1] if len(sys.argv) > 1 else None
 

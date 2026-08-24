@@ -1,25 +1,30 @@
+#!/usr/bin/env python3
 """
-figma_rest.py - Read Figma designs via the official REST API (no MCP, stdlib only).
+RETIRED -- do not use. Nothing in this repo imports it; it is kept only as a
+record of how the REST path worked.
 
-Why this exists: the Figma *MCP* server caps tool calls per seat (a "View seat"
-on Professional hits a hard limit fast). The Figma REST API has its own, far more
-generous limits and is completely independent of that cap. With one personal
-access token (scope: File content -> Read-only) you can read the full node tree
-(geometry, auto-layout, fills/colors, typography, components) AND export any
-frame to PNG/SVG. That is everything needed to rebuild a design as LF blocks.
+This project reads Figma through the figwright MCP (`mcp__figwright__*`), which
+talks to the Figma Plugin API locally and has no seat cap. The REST API here is
+per-seat rate limited: a View/Collab seat gets roughly SIX Tier-1 calls a MONTH
+(GET file / nodes / images), and a 429 has been observed with Retry-After of
+~4.6 days. One accidental call can block design work for the rest of the week.
 
-Token: create at Figma -> Settings -> Security -> Personal access tokens
-(File content = Read-only). Store as FIGMA_TOKEN in .env (gitignored). Never log it.
+If figwright will not connect, the fix is for the human to open the file in
+Figma with the Figwright plugin running -- not to fall back to this module.
 
-Endpoints used:
-  GET /v1/files/:key/nodes?ids=A,B   -> node JSON (style/geometry/text/layout)
-  GET /v1/images/:key?ids=A,B&format=png&scale=2  -> {id: temporary render URL}
-  GET /v1/files/:key/nodes           -> full subtree
-
-fileKey + nodeId come from a Figma URL:
-  https://www.figma.com/design/:fileKey/:name?node-id=1640-2196
-  -> fileKey, nodeId "1640:2196" (dash becomes colon).
+See .claude/skills/lightfunnels/references/figma-inspect.md.
 """
+import os
+import sys
+
+if os.environ.get("FIGMA_REST_I_KNOW_ITS_RETIRED") != "1":
+    sys.stderr.write(
+        "\nfigma_rest.py is RETIRED in this project -- use the figwright MCP.\n"
+        "It burns a per-month API quota that takes ~4.6 days to recover.\n"
+        "If you genuinely need it, the human sets "
+        "FIGMA_REST_I_KNOW_ITS_RETIRED=1.\n\n")
+    raise SystemExit(2)
+
 import json, os, urllib.request, urllib.parse, urllib.error
 
 API = "https://api.figma.com/v1"

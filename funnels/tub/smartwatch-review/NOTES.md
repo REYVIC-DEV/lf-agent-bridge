@@ -436,7 +436,7 @@ fail with a bare `"Oops! Something went wrong"`.
 
 ## Tooling (moved here from CHANGELOG.md, which now covers step 12 only)
 
-New in `tools/lf-agent-bridge/`:
+New in ``:
 
 - **`image_prep.py`** — resize + compress before upload. Codec by content type:
   `--mode photo` (lossy WebP) / `--mode graphic` (lossless). Reports measured
