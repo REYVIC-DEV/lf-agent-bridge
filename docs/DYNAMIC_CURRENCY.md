@@ -91,7 +91,7 @@ carrying an editorial sum *and* our price. Match with a regex, then rewrite
 
 | trap | what happens |
 |---|---|
-| `json.dumps` escapes `£` to `£` (`ensure_ascii=True`) | a currency regex over the dumped body finds **nothing at all** |
+| `json.dumps` escapes `£` to `\u00a3` (`ensure_ascii=True`) | a currency regex over the dumped body finds **nothing at all** |
 | `\d{1,3}%` matches `width:50%` | tags a star-rating **inline style**, not text — match text only |
 | `£[\d,]+` swallows a trailing comma | `"£79, no subscription"` → the comma lands inside the replaced span and vanishes on first write |
 
