@@ -1,0 +1,16 @@
+# The bridge itself (lf.py, lf_api.py, get_token.py) is deliberately dependency-free —
+# standard library only. These two are needed by the JUDGES, which drive a real browser
+# and compare real pixels:
+#
+#   playwright  — pagescore/qa_runner.py, pagescore/design_diff.py
+#                 (viewports, console errors, computed styles, element screenshots)
+#   Pillow      — pagescore/design_diff.py, pagescore/qa_runner.py
+#                 (image dimensions, and the crop comparison against Figma node renders)
+#
+# Both are imported lazily inside the functions that use them, so `lf.py` keeps working
+# with neither installed. Verified on Python 3.9.6.
+#
+#   pip3 install -r requirements.txt
+#   python3 -m playwright install chromium      # the browser itself, ~130 MB
+playwright>=1.40
+Pillow>=10.0

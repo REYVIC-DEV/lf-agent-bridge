@@ -174,7 +174,7 @@ def check_link(href):
         return {"status": "000", "error": str(e)[:120]}
 
 
-def phase2_links(dom_links, raw_html):
+def phase2_links(dom_links, raw_html, base_url=None):
     """dom_links: [{href, text, id}] harvested from the RENDERED page.
 
     program.md's rule set, applied verbatim: 2xx/redirect-to-2xx passes; 4xx/5xx
@@ -190,6 +190,11 @@ def phase2_links(dom_links, raw_html):
         if not href or href == "#" or href.lower().startswith("javascript:"):
             dead_anchor.append({"label": label, "href": href})
             continue
+        # Resolve relative hrefs against the page. Without this a normal "/path"
+        # link raises "unknown url type" and takes the whole run down.
+        if base_url and not href.startswith("#") and "://" not in href \
+                and not href.startswith(("mailto:", "tel:", "javascript:")):
+            href = urllib.parse.urljoin(base_url, href)
         if href.startswith("#"):
             # An in-page anchor is only real if the target exists (our legal
             # modals are #tu-terms style overlays that DO exist in the DOM).
@@ -203,7 +208,10 @@ def phase2_links(dom_links, raw_html):
         seen.setdefault(href, []).append(label)
 
     for href, labels in seen.items():
-        r = check_link(href)
+        try:
+            r = check_link(href)
+        except Exception as e:
+            r = {"status": "000", "error": str(e)[:120]}
         host = urllib.parse.urlparse(href).netloc.lower()
         blocked = any(b in host for b in BOT_BLOCKED)
         row = {"href": href, "labels": sorted(set(labels)), **r, "bot_blocked": blocked}
@@ -395,6 +403,10 @@ HARVEST_JS = r"""
     .filter(e => e.offsetParent !== null && !named(e))
     .map(e => e.outerHTML.slice(0, 120));
   const imgs = [...document.querySelectorAll('img')];
+  // Rendered but blank: in the layout, finished loading, zero intrinsic size.
+  const broken = imgs.filter(i => i.offsetParent !== null && i.complete && i.naturalWidth === 0)
+    .map(i => ({ src: (i.currentSrc || i.src || i.getAttribute('src') || '').split('?')[0],
+                 alt: i.getAttribute('alt') || '' }));
   // Identify each unlabelled image well enough to fix it in the builder:
   // LF's p.title lands on the title attribute and is the stable handle.
   const noalt = imgs.filter(i => i.offsetParent !== null
@@ -425,6 +437,7 @@ HARVEST_JS = r"""
     viewport_meta: vp,
     zoom_blocked: /maximum-scale\s*=\s*1|user-scalable\s*=\s*(no|0)/.test(vp),
     unnamed_interactive: unnamed, images_total: imgs.length, images_no_alt: noalt,
+    images_broken: broken,
     weight_bytes: res + nav,
     text: document.body.innerText
   };
@@ -490,11 +503,14 @@ def browser_pass(url, out_dir, viewports=None, shots=True):
                 page.goto(url, wait_until="domcontentloaded", timeout=90_000)
             page.wait_for_timeout(2500)
             # Scroll end to end -- lazy content and its errors only appear then.
+            # Dwell at each step: a fast scroll outruns lazy loading, so the shot comes
+            # back with blank images and the report claims a defect the page does not
+            # have. 250ms per step is enough for the request to finish.
             page.evaluate("() => new Promise(r => {let y=0;const t=setInterval(()=>{"
-                          "window.scrollBy(0,900);y+=900;"
+                          "window.scrollTo(0,y);y+=700;"
                           "if(y>document.body.scrollHeight){clearInterval(t);"
-                          "window.scrollTo(0,0);r();}},60);})")
-            page.wait_for_timeout(1200)
+                          "window.scrollTo(0,0);r();}},250);})")
+            page.wait_for_timeout(3000)
             row = page.evaluate(OVERFLOW_JS)
             row["width"] = w
             if shots:
@@ -551,7 +567,7 @@ def browser_pass(url, out_dir, viewports=None, shots=True):
 # what keeps "failed requests" a signal instead of 19 lines of noise every run.
 BEACON_HOSTS = ("analytics.google.com", "google-analytics.com", "doubleclick.net",
                 "google.com/ccm", "googletagmanager.com", "facebook.com/tr",
-                "aimerce.ai", "/lfevents", "connect.facebook.net", "tiktok.com",
+                "aimerce.ai", "/lfevents", "/api/collect", "connect.facebook.net", "tiktok.com",
                 "bing.com", "clarity.ms", "snap.com", "pinterest.com")
 
 
@@ -563,6 +579,9 @@ def is_beacon(rec):
 
 def a11y_block(h):
     issues, flags = [], []
+    if h.get("images_broken"):
+        issues.append(f"{len(h['images_broken'])} image(s) render blank "
+                      f"(loaded, zero intrinsic size)")
     if h.get("unnamed_interactive"):
         issues.append(f"{len(h['unnamed_interactive'])} interactive element(s) with no accessible name")
     if h.get("images_no_alt"):
@@ -574,6 +593,7 @@ def a11y_block(h):
     return {"lang": h.get("lang"), "viewport_meta": h.get("viewport_meta"),
             "unnamed_interactive": h.get("unnamed_interactive", []),
             "images_no_alt": h.get("images_no_alt", []),
+            "images_broken": h.get("images_broken", []),
             "images_total": h.get("images_total"),
             "verdict": "FAIL" if issues else ("FLAG" if flags else "PASS"),
             "note": "; ".join(issues + flags) or "named controls, alt text present, zoom allowed"}
@@ -603,7 +623,7 @@ def qa_page(url, run_dir, args):
     print(f"  phase 6  {p6['verdict']}  {p6['note']}")
 
     html = raw_html(final)
-    p2 = phase2_links(harvest.get("links", []), html)
+    p2 = phase2_links(harvest.get("links", []), html, base_url=final)
     print(f"  phase 2  {p2['verdict']}  {p2['note']}")
 
     p3 = phase3_meta(harvest, html)

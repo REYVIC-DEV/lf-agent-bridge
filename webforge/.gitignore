@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.vercel/
+out/
+runs/
+*.tsbuildinfo
+.env*
+
+# If you clone your site in here instead of alongside the repo, this keeps it from
+# being swallowed as an embedded git repo. Sibling directory is still preferred.
+site/
+sites/
