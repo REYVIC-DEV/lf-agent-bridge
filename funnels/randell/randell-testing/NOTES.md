@@ -4,7 +4,7 @@
 |---|---|---|---|
 | 0 | `step_0J0wlCl2Z6O6Hfg1S-wkY` | `bh-advertorial-v1` | entry page (`starting_step_id`) — **not touched** |
 | 1 | `step_SmIVoc258ZchgIHKzFlo-` | `bh-advertorial-v1-dyn` | copy of step 0 + dynamic currency |
-| 2 | `step_JM0a30ybnkm3hpOE7-lSW` | `techunboxed-uk-v4` | copy of the **live** advertorial entry (`fun_vGqQYxn4H2i_traYYkh4w` `/pb/3`) + dynamic currency, both feeds |
+| ~~2~~ | ~~`step_JM0a30ybnkm3hpOE7-lSW`~~ | ~~`techunboxed-uk-v4`~~ | **moved out 2026-08-28** to the live funnel as `dynamic-currency` (`step_o3hE-N_cIOLHMOhl9bnml`). Body backed up at `steps/02-techunboxed-uk-v4.tagged.json` |
 
 Serves on **both** `www.techunboxed.co` and `99commerce.myecomsite.net`.
 This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide's
@@ -163,6 +163,47 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
 
   Installs are now idempotent by marker, so re-running swaps the script instead of
   stacking a second copy.
+
+- `2026-08-28` — **`techunboxed-uk-v4` moved out of this funnel** into the live
+  advertorial `fun_vGqQYxn4H2i_traYYkh4w` as **`dynamic-currency`**
+  (`step_o3hE-N_cIOLHMOhl9bnml`), to be run as the dynamic-currency test.
+  URL: `https://www.techunboxed.co/smartwatch-review/dynamic-currency`
+
+  **Workflow label vs page title — two different fields**, and the names invite
+  the wrong one. `step.title` is the label in the funnel workflow; the page's
+  `<title>` is `settings.seo.title`. Set `step.title` to `DYNAMIC CURRENCY (test)`
+  (matching the sibling convention, e.g. `TECHUNBOXED-UK-V3 (rebuild)`) and left
+  `settings.seo.title` as `RANKED: The best health trackers...`, asserted
+  unchanged after the write.
+
+  **Writing into a live funnel, so the invariants were asserted, not assumed:**
+  `name`, `slug`, `published` and `starting_step_id` were never included in the
+  node and were all confirmed unchanged; steps 14 -> 15 (an add, not a replace);
+  the live entry `xI7j8mDEB` still serves 200 with **0** currency tags and its
+  content markers intact (15x `hlthtrack.co.uk`, 15x trustpilot).
+
+  **Three API shapes cost a round each, all worth writing down:**
+
+  | symptom | cause |
+  |---|---|
+  | `Cannot query field "uid" on type "CreateStep"` | `createStep` returns a wrapper — select `{step{uid slug title}}` |
+  | `String cannot represent a non string value` at `node.thumbnail` | `thumbnail` READS as `{key,url}` but `InputStep.thumbnail` is a `String` — send the `key` |
+  | bare `Oops! Something went wrong`, no field named | `body` is the custom `StepBody` scalar: it reads as a parsed **object** and must be sent back as one. `json.dumps(...)` is accepted and then fails anonymously |
+
+  **There is no step-delete mutation.** `deleteStep`, `deleteSteps`, `removeStep`,
+  `archiveStep`, `destroyStep`, `updateStep`, `moveStep` — all absent; probed by
+  sending each with no arguments, so a "missing required argument" would have
+  meant it exists. Only `createStep` exists. Removal goes through
+  **`InputFunnel.deleted_steps`**, the same path the dashboard uses. Omitting a
+  step from `updateFunnel(steps:)` does NOT delete it — omission is how siblings
+  survive a partial update.
+
+  The new card was placed below the existing 14 in the workflow canvas
+  (`max(y) + 240`) rather than at the source's coordinates, which would have
+  dropped it on top of another step.
+
+  Reversal path: `steps/02-techunboxed-uk-v4.tagged.json` holds the full
+  post-tagging record, committed before the removal.
 
 ## Open
 
