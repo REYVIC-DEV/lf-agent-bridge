@@ -4,7 +4,7 @@
 |---|---|---|---|
 | 0 | `step_0J0wlCl2Z6O6Hfg1S-wkY` | `bh-advertorial-v1` | entry page (`starting_step_id`) — **not touched** |
 | 1 | `step_SmIVoc258ZchgIHKzFlo-` | `bh-advertorial-v1-dyn` | copy of step 0 + dynamic currency |
-| ~~2~~ | ~~`step_JM0a30ybnkm3hpOE7-lSW`~~ | ~~`techunboxed-uk-v4`~~ | **moved out 2026-08-28** to the live funnel as `wkUz4VO4O` (`step_o3hE-N_cIOLHMOhl9bnml`). Body backed up at `steps/02-techunboxed-uk-v4.tagged.json` |
+| ~~2~~ | ~~`step_JM0a30ybnkm3hpOE7-lSW`~~ | ~~`techunboxed-uk-v4`~~ | **moved out 2026-08-28** to the live funnel as `best-fitness-trackers-2026` (`step_o3hE-N_cIOLHMOhl9bnml`). Body backed up at `steps/02-techunboxed-uk-v4.tagged.json` |
 
 Serves on **both** `www.techunboxed.co` and `99commerce.myecomsite.net`.
 This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide's
@@ -167,17 +167,24 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
 - `2026-08-28` — **`techunboxed-uk-v4` moved out of this funnel** into the live
   advertorial `fun_vGqQYxn4H2i_traYYkh4w` (`step_o3hE-N_cIOLHMOhl9bnml`), to be
   run as the dynamic-currency test.
-  URL: `https://www.techunboxed.co/smartwatch-review/wkUz4VO4O`
+  URL: `https://www.techunboxed.co/smartwatch-review/best-fitness-trackers-2026`
 
-  **The slug is opaque on purpose.** It was `dynamic-currency` first, which
-  announces the page as an internal test in the URL bar and in any ad's display
-  URL. Every page in this funnel that takes traffic uses a 9-character opaque
-  slug — `xI7j8mDEB`, `DzyMm0pUH`, `FsAAgEuAy`, `9QSx_mKmh`, `nxR5Ub02b` — so the
-  page was re-slugged to `wkUz4VO4O`, generated with `secrets` and checked against
-  the 15 existing slugs. `dynamic-currency` now 404s, which is expected: no
-  traffic had been sent to it. The **workflow label** stays
-  `DYNAMIC CURRENCY (test)` — that is where the test name belongs, visible to us
-  in the funnel and invisible to a visitor.
+  **The slug went through three values, and the third is the point.**
+  `dynamic-currency` announced the page as an internal test in the URL bar and in
+  any ad's display URL. `wkUz4VO4O` matched the opaque 9-character convention the
+  sibling live pages use (`xI7j8mDEB`, `DzyMm0pUH`, `FsAAgEuAy`, `9QSx_mKmh`) but
+  reads as nothing. Final: **`best-fitness-trackers-2026`**, taken from the page's
+  **own breadcrumb** — "Home > Wearables > Best Fitness Trackers of 2026" — rather
+  than invented, so the URL, the breadcrumb and the `<title>` all say the same
+  thing, and it survives being read aloud in an ad.
+
+  Both earlier slugs now 404, which is fine: no traffic had been pointed at
+  either. If one ever does get used, `lib/ad-landers.ts`-style 308s are the
+  pattern to follow rather than leaving a dead URL.
+
+  The **workflow label** stays `DYNAMIC CURRENCY (test)` throughout — that is
+  where the test name belongs, visible to us in the funnel and invisible to a
+  visitor.
 
   **Workflow label vs page title — two different fields**, and the names invite
   the wrong one. `step.title` is the label in the funnel workflow; the page's
