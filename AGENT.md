@@ -10,8 +10,10 @@ the same contract for Codex/Cursor/others).
 python3 lf.py <command> ...      # from the project root; prints JSON
 ```
 
-The bridge lives in ``; the project root holds only the
-agent files (`.claude/`, `.mcp.json`, `AGENT.md`, `README.md`).
+The **bridge is the repo root** — `lf.py`, `lf_api.py`, `lf_session.py`,
+`get_token.py`, `server.py`, `legacy/`, `templates/` — alongside the agent files
+(`.claude/`, `.mcp.json`, `AGENT.md`, `README.md`). `pagescore/` is the
+performance/QA loop, `content/` is extraction. See `docs/ARCHITECTURE.md`.
 
 Funnel working copies live in `funnels/<workspace>/<funnel-slug>/` (a workspace
 groups related funnels — one brand/store/campaign). Captured page bodies go in
@@ -22,10 +24,9 @@ Token: `--token` flag > `LF_ACCESS_TOKEN` env > `.env`. One-time setup:
 `python3 get_token.py --client-id <ID> --client-secret <SECRET>`.
 
 `lf.py`, `lf_session.py` and `get_token.py` read/write `.env`, `.session_token`,
-`.lf_state.json` and `.lf_account` **next to themselves** (inside
-``), so they work from any cwd. The ad-hoc scripts
-(`build_*.py`, `figma_rest.py`) read those from the current directory — `cd
-the repo root` first.
+`.lf_state.json` and `.lf_account` **next to themselves** (at the repo root), so
+they work from any cwd. The ad-hoc scripts (`build_*.py`, `figma_rest.py`) read
+those from the **current directory** — run them from the repo root.
 
 ## TWO MODES (verified live 2026-07-22)
 

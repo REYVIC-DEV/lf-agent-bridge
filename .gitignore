@@ -20,3 +20,23 @@ chart_recheck.png
 
 # holds a live Lightfunnels client_secret — never commit
 .claude/settings.local.json
+
+# ── QA output, not source ─────────────────────────────────────────────────────
+# Generated reports. `pagescore/runs/` is already ignored above; these predate it
+# and sit loose in pagescore/. ~600 KB, and they enumerate compliance failures on
+# live client pages — not something to publish on a public repo.
+pagescore/*.html
+webforge/runs/
+
+# ── hygiene for a public repo ────────────────────────────────────────────────
+.DS_Store
+node_modules/
+*.tsbuildinfo
+.venv/
+venv/
+# any env file, with or without a leading dot -- `.env*` alone misses `env.local`
+*.env
+env*.local
+*.key
+*.pem
+.secrets/

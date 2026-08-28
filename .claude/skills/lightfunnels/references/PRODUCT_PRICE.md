@@ -5,7 +5,7 @@ taken live from Shopify so the ad can never drift from what checkout charges.
 
 One funnel serves every country — no duplicate pages per market, no feature flag.
 
-- **Script:** [`dynamic-currency-header-block.html`](../dynamic-currency-header-block.html)
+- **Script:** [`dynamic-currency-header-block.html`](../../../../dynamic-currency-header-block.html)
 - **Converting anything that is *not* our product** (competitor prices, editorial
   sums): [`CURRENCY_CONVERTER.md`](CURRENCY_CONVERTER.md). Different feed,
   different guarantees — do not mix them up.
@@ -120,7 +120,7 @@ tagged figures is normal; discovering the tenth one after launch is not.
 ## Installing the script
 
 Paste the full contents of
-[`dynamic-currency-header-block.html`](../dynamic-currency-header-block.html)
+[`dynamic-currency-header-block.html`](../../../../dynamic-currency-header-block.html)
 into the step's **own** custom code — `settings.custom_html.header`, which renders
 in `<head>`.
 

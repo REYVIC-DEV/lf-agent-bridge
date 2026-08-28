@@ -40,6 +40,22 @@ Browsing 2/2). Also covers the hero LCP preload/`fetchpriority`, lazy media, `ar
 and — critically — **how to measure right** (PSI API / real Lighthouse / a delayed-font
 harness; a naive Playwright observer under-reports).
 
+**Showing our own product's price in the visitor's local currency?** Read
+[references/PRODUCT_PRICE.md](references/PRODUCT_PRICE.md). Live per-market prices
+from Shopify via `hlthtrack.com/api/prices` — exact, matches checkout. Tag figures
+with `data-price="price|compare|savings|discount"`, install
+`dynamic-currency-header-block.html` into the step's own `settings.custom_html.header`
+(APPEND, never replace — it carries `@font-face`; write the `<!-- dynamic-currency -->`
+marker so installs are idempotent). QA with `?country=` — no VPN needed. Covers the
+tagging traps (`£` escaping in `json.dumps`, `width:50%` matching, comma-swallowing).
+
+**Converting other GBP figures (competitor RRPs, editorial sums, "£0" cells)?** Read
+[references/CURRENCY_CONVERTER.md](references/CURRENCY_CONVERTER.md). Mid-market rates
+from `app.hlthtrack.com/api/fx` — indicative only, tagged `data-fx-gbp="…"`.
+**Never price our own product through it** — it will not match checkout. The endpoint
+is origin-locked (CORS), so on a preview domain conversions fail safe to GBP; QA on the
+real host. Also documents the override-gap distortion in PH/ZA/PL/HR comparison tables.
+
 **Figma access: figwright, and nothing else.** This project reads Figma through the
 **figwright MCP** (`@figwright/mcp` + its Figma plugin) — it reads the file the human
 has **open** via the Plugin API, has **no seat cap**, and is effectively unlimited, so

@@ -7,7 +7,7 @@ It is a **converter and nothing more**. For our own product, use the Shopify fee
 in [`PRODUCT_PRICE.md`](PRODUCT_PRICE.md); that one is exact and matches checkout.
 This one is indicative and does not.
 
-- **Script:** [`dynamic-currency-header-block.html`](../dynamic-currency-header-block.html)
+- **Script:** [`dynamic-currency-header-block.html`](../../../../dynamic-currency-header-block.html)
   (one script drives both feeds; install and QA harness are in
   [`PRODUCT_PRICE.md`](PRODUCT_PRICE.md))
 
