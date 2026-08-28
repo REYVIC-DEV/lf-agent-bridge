@@ -4,7 +4,7 @@
 |---|---|---|---|
 | 0 | `step_0J0wlCl2Z6O6Hfg1S-wkY` | `bh-advertorial-v1` | entry page (`starting_step_id`) — **not touched** |
 | 1 | `step_SmIVoc258ZchgIHKzFlo-` | `bh-advertorial-v1-dyn` | copy of step 0 + dynamic currency |
-| ~~2~~ | ~~`step_JM0a30ybnkm3hpOE7-lSW`~~ | ~~`techunboxed-uk-v4`~~ | **moved out 2026-08-28** to the live funnel as `dynamic-currency` (`step_o3hE-N_cIOLHMOhl9bnml`). Body backed up at `steps/02-techunboxed-uk-v4.tagged.json` |
+| ~~2~~ | ~~`step_JM0a30ybnkm3hpOE7-lSW`~~ | ~~`techunboxed-uk-v4`~~ | **moved out 2026-08-28** to the live funnel as `wkUz4VO4O` (`step_o3hE-N_cIOLHMOhl9bnml`). Body backed up at `steps/02-techunboxed-uk-v4.tagged.json` |
 
 Serves on **both** `www.techunboxed.co` and `99commerce.myecomsite.net`.
 This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide's
@@ -165,9 +165,19 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
   stacking a second copy.
 
 - `2026-08-28` — **`techunboxed-uk-v4` moved out of this funnel** into the live
-  advertorial `fun_vGqQYxn4H2i_traYYkh4w` as **`dynamic-currency`**
-  (`step_o3hE-N_cIOLHMOhl9bnml`), to be run as the dynamic-currency test.
-  URL: `https://www.techunboxed.co/smartwatch-review/dynamic-currency`
+  advertorial `fun_vGqQYxn4H2i_traYYkh4w` (`step_o3hE-N_cIOLHMOhl9bnml`), to be
+  run as the dynamic-currency test.
+  URL: `https://www.techunboxed.co/smartwatch-review/wkUz4VO4O`
+
+  **The slug is opaque on purpose.** It was `dynamic-currency` first, which
+  announces the page as an internal test in the URL bar and in any ad's display
+  URL. Every page in this funnel that takes traffic uses a 9-character opaque
+  slug — `xI7j8mDEB`, `DzyMm0pUH`, `FsAAgEuAy`, `9QSx_mKmh`, `nxR5Ub02b` — so the
+  page was re-slugged to `wkUz4VO4O`, generated with `secrets` and checked against
+  the 15 existing slugs. `dynamic-currency` now 404s, which is expected: no
+  traffic had been sent to it. The **workflow label** stays
+  `DYNAMIC CURRENCY (test)` — that is where the test name belongs, visible to us
+  in the funnel and invisible to a visitor.
 
   **Workflow label vs page title — two different fields**, and the names invite
   the wrong one. `step.title` is the label in the funnel workflow; the page's
