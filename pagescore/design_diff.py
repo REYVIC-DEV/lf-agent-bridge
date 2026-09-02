@@ -1002,7 +1002,17 @@ def main():
                          "are only checked for box and aspect, not for crop.")
     args = ap.parse_args()
 
-    spec = json.load(open(args.spec))
+    # ⚠️ encoding="utf-8" is REQUIRED, not tidiness. Without it Python uses the
+    # locale default, which on Windows is cp1252, and every non-ASCII character in
+    # the design JSON arrives as mojibake: a curly apostrophe (UTF-8 E2 80 99) reads
+    # back as "â€™". The live side comes from Playwright and is decoded correctly, so
+    # the two never match and the tool reports a FALSE "retyped" for copy that is in
+    # fact verbatim. Measured 2026-09-02 on an HLTH article: figma
+    # 'How much higher womenâ€™s ...' vs live 'How much higher women’s ...',
+    # similarity 0.944, verdict RETYPED, when the strings were identical.
+    # These designs are full of curly apostrophes, em dashes and currency symbols,
+    # so on Windows this silently poisoned the copy check.
+    spec = json.load(open(args.spec, encoding="utf-8"))
     all_nodes, containers = [], {}
     walk_text_nodes(spec, all_nodes, containers=containers)
     figma = [n for n in all_nodes if not n.get("decorative")]
@@ -1029,7 +1039,9 @@ def main():
               + ("" if args.crops else "  (no --crops: boxes compared, not pixels)"))
 
     rows, extra = match(figma, live)
-    accepted = json.load(open(args.accept)) if args.accept else {}
+    # utf-8 for the same reason as the spec read above: an accepted-deviation
+    # reason is prose and will contain non-ASCII sooner or later.
+    accepted = json.load(open(args.accept, encoding="utf-8")) if args.accept else {}
     for r in rows:
         why = accepted.get(r.get("figma_id"))
         if why and r["status"] != "OK":
@@ -1055,7 +1067,7 @@ def main():
                                      "MISSING")},
                "image_summary": {s: len([r for r in img_rows if r["status"] == s])
                                  for s in ("OK", "RESTYLED", "MISSING", "EXTRA")}}
-    with open(os.path.join(out_dir, "design_diff.json"), "w") as f:
+    with open(os.path.join(out_dir, "design_diff.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
     md = render(rows, extra, args.url, args.spec, args.viewport)
     if decorative:
@@ -1064,7 +1076,10 @@ def main():
                f"({', '.join(sorted({n['chars'].strip() for n in decorative}))}). "
                f"A correct build renders these as styled elements rather than text, so "
                f"they are excluded from the copy comparison.\n")
-    with open(os.path.join(out_dir, "design_diff.md"), "w") as f:
+    # The .md carries the design's own copy, so it must be written as utf-8 —
+    # otherwise the report itself is cp1252 on Windows and every curly apostrophe
+    # renders as a replacement character in any UTF-8 reader.
+    with open(os.path.join(out_dir, "design_diff.md"), "w", encoding="utf-8") as f:
         f.write(md)
     print(json.dumps(payload["summary"]))
     if img_rows:

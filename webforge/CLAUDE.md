@@ -62,8 +62,17 @@ There is **no `src/` directory**, **no shadcn/ui**, and **no `tailwind.config.ts
 
 - **Generated components go in `components/figma/`** — one file per Figma frame, named
   for the frame.
-- **Colours are `hlth-*` tokens** from the `@theme` block in `app/globals.css`
-  (`bg-hlth-green`, `text-hlth-black`, `border-hlth-border`). Never a raw hex.
+- **Colours: `.claude/rules/design-tokens.md` is the authority — read it, do not
+  paraphrase it here.** Short version: a token covers the fill → use the token; otherwise
+  use the arbitrary utility (`bg-[#07060f]`), lowercase.
+  ⚠️ Corrected 2026-09-02. This bullet used to read "Never a raw hex", which contradicted
+  `design-tokens.md` in the same repo — that file measures ~439 token utilities against
+  ~1,536 arbitrary-hex ones across 245 of 386 files and states plainly that "a blanket
+  'never write a hex' rule is wrong here". Independently re-measured in `components/`
+  before changing this: 1,567 arbitrary-hex classes against 189 `hlth-*` uses. Only six
+  tokens exist, while the v3 and article designs use ~30 colours with no token, so the old
+  rule forced either a wrong colour or ~30 invented tokens — and inventing tokens breaks
+  hard rule 2. Never round a measured colour to a nearby token.
 - **Fonts are the `.font-display` / `.font-body` utilities** — and they only resolve on
   the v3 route subtree. Read the font section of the site's `CLAUDE.md` before touching
   them; there are three documented traps there that have already cost real time.
@@ -72,8 +81,16 @@ There is **no `src/` directory**, **no shadcn/ui**, and **no `tailwind.config.ts
 - Server Components by default. `"use client"` only when the file actually needs state,
   effects, or browser APIs — and put it on the smallest component that needs it, not the
   page.
-- Compose classes with `cn()` from `src/lib/utils` so call-site overrides win.
-- `next/image` for images (width and height always, `priority` on the LCP image only).
+- ~~Compose classes with `cn()` from `src/lib/utils`.~~ ⚠️ **Removed 2026-09-02: there is
+  no `cn()` helper and no `src/` directory in the target repo** — this file says so itself
+  four lines above, so the rule contradicted its own page. Compose with a template literal
+  or a ternary, the way the existing components do.
+- **Images: plain `<img>` for content/editorial, `next/image` only for product imagery.**
+  ⚠️ Corrected 2026-09-02 — "always `next/image`" is wrong here. The target repo sets
+  `images.loader: 'custom'` with `lib/shopify-image-loader.ts` and **deliberately does not
+  use Vercel's image optimizer**; content images are intentionally plain `<img>` carrying
+  an `eslint-disable @next/next/no-img-element`. Follow the target repo's own convention
+  block, which is the authority. `priority` still belongs on the LCP image only.
 - `next/font` for fonts — it self-hosts and generates a metric-matched fallback, which
   removes font-swap layout shift at the source.
 - Named exports. One component per file. Props typed with an explicit `interface`, no
@@ -83,8 +100,13 @@ There is **no `src/` directory**, **no shadcn/ui**, and **no `tailwind.config.ts
 
 Full list in `RULES.md`. The three that get broken most:
 
-1. **No hardcoded hex colours.** Everything resolves to an `hlth-*` token.
-2. **No parallel system** — no shadcn, no `tailwind.config.ts`, no second token set.
+1. **Match the design's measured value exactly** — colour, size, spacing, radius. Use an
+   `hlth-*` token where one exists, a raw hex where one does not (see the colours bullet
+   above; this rule previously said "no hardcoded hex colours", which was wrong for this
+   repo). Never round a measured value to a nearer Tailwind step, and never change a
+   design value to make content fit.
+2. **No parallel system** — no shadcn, no `tailwind.config.ts`, no second token set. This
+   is also why you do NOT invent new colour tokens for one-off design values.
 3. **`npx tsc --noEmit` and `npm run lint` must both be clean.**
 
 ## Reusing the repo's QA

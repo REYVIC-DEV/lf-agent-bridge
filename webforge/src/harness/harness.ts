@@ -118,8 +118,19 @@ function run(
 }
 
 function have(cmd: string): boolean {
+  // ⚠️ This probe used to be POSIX-only — `execFileSync("command", ["-v", cmd],
+  // { shell: "/bin/sh" })`. Node on Windows cannot use `/bin/sh` as its shell, so
+  // the call threw for EVERY binary and `have()` reported them all missing,
+  // including a `claude` that was installed and on PATH. That is exactly what
+  // failed the 2026-09-01T10-31 run at GENERATE_CODE with "The `claude` CLI is not
+  // on PATH", on a machine where `where claude` resolves
+  // `C:\Users\...\.local\bin\claude.exe`. Measured, not guessed.
   try {
-    execFileSync("command", ["-v", cmd], { shell: "/bin/sh", stdio: "ignore" });
+    if (process.platform === "win32") {
+      execFileSync("where", [cmd], { stdio: "ignore" });
+    } else {
+      execFileSync("command", ["-v", cmd], { shell: "/bin/sh", stdio: "ignore" });
+    }
     return true;
   } catch {
     return false;
