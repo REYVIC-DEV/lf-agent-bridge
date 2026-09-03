@@ -642,7 +642,9 @@ def qa_page(url, run_dir, args):
             "body_text": harvest.get("text", "")[:200_000]}
     page["verdict"] = verdict_of(page)
     # The page's own copy, saved so the congruency pass (phase 5) reads text, not pixels.
-    with open(os.path.join(out_dir, "page_text.txt"), "w") as f:
+    # encoding is explicit: the page's own copy carries arrows, em dashes and
+    # curly quotes, and Windows would otherwise write it as cp1252 and raise.
+    with open(os.path.join(out_dir, "page_text.txt"), "w", encoding="utf-8") as f:
         f.write(harvest.get("text", ""))
     print(f"  VERDICT  {page['verdict']}")
     return page
@@ -688,10 +690,10 @@ def main():
                       for v in ("PASS", "FLAG", "FAIL")}
 
     fj = os.path.join(run_dir, "findings.json")
-    with open(fj, "w") as f:
-        json.dump(run, f, indent=2)
+    with open(fj, "w", encoding="utf-8") as f:
+        json.dump(run, f, indent=2, ensure_ascii=False)
     rm = os.path.join(run_dir, "report.md")
-    with open(rm, "w") as f:
+    with open(rm, "w", encoding="utf-8") as f:
         f.write(render_report(run))
     print(f"\n{run['summary']}")
     print(f"findings -> {os.path.relpath(fj, ROOT)}")

@@ -807,6 +807,20 @@ def compare_images(figma_imgs, live_imgs, crops_dir, shots):
     return rows
 
 
+def numeric(v):
+    """figwright returns the STRING "MIXED" for any property whose value differs
+    across a text node's runs, so `font_size` and `font_weight` are not always
+    numbers. Comparing one to an int raises TypeError and takes the whole fidelity
+    diff down at the LAST step, after every phase has already run. Returning None
+    makes the caller skip that one comparison, which is the honest outcome: a node
+    with two sizes in it has no single size to check against the design.
+
+    `figma_spec.py` already documents this sentinel in its own `dget`; this is the
+    same guard on the consuming side.
+    """
+    return v if isinstance(v, (int, float)) and not isinstance(v, bool) else None
+
+
 def match(figma_nodes, live_nodes):
     """Match each Figma line to a live line: exact first, then closest fuzzy."""
     pool = {}
@@ -898,12 +912,12 @@ def match(figma_nodes, live_nodes):
                 row["live_color"] = l["color_hex"]
                 row["tag"] = l["tag"]
                 deltas = []
-                if f["font_size"] and l["font_size"] and \
-                        abs(f["font_size"] - l["font_size"]) > SIZE_TOL_PX:
-                    deltas.append(f"size {f['font_size']:g} -> {l['font_size']:g}")
-                if f["font_weight"] and l["font_weight"] and \
-                        abs(f["font_weight"] - l["font_weight"]) > WEIGHT_TOL:
-                    deltas.append(f"weight {f['font_weight']} -> {l['font_weight']}")
+                fs, ls_ = numeric(f["font_size"]), numeric(l["font_size"])
+                if fs and ls_ and abs(fs - ls_) > SIZE_TOL_PX:
+                    deltas.append(f"size {fs:g} -> {ls_:g}")
+                fw, lw = numeric(f["font_weight"]), numeric(l["font_weight"])
+                if fw and lw and abs(fw - lw) > WEIGHT_TOL:
+                    deltas.append(f"weight {fw} -> {lw}")
                 if f["color"] and l["color_hex"] and f["color"] != l["color_hex"]:
                     deltas.append(f"colour {f['color']} -> {l['color_hex']}")
                 if not family_matches(intended_family(f), l.get("family")):

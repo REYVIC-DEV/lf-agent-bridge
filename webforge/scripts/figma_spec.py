@@ -88,13 +88,20 @@ def main():
     ap.add_argument('--out')
     ap.add_argument('--max-depth', type=int, default=99)
     a = ap.parse_args()
-    raw = json.load(open(a.dump))
+    # The no---out branch prints `ensure_ascii=False` JSON, so stdout must be UTF-8
+    # or Windows encodes it as cp1252 and dies on the first arrow or em dash in a
+    # TEXT node. Same root cause as the dump read below.
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    # encoding is explicit on purpose: a figwright dump is UTF-8 and Python on
+    # Windows would otherwise open it as cp1252 and die on the first em dash.
+    raw = json.load(open(a.dump, encoding='utf-8'))
     node = raw.get('node', raw)
     rows = [r for r in spec(node) if r['depth'] <= a.max_depth]
     if a.out:
         json.dump({'frame': node.get('id'), 'name': node.get('name'),
                    'width': round(node.get('width', 0)), 'height': round(node.get('height', 0)),
-                   'nodes': rows}, open(a.out, 'w'), indent=1, ensure_ascii=False)
+                   'nodes': rows}, open(a.out, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
         print('wrote %s  (%d nodes)' % (a.out, len(rows)))
     else:
         for r in rows:

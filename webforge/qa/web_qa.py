@@ -35,6 +35,47 @@ import time
 import urllib.error
 import urllib.request
 
+# ---- Windows ------------------------------------------------------------------
+# Three POSIX assumptions in the dev-server lifecycle, all of which fail here:
+#
+#   1. `npm` is `npm.cmd` on Windows and CreateProcess cannot find it without a
+#      shell, so Popen(["npm", ...]) raises WinError 2 "cannot find the file".
+#   2. `start_new_session` is setsid, POSIX only. The Windows equivalent that makes
+#      a child killable as a group is CREATE_NEW_PROCESS_GROUP.
+#   3. `os.killpg` does not exist on Windows, so teardown silently did nothing.
+#      `terminate()` alone would not have helped either: it kills the npm shim and
+#      leaves the `next dev` child alive. A surviving dev server is not a cosmetic
+#      leak on this machine, it is what exhausts RAM.
+WIN = sys.platform == "win32"
+NPM = "npm.cmd" if WIN else "npm"
+
+
+def spawn_kwargs():
+    """Popen kwargs that make a child killable as a group on either platform."""
+    if WIN:
+        return {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP}
+    return {"start_new_session": True}
+
+
+def kill_tree(proc):
+    """Kill a server AND its children. Never raises; teardown must not mask a verdict."""
+    if proc is None:
+        return
+    try:
+        if WIN:
+            # /T takes the tree, which is the point: npm.cmd spawns node.
+            subprocess.run(["taskkill", "/T", "/F", "/PID", str(proc.pid)],
+                           capture_output=True)
+        else:
+            os.killpg(os.getpgid(proc.pid), 15)
+    except Exception:
+        pass
+    try:
+        proc.wait(timeout=15)
+    except Exception:
+        pass
+
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 WEBFORGE = os.path.dirname(HERE)
 REPO = os.path.dirname(WEBFORGE)
@@ -109,7 +150,9 @@ def write_todo(run_dir, designs, page):
             lines += sorted(set(body))
     if len(lines) == 2:
         lines.append("Nothing. The page matches the design at every breakpoint checked.")
-    with open(os.path.join(run_dir, "todo.md"), "w") as fh:
+    # explicit utf-8: the todo quotes the page's and the design's own copy,
+    # which carries arrows and em dashes that cp1252 cannot encode.
+    with open(os.path.join(run_dir, "todo.md"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
 
 
@@ -164,14 +207,15 @@ def main():
     if not args.no_serve and not server_up(root_url):
         if args.prod:
             print("  building production output…")
-            b = subprocess.run(["npm", "run", "build"], cwd=args.project,
+            b = subprocess.run([NPM, "run", "build"], cwd=args.project,
                                capture_output=True, text=True)
             if b.returncode != 0:
                 sys.exit(f"build failed:\n{b.stdout[-2000:]}\n{b.stderr[-1000:]}")
-        cmd = ["npm", "run", "start" if args.prod else "dev", "--", "--port", str(args.port)]
+        cmd = [NPM, "run", "start" if args.prod else "dev", "--", "--port", str(args.port)]
         print(f"  starting: {' '.join(cmd)}")
-        server = subprocess.Popen(cmd, cwd=args.project, start_new_session=True,
-                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        server = subprocess.Popen(cmd, cwd=args.project,
+                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                  **spawn_kwargs())
 
     try:
         if not wait_for(url):
@@ -237,11 +281,7 @@ def main():
         print("  speed is NOT measured locally -- PSI cannot fetch localhost.")
         sys.exit(1 if verdict == "FAIL" else 0)
     finally:
-        if server is not None:
-            try:
-                os.killpg(os.getpgid(server.pid), 15)
-            except Exception:
-                pass
+        kill_tree(server)
 
 
 if __name__ == "__main__":
