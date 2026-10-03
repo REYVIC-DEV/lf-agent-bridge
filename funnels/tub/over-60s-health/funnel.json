@@ -1,0 +1,15 @@
+{
+  "lf_id": "fun_Z6I8-bN5nVJ_SwGgR9WWK",
+  "name": "TUB - Over-60s health - Meta",
+  "slug": "over-60s-health",
+  "published": true,
+  "created": "2026-09-29",
+  "created_by": "page-pipeline / over-60s build",
+  "workspace": "tub",
+  "admin_url": "https://app.lightfunnels.com/admin/funnel/fun_Z6I8-bN5nVJ_SwGgR9WWK/workflow",
+  "public_base": "https://www.techunboxed.co/over-60s-health/",
+  "holds_tests": {
+    "V-B gadgets 2-way": "https://app.clickup.com/t/z941abwj4k",
+    "V-A smartwatch": "https://app.clickup.com/t/z941abwj4j"
+  }
+}
