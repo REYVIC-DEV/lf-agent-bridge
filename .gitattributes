@@ -1,0 +1,4 @@
+# The tracker/currency snippets are byte-exact copies of what is installed live.
+# Line-ending normalisation would change their sha and break check_tracker_headers.py
+# on a fresh clone, so keep them exactly as committed.
+snippets/*.html -text
