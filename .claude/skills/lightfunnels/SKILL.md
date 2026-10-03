@@ -44,7 +44,7 @@ harness; a naive Playwright observer under-reports).
 [references/PRODUCT_PRICE.md](references/PRODUCT_PRICE.md). Live per-market prices
 from Shopify via `hlthtrack.com/api/prices` — exact, matches checkout. Tag figures
 with `data-price="price|compare|savings|discount"`, install
-`dynamic-currency-header-block.html` into the step's own `settings.custom_html.header`
+`snippets/dynamic-currency-header-block.html` into the step's own `settings.custom_html.header`
 (APPEND, never replace — it carries `@font-face`; write the `<!-- dynamic-currency -->`
 marker so installs are idempotent). QA with `?country=` — no VPN needed. Covers the
 tagging traps (`£` escaping in `json.dumps`, `width:50%` matching, comma-swallowing).

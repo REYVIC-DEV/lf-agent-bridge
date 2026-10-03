@@ -13,7 +13,7 @@ FUNNEL = "fun_f1IsXx3YnEA2UD2g91dAv"
 STEP = sys.argv[1]
 MARK = "<!-- dynamic-currency -->"
 
-script = open("dynamic-currency-header-block.html", encoding="utf-8").read()
+script = open("snippets/dynamic-currency-header-block.html", encoding="utf-8").read()
 tok = open(".session_token").read().strip()
 acct = open(".lf_account").read().strip()
 h = lf_api.session_headers(acct)

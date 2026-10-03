@@ -1,0 +1,102 @@
+<style>
+  .read-more-content {
+      /* Optional: ensures the text flows naturally with the paragraph */
+      display: none;
+  }
+
+/* Force the scrollbar to exist */
+.comparison-container::-webkit-scrollbar {
+    -webkit-appearance: none; /* Removes default system styling */
+    width: 8px;               /* Mandatory for vertical bars */
+    height: 8px;              /* Mandatory for horizontal bars */
+    display: block !important;
+}
+
+/* Style the 'thumb' (the draggable part) */
+.comparison-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4); 
+    border-radius: 10px;
+    border: 2px solid white; /* Adds a 'gutter' look */
+}
+
+/* Style the 'track' (the background) */
+.comparison-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+</style>
+
+
+<link
+  rel="preload"
+  as="image"
+  href="https://assets.lightfunnels.com/cdn-cgi/image/width=672,quality=80,format=auto/https://assets.lightfunnels.com/account-90380/images_library/b221e6c8-5128-459e-8133-d3a5f08c910f.LAmc9S80DsJSVq9G_tZAM.webp"
+/>
+
+<link
+  rel="preload"
+  as="image"
+  href="https://assets.lightfunnels.com/cdn-cgi/image/width=570,quality=80,format=auto/https://assets.lightfunnels.com/account-90380/images_library/b221e6c8-5128-459e-8133-d3a5f08c910f.LAmc9S80DsJSVq9G_tZAM.webp"
+/>
+
+<script>
+/* ============================================================================
+   GOOGLE - Comparison-1 vs dMs4WkOYD (2-way) — PURE POSTHOG redirect (flag-driven)
+   PostHog project: HTLH - GOOGLE (208779) · flag: google-comparison1-v2
+   Experiment: https://eu.posthog.com/project/208779/experiments/91531
+
+   control = Comparison 1 -> https://www.techunboxed.co/article/comparison-1  (ENTRY — paste here)
+   test    = dMs4WkOYD    -> https://www.techunboxed.co/article/dMs4WkOYD
+
+   GOOGLE FUNNEL: Google-sourced traffic (gclid) makes the header init PostHog with the
+   GOOGLE token, so this flag MUST live in the Google project (a Native flag would be
+   invisible to these visitors). Paste on the ENTRY / control page (/article/comparison-1)
+   ONLY. PostHog assigns 50/50. getFeatureFlag fires the $feature_flag_called exposure;
+   'test' is redirected to dMs4WkOYD; control stays. White cover hides the flash,
+   loop-guarded, ALL query params + hash carried over.
+
+   REQUIRES the Google header (Google Funnels/lf-header-tracking.html) with
+   request_batching:false — otherwise the exposure is batched (~3s) and the 500ms
+   redirect fires before it sends, under-counting the 'test' arm. Re-paste that header
+   before launching. Experiment is created as a draft — launch when ready.
+   ============================================================================ */
+(function () {
+  if (!window.posthog) return;
+
+  var TEST_URL  = "https://www.techunboxed.co/article/dMs4WkOYD";
+  var TEST_PATH = "/article/dMs4WkOYD";
+
+  // LOOP GUARD: if already on the test page, do nothing.
+  if (window.location.pathname.indexOf(TEST_PATH) !== -1) return;
+
+  // White cover (no flash before redirect).
+  var cover = document.createElement("div");
+  cover.id = "ph-ab-cover";
+  cover.setAttribute("style",
+    "position:fixed;inset:0;width:100vw;height:100vh;background:#ffffff;" +
+    "z-index:2147483647;opacity:1;transition:opacity .2s ease;");
+  (document.body || document.documentElement).appendChild(cover);
+  function reveal() {
+    cover.style.opacity = "0";
+    setTimeout(function () { if (cover && cover.parentNode) cover.parentNode.removeChild(cover); }, 250);
+  }
+  var safety = setTimeout(reveal, 2500);
+
+  posthog.onFeatureFlags(function () {
+    clearTimeout(safety);
+    if (posthog.getFeatureFlag("google-comparison1-v2") !== "test") { reveal(); return; } // control stays
+    var url;
+    try {
+      var dest = new URL(TEST_URL);
+      new URLSearchParams(window.location.search).forEach(function (v, k) { dest.searchParams.set(k, v); });
+      dest.hash = window.location.hash;
+      url = dest.toString();
+    } catch (e) {
+      url = TEST_URL + window.location.search + window.location.hash;
+    }
+    // Delay the redirect so PostHog sends the $feature_flag_called exposure BEFORE
+    // we navigate away — otherwise the redirected variant (test) gets under-counted.
+    setTimeout(function () { window.location.replace(url); }, 500);
+  });
+})();
+</script>

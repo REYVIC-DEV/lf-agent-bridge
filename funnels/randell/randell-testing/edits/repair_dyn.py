@@ -23,7 +23,7 @@ SRC = "step_0J0wlCl2Z6O6Hfg1S-wkY"      # bh-advertorial-v1, the entry
 DST = "step_SmIVoc258ZchgIHKzFlo-"      # bh-advertorial-v1-dyn
 MARK = "<!-- dynamic-currency -->"
 
-script = open("dynamic-currency-header-block.html", encoding="utf-8").read()
+script = open("snippets/dynamic-currency-header-block.html", encoding="utf-8").read()
 tok = open(".session_token").read().strip()
 acct = open(".lf_account").read().strip()
 h = lf_api.session_headers(acct)

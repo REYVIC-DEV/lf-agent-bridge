@@ -7,7 +7,7 @@ will be charged". Without the prefix a converted rival RRP and the converted tes
 spend both read as exact figures. That is a knowing editorial trade, which is the
 condition the original comment asked for.
 """
-p = "dynamic-currency-header-block.html"
+p = "snippets/dynamic-currency-header-block.html"
 s = open(p, encoding="utf-8").read()
 
 old = """      out = fmt(Math.round(gbp * rate), cur);   // whole units: it is indicative

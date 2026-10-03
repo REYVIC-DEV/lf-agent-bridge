@@ -10,7 +10,7 @@ broken. So 0 is formatted directly here rather than through fmt(), and takes no
 """
 import io
 
-p = "dynamic-currency-header-block.html"
+p = "snippets/dynamic-currency-header-block.html"
 s = open(p, encoding="utf-8").read()
 
 old = """      gbp = parseFloat(els[i].getAttribute("data-fx-gbp"));

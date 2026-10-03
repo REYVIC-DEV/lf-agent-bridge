@@ -5,7 +5,7 @@ taken live from Shopify so the ad can never drift from what checkout charges.
 
 One funnel serves every country — no duplicate pages per market, no feature flag.
 
-- **Script:** [`dynamic-currency-header-block.html`](../../../../dynamic-currency-header-block.html)
+- **Script:** [`snippets/dynamic-currency-header-block.html`](../../../../dynamic-currency-header-block.html)
 - **Converting anything that is *not* our product** (competitor prices, editorial
   sums): [`CURRENCY_CONVERTER.md`](CURRENCY_CONVERTER.md). Different feed,
   different guarantees — do not mix them up.
@@ -51,8 +51,24 @@ GET https://hlthtrack.com/api/prices
 }
 ```
 
-32 markets at the time of writing. `ACAO: *`, so it is callable from any origin —
-unlike the converter, which is origin-locked.
+32 markets at the time of writing.
+
+⚠️ **This endpoint is now origin-locked too — it used to send `ACAO: *` and no
+longer does.** Measured 2026-09-21: it answers `Vary: Origin` and returns an
+`Access-Control-Allow-Origin` header **only** for an allowed origin. A request
+from any other origin, or with no `Origin` at all, gets no CORS header and the
+browser blocks it. Both feeds now behave the same way, so the old "prices works
+anywhere, only the converter is locked" split is gone.
+
+**QA on the techunboxed URL, never the LightFunnels preview domain** — on the
+preview both fetches are blocked and the page correctly shows GBP, which looks
+identical to the script being broken.
+
+⚠️ **An unsupported country answers `400`, not an empty result.**
+`?country=US` returns `{"error":"unknown market","detail":"\"US\" is not an
+enabled Shopify market"}`. That is normal for any country Shopify does not sell
+to, not an outage. The consumer must treat it as "keep the GBP text" rather than
+as a failure worth retrying or reporting.
 
 **Use `formatted`, do not format our money yourself.** It is Shopify's own string
 for that market, so rounding and symbol placement are already right.
@@ -68,6 +84,95 @@ Field rules that matter on the page:
 
 ---
 
+## Every product, not just the band — `?products=all`
+
+Added 2026-09-21. The feed used to serve one product per call; it now serves all
+seven.
+
+| request | returns |
+|---|---|
+| `GET /api/prices` | main band, every market |
+| `GET /api/prices?country=GB` | main band, one market |
+| `GET /api/prices?handle=active-band` | one product, every market |
+| **`GET /api/prices?products=all`** | **all 7 products x 32 markets** |
+| **`GET /api/prices?products=all&country=DE`** | all 7 products, one market |
+
+`products=all` answers `{ generatedAt, missing[], products[], errors[] }` — note
+this is a DIFFERENT shape from the single-product response, which is
+`{ handle, title, markets[], byCurrency[], errors[] }`.
+
+**`products=all` costs the same as one product.** `@inContext` forces one
+upstream call per country, not per product, so it is 32 calls either way.
+Prefer it over looping handles. ~149 KB uncached, ~3.4s cold, 0.5s warm.
+
+### The seven, measured 2026-09-21 (GB)
+
+| handle | title | GB |
+|---|---|---|
+| `wearable-hlth-band` | HLTH Band 1.0 | £79.00 |
+| `performance-band` | Performance Band | £9.95 |
+| `active-band` | Active Band | £9.95 |
+| `hlth-arm-band` | Sport Knit Arm Band | £14.95 |
+| `hlth-band-lifetime-warranty` | HLTH Band Lifetime Warranty | £38.00 |
+| `hlth-band-5-year-warranty` | HLTH Band 5-Year Warranty | £19.00 |
+| `hlth-care-plus` | HLTH Care+ | from £7.95 |
+
+### What this unlocks, and it is not a nicety
+
+Before this, **an accessory price on a page was unpriceable.** It is our
+product, so the mid-market converter must not touch it; but the feed carried
+only the band's handle, so there was no exact figure either. The honest move was
+to leave it in GBP, which on the Google advertorial left exactly one `£14.95`
+sitting in the middle of a fully converted page.
+
+That figure is `hlth-arm-band`, and it now prices properly in every market —
+PH ₱465, ZA R186, HR €10.95. Mid-market on £14.95 would have said ~₱1,255, so
+the converter would have been wrong by nearly 3x.
+
+⚠️ **The shipped script does not consume this yet.** It fetches the single-product
+feed and drives `[data-price="price"]` / `"compare"` / `"savings"` / `"discount"`,
+all for one product. Pricing a second product on the same page needs the script
+to request `products=all` and a tag that names the handle, e.g.
+
+```html
+<span data-price="price" data-price-handle="hlth-arm-band">£14.95</span>
+```
+
+with a bare `data-price` continuing to mean the main band. Until that lands,
+an accessory figure stays in GBP.
+
+### Two new flags
+
+- **`multiPriced: true`** — the product's variants differ, so `amount` is the
+  CHEAPEST and must be quoted as **"from"**. Only `hlth-care-plus` today
+  (£7.95 rolling monthly vs £79.95 for 12 months upfront). Rendering that as a
+  flat price understates the yearly plan by an order of magnitude.
+- **`inconsistent: true`** on a `byCurrency` row — markets sharing that currency
+  disagree on the amount. Measured today:
+
+  | product | currency | amounts |
+  |---|---|---|
+  | `wearable-hlth-band` | EUR | 60.65, 79.00 (Croatia) |
+  | `wearable-hlth-band` | GBP | 79.00, 99.00 (Vietnam) |
+  | `performance-band` | EUR | 7.00, 9.95 |
+  | `active-band` | EUR | 7.00, 9.95 |
+  | `hlth-arm-band` | EUR | 10.95, 14.95 |
+  | `hlth-band-lifetime-warranty` | GBP | 38.00, 50.00 |
+
+  These are intentional price-list overrides, not bugs. The flag matters because
+  **an ad or a page that hardcodes "€79" is wrong in Croatia** — and wrong in a
+  way no UK or German test would ever reveal. Read the per-country `markets[]`
+  entry; never assume one currency means one price.
+
+### Failure behaviour
+
+**It never 500s on partial failure.** A market that fails lands in `errors[]`
+and everything else still returns 200. A handle that priced in no market lands
+in `missing[]`. So check those two arrays — an empty-looking product is
+reported, not silently absent.
+
+---
+
 ## What to tag
 
 Type the normal **GBP** figure as the visible text. That is the fallback every
@@ -80,6 +185,27 @@ un-localised.
 <span data-price="savings">£79</span>     <!-- compareAt − amount   (optional) -->
 <span data-price="discount">50%</span>    <!-- the % off            (optional) -->
 ```
+
+### Pricing a product that is not the main band
+
+A bare `data-price` means `wearable-hlth-band`, so every page written before
+2026-09-21 keeps working untouched. Name a handle to price anything else:
+
+```html
+<span data-price="price" data-price-handle="hlth-arm-band">£14.95</span>
+```
+
+⚠️ **A `multiPriced` product will NOT be written without `data-price-from`.**
+Care+ is £7.95 monthly and £79.95 for the year, and `amount` is the cheapest, so
+writing it as *the* price understates the annual plan tenfold. The script skips
+it unless the element opts in:
+
+```html
+from <span data-price="price" data-price-from data-price-handle="hlth-care-plus">£7.95</span>
+```
+
+The attribute is the page promising its own copy says "from". Failing to
+localise is recoverable; quoting a tenth of the price is not.
 
 - Tag **every** occurrence — hero, buy box, comparison table, sticky bar, FAQ,
   body copy. All of them are replaced.
@@ -120,7 +246,7 @@ tagged figures is normal; discovering the tenth one after launch is not.
 ## Installing the script
 
 Paste the full contents of
-[`dynamic-currency-header-block.html`](../../../../dynamic-currency-header-block.html)
+[`snippets/dynamic-currency-header-block.html`](../../../../dynamic-currency-header-block.html)
 into the step's **own** custom code — `settings.custom_html.header`, which renders
 in `<head>`.
 

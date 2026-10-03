@@ -34,7 +34,7 @@ This funnel has **no PostHog** — `header_scripts` is empty, so the setup guide
   it stays correct if a market's discount ever changes; `price` would silently
   start lying.
 
-  **`dynamic-currency-header-block.html` did not exist in the repo** — the setup
+  **`snippets/dynamic-currency-header-block.html` did not exist in the repo** — the setup
   guide references it and `API-PRICES.md`, neither of which is here. Written from
   the guide's spec plus `.claude/skills/lightfunnels/references/CURRENCY_CONVERTER.md`'s safety rules, and installed in the step's own
   `settings.custom_html.header` (per-step, not funnel-level `header_scripts`).

@@ -1,0 +1,431 @@
+{
+  "step": "step_coYi_dsw6RtJtR111GjR8",
+  "slug": "dMs4WkOYD",
+  "header_chars": 3796,
+  "font_face": 10,
+  "installed": false,
+  "n_money": 57,
+  "n_pct": 0,
+  "blocks": [
+    {
+      "block_id": "0fc8925b-d13",
+      "type": "Title",
+      "path": "root.children.children.children",
+      "money": [
+        "£1,581",
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "We Spent £1,581 Testing The Top 5 Fitness Trackers of 2026. The £79 Outsider Won.",
+      "raw_len": 81
+    },
+    {
+      "block_id": "cf79f246-735",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£399",
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "The newcomer tracks what a £399 watch can't, costs £79 on sale, and runs close to a month on one charge. We break down exactly what it does, and whether it's the right fit for you.",
+      "raw_len": 180
+    },
+    {
+      "block_id": "07bab56c-ed0",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£1,581"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "If you nodded yes to any of these, you've come to the right place. We spent £1,581 buying and testing the most popular trackers against the new band that's going viral in the UK.",
+      "raw_len": 178
+    },
+    {
+      "block_id": "b98d1421-048",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children",
+      "money": [
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£79",
+      "raw_len": 3
+    },
+    {
+      "block_id": "50b9f3a8-cc8",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children",
+      "money": [
+        "£158"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£158",
+      "raw_len": 54
+    },
+    {
+      "block_id": "60b89d68-606",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children",
+      "money": [
+        "£79",
+        "£158"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£79 £158",
+      "raw_len": 164
+    },
+    {
+      "block_id": "85d059e0-3d1",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "The winner: the HLTH Band . The £79 newcomer beat every big name in this test. Here's how all five stack up, why the underdog won, and who should honestly buy something else instead.",
+      "raw_len": 401
+    },
+    {
+      "block_id": "88b47ee0-5f2",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£79",
+        "£158"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£79 £158",
+      "raw_len": 158
+    },
+    {
+      "block_id": "a0db8de3-c8d",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£79",
+        "£158"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£79 £158",
+      "raw_len": 158
+    },
+    {
+      "block_id": "df51fbf4-805",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children.children",
+      "money": [
+        "£229"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£229 per year, every single year",
+      "raw_len": 32
+    },
+    {
+      "block_id": "dbce3ae6-124",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children.children",
+      "money": [
+        "£359"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Blood pressure locked to £359 tier",
+      "raw_len": 34
+    },
+    {
+      "block_id": "fb710e4f-4a0",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£229"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£229/yr",
+      "raw_len": 73
+    },
+    {
+      "block_id": "f95f5d6b-463",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children",
+      "money": [
+        "£229"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£229 per year, every single year",
+      "raw_len": 32
+    },
+    {
+      "block_id": "833dfee9-6f5",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children",
+      "money": [
+        "£359"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Blood pressure locked to £359 tier",
+      "raw_len": 34
+    },
+    {
+      "block_id": "0095b903-323",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£229"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£229/yr",
+      "raw_len": 73
+    },
+    {
+      "block_id": "c9557b70-798",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£219"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£219",
+      "raw_len": 70
+    },
+    {
+      "block_id": "096753e1-cd8",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£219"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£219",
+      "raw_len": 70
+    },
+    {
+      "block_id": "0a28c14b-3e1",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children.children",
+      "money": [
+        "£250"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£250 one-time investment",
+      "raw_len": 24
+    },
+    {
+      "block_id": "b6d1bf0d-4d0",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£269"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£269",
+      "raw_len": 70
+    },
+    {
+      "block_id": "432965d9-d51",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children",
+      "money": [
+        "£250"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£250 one-time investment",
+      "raw_len": 24
+    },
+    {
+      "block_id": "d3e2b539-d72",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£269"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£269",
+      "raw_len": 70
+    },
+    {
+      "block_id": "c4c32011-009",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children.children",
+      "money": [
+        "£9.99"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Sleep score & readiness behind £9.99/mo Premium",
+      "raw_len": 51
+    },
+    {
+      "block_id": "c77646cc-2d4",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£79.99",
+        "£139.99"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£79.99 £139.99",
+      "raw_len": 164
+    },
+    {
+      "block_id": "a2a654d0-49f",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children.children",
+      "money": [
+        "£9.99"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Sleep score & readiness behind £9.99/mo Premium",
+      "raw_len": 51
+    },
+    {
+      "block_id": "05775ee9-759",
+      "type": "Text",
+      "path": "root.children.children.children.children.children.children",
+      "money": [
+        "£79.99",
+        "£139.99"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "£79.99 £139.99",
+      "raw_len": 164
+    },
+    {
+      "block_id": "f68848b2-a87",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£229",
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Normally, this level of monitoring sits behind a £229-per-year membership or inside a smartwatch that dies every night. The HLTH Band is the exception. At £79 , it's the most capable screen-free health tracker we tested ",
+      "raw_len": 266
+    },
+    {
+      "block_id": "cf62ca51-c5a",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£359"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "That matters because a cuff catches one moment. The HLTH Band reads all day, while you work, sleep, and recover. That continuous picture shows you patterns a single reading never can. No other device in our test offered ",
+      "raw_len": 320
+    },
+    {
+      "block_id": "7b86899b-472",
+      "type": "HtmlElement",
+      "path": "root.children.children.children",
+      "money": [
+        "£229",
+        "£219",
+        "£200",
+        "£269",
+        "£79",
+        "£229",
+        "£0",
+        "£120",
+        "£0",
+        "£0",
+        "£458",
+        "£219",
+        "£320",
+        "£269",
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "DEVICE WHOOP 5.0 PEAK APPLE WATCH SE 3 FITBIT CHARGE 6 GARMIN VIVOACTIVE 6 HLTH BAND Year 1 £229 £219 £200 £269 £79 Year 2 £229 £0 £120 £0 £0 2-Year Total £458 £219 £320 £269 £79 Subscription Mandatory No Optional No No",
+      "raw_len": 2500
+    },
+    {
+      "block_id": "e673b639-7d0",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "So what are you giving up at £79? Three things, honestly. There's no screen , you check everything in the app, which for us was a feature rather than a flaw. There's no built-in GPS , the band leans on your phone for rou",
+      "raw_len": 563
+    },
+    {
+      "block_id": "6b4998f5-0e5",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£79",
+        "£158"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Price check: the £79 price is a launch sale, down from £158. We checked it on 1 July and again on 18 July 2026, and the discount was live both times. HLTH makes the band in small batches and earlier batches have sold out",
+      "raw_len": 310
+    },
+    {
+      "block_id": "4cedd5c5-778",
+      "type": "Text",
+      "path": "root.children.children.children",
+      "money": [
+        "£79"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Read enough of them and the same things keep coming up. People love how light the band is, that the battery genuinely lasts weeks instead of days, and that everything lives in one simple app. The other theme is money: no",
+      "raw_len": 284
+    },
+    {
+      "block_id": "5991501b-a5f",
+      "type": "HtmlElement",
+      "path": "root.children.children.children.children",
+      "money": [
+        "£79",
+        "£359"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "Is there really no subscription? What's the catch? + No subscription. You pay £79 once and everything is switched on. Blood pressure trends, HRV, sleep stages, blood oxygen. All of it. The catch isn't money. It's what th",
+      "raw_len": 656
+    },
+    {
+      "block_id": "2246a2e3-72a",
+      "type": "HtmlElement",
+      "path": "root.children.children.children.children",
+      "money": [
+        "£14.95"
+      ],
+      "pct": [],
+      "already_tagged": false,
+      "text": "What comes in the box? + The sensor, two straps and a charging cable. One strap is soft knit for daytime and sleep. The other is silicone for workouts and water. It fits wrists up to about 24cm, so there's no sizing kit ",
+      "raw_len": 551
+    }
+  ]
+}

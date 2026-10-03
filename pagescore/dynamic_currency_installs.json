@@ -1,0 +1,58 @@
+[
+  {
+    "funnel": "randell testing",
+    "funnel_uid": "fun_f1IsXx3YnEA2UD2g91dAv",
+    "funnel_slug": "randell-testing",
+    "published": true,
+    "step": "step_SmIVoc258ZchgIHKzFlo-",
+    "slug": "bh-advertorial-v1-dyn",
+    "title": "BH Advertorial v1 — dynamic currency",
+    "multiproduct": false,
+    "tz_entries": 53,
+    "has_prefix": false,
+    "copies": 1,
+    "noindex": false
+  },
+  {
+    "funnel": "Google funnels - UK",
+    "funnel_uid": "fun_p9Y_FwGlQsaP5bpW70q5N",
+    "funnel_slug": "article",
+    "published": true,
+    "step": "step_coYi_dsw6RtJtR111GjR8",
+    "slug": "dMs4WkOYD",
+    "title": "We Spent £1,581 Testing The Top 5 Fitness Trackers of 2026. The £79 Outsider Won.",
+    "multiproduct": true,
+    "tz_entries": 53,
+    "has_prefix": false,
+    "copies": 1,
+    "noindex": false
+  },
+  {
+    "funnel": "Google funnels - UK",
+    "funnel_uid": "fun_p9Y_FwGlQsaP5bpW70q5N",
+    "funnel_slug": "article",
+    "published": true,
+    "step": "step_u0V2pd8UIjiR9bXGyIL0M",
+    "slug": "dMs4WkOYD-fx",
+    "title": "We Spent GBP1,581 Testing The Top 5 - FX TEST",
+    "multiproduct": true,
+    "tz_entries": 53,
+    "has_prefix": false,
+    "copies": 1,
+    "noindex": true
+  },
+  {
+    "funnel": "TUB - Top 5 h trackers-v2 - META - LIVE",
+    "funnel_uid": "fun_vGqQYxn4H2i_traYYkh4w",
+    "funnel_slug": "smartwatch-review",
+    "published": true,
+    "step": "step_o3hE-N_cIOLHMOhl9bnml",
+    "slug": "best-fitness-trackers-2026",
+    "title": "DYNAMIC CURRENCY (test)",
+    "multiproduct": false,
+    "tz_entries": 53,
+    "has_prefix": false,
+    "copies": 1,
+    "noindex": false
+  }
+]
