@@ -135,6 +135,39 @@ def get_step_body(access_token, funnel_id, step_uid):
 
 
 # ---------------------------------------------------------------------------
+# Renderability guard.
+# ---------------------------------------------------------------------------
+def assert_steps_renderable(access_token, funnel_id, extra_headers=None):
+    """Raise if any step in `funnel_id` has no product attached.
+
+    A step with `product_id = None` ACCEPTS writes and never re-renders them:
+    updateFunnel returns success, a read-back shows the new body, and the live
+    URL serves the old HTML forever. There is no error anywhere.
+
+    That makes it invisible to every check we run, because our checks read
+    storage - the page passes copy, typography and tag counts while serving
+    something else entirely. Found 2026-09-29 on the four over-60s advertorials,
+    which had silently ignored a Lenis install; attaching a product flushed the
+    render and every pending edit landed at once.
+
+    Call this at the END of a build, after the body is written. Fix by setting
+    `product_id` at creation (createFunnel/createStep both take it) rather than
+    patching afterwards.
+    """
+    q = """query($id:ID!){node(id:$id){... on Funnel{
+             name steps{uid slug product_id}}}}"""
+    n = gql(access_token, q, {"id": funnel_id}, extra_headers=extra_headers)["node"]
+    orphans = [s["slug"] for s in n["steps"] if not s.get("product_id")]
+    if orphans:
+        raise RuntimeError(
+            "%s: %d step(s) have no product attached and will NOT render "
+            "edits: %s. Set product_id on each "
+            "(see assert_steps_renderable.__doc__)."
+            % (n["name"], len(orphans), ", ".join(orphans)))
+    return n["steps"]
+
+
+# ---------------------------------------------------------------------------
 # Create: scaffold a new funnel with empty pages by StepType.
 # ---------------------------------------------------------------------------
 def create_funnel(access_token, name, slug, funnel_steps, currency="USD",

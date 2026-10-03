@@ -1,0 +1,76 @@
+<!-- dynamic-currency -->
+<!-- ============================================================================
+     What goes in a Lightfunnels page header from 2026-09-27 onward.
+
+     The logic now lives at hlthtrack.com/dynamic-currency.js, published from
+     hlth-shopify-frontend/public/. This repo's dynamic-currency-header-block.html
+     remains the SOURCE, but editing it no longer changes what pages run - it has
+     to be re-copied and deployed. Do not edit the page copy to "fix" something.
+
+     WHY defer AND NOT A PLAIN <script src>:
+     a synchronous cross-origin script in <head> blocks first paint until
+     hlthtrack.com answers. On 2026-09-27 that domain returned 403 for ~20
+     minutes under Vercel bot mitigation; blocking would have meant blank pages
+     on paid traffic instead of prices quietly falling back to GBP. Resilience
+     beats the flash, so the flash is solved below instead.
+
+     WHY THE STUB EXISTS:
+     the external script hides tagged figures as its first action, which only
+     prevented a flash while it was INLINE in <head>. Deferred, it runs after the
+     body has painted, so a non-UK visitor would see GBP79 flip to PHP2,450 on
+     the one element that decides the sale. The stub applies that same hiding
+     synchronously, before any paint, and gets out of the way the moment a price
+     is written.
+
+     It carries NO prices, NO endpoints and NO country map, so it should never
+     need to change when markets or logic do. That is the whole point.
+============================================================================ -->
+<script>
+(function () {
+  var HIDE = "[data-price],[data-fx-gbp]{visibility:hidden}";
+  var MAX_MS = 2500;          // matches the external script's own reveal timer
+
+  // A UK visitor already sees the right text, so hiding anything for them is a
+  // pure regression - today they get no hide at all. One timezone comparison
+  // catches almost every one of them; this is deliberately NOT the 105-row map,
+  // which is server-side work now and must not come back into page code.
+  try {
+    var q = new URLSearchParams(location.search).get("country");
+    if (q) { if (q.toUpperCase() === "GB") return; }
+    else if ((Intl.DateTimeFormat().resolvedOptions() || {}).timeZone === "Europe/London") return;
+  } catch (e) {}
+
+  var s = document.createElement("style");
+  s.setAttribute("data-dc-stub", "");
+  s.textContent = HIDE;
+  (document.head || document.documentElement).appendChild(s);
+
+  var done = false;
+  function reveal() {
+    if (done) return;
+    done = true;
+    if (s.parentNode) s.parentNode.removeChild(s);
+  }
+  setTimeout(reveal, MAX_MS);
+  window.addEventListener("error", reveal);
+
+  // Reveal as soon as a price is actually written. Observing is attached at
+  // DOMContentLoaded rather than here: the style already prevents the flash, so
+  // the observer only decides WHEN to stop hiding, and attaching it late keeps
+  // it off the parse path of a 1.3 MB document.
+  function watch() {
+    var els = document.querySelectorAll("[data-price],[data-fx-gbp]");
+    if (!els.length) return reveal();          // nothing tagged: never hide
+    try {
+      var mo = new MutationObserver(function () { mo.disconnect(); reveal(); });
+      for (var i = 0; i < els.length && i < 40; i++) {
+        mo.observe(els[i], { childList: true, characterData: true, subtree: true });
+      }
+    } catch (e) { reveal(); }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", watch);
+  } else { watch(); }
+})();
+</script>
+<script src="https://hlthtrack.com/dynamic-currency.js" defer></script>

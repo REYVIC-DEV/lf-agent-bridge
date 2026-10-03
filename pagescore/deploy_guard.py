@@ -47,12 +47,42 @@ ROOT = os.path.dirname(HERE)
 ALLOW_ENV = "LF_ALLOW_REDEPLOY"
 
 
+def _funnel_via_session(funnel_id):
+    """Read-only fallback for machines that have a SESSION token but no app token
+    in .env. `lf.py funnel` resolves the app token only, so on those machines the
+    guard used to die with "No token." -- i.e. the safety check silently could not
+    run on exactly the setup that can write page bodies. This reads the same
+    fields with the session credentials instead. Still read-only."""
+    sys.path.insert(0, ROOT)
+    import lf_api                                            # noqa: E402
+    tok_path = os.path.join(ROOT, ".session_token")
+    acct_path = os.path.join(ROOT, ".lf_account")
+    if not os.path.exists(tok_path):
+        raise RuntimeError("no app token in .env and no .session_token to fall back on")
+    tok = open(tok_path).read().strip()
+    acct = open(acct_path).read().strip() if os.path.exists(acct_path) else ""
+    hh = {"account-id": acct, "version": "1",
+          "Origin": "https://app.lightfunnels.com",
+          "Referer": "https://app.lightfunnels.com/"}
+    r = lf_api.gql(
+        tok,
+        "query($q: String!){ funnels(first:1,query:$q){ edges { node { "
+        "id name slug published starting_step_id steps { id uid slug title type } } } } }",
+        {"q": "id:%s" % funnel_id}, extra_headers=hh)
+    edges = r["funnels"]["edges"]
+    if not edges:
+        raise RuntimeError(f"funnel {funnel_id} not found")
+    return edges[0]["node"]
+
+
 def _funnel(funnel_id):
     """Read the funnel through the bridge. Read-only -- `lf.py funnel` is a query."""
     out = subprocess.run(
         [sys.executable, "lf.py", "funnel", funnel_id],
         cwd=ROOT, capture_output=True, text=True, timeout=90)
     if out.returncode != 0:
+        if "No token" in (out.stderr or "") + (out.stdout or ""):
+            return _funnel_via_session(funnel_id)
         raise RuntimeError(f"could not read funnel {funnel_id}: {out.stderr[-300:]}")
     return json.loads(out.stdout)
 

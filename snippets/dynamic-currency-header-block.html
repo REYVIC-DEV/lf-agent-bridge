@@ -1,0 +1,235 @@
+<!-- ============================================================================
+     DYNAMIC CURRENCY — the browser script the Lightfunnels advertorials run.
+     Our product's price: .claude/skills/lightfunnels/references/PRODUCT_PRICE.md
+     Converting anything else: .claude/skills/lightfunnels/references/CURRENCY_CONVERTER.md
+
+     ⚠️ THIS FILE IS THE SOURCE, NOT WHAT THE PAGES RUN.
+     Since 2026-09-27 the pages load https://hlthtrack.com/dynamic-currency.js,
+     published from hlth-shopify-frontend/public/. Editing this file changes
+     nothing until it is re-copied there and the storefront is deployed. If the
+     two drift, the pages run code that cannot be found by grepping this repo.
+     The page-side tag lives in dynamic-currency-page-tag.html.
+
+     Two independent feeds, deliberately kept apart:
+
+       OUR PRODUCTS  hlthtrack.com/api/prices?products=all&country=...
+                     real Shopify per-market prices for all 7 products.
+                     Drives [data-price]. Uses the API's own `formatted`
+                     string, so we never format our own money.
+
+       COMPETITORS   app.hlthtrack.com/api/fx   mid-market FX. Drives [data-fx-gbp].
+                     Indicative ONLY - Shopify checkout converts at its own rate
+                     and price-list overrides ignore FX entirely. Fine for
+                     "about EUR 269" on a rival's RRP; NEVER for our price.
+
+     COUNTRY DETECTION IS SERVER-SIDE (changed 2026-09-27)
+     The browser no longer guesses. `country=auto` makes the API resolve the
+     visitor from the Vercel edge geo header and return `resolvedCountry`.
+
+     This replaced a 105-row IANA timezone map, and deleting that map is the
+     whole point: when Shopify went from 32 to 38 markets, every new market was
+     in the Americas while the map's only America/* rows were Canada's, so US,
+     Mexican and Brazilian visitors were quoted POUNDS on pages that had real
+     local prices waiting. Fixing it meant hand-editing four pages. A map that
+     has to be updated whenever a market is added is a map that will be wrong.
+
+     ⚠️ DO NOT REINTRODUCE CLIENT-SIDE COUNTRY GUESSING. If detection looks
+     wrong, it is a server-side geo question, not a page question.
+
+     MULTI-PRODUCT. A bare data-price means the main band, so pages written
+     before 2026-09-21 keep working. Name a handle to price anything else:
+
+       <span data-price="price">GBP79</span>                          main band
+       <span data-price="price" data-price-handle="hlth-arm-band">GBP14.95</span>
+
+     Handles: wearable-hlth-band (default) · performance-band · active-band ·
+     hlth-arm-band · hlth-band-lifetime-warranty · hlth-band-5-year-warranty ·
+     hlth-care-plus
+
+     ⚠️ THIS SCRIPT NO LONGER HIDES ANYTHING. The page tag's inline stub owns
+     anti-flash, because it is the only part that runs before first paint. This
+     script is loaded with `defer`, so hiding here would hide prices the visitor
+     can ALREADY SEE and then reveal them - the exact flicker the stub prevents.
+
+     Fail-safe by construction: every tagged element already contains the GBP
+     text and this script only ever overwrites it. Any failure - offline, CORS,
+     400, 403, 503, unknown country, missing rate - leaves the GBP text standing.
+
+     ⚠️ BOTH endpoints are origin-locked to techunboxed.co (Vary: Origin, and no
+     Access-Control-Allow-Origin at all for anything else). On the LightFunnels
+     preview domain both fetches are blocked and the page correctly shows GBP,
+     which looks identical to the script being broken. QA on the techunboxed URL.
+============================================================================ -->
+<script>
+(function () {
+  "use strict";
+  var PRICES = "https://hlthtrack.com/api/prices";
+  var FX     = "https://app.hlthtrack.com/api/fx";
+  var MAIN_HANDLE = "wearable-hlth-band";
+  var DEFAULT_CC = "GB";
+
+  // The ONLY client-side country logic left: an explicit override, for QA and
+  // for ad links that need to pin a market. Everything else asks the server.
+  function overrideCountry() {
+    try {
+      var q = new URLSearchParams(location.search).get("country");
+      if (q && /^[A-Za-z]{2}$/.test(q)) return q.toUpperCase();
+    } catch (e) {}
+    return null;
+  }
+  var OVERRIDE = overrideCountry();
+
+  // An explicit country is a SHARED-CACHEABLE url, so prefer it when we have
+  // one. `auto` is deliberately `private, no-store` at the edge - one url
+  // returning per-visitor content must never sit in a shared cache, or the CDN
+  // serves one country's prices to another. The Shopify calls behind it are
+  // cached server-side for 24h, so this costs the origin, not Shopify.
+  var URL_ = PRICES + "?products=all&country=" +
+             encodeURIComponent(OVERRIDE || "auto");
+
+  function trimZeros(t) {
+    // Trailing ".00" costs 3 characters and carries no information. A price
+    // cell is 44px wide at 390px, where "EUR268.00" overran its column by
+    // ~21px into the cell beside it. A genuinely fractional price (HR 60.65)
+    // is left alone. Handles the de-DE "268,00 EUR" ordering too.
+    return typeof t === "string" ? t.replace(/([.,])00(?=[^0-9]*$)/, "") : t;
+  }
+
+  function fmt(n, cur) {
+    if (!isFinite(n) || n <= 0) return null;   // a 0 renders a free product
+    try {
+      return trimZeros(new Intl.NumberFormat(navigator.language || "en-GB",
+        { style: "currency", currency: cur, maximumFractionDigits: 2 }).format(n));
+    } catch (e) { return null; }
+  }
+
+  // products=all answers { products: [ { handle, multiPriced, markets } ] } -
+  // a DIFFERENT shape from the single-product response. Country-scoped, so each
+  // product carries at most one market, but match on country rather than
+  // trusting index 0.
+  function marketOf(product, cc) {
+    var mk = (product && product.markets) || [], i;
+    for (i = 0; i < mk.length; i++) if (mk[i].country === cc) return mk[i];
+    return mk.length === 1 ? mk[0] : null;
+  }
+
+  function applyPrices(data, cc) {
+    var products = (data && data.products) || [];
+    var byHandle = {}, i, mainMarket = null, anyCurrency = null;
+    for (i = 0; i < products.length; i++) byHandle[products[i].handle] = products[i];
+
+    var els = document.querySelectorAll("[data-price]"), el, handle, kind, p, m;
+    for (i = 0; i < els.length; i++) {
+      el = els[i];
+      handle = el.getAttribute("data-price-handle") || MAIN_HANDLE;
+      kind = el.getAttribute("data-price");
+      p = byHandle[handle];
+      if (!p) continue;                            // unknown handle -> keep GBP
+      m = marketOf(p, cc);
+      if (!m || m.available === false) continue;   // not sold here -> keep GBP
+      if (!anyCurrency) anyCurrency = m.currency;
+      if (handle === MAIN_HANDLE) mainMarket = m;
+
+      // multiPriced means the variants disagree and `amount` is the CHEAPEST,
+      // so it is a "from" price. Care+ is 7.95 monthly and 79.95 for the year:
+      // writing the cheapest as if it were THE price understates the annual
+      // plan tenfold. Refuse unless the markup opts in with data-price-from,
+      // which is the page promising its copy says "from". Failing to localise
+      // is recoverable; quoting a tenth of the price is not.
+      if (p.multiPriced && kind === "price" && !el.hasAttribute("data-price-from")) {
+        continue;
+      }
+
+      var amount = parseFloat(m.amount), compare = parseFloat(m.compareAt), out = null;
+      if (kind === "price") {
+        out = trimZeros(m.formatted);
+      } else if (kind === "compare") {
+        out = isFinite(compare) ? fmt(compare, m.currency) : null;
+      } else if (kind === "savings") {
+        // COMPUTED, not assumed: savings equals the price only while every
+        // market sits at exactly 50% off, which is true today and is not a
+        // promise.
+        out = (isFinite(compare) && isFinite(amount) && compare > amount)
+          ? fmt(compare - amount, m.currency) : null;
+      } else if (kind === "discount") {
+        out = m.discountPct ? m.discountPct + "%" : null;
+      }
+      if (out != null && out !== "") el.textContent = out;
+    }
+    return mainMarket || (anyCurrency ? { currency: anyCurrency } : null);
+  }
+
+  function applyFx(fxData, cur) {
+    if (!fxData || !fxData.rates || !cur || cur === "GBP") return;
+    var rate = fxData.rates[cur];
+    // A currency with no rate is OMITTED by the API, never sent as 0 or null.
+    // undefined would give NaN and a 0 would render a free product - bail.
+    if (typeof rate !== "number" || !isFinite(rate) || rate <= 0) return;
+    var els = document.querySelectorAll("[data-fx-gbp]"), i, gbp, out;
+    for (i = 0; i < els.length; i++) {
+      gbp = parseFloat(els[i].getAttribute("data-fx-gbp"));
+      if (!isFinite(gbp) || gbp < 0) continue;
+      if (gbp === 0) {
+        // A "GBP0" subscription cell means "none". It still has to change
+        // currency or the row reads "EUR79 / GBP0 / EUR79". Formatted directly
+        // rather than through fmt(), whose <= 0 guard must stay in force for
+        // data-price, where a 0 would render a free product.
+        out = null;
+        try {
+          out = new Intl.NumberFormat(navigator.language || "en-GB",
+            { style: "currency", currency: cur,
+              maximumFractionDigits: 0 }).format(0);
+        } catch (e) { out = null; }
+        if (out) els[i].textContent = out;
+        continue;
+      }
+      out = fmt(Math.round(gbp * rate), cur);   // whole units: it is indicative
+      if (out) els[i].textContent = out;
+    }
+  }
+
+  function getJSON(url) {
+    return fetch(url, { mode: "cors", credentials: "omit" }).then(function (r) {
+      if (!r.ok) throw new Error(url + " " + r.status);
+      return r.json();
+    });
+  }
+
+  function run() {
+    getJSON(URL_).then(function (p) {
+      // Trust the server's answer over anything derived here. On an `auto`
+      // request it also tells us when it fell back: an unsold country (JP, IN,
+      // anywhere we do not ship) returns 200 with the GB market and
+      // fellBack:true. That is NORMAL, not a failure.
+      var cc = p.resolvedCountry || OVERRIDE || DEFAULT_CC;
+      var m = applyPrices(p, cc);
+      var cur = m && m.currency;
+
+      if (window.posthog && typeof posthog.register === "function") {
+        try {
+          posthog.register({
+            funnel_country: cc,
+            funnel_currency: cur || "GBP",
+            funnel_country_source: OVERRIDE ? "param" : "geo",
+            funnel_country_fellback: !!p.fellBack
+          });
+        } catch (e) {}
+      }
+
+      // Only reach for FX if a competitor figure actually exists on the page.
+      // Skipping it saves a cross-origin request on every non-GB pageview and
+      // avoids a console CORS error on hosts /api/fx does not allow.
+      var wantFx = document.querySelector("[data-fx-gbp]");
+      if (wantFx && cur && cur !== "GBP") {
+        // competitors are a separate, weaker feed - its failure must not undo
+        // the product prices already applied
+        return getJSON(FX).then(function (f) { applyFx(f, cur); }).catch(function () {});
+      }
+    }).catch(function () { /* every figure keeps its GBP text */ });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else { run(); }
+})();
+</script>

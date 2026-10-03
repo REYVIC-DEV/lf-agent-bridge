@@ -40,3 +40,7 @@ env*.local
 *.key
 *.pem
 .secrets/
+
+# Regenerable step-body caches (rebuilt from the API by cache-step-body.py).
+# The dated pre-* captures beside them ARE kept: those are rollback points.
+funnels/**/steps/_cache-*.json

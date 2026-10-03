@@ -120,18 +120,18 @@ def ensure_vault():
     os.makedirs(os.path.join(VAULT, "pages"), exist_ok=True)
     os.makedirs(os.path.join(VAULT, "sessions"), exist_ok=True)
     if not os.path.exists(MOC):
-        open(MOC, "w").write(MOC_SEED)
+        open(MOC, "w", encoding="utf-8").write(MOC_SEED)
 
 
 def insert_after(path, marker, line):
     """Add a bullet under a marker, newest first, without duplicating it."""
-    txt = open(path).read()
+    txt = open(path, encoding="utf-8").read()
     if line.strip() in txt:
         return
     if marker not in txt:
         txt += f"\n{marker}\n"
     txt = txt.replace(marker, f"{marker}\n{line}", 1)
-    open(path, "w").write(txt)
+    open(path, "w", encoding="utf-8").write(txt)
 
 
 def run_summary(run_id):
@@ -140,7 +140,7 @@ def run_summary(run_id):
     fj = os.path.join(HERE, "runs", run_id, "findings.json")
     if not os.path.exists(fj):
         return None, []
-    run = json.load(open(fj))
+    run = json.load(open(fj, encoding="utf-8"))
     lines = ["", f"## Measured ({run_id})", "",
              "| Page | Verdict | Speed | Links | Meta | Mobile | Console | A11y |",
              "|---|---|---|---|---|---|---|---|"]
@@ -177,12 +177,12 @@ def main():
     ensure_vault()
     today = datetime.now().strftime("%Y-%m-%d")
     slug = slugify(args.slug)
-    body = sys.stdin.read() if args.body == "-" else open(args.body).read()
+    body = sys.stdin.read() if args.body == "-" else open(args.body, encoding="utf-8").read()
 
     # --- page note -------------------------------------------------------
     page_path = os.path.join(VAULT, "pages", f"{slug}.md")
     if not os.path.exists(page_path):
-        open(page_path, "w").write(PAGE_SEED.format(
+        open(page_path, "w", encoding="utf-8").write(PAGE_SEED.format(
             slug=slug, today=today, url=args.url or "-",
             builder=args.builder or "-", funnel=args.funnel or "-"))
 
@@ -233,7 +233,7 @@ def main():
     out += ["", "---", "",
             f"Written by `pagescore/session_note.py`. "
             f"Runbook `pagescore/program.md`.", ""]
-    open(sess_path, "w").write("\n".join(out))
+    open(sess_path, "w", encoding="utf-8").write("\n".join(out))
 
     # --- backlinks -------------------------------------------------------
     insert_after(page_path, "<!-- history -->",

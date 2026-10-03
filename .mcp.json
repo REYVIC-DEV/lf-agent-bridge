@@ -3,6 +3,10 @@
     "figwright": {
       "command": "npx",
       "args": ["-y", "@figwright/mcp@latest"]
+    },
+    "clickup": {
+      "type": "http",
+      "url": "https://mcp.clickup.com/mcp"
     }
   }
 }
