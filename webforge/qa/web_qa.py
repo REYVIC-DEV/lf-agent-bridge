@@ -207,10 +207,22 @@ def main():
     if not args.no_serve and not server_up(root_url):
         if args.prod:
             print("  building production output…")
+            # ⚠️ encoding + errors are NOT optional on Windows. `text=True`
+            # alone decodes with the console codepage (cp1252 here), and the
+            # Next build prints box-drawing and tick characters, so the reader
+            # thread dies with UnicodeDecodeError on a byte like 0x8f. The run
+            # then fails during the build rather than during the judging, which
+            # reads as a page defect and is not one. Same class as the
+            # design_diff.py UTF-8 fix. Measured 2026-10-23 on /science/activity.
             b = subprocess.run([NPM, "run", "build"], cwd=args.project,
-                               capture_output=True, text=True)
+                               capture_output=True, text=True,
+                               encoding="utf-8", errors="replace")
             if b.returncode != 0:
-                sys.exit(f"build failed:\n{b.stdout[-2000:]}\n{b.stderr[-1000:]}")
+                # ⚠️ Either stream can be None when the reader thread died, and
+                # slicing None raises a TypeError that buries the real failure.
+                out = (b.stdout or "")[-2000:]
+                err = (b.stderr or "")[-1000:]
+                sys.exit(f"build failed:\n{out}\n{err}")
         cmd = [NPM, "run", "start" if args.prod else "dev", "--", "--port", str(args.port)]
         print(f"  starting: {' '.join(cmd)}")
         server = subprocess.Popen(cmd, cwd=args.project,

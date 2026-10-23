@@ -501,7 +501,7 @@ def read_live(url, viewport, mobile, want_images=False):
               }
             }""")
             pg.wait_for_timeout(300)
-            imgs = pg.evaluate(LIVE_IMG_JS)
+            imgs = pg.evaluate(LIVE_IMG_JS.replace("__MIN_IMG_PX__", str(MIN_IMG_PX)))
             for im in imgs:
                 try:
                     el = pg.query_selector(f'img[data-dd-img="{im["idx"]}"]')
@@ -694,6 +694,11 @@ IMG_ASPECT_TOL = 0.03      # 3% -- a differing aspect ratio is a box defect
 # the three the human flagged, which is the whole reason this check exists.
 IMG_PIXEL_TOL = 0.05
 
+# Smallest edge, in px, that counts as a real image on EITHER side of the
+# comparison. Anything under this is an icon or a spacer. Both the design walk
+# and LIVE_IMG_JS must use it — see the note in walk_image_nodes.
+MIN_IMG_PX = 24
+
 
 def walk_image_nodes(node, out, path=""):
     """Every Figma node painted with an image fill, in document order."""
@@ -712,7 +717,17 @@ def walk_image_nodes(node, out, path=""):
         box = node.get("absoluteBoundingBox") or {}
         w = box.get("width", node.get("width"))
         h = box.get("height", node.get("height"))
-        if w and h:
+        # ⚠️ The SAME threshold LIVE_IMG_JS applies. Both sides must filter
+        # identically, because compare_images pairs them IN DOCUMENT ORDER: a
+        # node one side keeps and the other drops shifts every pair after it.
+        #
+        # Found 2026-10-23 on /science/activity. The header's 22x22 country
+        # flag is an image fill, so it entered this list but not the live one,
+        # and the first real photo was then compared against the flag
+        # ("aspect 1.00 -> 0.91") with impossible readings further down the
+        # page ("aspect 8.55 -> 1.30"). Nothing on the page was wrong; the two
+        # lists simply disagreed about what counts as an image.
+        if w and h and w >= MIN_IMG_PX and h >= MIN_IMG_PX:
             out.append({"id": node.get("id"), "path": here.lstrip("/"),
                         "name": name, "w": round(w), "h": round(h),
                         "y": box.get("y", node.get("y")) or 0})
@@ -732,7 +747,7 @@ LIVE_IMG_JS = r"""
   const out = [];
   document.querySelectorAll('img').forEach((im, i) => {
     const r = im.getBoundingClientRect();
-    if (r.width < 24 || r.height < 24) return;          // icons and spacers
+    if (r.width < __MIN_IMG_PX__ || r.height < __MIN_IMG_PX__) return;   // icons and spacers
     const cs = getComputedStyle(im);
     if (cs.display === 'none' || cs.visibility === 'hidden') return;
     im.setAttribute('data-dd-img', String(i));
