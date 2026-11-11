@@ -170,6 +170,11 @@ def absolute_y(node, origin_y):
     return float(origin_y) + float(node.get("y") or 0)
 
 
+def _num(v):
+    """A numeric style value, or None when Figma reported "mixed"/absent."""
+    return v if isinstance(v, (int, float)) and not isinstance(v, bool) else None
+
+
 def walk_text_nodes(node, out, path="", ancestors=None, sibling_index=None,
                     origin_y=0.0, containers=None):
     """Pull every TEXT node out of any Figma-shaped JSON, however it was produced."""
@@ -207,13 +212,18 @@ def walk_text_nodes(node, out, path="", ancestors=None, sibling_index=None,
         lh = st.get("lineHeightPx")
         if lh is None:
             lh = dget(node.get("lineHeight"), "value")
+        # A Figma TEXT node whose runs differ reports the literal string "mixed" for
+        # fontSize / fontName / fills instead of a value. Letting that through makes
+        # style_distance() do `"mixed" - 16` and take the whole run down, so anything
+        # non-numeric becomes None -- i.e. "unknown", which every comparison below
+        # already skips. The run's real styling is still checked as copy.
         out.append({
             "id": node.get("id"), "path": here.lstrip("/"),
             "chars": chars,
-            "font_size": st.get("fontSize") or node.get("fontSize"),
-            "font_weight": weight,
-            "family": family,
-            "line_height": lh,
+            "font_size": _num(st.get("fontSize") or node.get("fontSize")),
+            "font_weight": _num(weight),
+            "family": family if isinstance(family, str) and family != "mixed" else None,
+            "line_height": _num(lh),
             "align": st.get("textAlignHorizontal") or node.get("textAlignHorizontal"),
             "color": hexcolor(solid),
             "y": box.get("y", node.get("y")), "x": box.get("x", node.get("x")),
@@ -289,15 +299,28 @@ LIVE_JS = r"""
   const lineCount = target => {
     try {
       const nodes = target.nodeType === 3 ? [target] : visibleTextNodes(target);
-      const tops = new Set();
+      const tops = [];
       for (const n of nodes) {
         const rg = document.createRange();
         rg.selectNodeContents(n);
         for (const r of rg.getClientRects()) {
-          if (r.width > 0 || r.height > 0) tops.add(Math.round(r.top));
+          if (r.width > 0 || r.height > 0) tops.push(r.top);
         }
       }
-      return tops.size || null;
+      if (!tops.length) return null;
+      // Runs in different FACES sit at different glyph-box tops inside the SAME line
+      // box, so counting distinct tops reads one mixed-font line as two or three --
+      // which is most of a listicle's "Label: value" copy. Cluster instead: a new
+      // line only starts where the gap exceeds half a line.
+      const host = target.nodeType === 3 ? target.parentElement : target;
+      const hcs = host ? getComputedStyle(host) : null;
+      let step = hcs ? parseFloat(hcs.lineHeight) : NaN;
+      if (!isFinite(step)) step = hcs ? parseFloat(hcs.fontSize) * 1.2 : 16;
+      const tol = Math.max(2, step * 0.5);
+      tops.sort((a, b) => a - b);
+      let lines = 1;
+      for (let i = 1; i < tops.length; i++) if (tops[i] - tops[i - 1] > tol) lines++;
+      return lines;
     } catch (e) { return null; }
   };
   // The mirror of enclosing_box() on the Figma side: the nearest ancestor that

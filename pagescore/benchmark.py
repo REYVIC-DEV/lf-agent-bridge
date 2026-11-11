@@ -35,6 +35,7 @@ key, falls back to local Lighthouse if the `lighthouse` CLI is on PATH
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -59,13 +60,33 @@ TSV_COLUMNS = [
 ]
 
 
+#: Both names are accepted. The key was added to .env as PAGESPEED_KEY on
+#: 2026-10-08 while this only looked for PSI_API_KEY, so every run still
+#: skipped PageSpeed and reported "performance unavailable" as though no key
+#: existed. A key that is present but invisible is worse than a missing one,
+#: because the run still produces a verdict.
+PSI_KEY_NAMES = ("PSI_API_KEY", "PAGESPEED_KEY")
+
+
 def psi_api_key(env_path=os.path.join(ROOT, ".env")):
-    key = os.environ.get("PSI_API_KEY")
-    if not key and os.path.exists(env_path):
+    for name in PSI_KEY_NAMES:
+        key = os.environ.get(name)
+        if key:
+            return key
+    if os.path.exists(env_path):
+        # Tolerate leading whitespace, `export `, and spaces around the `=`.
+        # The old `line.startswith("PSI_API_KEY=")` missed a line written as
+        # `PSI_API_KEY = ...`, which is how the key was actually added on
+        # 2026-10-08. It read as "no key" and the run silently skipped
+        # PageSpeed, so the formatting of a secrets file quietly decided
+        # whether a whole QA phase ran.
+        pat = re.compile(r"^\s*(?:export\s+)?(" + "|".join(PSI_KEY_NAMES) +
+                         r")\s*=\s*(.+?)\s*$")
         for line in open(env_path):
-            if line.startswith("PSI_API_KEY="):
-                key = line.split("=", 1)[1].strip().strip('"').strip("'")
-    return key
+            m = pat.match(line)
+            if m:
+                return m.group(2).strip().strip('"').strip("'")
+    return None
 
 
 def git_commit():

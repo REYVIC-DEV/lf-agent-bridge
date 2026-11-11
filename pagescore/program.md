@@ -66,13 +66,14 @@ At each width:
    document.documentElement.scrollWidth > window.innerWidth
    Then confirm it is real: window.scrollTo(50, 0); window.scrollX
    If scrollX is greater than 0, the page actually pans sideways.
-3. Visually inspect the known trouble spots: comparison tables, embedded video, the references/citations block, image grids, the sticky CTA bar.
+3. Visually inspect the known trouble spots: comparison tables, embedded video, the references/citations block, image grids, the sticky CTA bar, body-copy paragraph spacing.
 
 Pass criteria:
 - No horizontal scroll at any width, 320px included
 - Tables either reflow or scroll inside their own container; numbers never wrap mid-digit (like "£22 9")
 - Long URLs (citations, references) wrap. The usual fix is overflow-wrap: anywhere on that block.
 - Tap targets and CTAs remain full-width and reachable
+- Body copy reads as distinct paragraphs with a real visible gap between them, not a wall of text with only single line-breaks. Plain-text extraction cannot catch this (a `<br>` and a blank line look identical once HTML is stripped) - check the rendered screenshot. See `.claude/rules/lf-advertorial-pages.md`.
 
 If overflow exists but no element obviously sticks out, walk the DOM comparing each element's scrollWidth to its clientWidth until you find the container that is too wide. On the techunboxed page it was unbroken DOI URLs in the References section.
 

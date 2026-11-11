@@ -61,9 +61,13 @@ def _funnel_via_session(funnel_id):
         raise RuntimeError("no app token in .env and no .session_token to fall back on")
     tok = open(tok_path).read().strip()
     acct = open(acct_path).read().strip() if os.path.exists(acct_path) else ""
-    hh = {"account-id": acct, "version": "1",
-          "Origin": "https://app.lightfunnels.com",
-          "Referer": "https://app.lightfunnels.com/"}
+    # The API moved from `Authorization: Bearer` to the lf_session cookie on
+    # 2026-10-06. Hand-building the headers here dropped the Cookie, so this
+    # read failed with "Your session has expired" and the guard could not run at
+    # all on a session-only machine -- i.e. the safety check was off on exactly
+    # the setup that can write page bodies. lf_api.session_headers() attaches
+    # the cookie from .lf_state.json. Still read-only.
+    hh = lf_api.session_headers(acct)
     r = lf_api.gql(
         tok,
         "query($q: String!){ funnels(first:1,query:$q){ edges { node { "

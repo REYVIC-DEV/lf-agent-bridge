@@ -77,7 +77,10 @@ It measures the frame node by node through figwright, copies text verbatim, and 
 `pagescore/build_<name>.py`. It ships the standing requirements as part of the build, not
 as polish: one `h1`, full `settings.seo` with a 1200×630 social image, `twitter:*` tags,
 `alt` on every content image, the font-preload + `InterFallback` block, no `href="#"`,
-`overflow-wrap: anywhere` on rich text.
+`overflow-wrap: anywhere` on rich text, one node per paragraph of body copy (never several
+paragraphs joined by a bare `\n` in one text node — see `.claude/rules/lf-advertorial-pages.md`),
+and on any TechUnboxed/SOF advertorial, dynamic-currency tags on every money figure from the
+first draft (same file).
 
 It saves the frame dump to `pagescore/runs/<run-id>/design.json` — **stage 2 cannot check
 fidelity without it.**
