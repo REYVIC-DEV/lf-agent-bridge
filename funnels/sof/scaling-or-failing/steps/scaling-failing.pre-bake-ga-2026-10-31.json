@@ -1,0 +1,570 @@
+{
+  "id": "fd5055ed-008d-4ec6-881e-c26c7a10e45f",
+  "t": "Root",
+  "version": 11,
+  "styles": [
+    {
+      "prop": "pageWidth",
+      "value": "1680px"
+    },
+    {
+      "prop": "backgroundColor",
+      "value": {
+        "r": 252,
+        "g": 236,
+        "b": 199,
+        "a": 1
+      }
+    }
+  ],
+  "p": {
+    "children": [
+      {
+        "t": "Section",
+        "id": "3d033e98-814d-496b-b170-ad435d054aad",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "227fd9fb-8286-4b79-9f7c-79f159e8ad81",
+              "p": {
+                "content": "<div class=\"sof sof-sec sof-promobar sof-sec--bleed\"><div class=\"sof-cap\"><a class=\"sof-promo\" href=\"https://buy.stripe.com/3cIfZh0RM201aiyg01dby04\"><span>GET EARLY BIRD TICKET &amp; SAVE $1000</span></a></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "7c1c2efc-286e-4179-b77e-c2690e9b83bc",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "de4ea53c-5454-43df-a320-c38c8ac4a963",
+              "p": {
+                "content": "<div class=\"sof sof-sec sof-cdbar sof-sec--bleed\"><div class=\"sof-cap\"><div class=\"sof-cd\" data-cd-ends=\"2026-10-31T06:59:59Z\"><span class=\"sof-cd-lab\"><b>EARLY BIRD</b><i>PRICING ENDS SOON</i></span><span class=\"sof-cd-units\"><span class=\"sof-cd-u\"><b data-cd=\"d\">05</b><i>DAYS</i></span><span class=\"sof-cd-c\" aria-hidden=\"true\">:</span><span class=\"sof-cd-u\"><b data-cd=\"h\">02</b><i>HRS</i></span><span class=\"sof-cd-c\" aria-hidden=\"true\">:</span><span class=\"sof-cd-u\"><b data-cd=\"m\">36</b><i>MIN</i></span><span class=\"sof-cd-c\" aria-hidden=\"true\">:</span><span class=\"sof-cd-u\"><b data-cd=\"s\">09</b><i>SEC</i></span></span></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "036a23c6-3889-4a11-9ff3-a6ac2b19c63b",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "a0fac126-0588-4289-b419-ed0ab4510bfb",
+              "p": {
+                "content": "<div class=\"sof sof-sec sof-head sof-sec--bleed\"><div class=\"sof-cap\"><input type=\"checkbox\" id=\"sof-menu\" class=\"sof-menu-cb\" aria-hidden=\"true\" tabindex=\"-1\"><nav class=\"sof-nav sof-nav-d\" aria-label=\"Main\"><a class=\"sof-navcell sof-navcell--rule\" href=\"#about\">ABOUT</a><a class=\"sof-navcell sof-navcell--rule\" href=\"#speakers\">SPEAKERS</a><a class=\"sof-navcell sof-navcell--rule\" href=\"#topics\">TOPICS</a><a class=\"sof-navcell sof-navcell--rule sof-navcell--gold\" href=\"#tickets\">GET TICKET</a><a class=\"sof-navcell\" href=\"/event/contact\">CONTACT</a></nav><nav class=\"sof-nav sof-nav-m\" aria-label=\"Main\"><label class=\"sof-navcell sof-navcell--rule\" for=\"sof-menu\"><span class=\"sof-burger\" aria-hidden=\"true\"><i></i><i></i><i></i></span>MENU</label><a class=\"sof-navcell sof-navcell--gold\" href=\"#tickets\">GET TICKET</a></nav><div class=\"sof-menu\"><a href=\"#about\">ABOUT</a><a href=\"#speakers\">SPEAKERS</a><a href=\"#topics\">TOPICS</a><a href=\"#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"/event/contact\">CONTACT</a></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "a3843b2b-a1ae-48d3-a64f-35ca27852307",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "37a8aa93-f059-414f-86a5-8675d11f168b",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-hero sof-sec--bleed\"><div class=\"sof-cap\"><picture class=\"sof-hero-pic\"><source media=\"(max-width:767px)\" srcset=\"https://assets.lightfunnels.com/account-90380/images_library/95277d6e-f234-49d5-ab29-166c110822d4.webp\"><img class=\"sof-hero-plate\" src=\"https://assets.lightfunnels.com/account-90380/images_library/bc343abc-8d0c-4347-8ae2-84d9c796a531.webp\" alt=\"\" aria-hidden=\"true\" fetchpriority=\"high\" decoding=\"async\"></picture><div class=\"sof-hero-wash\" aria-hidden=\"true\"></div><div class=\"sof-hero-shade\" aria-hidden=\"true\"></div><h1 class=\"sof-vh sof-h1\"><span class=\"a\">SCALING</span> <span class=\"b\">OR</span> <span class=\"c\">FAILING</span></h1><div class=\"sof-hero-m\"><p class=\"sof-date\">DECEMBER 7\u20138, 2026 \u2022 BANGKOK, THAILAND</p><div class=\"sof-lockup\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/54fba04c-c30b-4f8c-937a-96e0fd20b7ee.webp\" alt=\"\" fetchpriority=\"high\" decoding=\"async\"></div><div class=\"sof-tag\"><span>BY OPERATORS. FOR OPERATORS.</span></div><a class=\"sof-cta\" href=\"#tickets\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a><div class=\"sof-pow\"><b>POWERED BY</b><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div><div class=\"sof-hosts\"><span>RYAN TALMADGE</span><span>NICK SHACKELFORD</span><span>TOPI HEINONEN</span></div></div><div class=\"sof-hero-d\"><div class=\"sof-hero-col\"><p class=\"sof-date\">DECEMBER 7\u20138, 2026 \u2022 BANGKOK, THAILAND</p><div class=\"sof-lockup\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/18934721-4035-4a86-96be-78ffbff65c4e.webp\" alt=\"\" fetchpriority=\"high\" decoding=\"async\"></div><div class=\"sof-tag\"><span>BY OPERATORS. FOR OPERATORS.</span></div><a class=\"sof-cta\" href=\"#tickets\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a><div class=\"sof-pow\"><b>POWERED BY</b><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div></div><div class=\"sof-hero-shadeblur\" aria-hidden=\"true\"></div><div class=\"sof-hosts\"><span>RYAN TALMADGE</span><span>NICK SHACKELFORD</span><span>TOPI HEINONEN</span></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "ad498ac2-83de-47a6-b770-809d557af3ca",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "54b9ccd1-e132-405c-bc8f-de2471453f99",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-ticker sof-sec--bleed\"><div class=\"sof-cap\"><div class=\"sof-tick-track\"><div class=\"sof-tick-seq\"><span class=\"sof-tick-word\">300+ OPERATORS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">12+ SPEAKERS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">2 DAYS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">BANGKOK \u00b7 DEC 7\u20138</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">REAL NUMBERS ONLY</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">NO RECYCLED SLIDES</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span></div><div class=\"sof-tick-seq\" aria-hidden=\"true\"><span class=\"sof-tick-word\">300+ OPERATORS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">12+ SPEAKERS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">2 DAYS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">BANGKOK \u00b7 DEC 7\u20138</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">REAL NUMBERS ONLY</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">NO RECYCLED SLIDES</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "26dd0302-9fae-47ca-b209-96a45ccd4307",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "383bce39-1b50-45a6-b386-e52dab889b00",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-stats sof-sec--bleed\"><div class=\"sof-cap\"><div class=\"sof-stats-row\"><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ba802fe5-df70-4037-a5ea-4a01bdc754f5.webp\" alt=\"300+\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/5d3c6d64-0aaf-4b3e-a988-4552527360ca.webp\" alt=\"OPERATORS\" loading=\"lazy\" decoding=\"async\"></span></div><span class=\"sof-statdiv\" aria-hidden=\"true\"></span><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/26a7dd29-97df-4f5e-b75b-291de467b982.webp\" alt=\"12\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/5d95c2ab-d356-485b-b193-7571bc665f0f.webp\" alt=\"SPEAKERS\" loading=\"lazy\" decoding=\"async\"></span></div><span class=\"sof-statdiv\" aria-hidden=\"true\"></span><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f8c8dbae-4046-46d6-8899-6165817f6076.webp\" alt=\"2\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/e44df19b-7c08-406f-994d-cd013a8a8ed0.webp\" alt=\"DAYS\" loading=\"lazy\" decoding=\"async\"></span></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "9a69688c-3a71-4042-932b-83cf55c6f33f",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "6ab0c1c6-973b-4d62-b4d0-acd9888e247c",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-speakers\" id=\"speakers\"><div class=\"sof-cap\"><div class=\"sof-in\"><h2><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9484b3c3-493d-4fd0-8f43-1396740a0a9f.webp\" alt=\"How the best are scaling right now\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0d2cad2c-421e-4efc-9a93-2fd48db13260.webp\" alt=\"How the best are scaling right now\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">How the best are scaling right now</span></h2><div class=\"sof-grid\"><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/e7f8dc36-80ea-40fb-a40a-56d6589aa09f.jpg\" alt=\"STEVE TAN\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-0\" tabindex=\"0\" role=\"button\" aria-label=\"Read STEVE TAN\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">STEVE TAN<label class=\"sof-spk-i\" for=\"sof-spk-0\" tabindex=\"0\" role=\"button\" aria-label=\"Read STEVE TAN\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">$100M+ in ecom sales</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/12a8bb71-b954-40ec-982a-31c4b337e108.jpg\" alt=\"ALEX FEDOTOFF\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-1\" tabindex=\"0\" role=\"button\" aria-label=\"Read ALEX FEDOTOFF\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">ALEX FEDOTOFF<label class=\"sof-spk-i\" for=\"sof-spk-1\" tabindex=\"0\" role=\"button\" aria-label=\"Read ALEX FEDOTOFF\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">The Godfather of Ecom</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/76ad1f83-d859-4bdf-bab1-0c20288647ba.jpg\" alt=\"JOSHUA CHIN\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-2\" tabindex=\"0\" role=\"button\" aria-label=\"Read JOSHUA CHIN\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">JOSHUA CHIN<label class=\"sof-spk-i\" for=\"sof-spk-2\" tabindex=\"0\" role=\"button\" aria-label=\"Read JOSHUA CHIN\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">Chronos \u00b7 8-figure email rev</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/d3398e36-4aa9-4b87-8ed8-0267f8acbb7a.jpg\" alt=\"RONAK SHAH\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-3\" tabindex=\"0\" role=\"button\" aria-label=\"Read RONAK SHAH\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">RONAK SHAH<label class=\"sof-spk-i\" for=\"sof-spk-3\" tabindex=\"0\" role=\"button\" aria-label=\"Read RONAK SHAH\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">Founder of Obvi</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/0cc42da7-fb5a-4f21-93e4-023aa518a77d.jpg\" alt=\"DARA DENNEY\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-4\" tabindex=\"0\" role=\"button\" aria-label=\"Read DARA DENNEY\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">DARA DENNEY<label class=\"sof-spk-i\" for=\"sof-spk-4\" tabindex=\"0\" role=\"button\" aria-label=\"Read DARA DENNEY\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">Performance Creative Queen</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/f8807a11-97f4-4e15-9206-2c07c2c12511.jpg\" alt=\"JEM BOUROUH\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-5\" tabindex=\"0\" role=\"button\" aria-label=\"Read JEM BOUROUH\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">JEM BOUROUH<label class=\"sof-spk-i\" for=\"sof-spk-5\" tabindex=\"0\" role=\"button\" aria-label=\"Read JEM BOUROUH\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">The King of Google Ads</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/9a27ff10-2028-42d6-9338-c5edeca33542.jpg\" alt=\"PHIL LI\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-6\" tabindex=\"0\" role=\"button\" aria-label=\"Read PHIL LI\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">PHIL LI<label class=\"sof-spk-i\" for=\"sof-spk-6\" tabindex=\"0\" role=\"button\" aria-label=\"Read PHIL LI\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">$500M+ a year on Amazon</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/a9485882-fad8-411b-b771-28bbc82fb9a8.jpg\" alt=\"SHAWN HE\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-7\" tabindex=\"0\" role=\"button\" aria-label=\"Read SHAWN HE\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">SHAWN HE<label class=\"sof-spk-i\" for=\"sof-spk-7\" tabindex=\"0\" role=\"button\" aria-label=\"Read SHAWN HE\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">$500M+ a year on Amazon</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/a402ac75-0fb4-4c41-aef6-4f14af934587.jpg\" alt=\"JAY CRUIZ\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-8\" tabindex=\"0\" role=\"button\" aria-label=\"Read JAY CRUIZ\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">JAY CRUIZ<label class=\"sof-spk-i\" for=\"sof-spk-8\" tabindex=\"0\" role=\"button\" aria-label=\"Read JAY CRUIZ\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">AEO That Works \u00b7 9 Figure Traffic</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/4bb6b86a-0f7e-454a-9d88-87c5a9d23c3b.jpg\" alt=\"GONZALO MARTIN\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-9\" tabindex=\"0\" role=\"button\" aria-label=\"Read GONZALO MARTIN\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">GONZALO MARTIN<label class=\"sof-spk-i\" for=\"sof-spk-9\" tabindex=\"0\" role=\"button\" aria-label=\"Read GONZALO MARTIN\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">Brand Owner \u00b7 $600K+ Days</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/41c93643-01b0-492b-9b61-d1ecd6a25a6a.webp\" alt=\"BARRY HOTT\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-10\" tabindex=\"0\" role=\"button\" aria-label=\"Read BARRY HOTT\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">BARRY HOTT<label class=\"sof-spk-i\" for=\"sof-spk-10\" tabindex=\"0\" role=\"button\" aria-label=\"Read BARRY HOTT\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">Founder, Hott Growth</p></div></div><div class=\"sof-card sof-card--bio\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/374c21d7-30db-434b-9621-2421eee0bf6c.webp\" alt=\"DEE DENG\" loading=\"lazy\" decoding=\"async\"><label class=\"sof-spk-hit\" for=\"sof-spk-11\" tabindex=\"0\" role=\"button\" aria-label=\"Read DEE DENG\u2019s bio\"></label><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">DEE DENG<label class=\"sof-spk-i\" for=\"sof-spk-11\" tabindex=\"0\" role=\"button\" aria-label=\"Read DEE DENG\u2019s bio\"><span aria-hidden=\"true\">i</span></label></p><p class=\"sof-spk-role\">CEO, Right Hook Digital</p></div></div></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "dcdfe3d3-a6d7-48de-981c-4999882c00dc",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "185de08a-a792-4a29-bdc2-0f64e0001cb3",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-formats\"><div class=\"sof-cap\"><div class=\"sof-in\"><div class=\"sof-eyebrow\"><b>HOW THE TWO DAYS RUN</b><i aria-hidden=\"true\"></i></div><h2 class=\"sof-ftitle\"><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/b50aa558-ce47-44c3-aa2f-c49be669068b.webp\" alt=\"Three formats. Zero filler.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-ft1\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f869ac78-4594-477a-b6a6-76dfb04b46d2.webp\" alt=\"Three formats.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-ft2\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/3a64a4ae-ebd6-41ba-9c48-bb3dcaec7636.webp\" alt=\"Zero filler.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">Three formats. Zero filler.</span></h2><p class=\"sof-subline\">EVERY SESSION IS BUILT TO SEND YOU HOME WITH SOMETHING YOU CAN SHIP ON MONDAY.</p><div class=\"sof-fcards\"><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/accb3199-6a39-45cf-b27c-0e0af19f88e0.webp\" alt=\"Two operators on stage mid-interview\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">01 \u00b7 LIVE INTERVIEWS</p><p class=\"sof-fhead\">OPERATORS GRILLED ON STAGE.</p><p class=\"sof-fbody sof-rich\">Unscripted conversations with the people actually running brands. Real numbers, real mistakes, and what they\u2019d do differently. Nothing pre-approved, nothing polished.</p></div></div><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ec6957c2-1e6f-40b3-8e01-27a87d62d2db.webp\" alt=\"A speaker presenting a system on the main stage\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">02 \u00b7 EXCLUSIVE PRESENTATIONS</p><p class=\"sof-fhead\">PLAYBOOKS YOU WON\u2019T FIND ON X.</p><p class=\"sof-fbody sof-rich\">A select few speakers take the stage solo to break down one system that\u2019s working right now. The exact creatives, funnels, and margins behind it. Shown for the first time, in this room only.</p></div></div><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ec0635f7-b5ad-4bd9-af3a-ceff26d028c4.webp\" alt=\"An attendee asking a question from the audience\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">03 \u00b7 Q&amp;A WITH THE AUDIENCE</p><p class=\"sof-fhead\">GET ANSWERS TO YOUR EXACT QUESTIONS.</p><p class=\"sof-fbody sof-rich\">Open mic after every session. Ask about your store, your ads, your cash flow. Get a straight answer from someone who has already solved it.</p></div></div></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "94716d82-d94c-4a94-9668-ebf4cfd82912",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "e672f0fc-c670-4563-8a50-70ba24510dba",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-decide\" id=\"about\"><div class=\"sof-cap\"><picture class=\"sof-decide-pic\"><source media=\"(max-width:1023px)\" srcset=\"https://assets.lightfunnels.com/account-90380/images_library/351c41ab-1c64-433d-89e6-eacb22110614.webp\"><img class=\"sof-decide-bg\" src=\"https://assets.lightfunnels.com/account-90380/images_library/8cf38f3b-bde6-433c-b13d-b702aa2e012e.webp\" alt=\"\" aria-hidden=\"true\" loading=\"lazy\" decoding=\"async\"></picture><div class=\"sof-decide-wash\" aria-hidden=\"true\"></div><div class=\"sof-in\"><p class=\"sof-kicker\">YOU DECIDE:</p><h2 class=\"sof-decide-head\"><span class=\"sof-vh\">Are you scaling or failing?</span><span class=\"sof-decide-art\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/63929565-36fb-4381-ac9d-378d944b28be.png\" alt=\"Are you scaling or failing?\" loading=\"lazy\" decoding=\"async\"></span></h2><p class=\"sof-decide-body sof-decide-intro sof-only-d sof-rich\"><strong>Scaling or Failing</strong> has been our underground community since 2024. <br><br>Behind closed doors, it\u2019s helped countless <br>brands hit six, even seven-figure days.</p><p class=\"sof-decide-body sof-decide-intro sof-only-m sof-rich\"><strong>Scaling or Failing</strong> has been our underground community since 2024. <br><br>Behind closed doors, it\u2019s helped countless <br>brands hit six, even seven-figure days.</p><p class=\"sof-decide-body sof-decide-promise sof-rich\">Until now, every mastermind has been private. <br>This December we go live, big time. <br><br>Cu in Bangkok! </p></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "26d1e180-639d-4398-a21c-fe11b09086d7",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "7e124b04-284f-4c7a-bc73-4fea797ed10d",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-mission\" id=\"topics\"><div class=\"sof-cap\"><div class=\"sof-in\"><p class=\"sof-meyebrow\"><i></i><span>HOW THE DAYS PLAY OUT</span><i></i></p><h2 class=\"sof-art\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/1db21b8c-e46c-43b4-8078-ba65947e747f.png\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span class=\"sof-vh\">The Mission Map</span></h2><p class=\"sof-mission-intro\">Two days in the room. Every block is built to send you home with something you can ship on Monday.</p><div class=\"sof-days\"><div class=\"sof-day\"><span class=\"sof-daychip\">DAY 1 \u00b7 DEC 7</span><h3 class=\"sof-day-h\">MISSION: LEARN THE PLAYBOOK</h3><div class=\"sof-slots\"><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Presentations</p><p class=\"sof-slot-d\">Working systems, shown here first.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Live interviews</p><p class=\"sof-slot-d\">Operators grilled on stage. Real numbers.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Open Q&amp;A</p><p class=\"sof-slot-d\">Bring your store, your ads, your numbers.</p></div></div></div></div><div class=\"sof-day\"><span class=\"sof-daychip\">DAY 2 \u00b7 DEC 8</span><h3 class=\"sof-day-h\">MISSION: SCALE IT</h3><div class=\"sof-slots\"><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Presentations</p><p class=\"sof-slot-d\">The funnels and creative behind what\u2019s scaling now.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Live interviews</p><p class=\"sof-slot-d\">The hard questions, answered with receipts.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Open Q&amp;A</p><p class=\"sof-slot-d\">Your toughest scaling problem, solved live.</p></div></div><div class=\"sof-slot sof-slot--bf\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">After party</p><p class=\"sof-slot-d\">Last call, Bangkok style.</p></div><span class=\"sof-bfplate\"><img class=\"sof-slot-bf\" src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></span></div></div></div><div class=\"sof-day sof-day--gold\"><span class=\"sof-daychip sof-daychip--gold\">DAY 3 \u00b7 INVITE ONLY</span><h3 class=\"sof-day-h\">MISSION: THE VILLA</h3><div class=\"sof-slots\"><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Private conversations</p><p class=\"sof-slot-d\">Small rooms with the speakers and invited operators.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Off the record</p><p class=\"sof-slot-d\">Unfiltered talk you won\u2019t hear on stage.</p></div></div></div></div></div><p class=\"sof-mission-note\">Draft schedule. Final times go out to ticket holders.</p></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "aaca2a79-540f-411a-af96-0fa95b6f674a",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "270fd725-0a15-43a5-bb58-dfd1e3306ef3",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-tickets\" id=\"tickets\"><div class=\"sof-cap\"><div class=\"sof-in\"><p class=\"sof-teyebrow\"><i aria-hidden=\"true\"></i><b>GET READY TO SCALE NEW HEIGHTS IN 2027</b><i aria-hidden=\"true\"></i></p><h2 class=\"sof-ttitle\"><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/13525c44-44d1-40ae-91b7-35ac9fea94ff.png\" alt=\"DON\u2019T MISS OUT\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/6b5e5348-573b-43ce-9ecf-78c6e86070bc.png\" alt=\"DON\u2019T MISS OUT\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">DON\u2019T MISS OUT</span></h2><p class=\"sof-tdate\">DECEMBER 7\u20138, 2026 \u00b7 BANGKOK, THAILAND</p><div class=\"sof-tcard\"><p class=\"sof-tbanner\"><span class=\"sof-tcheck\" aria-hidden=\"true\"><svg viewBox=\"0 0 14 10\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1.6 5.2 5.4 9 12.4 1.4\"/></svg></span><b>LOWEST PRICE IT WILL EVER BE</b></p><div class=\"sof-ttop\"><div class=\"sof-badges\"><span class=\"sof-badge\">SAVE $1,000</span><span class=\"sof-badge sof-badge--urgent\">ENDS OCT 30</span></div><p class=\"sof-tname\">EARLY BIRD</p><div class=\"sof-tpricerow\"><p class=\"sof-tprice\">$1997</p><p class=\"sof-tcompare\"><span class=\"sof-vh\">Was </span>$2997</p></div><div class=\"sof-tmark\"><img class=\"sof-sticker\" src=\"https://assets.lightfunnels.com/account-90380/images_library/3e14af5e-fdf8-442b-9317-1d0b608d4125.webp\" alt=\"Scalizard recommends\" loading=\"lazy\" decoding=\"async\"></div></div><ul class=\"sof-tlist\"><li>Full 2-day event access</li><li>Every session + live Q&amp;A</li><li>Food &amp; drinks both days</li><li>Event recordings + takeaways</li></ul><a class=\"sof-tbtn\" href=\"https://buy.stripe.com/3cIfZh0RM201aiyg01dby04\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "dbc2572d-f983-4c67-bb3f-97997cc7fa94",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "0527d5f1-4e8a-4b04-a4b0-5cc4039da5ad",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-sponsor\"><div class=\"sof-cap\"><div class=\"sof-in\"><p class=\"sof-partner\">MAIN PARTNER</p><div class=\"sof-sponsor-rule\" aria-hidden=\"true\"></div><h2 class=\"sof-powered\">POWERED BY</h2><div class=\"sof-plate\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "3a2c61b5-6343-48d5-8d03-15eee163076c",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "fea4e444-9c2a-42ec-a195-8d0b13451d85",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-footer\" id=\"contact\"><div class=\"sof-cap\"><div class=\"sof-in\"><div class=\"sof-footer-in\"><div><p class=\"sof-fbrand\">SCALING OR FAILING</p><p class=\"sof-fdate\">BANGKOK \u00b7 DEC 7\u20138, 2026</p></div><nav class=\"sof-fnav\" aria-label=\"Footer\"><a href=\"#about\">ABOUT</a><a href=\"#speakers\">SPEAKERS</a><a href=\"#topics\">TOPICS</a><a href=\"#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"/event/contact\">CONTACT</a></nav><p class=\"sof-fcopy sof-rich\">\u00a9 2026 Scaling or Failing  \u00b7  <label class=\"sof-legal-open\" for=\"sof-legal-privacy\">Privacy</label>  \u00b7  <label class=\"sof-legal-open\" for=\"sof-legal-terms\">Terms</label></p></div></div></div></div></div><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-off\" class=\"sof-legal-r\" checked><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-terms\" class=\"sof-legal-r\"><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-privacy\" class=\"sof-legal-r\"><div class=\"sof-legal\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Terms and Privacy\"><label class=\"sof-legal-scrim\" for=\"sof-legal-off\" aria-label=\"Close\"></label><div class=\"sof-legal-box\"><div class=\"sof-legal-head\"><div class=\"sof-legal-tabs\"><label class=\"sof-legal-tab sof-legal-tab--t\" for=\"sof-legal-terms\">TERMS</label><label class=\"sof-legal-tab sof-legal-tab--p\" for=\"sof-legal-privacy\">PRIVACY</label></div><label class=\"sof-legal-x\" for=\"sof-legal-off\" aria-label=\"Close\">&times;</label></div><div class=\"sof-legal-body\" data-lenis-prevent tabindex=\"0\"><div class=\"sof-legal-doc sof-legal-doc--t\">\n<h3>Attendee terms and conditions</h3>\n<p class=\"sof-legal-meta\">Scaling or Failing &middot; Bangkok, Thailand &middot; 7 and 8 December 2026 &middot; Last updated 10 October 2026</p>\n\n<h4>Key points at a glance</h4>\n<ul>\n<li>99Commerce Limited, a Hong Kong company, hosts this event. You buy tickets\nand manage your registration through the Whova app.</li>\n<li>Tickets are non-refundable. You can transfer your ticket to someone else\nuntil December 1, 2026 at no cost.</li>\n<li>If we cancel the event, you get your money back. If we postpone it, your\nticket moves to the new date, or you can ask for a refund.</li>\n<li>This is a mastermind. People share real numbers and real mistakes. Keep what\nothers share in the room confidential.</li>\n<li>You may not record sessions, including with AI note-taking or transcription\ntools, unless we give you written permission.</li>\n<li>We photograph and film the event. Tell us if you would rather not appear in\nour promotional material.</li>\n<li>You are responsible for your own travel, visa, insurance and health\narrangements.</li>\n<li>The event gives you ideas and contacts. It does not guarantee business\nresults.</li>\n<li>We handle your data as set out in our <label class=\"sof-legal-open\" for=\"sof-legal-privacy\">privacy policy</label>. We never sell or hand over\nattendee lists to sponsors.</li>\n</ul>\n\n<h4>1. Who we are and what these terms cover</h4>\n<p>\"We\", \"us\" and \"our\" means 99Commerce Limited, a company incorporated in Hong Kong\nregistered at Office Unit B on 9/F Thomson COmm Bldg 8 Thomson Rd Wan Chai Hong Kong. \"You\" means the person who buys a ticket or attends the\nevent.</p>\n<p>These terms apply to the Scaling or Failing BKK Mastermind in Bangkok,\nThailand, on December 7 and 8, 2026, including any official side events, dinners\nand online content we provide with it (together, \"the event\").</p>\n<p>By buying a ticket, registering, or entering the event, you agree to these\nterms. If you buy a ticket for someone else, you must make sure they know about\nthese terms and agree to them.</p>\n<p>You must be at least 18 years old to attend.</p>\n\n<h4>2. Registration</h4>\n<p>We run registration, ticketing and the event app through Whova, a third-party\nplatform. To register, you will need to create a Whova account and follow\nWhova's own terms of use and privacy policy.</p>\n<p>Please give us accurate, complete and current information, including your full\nname as it appears on your ID. We may ask for ID at check-in. If your details\nchange, update them in Whova or email us.</p>\n<p>Each ticket admits one named person. You may not share a ticket or a\nbadge.</p>\n<p>Ticket transfers and name changes, you can email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>.</p>\n<p>We may decline or cancel a registration at our discretion, for example if the\nevent is over capacity or if a person's attendance would conflict with section 7.\nIf we do this before the event for reasons that are not your fault, we will\nrefund what you paid.</p>\n\n<h4>3. Ticket prices and payment</h4>\n<p>Ticket prices are shown on our website. Prices are in USD and are inclusive of\nVAT and other applicable taxes.</p>\n<p>You must pay in full at the time of booking unless we agree a different\narrangement in writing (for example, an invoice for a group booking). Card fees\nor currency conversion charges from your own bank are your responsibility.</p>\n<p>Your ticket is confirmed once payment clears and you receive a confirmation\nfrom us. Prices can change over time (for example, early-bird pricing ends). A\nlater price change does not entitle you to a refund or a partial refund.</p>\n\n<h4>4. Refunds, cancellations and substitutions</h4>\n<p>All ticket sales are final and non-refundable, except as described below.</p>\n<p><strong>Event cancellation by 99Commerce:</strong> If we cancel the event\nentirely, you will receive a full refund of the ticket price within 30 days.</p>\n<p><strong>Event postponement by 99Commerce:</strong> If the event is postponed,\nyour ticket stays valid for the new date. If you cannot attend the new date, you\nmay request a refund within 14 days of the postponement announcement.</p>\n<p><strong>Attendee cancellation:</strong> We do not offer refunds if you cancel,\nfor any reason. This includes travel disruptions, visa issues, and personal\nemergencies. We strongly recommend buying travel insurance.</p>\n<p><strong>Ticket transfers:</strong> If you cannot attend, you can transfer your\nticket to someone else until December 1, 2026. Email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a> with the new\nattendee's name and email. Each ticket is valid for one named attendee only.</p>\n<p>Refunds are paid to the original payment method. Nothing in this section\nlimits any refund right the law gives you that cannot be waived by contract.</p>\n\n<h4>6. Events outside our control (force majeure)</h4>\n<p>We are not in breach of these terms if events outside our reasonable control\nstop us from running the event or part of it, or force us to change it. Examples\ninclude natural disasters, extreme weather, flooding, fire, epidemics or public\nhealth orders, government action or travel restrictions, civil unrest, terrorism,\nstrikes, power or venue failures, and the venue becoming unavailable.</p>\n<p>If one of these events happens, we will first try to postpone or relocate the\nevent, or move part of it online. If we have to cancel the event entirely,\nsection 5 applies and you receive a partial refund of the ticket price\n<span class=\"sof-legal-tbc\">[what is deducted from a force-majeure refund]</span>.</p>\n\n<h4>7. Code of conduct</h4>\n<p>We want an event where people speak openly about what is working and what is\nfailing in their business. That only works if everyone feels safe and\nrespected.</p>\n<p>At the event, at side events you agree to:</p>\n<ul>\n<li>treat other attendees, speakers, sponsors, staff and venue workers with\nrespect;</li>\n<li>not harass, intimidate, threaten or discriminate against anyone, in person or\nonline;</li>\n<li>not make unwelcome physical contact or sexual comments;</li>\n<li>respect the confidentiality rules in section 9;</li>\n<li>follow the instructions of our staff, venue staff and security;</li>\n<li>not be intoxicated to a degree that disrupts others;</li>\n<li>follow Thai law. Note that e-cigarettes and vapes are illegal in Thailand,\nand that drug offences carry severe penalties;</li>\n<li>not host or promote any unofficial event that presents itself as part of, or\nconnected to, the Scaling or Failing BKK Mastermind without our written\napproval.</li>\n</ul>\n<p>If you experience or see behaviour that breaks these rules, tell a member of\nour team at the event or email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>. We will handle reports discreetly.</p>\n\n<h4>8. Removal from the event</h4>\n<p>We may refuse entry to, or remove, anyone who breaks these terms, Thai law, or\nvenue rules, or whose behaviour we reasonably believe puts others at risk or\ndisrupts the event. We may also deactivate their Whova access.</p>\n<p>If we remove you for one of these reasons, you will not receive a refund, and\nwe may refuse you entry to future events.</p>\n\n<h4>9. Mastermind confidentiality</h4>\n<p>This event runs as a mastermind. Attendees and speakers will share revenue\nfigures, margins, supplier details, failed launches, team problems and other\nsensitive business information. They do this because they trust the room.</p>\n<p>By attending, you agree:</p>\n<ul>\n<li>not to share, publish or post information that another attendee or speaker\nshares in a session, roundtable or private conversation if it identifies them or\ntheir business, unless they give you permission;</li>\n<li>not to use another attendee's confidential business information to compete\nwith them, copy their business, or approach their suppliers, staff or customers\nin a way that relies on that information;</li>\n<li>that you may use general lessons and ideas you learn, as long as you do not\nidentify who shared them.</li>\n</ul>\n<p>This does not cover information that is already public, information you\nalready knew, or disclosures the law requires.</p>\n<p>Please use judgement about what you share. We ask everyone to respect\nconfidentiality, but we cannot control what other attendees do and we are not\nliable if someone breaks this section. Do not share anything that would seriously\nharm you or your business if it became public.</p>\n\n<h4>10. No recording of sessions</h4>\n<p>You may not record, livestream, photograph or transcribe any session,\nincluding slides and screens, without our prior written permission. This includes\naudio and video recording on phones, and AI note-taking or transcription\ntools.</p>\n<p>Taking your own written or typed notes for personal use is fine.</p>\n<p>If you record without permission, we may ask you to delete the recording,\nremove you under section 8, or both.</p>\n\n<h4>11. Photos, video and media release</h4>\n<p>We and our contractors will take photographs, video and audio at the event.\nThis may include footage in which you appear, including in the audience or in\npublic areas.</p>\n<p>By attending, you allow us to use that footage, including your image, name and\nvoice, to report on and promote the Scaling or Failing BKK Mastermind and future\n99Commerce events, on our website, social media, in advertising and in other\nmedia, without payment to you.</p>\n<p>If you would prefer not to appear in promotional material:</p>\n<ul>\n<li>tell us when you register or email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a> before the event;</li>\n<li>tell our photographer at the event.</li>\n</ul>\n<p>We will make reasonable efforts to respect your preference. We cannot\nguarantee you will not appear in wide shots of the room, but we will not feature\nyou prominently and we will remove footage of you from our own channels on\nrequest where reasonably possible.</p>\n<p>We do not photograph or film confidential mastermind sessions unless we tell\nparticipants in advance.</p>\n\n<h4>12. Speaker content and intellectual property</h4>\n<p>Speakers and 99Commerce own the content they present, including slides,\nframeworks, templates, workbooks and recordings. Where we give you materials, you\nmay use them for your own business. You may not copy, sell, publish, share\npublicly, or use them to train or teach others commercially without the owner's\nwritten permission.</p>\n<p>The Scaling or Failing BKK Mastermind name, logos and branding belong to\n99Commerce Limited. You may not use them in a way that suggests an endorsement or\npartnership without our written permission.</p>\n<p>Speakers' views are their own and do not necessarily reflect ours.</p>\n\n<h4>13. Networking and solicitation</h4>\n<p>Networking is a big part of this event. We want people to meet, swap ideas and\ndo business. We also want everyone to have a good experience.</p>\n<p>You agree not to:</p>\n<ul>\n<li>send mass or repeated unsolicited sales messages to attendees, in person,\nthrough Whova or afterwards;</li>\n<li>add attendees to mailing lists or marketing campaigns unless they have\nagreed;</li>\n<li>collect attendee contact details through scraping, bots or other automated\ntools;</li>\n<li>sell products, run paid pitches or promote a business in sessions or public\nareas unless you are an approved sponsor;</li>\n<li>hand out promotional material or merchandise at the venue unless you are an\napproved sponsor.</li>\n</ul>\n<p>One-to-one conversations where both people are interested are welcome. If\nsomeone tells you they are not interested, respect that.</p>\n\n<h4>14. Health, safety, travel and visas</h4>\n<p>You are responsible for:</p>\n<ul>\n<li>your passport, visa and entry permission for Thailand. Check the current\nrules with the Thai embassy or consulate in your country. From September 15,\n2026, many nationalities receive a 30-day visa-free stay for tourism. If you are\nunsure whether attending a business event fits your entry category, get advice\nbefore you travel;</li>\n<li>your flights, accommodation and local transport;</li>\n<li>travel and medical insurance. We strongly recommend insurance that covers\ncancellation, medical treatment and personal belongings;</li>\n<li>your own health, including any vaccinations, medication and dietary needs.\nTell us in Whova about dietary or accessibility needs and we will do our best to\naccommodate them;</li>\n<li>following venue safety rules and the instructions of staff in an\nemergency.</li>\n</ul>\n<p>Thai law may differ from the law in your country. Alcohol sales and\nconsumption are restricted in some places and at some times. Vaping and\ne-cigarettes are illegal. You are responsible for following local law.</p>\n<p>We may change health or safety measures at the event if public health guidance\nor venue rules require it.</p>\n\n<h4>15. Your belongings and the venue</h4>\n<p>You are responsible for your own belongings. We are not responsible for loss,\ntheft or damage to personal property at the event, including items left in a\ncloakroom or meeting room, unless it was caused by our negligence.</p>\n<p>You are responsible for any damage you cause to the venue or its\nequipment.</p>\n\n<h4>16. No guarantee of results</h4>\n<p>The event gives you information, perspectives and contacts. It is not legal,\ntax, financial or investment advice. What works for one business may not work for\nyours.</p>\n<p>We do not guarantee any particular business outcome, revenue, profit or growth\nfrom attending. You make your own decisions and are responsible for the results.\nTake professional advice before acting on anything you hear.</p>\n<p>We do not vet or endorse attendees, sponsors or the products and services they\noffer. Do your own checks before doing business with anyone you meet.</p>\n\n<h4>17. Our liability</h4>\n<p>To the maximum extent permitted by law, 99Commerce Limited shall not be liable for any\nindirect, incidental, special, or consequential damages arising from your\nattendance at or inability to attend Scaling or Failing, use of this Site, or any\nevent-related circumstances.</p>\n<p>Our total liability to you for any claim related to Scsaling or Failing shall\nnot exceed the amount you paid for your ticket.</p>\n\n<h4>18. Your data and privacy</h4>\n<p>Our full <label class=\"sof-legal-open\" for=\"sof-legal-privacy\">privacy policy</label> is the other tab of this dialog. Here is a short summary.</p>\n<p><strong>What we collect:</strong> your name, email, phone number, company and\njob title, billing details, ticket type, dietary and accessibility needs you\nchoose to share, and information about your use of Whova. We also capture photos\nand video at the event (see section 11).</p>\n<p><strong>Why we use it:</strong> to process your ticket, run check-in and the\nevent, send you event updates, keep the event safe, handle questions and refunds,\nmeet legal and accounting duties, and improve future events. We will only send\nyou marketing about future events if you have agreed, and you can opt out at any\ntime.</p>\n<p><strong>Whova:</strong> Whova runs our registration and app. When Whova\nprocesses your data for our event, we are responsible for that data and Whova\nacts on our instructions. Whova also has its own privacy policy at\n<a class=\"sof-legal-mail\" href=\"https://whova.com/privacy/\" target=\"_blank\"\nrel=\"noopener\">whova.com/privacy</a>, which applies to your Whova account. By\ndefault, your name and profile appear in the in-app attendee list so other\nattendees can find you. You can switch to \"invisible\" in the Whova settings at\nany time. Whova does not show your email or phone number to other attendees\nunless you choose to exchange them.</p>\n<p><strong>Sponsors:</strong> we do not sell your data or give sponsors an\nattendee list. A sponsor only receives your details if you choose to share them,\nfor example by letting them scan your badge or QR code, exchanging contact\ndetails in Whova, or claiming one of their offers. Once you share your details\nwith a sponsor, their own privacy policy applies to how they use them.</p>\n<p><strong>Who else we share data with:</strong> service providers that help us\nrun the event (such as Whova and its payment provider, the venue, our\nphotographers and our email tools), professional advisers, and authorities where\nthe law requires it.</p>\n<p><strong>International transfers:</strong> we are based in Hong Kong, the event\nis in Thailand, and Whova stores data in the United States. Your data may be\nprocessed in these and other countries. We take reasonable steps to protect it\nwhen it moves.</p>\n<p><strong>Retention:</strong> we keep your data only as long as we need it for\nthese purposes and to meet legal and accounting requirements.</p>\n<p><strong>Your rights:</strong> depending on where you live (including under\nHong Kong's Personal Data (Privacy) Ordinance and Thailand's Personal Data\nProtection Act), you may have the right to access, correct or delete your data,\nobject to or restrict some uses, withdraw consent, or complain to a data\nprotection authority. To use these rights, email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>.</p>\n\n<h4>19. Governing law and disputes</h4>\n<p>Hong Kong law governs these terms.</p>\n<p>If you have a complaint, please email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a> first. We will try to resolve it\nwithin 30 days.</p>\n<p>If we cannot resolve it, the courts of Hong Kong have non-exclusive\njurisdiction. This means you or we can bring a claim in Hong Kong, and nothing\nhere stops you using the courts or consumer protection bodies where you live if\nthe law gives you that right.</p>\n<p>If you are a consumer, nothing in these terms removes any protection that the\nlaw of your country of residence gives you and that cannot be changed by\ncontract.</p>\n\n<h4>20. Changes to these terms</h4>\n<p>We may update these terms, for example to reflect a change in law, venue or\nevent format. We will post the updated version on our website and in Whova with a\nnew \"last updated\" date, and email registered attendees about any significant\nchange.</p>\n<p>If a change significantly affects you before the event and you do not accept\nit, you may ask for a refund of your ticket price within 30 days of our\nnotice.</p>\n\n<h4>21. General</h4>\n<ul>\n<li>These terms, together with our privacy policy and any specific terms shown at\ncheckout, make up the whole agreement between you and us about the event.</li>\n<li>If a court finds part of these terms invalid, the rest still applies.</li>\n<li>If we do not enforce a right straight away, we can still enforce it\nlater.</li>\n<li>You may not transfer your rights under these terms except through a ticket\ntransfer under section 2.</li>\n<li>If there is a translated version of these terms, the English version applies\nif the two differ.</li>\n</ul>\n\n<h4>22. Contact us</h4>\n<p>99Commerce Limited<br>Office Unit B on 9/F Thomson COmm Bldg 8 Thomson Rd Wan Chai Hong Kong<br>Email: <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a></p>\n</div><div class=\"sof-legal-doc sof-legal-doc--p\">\n<h3>Privacy Policy</h3>\n<p class=\"sof-legal-meta\">Scaling or Failing &middot; Bangkok, Thailand &middot; 7 and 8 December 2026 &middot; Last updated 14 October 2026</p>\n\n<h4>1. Who we are</h4>\n<p>99Commerce Limited, trading as Scaling or Failing, of Office Unit B on 9/F Thomson COmm Bldg 8 Thomson Rd Wan Chai Hong Kong, decides how the\npersonal data described here is used. You can reach us at <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>.</p>\n\n<h4>2. What we collect</h4>\n<ul>\n<li><strong>When you book.</strong> Your name, email, phone, company, job title\nand billing details, plus anything you choose to add such as dietary or\naccessibility needs.</li>\n<li><strong>When you contact us.</strong> Whatever you put in your message.</li>\n<li><strong>At the event.</strong> Your name and company on your badge, and\nphotography and film of the room.</li>\n<li><strong>When you visit this page.</strong> See the next section.</li>\n</ul>\n\n<h4>3. What this page does</h4>\n<p>The event page asks you for nothing. The contact page has a form. What you\ntype into it is emailed to us so that we can reply, and is not stored anywhere\nelse. Both pages set cookies and contact a few other services:</p>\n<ul>\n<li>Our website platform, Lightfunnels, sets a session cookie, two cart cookies,\nand an identifier called lfbid that lasts about a year and lets the platform\nrecognise a returning browser.</li>\n<li>Google Fonts serves the typefaces, so Google receives your IP address.</li>\n<li>unpkg serves the smooth scrolling library, so unpkg receives your IP\naddress.</li>\n<li>Sentry receives a report if the page hits an error.</li>\n</ul>\n<p>We run no advertising pixels, no analytics and no remarketing tags on this\npage.</p>\n\n<h4>4. Why we use it</h4>\n<ul>\n<li>To sell you a ticket and get you into the event, which we need in order to\nperform our contract with you.</li>\n<li>To keep this website working and secure, which is our legitimate\ninterest.</li>\n<li>To tell you about this event and future ones, with your consent where\nconsent is required. You can opt out at any time.</li>\n<li>To meet our accounting and tax obligations, which is a legal duty.</li>\n</ul>\n\n<h4>5. Who we share it with</h4>\n<ul>\n<li>Our registration and ticketing platform, which processes your booking.</li>\n<li>Stripe, our payment provider, which handles the checkout and your card\ndetails. We never see your full card number.</li>\n<li>The venue and our catering and production suppliers, for names, access and\ndietary needs.</li>\n<li>Partners and sponsors, <strong>only where you have agreed</strong>, for\nexample by letting a sponsor scan your badge.</li>\n<li>Our email and automation providers, which carry your contact form message\nto us.</li>\n<li>Professional advisers and authorities, where we are required to.</li>\n</ul>\n<p>We do not sell your personal data.</p>\n\n<h4>6. Where it goes</h4>\n<p>The event is in Thailand and some of our suppliers are in the United States,\nso your data will be transferred outside the UK and the EEA. Where it is, we\nrely on appropriate safeguards such as standard contractual clauses.</p>\n\n<h4>7. How long we keep it</h4>\n<p>Booking and payment records for seven years, to satisfy accounting rules.\nMarketing contact details until you opt out. Event photography and film are kept\nas part of our archive.</p>\n\n<h4>8. Your rights</h4>\n<p>You can ask us for a copy of your data, to correct it, to delete it, to\nrestrict or object to how we use it, or to receive it in a portable form, and\nyou can withdraw consent at any time. Email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>. You can also complain to\nyour local data protection regulator.</p>\n\n<h4>9. Marketing</h4>\n<p>Every marketing email has an unsubscribe link. Unsubscribing does not stop\nthe messages we need to send you about a ticket you have already bought.</p>\n\n<h4>10. Children</h4>\n<p>This event is for business professionals and is not intended for anyone under\n18.</p>\n\n<h4>11. Changes to this policy</h4>\n<p>If we change this policy we will update the date at the top of it.</p>\n</div></div></div></div><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-none\" class=\"sof-spk-r\" checked aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-0\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-1\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-2\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-3\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-4\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-5\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-6\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-7\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-8\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-9\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-10\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><input type=\"radio\" name=\"sof-spk\" id=\"sof-spk-11\" class=\"sof-spk-r\" aria-hidden=\"true\" tabindex=\"-1\"><div class=\"sof-spk-modal\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Speaker bio\"><label class=\"sof-spk-scrim\" for=\"sof-spk-none\" aria-hidden=\"true\"></label><div class=\"sof-spk-box\"><label class=\"sof-spk-x\" for=\"sof-spk-none\" tabindex=\"0\" role=\"button\" aria-label=\"Close\"><span aria-hidden=\"true\">\u00d7</span></label><div class=\"sof-spk-doc sof-spk-doc--0\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/e7f8dc36-80ea-40fb-a40a-56d6589aa09f.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">STEVE TAN</p><p class=\"sof-spk-modal-role\">$100M+ in ecom sales</p><div class=\"sof-spk-bio\"><p>$100M+ in ecom sales. Steve Tan and his brother Evan turned that into Super Tan Brothers Group, a stack of ecommerce, software, education, logistics and marketing companies with 400+ people across six countries. He built eCommerce Elites Mastermind into a 100,000+ member community along the way. Now he is all-in on AI, and he is showing operators what actually works.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/heystevetan/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/heystevetan/?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://www.supertanbros.com/\" target=\"_blank\" rel=\"noopener noreferrer\">supertanbros.com</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--1\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/12a8bb71-b954-40ec-982a-31c4b337e108.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">ALEX FEDOTOFF</p><p class=\"sof-spk-modal-role\">The Godfather of Ecom</p><div class=\"sof-spk-bio\"><p>Alex Fedotoff has built and sold two ecommerce businesses, both in 7 to 8 figure acquisitions. Then he did it again at scale: an eight-figure ecom portfolio and an education company for the next wave of founders, run out of Miami. He has worked with 1,000+ DTC founders and says his Facebook ads strategy has added over $100M in revenue. There is a reason they call him the Godfather of Ecom.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/alex-fedotoff\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.alexfedotoff.com/\" target=\"_blank\" rel=\"noopener noreferrer\">alexfedotoff.com</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/alexfedotofff/?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://www.gethookd.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">gethookd.ai</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--2\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/76ad1f83-d859-4bdf-bab1-0c20288647ba.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">JOSHUA CHIN</p><p class=\"sof-spk-modal-role\">Chronos \u00b7 8-figure email rev</p><div class=\"sof-spk-bio\"><p>Joshua Chin runs Chronos, the Singapore agency behind email, SMS and push for 500+ DTC brands. His team has driven $400M+ in attributed revenue, across beauty, wellness, apparel and home goods. If your owned channels are leaving money on the table, this is the guy who finds it.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/joshua-chin-jl/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/joshchinn/?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://chronos.agency/about-us/\" target=\"_blank\" rel=\"noopener noreferrer\">chronos.agency</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--3\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/d3398e36-4aa9-4b87-8ed8-0267f8acbb7a.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">RONAK SHAH</p><p class=\"sof-spk-modal-role\">Founder of Obvi</p><div class=\"sof-spk-bio\"><p>Ronak Shah is the founder of Obvi and the man they call \u201cThe DTC Plumber.\u201d He advises and invests in 25+ DTC brands out of New York, and he knows where the leaks are. His new project is AI infrastructure, built under RONSHAH.CO.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/ronak06/?isSelfProfile=false\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.ronshah.co/\" target=\"_blank\" rel=\"noopener noreferrer\">ronshah.co</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--4\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/0cc42da7-fb5a-4f21-93e4-023aa518a77d.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">DARA DENNEY</p><p class=\"sof-spk-modal-role\">Performance Creative Queen</p><div class=\"sof-spk-bio\"><p>Performance Creative Expert and Ad Agency Owner.</p><p>Dara Denney is a performance creative expert and ad agency owner who went from humanitarian work to education to the top of paid creative. Her YouTube channel gives away her creative strategy for free, which tells you how deep the playbook goes. Her team runs creative testing and AI-assisted production for brands that want to win on the ad, not just the media buy. New York built her, and the DTC world watches what she posts.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/daradenney/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.youtube.com/watch?v=-E9sjb2msjo\" target=\"_blank\" rel=\"noopener noreferrer\">YouTube</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--5\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/f8807a11-97f4-4e15-9206-2c07c2c12511.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">JEM BOUROUH</p><p class=\"sof-spk-modal-role\">The King of Google Ads</p><div class=\"sof-spk-bio\"><p>Google Ads for High-Growth DTC Brands</p><p>Jem Bourouh runs Adcubator, the Dubai Google Ads agency DTC brands call when the account needs a rebuild. His team manages nine figures a year in ad spend for brands like BR\u0112Z, Hey Shape, Calming Co and Eskiin, across Search, Shopping, PMAX and YouTube. The agency also runs its own ecommerce brands, so the advice comes from people who pay their own ad bills. He has keynoted at OMR, and he is the King of Google Ads for a reason.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/jem-bourouh/?isSelfProfile=false\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/jembourouh/?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://x.com/JemBourouhDE\" target=\"_blank\" rel=\"noopener noreferrer\">X</a><a class=\"sof-spk-link\" href=\"https://adcubator.com/\" target=\"_blank\" rel=\"noopener noreferrer\">adcubator.com</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--6\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/9a27ff10-2028-42d6-9338-c5edeca33542.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">PHIL LI</p><p class=\"sof-spk-modal-role\">$500M+ a year on Amazon</p><div class=\"sof-spk-bio\"><p>180+ brands launched to Amazon. $500M+ in Amazon sales</p><p>Phil Li has launched 180+ brands on Amazon and generated $500M+ in Amazon sales. He runs Black Compass Digital out of Toronto, where his team adds millions in revenue for ecommerce brands like ALT, Cupids, Tobio\u2019s and KittySpout. Phil knows how to turn Amazon into a growth channel, not a side listing. Come hear how he does it.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/philipli1/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/philipjhli/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://www.blackcompass.digital/\" target=\"_blank\" rel=\"noopener noreferrer\">blackcompass.digital</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--7\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/a9485882-fad8-411b-b771-28bbc82fb9a8.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">SHAWN HE</p><p class=\"sof-spk-modal-role\">$500M+ a year on Amazon</p><div class=\"sof-spk-bio\"><p>Shawn He is the co-founder of Black Compass Digital in Toronto, and his team has driven $500M+ in incremental revenue for DTC brands on Amazon and in retail. He takes 7, 8 and 9 figure brands into Amazon, Walmart, Target and Costco, and his team pulled in $60M in a single Black Friday and Cyber Monday weekend. Before Black Compass, he built brands and exited them.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/heshawn/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.blackcompass.digital/\" target=\"_blank\" rel=\"noopener noreferrer\">blackcompass.digital</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--8\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/a402ac75-0fb4-4c41-aef6-4f14af934587.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">JAY CRUIZ</p><p class=\"sof-spk-modal-role\">AEO That Works \u00b7 9 Figure Traffic</p><div class=\"sof-spk-bio\"><p>Jay Cruiz is a world-renowned expert in AI-powered organic traffic for ecommerce and a keynote speaker. As co-creator of AmpCast AI by Ampifire.com, he helps brands dominate ChatGPT, Google, YouTube, and social search with AI-generated content published across 300+ high-authority sites. His clients see 5-50x ROCS and massive organic growth, including scaling one brand to 60,000+ monthly organic clicks.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/jay-cruiz-745270108/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/jaycruiz_/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://ampifire.com/\" target=\"_blank\" rel=\"noopener noreferrer\">ampifire.com</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--9\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/4bb6b86a-0f7e-454a-9d88-87c5a9d23c3b.jpg\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">GONZALO MARTIN</p><p class=\"sof-spk-modal-role\">Brand Owner \u00b7 $600K+ Days</p><div class=\"sof-spk-bio\"><p>Gonzalo Martin built a DTC craft kit brand that hit $600K+ days just eight months after launch. Every order comes with guided lessons, and he has turned buyers into a community that keeps coming back. He built a brand that scales, and you can hear exactly how in Bangkok.</p></div></div></div><div class=\"sof-spk-doc sof-spk-doc--10\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/41c93643-01b0-492b-9b61-d1ecd6a25a6a.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">BARRY HOTT</p><p class=\"sof-spk-modal-role\">Founder, Hott Growth</p><div class=\"sof-spk-bio\"><p>Barry Hott is the founder of Hott Growth and has managed over $600M in paid media since 2008. He is famous for ugly ads that convert, and he builds creative testing systems from first principles, not from trends. He helped launch Lone River Ranch Water, which Diageo acquired in 2021. These days he is also building URL Love It, a website change monitor.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/binghott/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.buildingadswithbarry.com/\" target=\"_blank\" rel=\"noopener noreferrer\">buildingadswithbarry.com</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/binghott/?hl=en\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://www.hottgrowth.com/\" target=\"_blank\" rel=\"noopener noreferrer\">hottgrowth.com</a></div></div></div><div class=\"sof-spk-doc sof-spk-doc--11\"><img class=\"sof-spk-figure\" src=\"https://assets.lightfunnels.com/account-90380/images_library/374c21d7-30db-434b-9621-2421eee0bf6c.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-spk-copy\"><p class=\"sof-spk-modal-name\">DEE DENG</p><p class=\"sof-spk-modal-role\">CEO, Right Hook Digital</p><div class=\"sof-spk-bio\"><p>Dee Deng is the CEO of Right Hook Digital, based in Brisbane, Australia. Growth marketer, coach and investor, he helps 7 to 8 figure brands uncap their growth. He has seen what the next level looks like, and he knows how to get you there.</p></div><div class=\"sof-spk-links\"><a class=\"sof-spk-link\" href=\"https://www.linkedin.com/in/deedeng/?isSelfProfile=false\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><a class=\"sof-spk-link\" href=\"https://www.instagram.com/yo.uncledee/\" target=\"_blank\" rel=\"noopener noreferrer\">Instagram</a><a class=\"sof-spk-link\" href=\"https://righthookdigital.com/\" target=\"_blank\" rel=\"noopener noreferrer\">righthookdigital.com</a></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

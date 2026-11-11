@@ -1,0 +1,486 @@
+{
+  "id": "cb711b77-f7d4-4198-ac41-bfa0df214da4",
+  "t": "Root",
+  "version": 11,
+  "styles": [
+    {
+      "prop": "pageWidth",
+      "value": "1680px"
+    },
+    {
+      "prop": "backgroundColor",
+      "value": {
+        "r": 252,
+        "g": 236,
+        "b": 199,
+        "a": 1
+      }
+    }
+  ],
+  "p": {
+    "children": [
+      {
+        "t": "Section",
+        "id": "721a335d-d83d-4bda-8031-aec7298d07ce",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "21f657a8-ce3b-4eaa-8e4d-3d72ed31808e",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-head sof-sec--bleed\"><a class=\"sof-promo\" href=\"https://buy.stripe.com/3cIfZh0RM201aiyg01dby04\"><span>GET EARLY BIRD TICKET &amp; SAVE $1000</span></a><input type=\"checkbox\" id=\"sof-menu\" class=\"sof-menu-cb\" aria-hidden=\"true\" tabindex=\"-1\"><nav class=\"sof-nav sof-nav-d\" aria-label=\"Main\"><a class=\"sof-navcell sof-navcell--rule\" href=\"#about\">ABOUT</a><a class=\"sof-navcell sof-navcell--rule\" href=\"#speakers\">SPEAKERS</a><a class=\"sof-navcell sof-navcell--rule\" href=\"#topics\">TOPICS</a><a class=\"sof-navcell sof-navcell--rule sof-navcell--gold\" href=\"#tickets\">GET TICKET</a><a class=\"sof-navcell\" href=\"/event/contact\">CONTACT</a></nav><nav class=\"sof-nav sof-nav-m\" aria-label=\"Main\"><label class=\"sof-navcell sof-navcell--rule\" for=\"sof-menu\"><span class=\"sof-burger\" aria-hidden=\"true\"><i></i><i></i><i></i></span>MENU</label><a class=\"sof-navcell sof-navcell--gold\" href=\"#tickets\">GET TICKET</a></nav><div class=\"sof-menu\"><a href=\"#about\">ABOUT</a><a href=\"#speakers\">SPEAKERS</a><a href=\"#topics\">TOPICS</a><a href=\"#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"/event/contact\">CONTACT</a></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "1ea797a4-dcff-47d4-a78a-d538a830a175",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "2091e7cd-afad-4f0f-81f5-9ba9e4540e03",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-hero sof-sec--bleed\"><picture class=\"sof-hero-pic\"><source media=\"(max-width:767px)\" srcset=\"https://assets.lightfunnels.com/account-90380/images_library/95277d6e-f234-49d5-ab29-166c110822d4.webp\"><img class=\"sof-hero-plate\" src=\"https://assets.lightfunnels.com/account-90380/images_library/bc343abc-8d0c-4347-8ae2-84d9c796a531.webp\" alt=\"\" aria-hidden=\"true\" fetchpriority=\"high\" decoding=\"async\"></picture><div class=\"sof-hero-wash\" aria-hidden=\"true\"></div><div class=\"sof-hero-shade\" aria-hidden=\"true\"></div><h1 class=\"sof-vh sof-h1\"><span class=\"a\">SCALING</span> <span class=\"b\">OR</span> <span class=\"c\">FAILING</span></h1><div class=\"sof-hero-m\"><p class=\"sof-date\">DECEMBER 7\u20138, 2026 \u2022 BANGKOK, THAILAND</p><div class=\"sof-lockup\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/54fba04c-c30b-4f8c-937a-96e0fd20b7ee.webp\" alt=\"\" fetchpriority=\"high\" decoding=\"async\"></div><div class=\"sof-tag\"><span>BY OPERATORS. FOR OPERATORS.</span></div><a class=\"sof-cta\" href=\"https://buy.stripe.com/3cIfZh0RM201aiyg01dby04\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a><div class=\"sof-pow\"><b>POWERED BY</b><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div><div class=\"sof-hosts\"><span>RYAN TALMADGE</span><span>NICK SHACKELFORD</span><span>TOPI HEINONEN</span></div></div><div class=\"sof-hero-d\"><div class=\"sof-hero-col\"><p class=\"sof-date\">DECEMBER 7\u20138, 2026 \u2022 BANGKOK, THAILAND</p><div class=\"sof-lockup\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/18934721-4035-4a86-96be-78ffbff65c4e.webp\" alt=\"\" fetchpriority=\"high\" decoding=\"async\"></div><div class=\"sof-tag\"><span>BY OPERATORS. FOR OPERATORS.</span></div><a class=\"sof-cta\" href=\"https://buy.stripe.com/3cIfZh0RM201aiyg01dby04\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a><div class=\"sof-pow\"><b>POWERED BY</b><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div></div><div class=\"sof-hero-shadeblur\" aria-hidden=\"true\"></div><div class=\"sof-hosts\"><span>RYAN TALMADGE</span><span>NICK SHACKELFORD</span><span>TOPI HEINONEN</span></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "e54847d7-e46e-4282-bd49-1f5334fb1522",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "99968240-1b0a-4556-9b34-501c62117cba",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-ticker sof-sec--bleed\"><div class=\"sof-tick-track\"><div class=\"sof-tick-seq\"><span class=\"sof-tick-word\">300+ OPERATORS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">12+ SPEAKERS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">2+1 DAYS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">BANGKOK \u00b7 DEC 7\u20138</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">REAL NUMBERS ONLY</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">NO RECYCLED SLIDES</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span></div><div class=\"sof-tick-seq\" aria-hidden=\"true\"><span class=\"sof-tick-word\">300+ OPERATORS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">12+ SPEAKERS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">2+1 DAYS</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">BANGKOK \u00b7 DEC 7\u20138</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">REAL NUMBERS ONLY</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span><span class=\"sof-tick-word\">NO RECYCLED SLIDES</span><span class=\"sof-tick-star\"><svg viewBox=\"0 0 34 34\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M16.9999 2.26672L21.3916 11.6167L31.7333 12.8917L24.0833 19.9751L26.0666 30.1751L16.9999 25.2167L7.93327 30.1751L9.9166 19.9751L2.2666 12.8917L12.6083 11.6167L16.9999 2.26672Z\" fill=\"#D10721\" stroke=\"#041C32\" stroke-width=\"2.55\" stroke-linejoin=\"round\"/></svg></span></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "e3b62d50-ba6b-43ab-9f13-60a4512ad75f",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "0ca60995-2737-48bd-8bc1-1b093ec7d260",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-stats sof-sec--bleed\"><div class=\"sof-stats-row\"><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ba802fe5-df70-4037-a5ea-4a01bdc754f5.webp\" alt=\"300+\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/5d3c6d64-0aaf-4b3e-a988-4552527360ca.webp\" alt=\"OPERATORS\" loading=\"lazy\" decoding=\"async\"></span></div><span class=\"sof-statdiv\" aria-hidden=\"true\"></span><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/26a7dd29-97df-4f5e-b75b-291de467b982.webp\" alt=\"12\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/5d95c2ab-d356-485b-b193-7571bc665f0f.webp\" alt=\"SPEAKERS\" loading=\"lazy\" decoding=\"async\"></span></div><span class=\"sof-statdiv\" aria-hidden=\"true\"></span><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f8c8dbae-4046-46d6-8899-6165817f6076.webp\" alt=\"2\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/e44df19b-7c08-406f-994d-cd013a8a8ed0.webp\" alt=\"DAYS\" loading=\"lazy\" decoding=\"async\"></span></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "4ef09a60-8e0f-423c-b60b-41b5d9fa1f61",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "94417bc9-1f30-4db6-b1f4-c826eb0158d4",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-speakers\" id=\"speakers\"><div class=\"sof-in\"><h2><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9484b3c3-493d-4fd0-8f43-1396740a0a9f.webp\" alt=\"How the best are scaling right now\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0d2cad2c-421e-4efc-9a93-2fd48db13260.webp\" alt=\"How the best are scaling right now\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">How the best are scaling right now</span></h2><div class=\"sof-grid\"><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/e7f8dc36-80ea-40fb-a40a-56d6589aa09f.jpg\" alt=\"STEVE TAN\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">STEVE TAN</p><p class=\"sof-spk-role\">$100M+ in ecom sales</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/12a8bb71-b954-40ec-982a-31c4b337e108.jpg\" alt=\"ALEX FEDOTOFF\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">ALEX FEDOTOFF</p><p class=\"sof-spk-role\">The Godfather of Ecom</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/76ad1f83-d859-4bdf-bab1-0c20288647ba.jpg\" alt=\"JOSHUA CHIN\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">JOSHUA CHIN</p><p class=\"sof-spk-role\">Chronos \u00b7 8-figure email rev</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/d3398e36-4aa9-4b87-8ed8-0267f8acbb7a.jpg\" alt=\"RONAK SHAH\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">RONAK SHAH</p><p class=\"sof-spk-role\">Founder of My Obvi</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/0cc42da7-fb5a-4f21-93e4-023aa518a77d.jpg\" alt=\"DARA DENNEY\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">DARA DENNEY</p><p class=\"sof-spk-role\">Performance Creative Queen</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/f8807a11-97f4-4e15-9206-2c07c2c12511.jpg\" alt=\"JEM BOUROUH\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">JEM BOUROUH</p><p class=\"sof-spk-role\">The King of Google Ads</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/9a27ff10-2028-42d6-9338-c5edeca33542.jpg\" alt=\"PHIL LI\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">PHIL LI</p><p class=\"sof-spk-role\">$400M+ a year on Amazon</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/a9485882-fad8-411b-b771-28bbc82fb9a8.jpg\" alt=\"SHAWN HE\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">SHAWN HE</p><p class=\"sof-spk-role\">$400M+ a year on Amazon</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/a402ac75-0fb4-4c41-aef6-4f14af934587.jpg\" alt=\"JAY CRUZ\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">JAY CRUZ</p><p class=\"sof-spk-role\">SEO &amp; GEO Expert</p></div></div><div class=\"sof-card\"><img class=\"sof-spk-photo\" src=\"https://assets.lightfunnels.com/account-90380/images_library/4bb6b86a-0f7e-454a-9d88-87c5a9d23c3b.jpg\" alt=\"GONZALO&lt;br&gt;FERNANDEZ\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-card-foot\"><p class=\"sof-spk-name\">GONZALO<br>FERNANDEZ</p><p class=\"sof-spk-role\">Founder of Tobio\u2019s</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><p class=\"sof-spk-name sof-spk-name--tba\">TBA</p><p class=\"sof-spk-role sof-spk-role--tba\">Announcing soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><p class=\"sof-spk-name sof-spk-name--tba\">TBA</p><p class=\"sof-spk-role sof-spk-role--tba\">Announcing soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><p class=\"sof-spk-name sof-spk-name--tba\">TBA</p><p class=\"sof-spk-role sof-spk-role--tba\">Announcing soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><p class=\"sof-spk-name sof-spk-name--tba\">TBA</p><p class=\"sof-spk-role sof-spk-role--tba\">Announcing soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><p class=\"sof-spk-name sof-spk-name--tba\">TBA</p><p class=\"sof-spk-role sof-spk-role--tba\">Announcing soon</p></div></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "b07b0d9b-5ec0-4e7e-bcc6-47fe123d4ee5",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "6539defe-a470-4dad-81a7-5bcd60a52891",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-formats\"><div class=\"sof-in\"><div class=\"sof-eyebrow\"><b>HOW THE TWO DAYS RUN</b><i aria-hidden=\"true\"></i></div><h2 class=\"sof-ftitle\"><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/b50aa558-ce47-44c3-aa2f-c49be669068b.webp\" alt=\"Three formats. Zero filler.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-ft1\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f869ac78-4594-477a-b6a6-76dfb04b46d2.webp\" alt=\"Three formats.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-ft2\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/3a64a4ae-ebd6-41ba-9c48-bb3dcaec7636.webp\" alt=\"Zero filler.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">Three formats. Zero filler.</span></h2><p class=\"sof-subline\">EVERY SESSION IS BUILT TO SEND YOU HOME WITH SOMETHING YOU CAN SHIP ON MONDAY.</p><div class=\"sof-fcards\"><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/accb3199-6a39-45cf-b27c-0e0af19f88e0.webp\" alt=\"Two operators on stage mid-interview\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">01 \u00b7 LIVE INTERVIEWS</p><p class=\"sof-fhead\">OPERATORS GRILLED ON STAGE.</p><p class=\"sof-fbody sof-rich\">Unscripted conversations with the people actually running brands. Real numbers, real mistakes, and what they\u2019d do differently. Nothing pre-approved, nothing polished.</p></div></div><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ec6957c2-1e6f-40b3-8e01-27a87d62d2db.webp\" alt=\"A speaker presenting a system on the main stage\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">02 \u00b7 EXCLUSIVE PRESENTATIONS</p><p class=\"sof-fhead\">PLAYBOOKS YOU WON\u2019T FIND ON X.</p><p class=\"sof-fbody sof-rich\">A select few speakers take the stage solo to break down one system that\u2019s working right now. The exact creatives, funnels, and margins behind it. Shown for the first time, in this room only.</p></div></div><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ec0635f7-b5ad-4bd9-af3a-ceff26d028c4.webp\" alt=\"An attendee asking a question from the audience\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">03 \u00b7 Q&amp;A WITH THE AUDIENCE</p><p class=\"sof-fhead\">GET ANSWERS TO YOUR EXACT QUESTIONS.</p><p class=\"sof-fbody sof-rich\">Open mic after every session. Ask about your store, your ads, your cash flow. Get a straight answer from someone who has already solved it.</p></div></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "9676bdbe-5363-44f8-aba1-c2b52af7308a",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "33beb1ee-7a14-418c-a04e-53dbd2cb75b7",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-decide\" id=\"about\"><picture class=\"sof-decide-pic\"><source media=\"(max-width:1023px)\" srcset=\"https://assets.lightfunnels.com/account-90380/images_library/351c41ab-1c64-433d-89e6-eacb22110614.webp\"><img class=\"sof-decide-bg\" src=\"https://assets.lightfunnels.com/account-90380/images_library/8cf38f3b-bde6-433c-b13d-b702aa2e012e.webp\" alt=\"\" aria-hidden=\"true\" loading=\"lazy\" decoding=\"async\"></picture><div class=\"sof-decide-wash\" aria-hidden=\"true\"></div><div class=\"sof-in\"><p class=\"sof-kicker\">YOU DECIDE:</p><h2 class=\"sof-decide-head\"><span class=\"sof-vh\">Are you scaling or failing?</span><span class=\"sof-decide-art\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/63929565-36fb-4381-ac9d-378d944b28be.png\" alt=\"Are you scaling or failing?\" loading=\"lazy\" decoding=\"async\"></span></h2><p class=\"sof-decide-body sof-decide-intro sof-only-d sof-rich\"><strong>Scaling or Failing</strong> has been our underground community since 2024. <br><br>Behind closed doors, it\u2019s helped countless <br>brands hit six, even seven-figure days.</p><p class=\"sof-decide-body sof-decide-intro sof-only-m sof-rich\"><strong>Scaling or Failing</strong> has been our underground community since 2024. <br><br>Behind closed doors, it\u2019s helped countless <br>brands hit six, even seven-figure days.</p><p class=\"sof-decide-body sof-decide-promise sof-rich\">Until now, every mastermind has been private. <br>This December we go live, big time. <br><br>Cu in Bangkok! </p></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "2581cb28-8cf6-490b-baf8-7cc2ea519942",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "db6a8b2e-d164-46f7-8fda-6969d51f150a",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-mission\" id=\"topics\"><div class=\"sof-in\"><p class=\"sof-meyebrow\"><i></i><span>HOW THE DAYS PLAY OUT</span><i></i></p><h2 class=\"sof-art\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/1db21b8c-e46c-43b4-8078-ba65947e747f.png\" alt=\"\" loading=\"lazy\" decoding=\"async\"><span class=\"sof-vh\">The Mission Map</span></h2><p class=\"sof-mission-intro\">Two days in the room. One more if you go VIP. Every block is built to send you home with something you can ship on Monday.</p><div class=\"sof-days\"><div class=\"sof-day\"><span class=\"sof-daychip\">DAY 1 \u00b7 DEC 7</span><h3 class=\"sof-day-h\">MISSION: LEARN THE PLAYBOOK</h3><div class=\"sof-slots\"><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Presentations</p><p class=\"sof-slot-d\">Working systems, shown here first.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Live interviews</p><p class=\"sof-slot-d\">Operators grilled on stage. Real numbers.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Open Q&amp;A</p><p class=\"sof-slot-d\">Bring your store, your ads, your numbers.</p></div></div></div></div><div class=\"sof-day\"><span class=\"sof-daychip\">DAY 2 \u00b7 DEC 8</span><h3 class=\"sof-day-h\">MISSION: SCALE IT</h3><div class=\"sof-slots\"><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Presentations</p><p class=\"sof-slot-d\">The funnels and creative behind what\u2019s scaling now.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Live interviews</p><p class=\"sof-slot-d\">The hard questions, answered with receipts.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Open Q&amp;A</p><p class=\"sof-slot-d\">Your toughest scaling problem, solved live.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">After party</p><p class=\"sof-slot-d\">Last call, Bangkok style.</p></div></div></div></div><div class=\"sof-day sof-day--vip\"><span class=\"sof-daychip sof-daychip--vip\">DAY 3 \u00b7 VIP ONLY</span><h3 class=\"sof-day-h\">MISSION: THE VILLA</h3><div class=\"sof-slots\"><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Private conversations</p><p class=\"sof-slot-d\">Small rooms with the speakers and VIPs.</p></div></div><div class=\"sof-slot\"><div class=\"sof-slot-b\"><p class=\"sof-slot-h\">Off the record</p><p class=\"sof-slot-d\">Unfiltered talk you won\u2019t hear on stage.</p></div></div></div><a class=\"sof-vipcta\" href=\"https://buy.stripe.com/3cIcN55822013UaeVXdby05\">UPGRADE TO VIP  \u2192</a></div></div><p class=\"sof-mission-note\">Draft schedule. Final times go out to ticket holders.</p></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "e44fd7f7-ab73-412a-a671-925562f44cf5",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "5118d850-d634-42ea-a0cf-7e624158e914",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-tickets\" id=\"tickets\"><div class=\"sof-in\"><h2 class=\"sof-ttitle\"><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/1bd0e151-d670-4cdd-88e4-515cbcb50abb.png\" alt=\"DON\u2019T MISS OUT\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ebf4e546-7983-4eff-817a-d75dd2d1e21b.png\" alt=\"DON\u2019T MISS OUT\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">DON\u2019T MISS OUT</span></h2><p class=\"sof-tdate\">DECEMBER 7\u20138, 2026 \u00b7 BANGKOK, THAILAND</p><p class=\"sof-tkicker\">GET READY TO SCALE NEW HEIGHTS IN 2027</p><div class=\"sof-tcards\"><div class=\"sof-tcard\"><div class=\"sof-badges\"><span class=\"sof-badge\">SAVE $1,000 \u00b7 EARLY BIRD</span><span class=\"sof-badge sof-badge--urgent\">PRICE INCREASES ANY DAY!</span></div><p class=\"sof-tname\">EARLY BIRD</p><div class=\"sof-tpricerow\"><p class=\"sof-tprice\">$1997</p><p class=\"sof-tcompare\"><span class=\"sof-vh\">Was </span>$2997</p></div><ul class=\"sof-tlist\"><li>Full 2-day event access</li><li>Every session + live Q&amp;A</li><li>Food &amp; drinks both days</li><li>Event recordings + takeaways</li></ul><a class=\"sof-tbtn\" href=\"https://buy.stripe.com/3cIfZh0RM201aiyg01dby04\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a></div><div class=\"sof-tcard\"><img class=\"sof-sticker\" src=\"https://assets.lightfunnels.com/account-90380/images_library/3e14af5e-fdf8-442b-9317-1d0b608d4125.webp\" alt=\"Scalizard recommends\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-badges\"><span class=\"sof-badge\">LIMITED SEATS</span></div><p class=\"sof-tname sof-tname--vip\">VIP</p><div class=\"sof-tpricerow\"><p class=\"sof-tprice\">$6497</p></div><ul class=\"sof-tlist\"><li>Front row seating</li><li>First access to speaker Q&amp;A</li><li>Hotel suite + airport pickup</li><li class=\"sof-strong\">3rd-day villa mastermind &amp; dinner</li><li>All recordings + takeaways</li></ul><a class=\"sof-tbtn\" href=\"https://buy.stripe.com/3cIcN55822013UaeVXdby05\"><i aria-hidden=\"true\"></i><span>GET VIP TICKET  \u2192</span></a></div></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "3e0db618-c7f0-4d12-ba7d-ba64137659e5",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "8f46fb28-f08b-4a82-9fbf-5c158c8a40e5",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-sponsor\"><div class=\"sof-in\"><p class=\"sof-partner\">MAIN PARTNER</p><div class=\"sof-sponsor-rule\" aria-hidden=\"true\"></div><h2 class=\"sof-powered\">POWERED BY</h2><div class=\"sof-plate\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "24d3296a-63cc-49a4-aebe-db8b735231ae",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "30d57196-0b15-4008-abf5-d798620933f6",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-footer\" id=\"contact\"><div class=\"sof-in\"><div class=\"sof-footer-in\"><div><p class=\"sof-fbrand\">SCALING OR FAILING</p><p class=\"sof-fdate\">BANGKOK \u00b7 DEC 7\u20138, 2026</p></div><nav class=\"sof-fnav\" aria-label=\"Footer\"><a href=\"#about\">ABOUT</a><a href=\"#speakers\">SPEAKERS</a><a href=\"#topics\">TOPICS</a><a href=\"#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"/event/contact\">CONTACT</a></nav><p class=\"sof-fcopy sof-rich\">\u00a9 2026 Scaling or Failing  \u00b7  <label class=\"sof-legal-open\" for=\"sof-legal-privacy\">Privacy</label>  \u00b7  <label class=\"sof-legal-open\" for=\"sof-legal-terms\">Terms</label></p></div></div></div></div><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-off\" class=\"sof-legal-r\" checked><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-terms\" class=\"sof-legal-r\"><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-privacy\" class=\"sof-legal-r\"><div class=\"sof-legal\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Terms and Privacy\"><label class=\"sof-legal-scrim\" for=\"sof-legal-off\" aria-label=\"Close\"></label><div class=\"sof-legal-box\"><div class=\"sof-legal-head\"><div class=\"sof-legal-tabs\"><label class=\"sof-legal-tab sof-legal-tab--t\" for=\"sof-legal-terms\">TERMS</label><label class=\"sof-legal-tab sof-legal-tab--p\" for=\"sof-legal-privacy\">PRIVACY</label></div><label class=\"sof-legal-x\" for=\"sof-legal-off\" aria-label=\"Close\">&times;</label></div><div class=\"sof-legal-body\" data-lenis-prevent tabindex=\"0\"><div class=\"sof-legal-doc sof-legal-doc--t\">\n<h3>Terms and Conditions</h3>\n<p class=\"sof-legal-meta\">Scaling or Failing &middot; Bangkok, Thailand &middot; 7 and 8 December 2026 &middot; Last updated 9 October 2026</p>\n\n<h4>1. About these terms</h4>\n<p>These terms are an agreement between you and <span class=\"sof-legal-tbc\">[organiser legal entity]</span>, trading as Scaling or\nFailing, of <span class=\"sof-legal-tbc\">[registered address]</span>. They apply when you buy a ticket to, or attend, Scaling\nor Failing in Bangkok, Thailand on 7 and 8 December 2026. Buying a ticket means\nyou accept them.</p>\n\n<h4>2. The event</h4>\n<p>Scaling or Failing is a two day, in person event for ecommerce operators,\nrunning live interviews, presentations and audience question sessions. Speakers,\ntopics, timings and the running order are indicative and may change. We will\nemail you about any material change, using the address on your registration.</p>\n\n<h4>3. Tickets</h4>\n<p>Tickets are sold through our registration platform and issued to a named\nindividual. One ticket admits one person. We may ask for photo identification\nmatching the name on the ticket before admitting you. Tickets are limited and\nsold on a first come basis, and your order is confirmed only once payment has\ncleared and we have sent you a confirmation email.</p>\n<p>Tickets are not for resale. We may cancel, without refund, any ticket we\nreasonably believe has been resold or offered for resale.</p>\n\n<h4>4. Prices and payment</h4>\n<p>Prices are shown in US dollars and exclude any taxes, bank charges or\ncurrency conversion fees your own payment provider applies. Early bird pricing\nis time limited and may be withdrawn or increased at any time. The price you pay\nis the one displayed when your order is confirmed.</p>\n\n<h4>5. Refunds, transfers and name changes</h4>\n<p><strong>Tickets are non-refundable.</strong> If you cannot attend, you may\npass your ticket to someone else at no charge by sending us the new attendee's\nname and email at least 14 days before the event. We cannot guarantee a transfer\nrequested inside 14 days, because badges and catering are confirmed in\nadvance.</p>\n<p>None of this affects any refund right you have by law that cannot be\nexcluded.</p>\n\n<h4>6. If we change or cancel the event</h4>\n<p>We may change the venue, dates, format or programme where we reasonably need\nto. If we move the event, your ticket stays valid for the new dates and you may\ntransfer it to another person instead. If we cancel outright and offer no\nreplacement date, we will refund the ticket price you paid.</p>\n<p>We are not responsible for travel, accommodation or visa costs you have\nalready committed to, so please take out travel insurance.</p>\n\n<h4>7. Events outside our control</h4>\n<p>We are not liable for failing to run the event where the cause is outside our\nreasonable control, including government restriction, civil unrest, strike\naction, extreme weather, failure of utilities or transport, or a public health\nmeasure.</p>\n\n<h4>8. Travel, visas and your own arrangements</h4>\n<p>You are responsible for your own travel, accommodation and insurance, and for\nholding a valid passport and whatever visa or entry permission Thailand\nrequires. Entry decisions rest with the Thai authorities and are outside our\ncontrol. Being refused entry is not grounds for a refund.</p>\n\n<h4>9. Behaviour at the event</h4>\n<p>We want a room people can speak openly in. We may refuse entry to, or remove,\nanyone who behaves abusively, harasses another attendee, is intoxicated to the\npoint of disruption, or ignores venue and safety instructions. No refund is due\nwhere we do.</p>\n\n<h4>10. Filming and photography</h4>\n<p>We film, record and photograph the event, including the audience, and we use\nthat material to promote this and future events. By attending, you agree to\nappear in it. If you would rather not, tell us at registration and we will do\nwhat we reasonably can. You may not record sessions yourself without our\nwritten permission.</p>\n\n<h4>11. Confidentiality of what is shared</h4>\n<p>Speakers share live numbers, margins and creative that are not public. You\nagree not to publish, broadcast or repost session content, slides or figures\noutside the room without that speaker's permission.</p>\n\n<h4>12. No guarantee of results</h4>\n<p>Everything shared at the event is for information only. It is not financial,\nlegal, tax or investment advice, and it is not a promise of results. Figures a\nspeaker describes are their own experience, not a projection of what you will\nachieve. Your business decisions remain yours.</p>\n\n<h4>13. Our liability</h4>\n<p>We do not exclude our liability for death or personal injury caused by our\nnegligence, for fraud, or for anything else that cannot be excluded by law.\nSubject to that, our total liability to you in connection with the event is\nlimited to the ticket price you paid, and we are not liable for lost profit,\nlost revenue, lost opportunity or other indirect loss.</p>\n\n<h4>14. Governing law</h4>\n<p>These terms are governed by the law of <span class=\"sof-legal-tbc\">[governing law and jurisdiction]</span>, whose courts have exclusive\njurisdiction.</p>\n\n<h4>15. Contact</h4>\n<p>Email us at <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>.</p>\n</div><div class=\"sof-legal-doc sof-legal-doc--p\">\n<h3>Privacy Policy</h3>\n<p class=\"sof-legal-meta\">Scaling or Failing &middot; Bangkok, Thailand &middot; 7 and 8 December 2026 &middot; Last updated 14 October 2026</p>\n\n<h4>1. Who we are</h4>\n<p><span class=\"sof-legal-tbc\">[organiser legal entity]</span>, trading as Scaling or Failing, of <span class=\"sof-legal-tbc\">[registered address]</span>, decides how the\npersonal data described here is used. You can reach us at <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>.</p>\n\n<h4>2. What we collect</h4>\n<ul>\n<li><strong>When you book.</strong> Your name, email, phone, company, job title\nand billing details, plus anything you choose to add such as dietary or\naccessibility needs.</li>\n<li><strong>When you contact us.</strong> Whatever you put in your message.</li>\n<li><strong>At the event.</strong> Your name and company on your badge, and\nphotography and film of the room.</li>\n<li><strong>When you visit this page.</strong> See the next section.</li>\n</ul>\n\n<h4>3. What this page does</h4>\n<p>The event page asks you for nothing. The contact page has a form. What you\ntype into it, together with the IP address you send it from, is emailed to us\nso that we can reply, and is not stored anywhere else. Both pages set cookies\nand contact a few other services:</p>\n<ul>\n<li>Our website platform, Lightfunnels, sets a session cookie, two cart cookies,\nand an identifier called lfbid that lasts about a year and lets the platform\nrecognise a returning browser.</li>\n<li>Google Fonts serves the typefaces, so Google receives your IP address.</li>\n<li>unpkg serves the smooth scrolling library, so unpkg receives your IP\naddress.</li>\n<li>Sentry receives a report if the page hits an error.</li>\n</ul>\n<p>We run no advertising pixels, no analytics and no remarketing tags on this\npage.</p>\n\n<h4>4. Why we use it</h4>\n<ul>\n<li>To sell you a ticket and get you into the event, which we need in order to\nperform our contract with you.</li>\n<li>To keep this website working and secure, which is our legitimate\ninterest.</li>\n<li>To tell you about this event and future ones, with your consent where\nconsent is required. You can opt out at any time.</li>\n<li>To meet our accounting and tax obligations, which is a legal duty.</li>\n</ul>\n\n<h4>5. Who we share it with</h4>\n<ul>\n<li>Our registration and ticketing platform, which processes your booking.</li>\n<li>Stripe, our payment provider, which handles the checkout and your card\ndetails. We never see your full card number.</li>\n<li>The venue and our catering and production suppliers, for names, access and\ndietary needs.</li>\n<li>Partners and sponsors, <strong>only where you have agreed</strong>, for\nexample by letting a sponsor scan your badge.</li>\n<li>Our email and automation providers, which carry your contact form message\nto us.</li>\n<li>Professional advisers and authorities, where we are required to.</li>\n</ul>\n<p>We do not sell your personal data.</p>\n\n<h4>6. Where it goes</h4>\n<p>The event is in Thailand and some of our suppliers are in the United States,\nso your data will be transferred outside the UK and the EEA. Where it is, we\nrely on appropriate safeguards such as standard contractual clauses.</p>\n\n<h4>7. How long we keep it</h4>\n<p>Booking and payment records for seven years, to satisfy accounting rules.\nMarketing contact details until you opt out. Event photography and film are kept\nas part of our archive.</p>\n\n<h4>8. Your rights</h4>\n<p>You can ask us for a copy of your data, to correct it, to delete it, to\nrestrict or object to how we use it, or to receive it in a portable form, and\nyou can withdraw consent at any time. Email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>. You can also complain to\nyour local data protection regulator.</p>\n\n<h4>9. Marketing</h4>\n<p>Every marketing email has an unsubscribe link. Unsubscribing does not stop\nthe messages we need to send you about a ticket you have already bought.</p>\n\n<h4>10. Children</h4>\n<p>This event is for business professionals and is not intended for anyone under\n18.</p>\n\n<h4>11. Changes to this policy</h4>\n<p>If we change this policy we will update the date at the top of it.</p>\n</div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

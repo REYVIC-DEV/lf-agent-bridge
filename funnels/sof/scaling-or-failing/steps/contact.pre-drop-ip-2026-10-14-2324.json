@@ -1,0 +1,150 @@
+{
+  "id": "c0cd3b8c-39cc-45ad-b8fc-cd8f9e518e0e",
+  "t": "Root",
+  "version": 11,
+  "styles": [
+    {
+      "prop": "pageWidth",
+      "value": "1680px"
+    },
+    {
+      "prop": "backgroundColor",
+      "value": {
+        "r": 252,
+        "g": 236,
+        "b": 199,
+        "a": 1
+      }
+    }
+  ],
+  "p": {
+    "children": [
+      {
+        "t": "Section",
+        "id": "1e0ab93f-07dd-48c4-b81b-c867ed2dac7d",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "3072d1b3-8f82-44c6-9e1a-6e8e12e0647e",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-head sof-sec--bleed\"><a class=\"sof-promo\" href=\"https://buy.stripe.com/3cIfZh0RM201aiyg01dby04\"><span>GET EARLY BIRD TICKET &amp; SAVE $1000</span></a><input type=\"checkbox\" id=\"sof-menu\" class=\"sof-menu-cb\" aria-hidden=\"true\" tabindex=\"-1\"><nav class=\"sof-nav sof-nav-d\" aria-label=\"Main\"><a class=\"sof-navcell sof-navcell--rule\" href=\"/event/scaling-failing#about\">ABOUT</a><a class=\"sof-navcell sof-navcell--rule\" href=\"/event/scaling-failing#speakers\">SPEAKERS</a><a class=\"sof-navcell sof-navcell--rule\" href=\"/event/scaling-failing#topics\">TOPICS</a><a class=\"sof-navcell sof-navcell--rule sof-navcell--gold\" href=\"/event/scaling-failing#tickets\">GET TICKET</a><a class=\"sof-navcell\" href=\"/event/contact\">CONTACT</a></nav><nav class=\"sof-nav sof-nav-m\" aria-label=\"Main\"><label class=\"sof-navcell sof-navcell--rule\" for=\"sof-menu\"><span class=\"sof-burger\" aria-hidden=\"true\"><i></i><i></i><i></i></span>MENU</label><a class=\"sof-navcell sof-navcell--gold\" href=\"#tickets\">GET TICKET</a></nav><div class=\"sof-menu\"><a href=\"/event/scaling-failing#about\">ABOUT</a><a href=\"/event/scaling-failing#speakers\">SPEAKERS</a><a href=\"/event/scaling-failing#topics\">TOPICS</a><a href=\"/event/scaling-failing#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"/event/contact\">CONTACT</a></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "357945ce-a4ec-447a-a8d7-8b06a63b2354",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "f87bcb10-a905-42bd-979b-ebfedd4c7602",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-contact\"><div class=\"sof-in\"><h1 class=\"sof-art\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ffd78428-f568-4225-8c05-f3ff5fb0353a.png\" alt=\"\" loading=\"eager\" decoding=\"async\"><span class=\"sof-vh\">Get in touch</span></h1><p class=\"sof-contact-sub\">Questions about tickets, sponsorship or speaking? We reply within 24 hours.</p><form class=\"sof-form\"><div class=\"sof-field\"><label for=\"sof-name\">NAME</label><input id=\"sof-name\" name=\"name\" type=\"text\" placeholder=\"Your name\" required></div><div class=\"sof-field\"><label for=\"sof-email\">EMAIL</label><input id=\"sof-email\" name=\"email\" type=\"email\" placeholder=\"Your email\" required></div><div class=\"sof-field\"><label for=\"sof-topic\">TOPIC</label><div class=\"sof-select\"><select id=\"sof-topic\" name=\"topic\" required><option value=\"\" disabled selected hidden>Tickets / Sponsorship / Speaking / Other</option><option value=\"Tickets\">Tickets</option><option value=\"Sponsorship\">Sponsorship</option><option value=\"Speaking\">Speaking</option><option value=\"Other\">Other</option></select></div></div><div class=\"sof-field\"><label for=\"sof-message\">MESSAGE</label><textarea id=\"sof-message\" name=\"message\" rows=\"5\" placeholder=\"How can we help?\" required></textarea></div><div aria-hidden=\"true\" style=\"position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden\"><label for=\"sof-website\">Website</label><input id=\"sof-website\" name=\"website\" type=\"text\" tabindex=\"-1\" autocomplete=\"off\"></div><button class=\"sof-send\" type=\"submit\">SEND MESSAGE  \u2192</button><p class=\"sof-form-note\">Or email <a href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a></p></form></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "t": "Section",
+        "id": "ff299fb8-5fe3-4292-abdd-8d0ca6ea42fd",
+        "styles": [
+          {
+            "prop": "padding",
+            "value": {
+              "top": "0px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            }
+          }
+        ],
+        "p": {
+          "layout": "",
+          "dividerPosition": [
+            "top"
+          ],
+          "horizontalFlip": false,
+          "embedded_video": {
+            "src": "",
+            "video_size": "stretch",
+            "video_position": "center"
+          },
+          "children": [
+            {
+              "t": "HtmlElement",
+              "id": "e4111af4-b0bb-48bc-9402-f67a488add96",
+              "p": {
+                "content": "<div class=\"sof-scale\"><div class=\"sof sof-sec sof-footer\" id=\"contact\"><div class=\"sof-in\"><div class=\"sof-footer-in\"><div><p class=\"sof-fbrand\">SCALING OR FAILING</p><p class=\"sof-fdate\">BANGKOK \u00b7 DEC 7\u20138, 2026</p></div><nav class=\"sof-fnav\" aria-label=\"Footer\"><a href=\"/event/scaling-failing#about\">ABOUT</a><a href=\"/event/scaling-failing#speakers\">SPEAKERS</a><a href=\"/event/scaling-failing#topics\">TOPICS</a><a href=\"/event/scaling-failing#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"/event/contact\">CONTACT</a></nav><p class=\"sof-fcopy sof-rich\">\u00a9 2026 Scaling or Failing  \u00b7  <label class=\"sof-legal-open\" for=\"sof-legal-privacy\">Privacy</label>  \u00b7  <label class=\"sof-legal-open\" for=\"sof-legal-terms\">Terms</label></p></div></div></div></div><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-off\" class=\"sof-legal-r\" checked><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-terms\" class=\"sof-legal-r\"><input type=\"radio\" name=\"sof-legal\" id=\"sof-legal-privacy\" class=\"sof-legal-r\"><div class=\"sof-legal\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Terms and Privacy\"><label class=\"sof-legal-scrim\" for=\"sof-legal-off\" aria-label=\"Close\"></label><div class=\"sof-legal-box\"><div class=\"sof-legal-head\"><div class=\"sof-legal-tabs\"><label class=\"sof-legal-tab sof-legal-tab--t\" for=\"sof-legal-terms\">TERMS</label><label class=\"sof-legal-tab sof-legal-tab--p\" for=\"sof-legal-privacy\">PRIVACY</label></div><label class=\"sof-legal-x\" for=\"sof-legal-off\" aria-label=\"Close\">&times;</label></div><div class=\"sof-legal-body\" data-lenis-prevent tabindex=\"0\"><div class=\"sof-legal-doc sof-legal-doc--t\">\n<h3>Terms and Conditions</h3>\n<p class=\"sof-legal-meta\">Scaling or Failing &middot; Bangkok, Thailand &middot; 7 and 8 December 2026 &middot; Last updated 9 October 2026</p>\n\n<h4>1. About these terms</h4>\n<p>These terms are an agreement between you and <span class=\"sof-legal-tbc\">[organiser legal entity]</span>, trading as Scaling or\nFailing, of <span class=\"sof-legal-tbc\">[registered address]</span>. They apply when you buy a ticket to, or attend, Scaling\nor Failing in Bangkok, Thailand on 7 and 8 December 2026. Buying a ticket means\nyou accept them.</p>\n\n<h4>2. The event</h4>\n<p>Scaling or Failing is a two day, in person event for ecommerce operators,\nrunning live interviews, presentations and audience question sessions. Speakers,\ntopics, timings and the running order are indicative and may change. We will\nemail you about any material change, using the address on your registration.</p>\n\n<h4>3. Tickets</h4>\n<p>Tickets are sold through our registration platform and issued to a named\nindividual. One ticket admits one person. We may ask for photo identification\nmatching the name on the ticket before admitting you. Tickets are limited and\nsold on a first come basis, and your order is confirmed only once payment has\ncleared and we have sent you a confirmation email.</p>\n<p>Tickets are not for resale. We may cancel, without refund, any ticket we\nreasonably believe has been resold or offered for resale.</p>\n\n<h4>4. Prices and payment</h4>\n<p>Prices are shown in US dollars and exclude any taxes, bank charges or\ncurrency conversion fees your own payment provider applies. Early bird pricing\nis time limited and may be withdrawn or increased at any time. The price you pay\nis the one displayed when your order is confirmed.</p>\n\n<h4>5. Refunds, transfers and name changes</h4>\n<p><strong>Tickets are non-refundable.</strong> If you cannot attend, you may\npass your ticket to someone else at no charge by sending us the new attendee's\nname and email at least 14 days before the event. We cannot guarantee a transfer\nrequested inside 14 days, because badges and catering are confirmed in\nadvance.</p>\n<p>None of this affects any refund right you have by law that cannot be\nexcluded.</p>\n\n<h4>6. If we change or cancel the event</h4>\n<p>We may change the venue, dates, format or programme where we reasonably need\nto. If we move the event, your ticket stays valid for the new dates and you may\ntransfer it to another person instead. If we cancel outright and offer no\nreplacement date, we will refund the ticket price you paid.</p>\n<p>We are not responsible for travel, accommodation or visa costs you have\nalready committed to, so please take out travel insurance.</p>\n\n<h4>7. Events outside our control</h4>\n<p>We are not liable for failing to run the event where the cause is outside our\nreasonable control, including government restriction, civil unrest, strike\naction, extreme weather, failure of utilities or transport, or a public health\nmeasure.</p>\n\n<h4>8. Travel, visas and your own arrangements</h4>\n<p>You are responsible for your own travel, accommodation and insurance, and for\nholding a valid passport and whatever visa or entry permission Thailand\nrequires. Entry decisions rest with the Thai authorities and are outside our\ncontrol. Being refused entry is not grounds for a refund.</p>\n\n<h4>9. Behaviour at the event</h4>\n<p>We want a room people can speak openly in. We may refuse entry to, or remove,\nanyone who behaves abusively, harasses another attendee, is intoxicated to the\npoint of disruption, or ignores venue and safety instructions. No refund is due\nwhere we do.</p>\n\n<h4>10. Filming and photography</h4>\n<p>We film, record and photograph the event, including the audience, and we use\nthat material to promote this and future events. By attending, you agree to\nappear in it. If you would rather not, tell us at registration and we will do\nwhat we reasonably can. You may not record sessions yourself without our\nwritten permission.</p>\n\n<h4>11. Confidentiality of what is shared</h4>\n<p>Speakers share live numbers, margins and creative that are not public. You\nagree not to publish, broadcast or repost session content, slides or figures\noutside the room without that speaker's permission.</p>\n\n<h4>12. No guarantee of results</h4>\n<p>Everything shared at the event is for information only. It is not financial,\nlegal, tax or investment advice, and it is not a promise of results. Figures a\nspeaker describes are their own experience, not a projection of what you will\nachieve. Your business decisions remain yours.</p>\n\n<h4>13. Our liability</h4>\n<p>We do not exclude our liability for death or personal injury caused by our\nnegligence, for fraud, or for anything else that cannot be excluded by law.\nSubject to that, our total liability to you in connection with the event is\nlimited to the ticket price you paid, and we are not liable for lost profit,\nlost revenue, lost opportunity or other indirect loss.</p>\n\n<h4>14. Governing law</h4>\n<p>These terms are governed by the law of <span class=\"sof-legal-tbc\">[governing law and jurisdiction]</span>, whose courts have exclusive\njurisdiction.</p>\n\n<h4>15. Contact</h4>\n<p>Email us at <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>.</p>\n</div><div class=\"sof-legal-doc sof-legal-doc--p\">\n<h3>Privacy Policy</h3>\n<p class=\"sof-legal-meta\">Scaling or Failing &middot; Bangkok, Thailand &middot; 7 and 8 December 2026 &middot; Last updated 14 October 2026</p>\n\n<h4>1. Who we are</h4>\n<p><span class=\"sof-legal-tbc\">[organiser legal entity]</span>, trading as Scaling or Failing, of <span class=\"sof-legal-tbc\">[registered address]</span>, decides how the\npersonal data described here is used. You can reach us at <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>.</p>\n\n<h4>2. What we collect</h4>\n<ul>\n<li><strong>When you book.</strong> Your name, email, phone, company, job title\nand billing details, plus anything you choose to add such as dietary or\naccessibility needs.</li>\n<li><strong>When you contact us.</strong> Whatever you put in your message.</li>\n<li><strong>At the event.</strong> Your name and company on your badge, and\nphotography and film of the room.</li>\n<li><strong>When you visit this page.</strong> See the next section.</li>\n</ul>\n\n<h4>3. What this page does</h4>\n<p>The event page asks you for nothing. The contact page has a form. What you\ntype into it, together with the IP address you send it from, is emailed to us\nso that we can reply, and is not stored anywhere else. Both pages set cookies\nand contact a few other services:</p>\n<ul>\n<li>Our website platform, Lightfunnels, sets a session cookie, two cart cookies,\nand an identifier called lfbid that lasts about a year and lets the platform\nrecognise a returning browser.</li>\n<li>Google Fonts serves the typefaces, so Google receives your IP address.</li>\n<li>unpkg serves the smooth scrolling library, so unpkg receives your IP\naddress.</li>\n<li>Sentry receives a report if the page hits an error.</li>\n</ul>\n<p>We run no advertising pixels, no analytics and no remarketing tags on this\npage.</p>\n\n<h4>4. Why we use it</h4>\n<ul>\n<li>To sell you a ticket and get you into the event, which we need in order to\nperform our contract with you.</li>\n<li>To keep this website working and secure, which is our legitimate\ninterest.</li>\n<li>To tell you about this event and future ones, with your consent where\nconsent is required. You can opt out at any time.</li>\n<li>To meet our accounting and tax obligations, which is a legal duty.</li>\n</ul>\n\n<h4>5. Who we share it with</h4>\n<ul>\n<li>Our registration and ticketing platform, which processes your booking.</li>\n<li>Stripe, our payment provider, which handles the checkout and your card\ndetails. We never see your full card number.</li>\n<li>The venue and our catering and production suppliers, for names, access and\ndietary needs.</li>\n<li>Partners and sponsors, <strong>only where you have agreed</strong>, for\nexample by letting a sponsor scan your badge.</li>\n<li>Our email and automation providers, which carry your contact form message\nto us.</li>\n<li>Professional advisers and authorities, where we are required to.</li>\n</ul>\n<p>We do not sell your personal data.</p>\n\n<h4>6. Where it goes</h4>\n<p>The event is in Thailand and some of our suppliers are in the United States,\nso your data will be transferred outside the UK and the EEA. Where it is, we\nrely on appropriate safeguards such as standard contractual clauses.</p>\n\n<h4>7. How long we keep it</h4>\n<p>Booking and payment records for seven years, to satisfy accounting rules.\nMarketing contact details until you opt out. Event photography and film are kept\nas part of our archive.</p>\n\n<h4>8. Your rights</h4>\n<p>You can ask us for a copy of your data, to correct it, to delete it, to\nrestrict or object to how we use it, or to receive it in a portable form, and\nyou can withdraw consent at any time. Email <a class=\"sof-legal-mail\" href=\"mailto:hello@scalingorfailing.com\">hello@scalingorfailing.com</a>. You can also complain to\nyour local data protection regulator.</p>\n\n<h4>9. Marketing</h4>\n<p>Every marketing email has an unsubscribe link. Unsubscribing does not stop\nthe messages we need to send you about a ticket you have already bought.</p>\n\n<h4>10. Children</h4>\n<p>This event is for business professionals and is not intended for anyone under\n18.</p>\n\n<h4>11. Changes to this policy</h4>\n<p>If we change this policy we will update the date at the top of it.</p>\n</div></div></div></div>"
+              },
+              "styles": [
+                {
+                  "prop": "width",
+                  "value": "100%"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

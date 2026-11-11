@@ -1,0 +1,221 @@
+<!-- Smooth scroll: anchor clicks (CSS) + momentum scroll (Lenis) -->
+
+<style>
+
+  /* Native smooth scroll ONLY when Lenis is NOT active (mobile/touch). Lenis adds a
+
+     `lenis` class to <html> on desktop; excluding it stops the native engine from
+
+     fighting Lenis — the intermittent "can't reach the bottom" glitch (esp. Mac trackpads). */
+
+  html:not(.lenis) { scroll-behavior: smooth; }
+
+  /* keep anchored sections clear of a sticky header — adjust 80px to header height */
+
+  [id] { scroll-margin-top: 80px; }
+
+  /* Lenis required CSS (normally shipped as lenis.css — it was MISSING, which let the
+
+     native smooth-scroll rule above fight Lenis). Inlined so no extra request. */
+
+  html.lenis, html.lenis body { height: auto; }
+
+  /* NOTE: this Lenis build only stamps class `lenis` on <html> (never `lenis-smooth`), so
+
+     target `html.lenis`. !important + specificity beats ANY html{scroll-behavior:smooth}
+
+     (incl. a leftover/old style block), forcing native smooth OFF whenever Lenis runs. */
+
+  html.lenis { scroll-behavior: auto !important; }
+
+  html.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+
+  html.lenis.lenis-stopped { overflow: hidden; }
+
+</style>
+
+<script>
+
+  window.addEventListener('DOMContentLoaded', function () {
+
+    // Mobile/touch: do not even DOWNLOAD Lenis - the init below is a no-op there,
+
+    // so fetching ~10KB of third-party JS is pure waste. Desktop injects it on demand.
+
+    if (window.matchMedia('(max-width: 768px), (pointer: coarse)').matches) return;
+
+    var _ls = document.createElement('script');
+
+    _ls.src = 'https://unpkg.com/lenis@1/dist/lenis.min.js';
+
+    _ls.onload = _lenisMain;
+
+    document.head.appendChild(_ls);
+
+  });
+
+  function _lenisMain() {
+
+    // Lenis OFF on mobile/touch: its momentum scroll intermittently fails to reach the
+
+    // page bottom on mobile (dynamic browser-bar viewport + content resizing after load).
+
+    // Native scroll + CSS scroll-behavior:smooth handle anchor jumps fine there.
+
+    if (window.matchMedia('(max-width: 768px), (pointer: coarse)').matches) return;
+
+    if (typeof Lenis === 'undefined') return;
+
+    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+
+    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+
+    requestAnimationFrame(raf);
+
+    // Re-measure Lenis's max-scroll whenever the page GROWS (images without width/height
+
+    // reflow as they load, LF-injected blocks, "Read more" expanders). Belt-and-suspenders
+
+    // vs a stale, too-short scroll limit. rAF-debounced so it can't loop. Desktop only.
+
+    var _rz = false;
+
+    function resync() { if (_rz) return; _rz = true; requestAnimationFrame(function () { _rz = false; try { lenis.resize(); } catch (e) {} }); }
+
+    window.addEventListener('load', resync);
+
+    window.addEventListener('resize', resync);
+
+    try { if (window.ResizeObserver) new ResizeObserver(resync).observe(document.body); } catch (e) {}
+
+    document.addEventListener('click', function (e) { if (e.target && e.target.closest && e.target.closest('.read-more-btn,[data-toggle],summary')) setTimeout(resync, 60); }, true);
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+
+      a.addEventListener('click', function (e) {
+
+        var target = document.querySelector(a.getAttribute('href'));
+
+        if (target) { e.preventDefault(); lenis.scrollTo(target); }
+
+      });
+
+    });
+
+  }
+
+</script>
+
+<!-- sof-contact-form -> n8n
+     Submits the contact form. Funnel level because header_scripts is the only
+     script slot this account exposes, so it is guarded on form.sof-form and is
+     inert on every other page in the funnel. -->
+<script>
+(function () {
+  var ENDPOINT = 'https://primary-production-f5243.up.railway.app/webhook/sof-contact';
+  function wire() {
+    var form = document.querySelector('form.sof-form');
+    if (!form || form.getAttribute('data-sof-wired')) return;
+    form.setAttribute('data-sof-wired', '1');
+    var btn = form.querySelector('.sof-send');
+    var note = form.querySelector('.sof-form-note');
+    var label = btn ? btn.innerHTML : '';
+    var noteHTML = note ? note.innerHTML : '';
+    function say(html, bad) {
+      if (!note) return;
+      note.innerHTML = html;
+      note.style.color = bad ? '#B3261E' : '';
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.reportValidity && !form.reportValidity()) return;
+      // Form-encoded: a CORS simple request, so the browser sends no preflight
+      // OPTIONS. n8n still parses it into body.
+      var data = new URLSearchParams(new FormData(form));
+      if (btn) { btn.disabled = true; btn.innerHTML = 'SENDING&hellip;'; }
+      say(noteHTML);
+      fetch(ENDPOINT, { method: 'POST', body: data })
+        .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
+        .then(function (j) {
+          if (!j || j.ok !== true) throw new Error('rejected');
+          form.reset();
+          if (btn) btn.innerHTML = 'SENT';        // left disabled: no double send
+          say('Thanks. Your message is with us, we reply within 24 hours.');
+        })
+        .catch(function () {
+          if (btn) { btn.disabled = false; btn.innerHTML = label; }
+          say('That did not send. Please email ' +
+              '<a href="mailto:hello@scalingorfailing.com">hello@scalingorfailing.com</a>.', true);
+        });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+  else wire();
+})();
+</script>
+
+<!-- sof-affiliate-ref -->
+<script>
+/* Affiliate promo codes on the Stripe buttons, taken from ?ref= on our own URL.
+   scalingorfailing.com/event/?ref=JEM  ->  buttons carry promoCode=JEM
+   Any code is accepted so a new affiliate needs no site change; it is cleaned
+   first, so a junk or hostile value can never reshape the Stripe URL. */
+(function () {
+  var PARAM  = 'ref';
+  var STORE  = 'sof_ref';
+  var PREFIX = 'https://whop.com/checkout/';
+  var FIELD  = 'promoCode';
+
+  /* Uppercase, and only A-Z 0-9 _ - up to 40 chars. Anything else becomes ''
+     and the buttons are left exactly as they shipped. */
+  function clean(v) {
+    if (!v) return '';
+    v = String(v).trim().toUpperCase();
+    return /^[A-Z0-9_-]{1,40}$/.test(v) ? v : '';
+  }
+
+  var code = '';
+  try { code = clean(new URLSearchParams(window.location.search).get(PARAM)); } catch (e) {}
+
+  /* Remember it for the rest of the visit. The nav links out to /event/contact,
+     and without this the code is lost on the way back and the affiliate loses
+     the sale. sessionStorage, so it ends with the tab. */
+  try {
+    if (code) window.sessionStorage.setItem(STORE, code);
+    else code = clean(window.sessionStorage.getItem(STORE));
+  } catch (e) {}
+
+  if (!code) return;
+
+  function apply() {
+    var links = document.querySelectorAll('a[href^="' + PREFIX + '"]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i], u;
+      try { u = new URL(a.href); } catch (e) { continue; }
+      /* Already right: skip, so this pass writes nothing to the DOM and cannot
+         re-trigger the observer below. */
+      if (u.searchParams.get(FIELD) === code) continue;
+      u.searchParams.set(FIELD, code);
+      a.href = u.toString();
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply);
+  else apply();
+
+  /* LF hydrates its blocks from JSON after load and can replace these anchors,
+     which would silently drop the code. Debounced to one run per frame: an
+     unthrottled document-wide observer running querySelectorAll is a scroll-jank
+     source on a page that is also running Lenis. */
+  var queued = false;
+  function schedule() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(function () { queued = false; apply(); });
+  }
+  try {
+    new MutationObserver(schedule).observe(document.documentElement,
+                                           { childList: true, subtree: true });
+  } catch (e) {}
+})();
+</script>

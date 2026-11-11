@@ -1,0 +1,467 @@
+{
+ "uid": "step_Wl7z21c5B9Fdkg4YzXLzV",
+ "slug": "event-v2",
+ "title": "Scaling or Failing \u2014 Bangkok, December 7\u20138 2026",
+ "type": "article_page",
+ "product_id": null,
+ "settings": {
+  "seo": {
+   "title": "Scaling or Failing 2026 \u2014 Bangkok, Dec 7\u20138",
+   "keywords": "Scaling or Failing, ecommerce event Bangkok, ecommerce conference 2026, DTC mastermind, paid media conference, TikTok Shops, native ads, Facebook ads event, BestFulfill, Bangkok December 2026",
+   "description": "Two days in Bangkok with the operators actually running the brands. Live interviews, unreleased playbooks and open-mic Q&A. Early Bird $1,997.",
+   "social_image_uid": "img_wNZmUiHaWdnKImSCow203"
+  },
+  "custom_html": {
+   "footer": "<script>(function(){var v=document.querySelector(\"meta[name=viewport]\");if(v&&/maximum-scale/.test(v.content))v.setAttribute(\"content\",\"width=device-width, initial-scale=1\");})();</script>\n<script>(function(){var c=document.getElementById(\"sof-menu\");if(!c)return;document.addEventListener(\"click\",function(e){var a=e.target.closest(\".sof-menu a\");if(a)c.checked=false;});})();</script>\n",
+   "header": "<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B45L0z3bWuYMBYro.woff2\">\n<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"https://fonts.gstatic.com/s/firasanscondensed/v11/wEOsEADFm8hSaQTFG18FErVhsC9x-tarWU3IuMR0cjRYhY8.woff2\">\n<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"/cf-fonts/s/inter/5.2.8/latin/500/normal.woff2\">\n<link rel=\"preload\" as=\"font\" type=\"font/woff2\" crossorigin href=\"/cf-fonts/s/inter/5.2.8/latin/700/normal.woff2\">\n<link rel=\"preload\" as=\"image\" fetchpriority=\"high\" href=\"https://assets.lightfunnels.com/account-90380/images_library/bc343abc-8d0c-4347-8ae2-84d9c796a531.webp\" media=\"(min-width: 768px)\">\n<link rel=\"preload\" as=\"image\" fetchpriority=\"high\" href=\"https://assets.lightfunnels.com/account-90380/images_library/95277d6e-f234-49d5-ab29-166c110822d4.webp\" media=\"(max-width: 767px)\">\n<style>@font-face{font-family:'League Spartan';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/leaguespartan/v15/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvMGYPZA81dNA6MzbxG.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/firasanscondensed/v11/wEOsEADFm8hSaQTFG18FErVhsC9x-tarWU3IuMR0cjRYhY8.woff2) format('woff2')}@font-face{font-family:'Fira Sans Extra Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/firasansextracondensed/v11/NaPPcYDaAO5dirw6IaFn7lPJFqXmS-M9Atn3wgda3USLr3i-oWR9e2U.woff2) format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B45L0z3bWuYMBYro.woff2) format('woff2')}@font-face{font-family:'Fira Mono';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/firamono/v16/N0bS2SlFPv1weGeLZDtondvHnvfUS5NBBA.woff2) format('woff2')}@font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/archivoblack/v23/HTxqL289NzCGg4MzN6KJ7eW6CYyF_jzx13E.woff2) format('woff2')}@font-face{font-family:'Arimo';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/arimo/v36/P5sfzZCDf9_T_3cV7NCUECyoxNk37cxcABrBdwcoaaQw.woff2) format('woff2')}@font-face{font-family:'Passion One';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/passionone/v20/Pby6FmL8HhTPqbjUzux3JEMS0U7vyJc-u28z.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/400/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/500/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/600/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/700/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:800;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/800/normal.woff2) format('woff2')}@font-face{font-family:Inter;font-style:normal;font-weight:900;font-display:swap;src:url(/cf-fonts/s/inter/5.2.8/latin/900/normal.woff2) format('woff2')}@font-face{font-family:InterFallback;src:local('Arial'),local('Liberation Sans'),local('Helvetica Neue');ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;size-adjust:107.12%}</style>\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<style>\n.sof,.sof *{box-sizing:border-box}\n.sof{font-family:Inter, InterFallback, Arial, sans-serif;color:#041C32;-webkit-font-smoothing:antialiased;\n     text-rendering:optimizeLegibility}\n.sof :where(img){display:block;max-width:100%;height:auto}\n/* :where() keeps this at zero specificity, so a later single-class rule such as\n   .sof-navcell still wins its own colour. `.sof a` would outrank it (0,1,1 vs\n   0,1,0) and silently paint every nav label navy-on-navy. */\n.sof :where(a){color:inherit;text-decoration:none}\n.sof :where(p){margin:0}\n.sof :where(h1,h2){margin:0;font-weight:inherit;font-size:inherit;line-height:inherit}\n/* Rendered, but clipped to nothing: image-replaced display type keeps its real\n   words, at the node's real size and colour, for crawlers and screen readers. */\n.sof-vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;\n        border:0;clip-path:inset(50%);white-space:nowrap;overflow-wrap:anywhere}\n/* The h1's words at the hero lockup node's own size and colour, per breakpoint. */\n.sof-h1 .a{font-size:91.76px;color:#FCCF44}\n.sof-h1 .b{font-size:38.34px;color:#FBEFD6}\n.sof-h1 .c{font-size:90px;color:#FBEFD6}\n.sof-sec{position:relative;width:100%;overflow:hidden;padding-left:24px;padding-right:24px}\n.sof-in{position:relative;width:100%;max-width:1680px;margin:0 auto}\n/* Display artwork: Figma renders a node WITH its outside strokes, so the png is\n   a little wider than the node box. Widths below are the measured render\n   extent (raw px / export scale), not the node box, with the bleed split. */\n.sof-art{display:block;width:100%;margin:0 auto}\n.sof-art img{width:100%}\n.sof-rich{overflow-wrap:anywhere}\n.sof-grad{background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%)}\n\n/* ===================== 1 \u00b7 HEADER (870:7 / 870:434) ===================== */\n.sof-promo{display:flex;align-items:center;justify-content:center;height:38px;\n  background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%);overflow:hidden}\n.sof-promo span{font-family:League Spartan,Arial,sans-serif;font-weight:700;\n  font-size:15.5px;color:#FBEFD6;text-align:center;padding:0 12px}\n.sof-nav{display:flex;height:58px;background:#0B1A32;overflow:hidden}\n.sof-navcell{display:flex;align-items:center;justify-content:center;height:100%;\n  font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:18px;letter-spacing:0.5px;\n  color:#FBEFD6;cursor:pointer;line-height:1}\n.sof-navcell--rule{border-right:2px solid #FBEFD6}\n.sof-navcell--gold{color:#FCCF44}\n.sof-nav-m{width:100%}\n.sof-nav-m .sof-navcell{flex:0 0 50%;gap:10px}\n.sof-nav-d{display:none}\n.sof-burger{display:inline-block;width:22px;height:16px;position:relative;flex:0 0 22px}\n.sof-burger i{position:absolute;left:0;height:3px;background:#fff;display:block}\n.sof-burger i:nth-child(1){top:0;width:22px}\n.sof-burger i:nth-child(2){top:6.5px;width:22px}\n.sof-burger i:nth-child(3){top:13px;width:15px}\n.sof-menu-cb{position:absolute;opacity:0;width:0;height:0;pointer-events:none}\n.sof-menu{display:none;background:#0B1A32;border-top:2px solid #FBEFD626}\n.sof-menu-cb:checked ~ .sof-menu{display:block}\n.sof-menu a{display:block;padding:14px 24px;font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;\n  font-size:14px;letter-spacing:.08em;color:#FBEFD6;border-bottom:1px solid #FBEFD626}\n.sof-menu a:last-child{border-bottom:0}\n.sof-menu a.sof-gold{color:#FCCF44}\n\n/* ===================== 2 \u00b7 HERO (870:21 / 870:446) ===================== */\n.sof-hero{background:#FCECC7}\n.sof-hero-pic{display:contents}\n.sof-hero-plate{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}\n.sof-hero-wash,.sof-hero-shade{position:absolute;left:0;right:0;pointer-events:none}\n/* mobile z-order: art -> wash -> shade (desktop flips, see the media block) */\n.sof-hero-wash{top:0;bottom:0;background:linear-gradient(180deg,\n  #FCECC7F0 0%,#FCECC7E0 42%,#FCECC773 55%,#FCECC700 66%);z-index:1}\n.sof-hero-shade{left:0;right:0;bottom:0;height:200px;background:linear-gradient(180deg,\n  #061A2C00 0%,#061A2CBF 100%);z-index:2}\n.sof-hero-m{position:relative;z-index:3;padding:41px 25px 0;min-height:844px}\n.sof-hero-d{display:none}\n.sof-date{font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:18.5px;color:#041C32;\n  text-align:center;width:100%;max-width:329px;margin:0 auto;line-height:1.2}\n/* render 322.33 wide vs a 310 node box -> 6.17 of stroke bleed each side */\n.sof-lockup{width:322.33px;max-width:100%;margin:10px 0 0 -0.17px}\n.sof-lockup img{width:100%}\n.sof-tag{display:flex;align-items:center;justify-content:center;width:100%;\n  max-width:274px;height:30px;margin:3px auto 0;border-radius:15px;\n  background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%);\n  border:2px solid #FBEFD6;box-shadow:0 3px 7px #0000004D;overflow:hidden}\n.sof-tag span{font-family:Archivo Black,Arial Black,sans-serif;font-weight:400;\n  font-size:15.5px;letter-spacing:1.8px;color:#FFFFFF;line-height:1;white-space:nowrap}\n.sof-cta{position:relative;display:block;width:100%;max-width:341px;height:61px;\n  margin-top:11px}\n.sof-cta i{position:absolute;left:0;right:0;top:4.8px;height:56px;border-radius:28px;\n  background:#041C32}\n.sof-cta span{position:absolute;left:0;right:0;top:0;height:56px;border-radius:28px;\n  background:#FCCF44;border:3px solid #041C32;display:flex;align-items:center;\n  justify-content:center;font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:27px;\n  color:#041C32;line-height:1;white-space:pre}\n.sof-pow{display:flex;align-items:center;width:100%;max-width:263px;height:34px;\n  margin:14px auto 0;gap:4px}\n.sof-pow b{font-family:Fira Mono, ui-monospace, monospace;font-weight:700;font-size:12px;letter-spacing:.5px;\n  color:#041C32;line-height:1}\n.sof-pow img{width:182px;height:34px;object-fit:contain;margin-left:auto}\n.sof-hosts{display:flex;justify-content:space-between;align-items:flex-start;\n  width:calc(100% + 34px);margin:336px -17px 0;padding:0 5px}\n.sof-hosts span{font-family:Fira Sans Extra Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:15.5px;\n  letter-spacing:-0.1px;color:#FBEFD6;line-height:19px;white-space:nowrap;\n  text-shadow:0 4px 14.7px #063B67}\n\n/* ===================== 3 \u00b7 STATS (870:46 / 870:470) ===================== */\n.sof-stats{background:#0B1A32;border-top:1px solid #FBEFD659;\n  border-bottom:1px solid #FBEFD659}\n.sof-stats-row{display:flex;justify-content:center;align-items:flex-start;\n  gap:10.33px;padding:24px 0 23.2px}\n.sof-stat{width:116.67px;height:74.8px;display:flex;flex-direction:column;\n  align-items:center;padding-top:12.11px}\n.sof-stat .sof-num{height:32.09px}\n.sof-stat .sof-lab{height:12.75px;margin-top:7.23px}\n.sof-stat img{height:100%;width:auto}\n.sof-statdiv{align-self:center;width:1px;height:62px;background:#FBEFD659;flex:0 0 1px}\n\n/* ===================== 4 \u00b7 SPEAKERS (870:66 / 870:490) ================= */\n.sof-speakers{background:#FCECC7;padding-top:64px;padding-bottom:64px}\n.sof-speakers .sof-art{max-width:343px;margin-left:0}\n/* The Figma \"Grid line\" rectangles are internal only (the 4/6px outside stroke\n   is the same colour as the fill, so it paints nothing). Reproduced as grid\n   gaps over a tinted container. minmax(0,1fr) is load-bearing: a plain 1fr is\n   minmax(auto,1fr) and a nowrap label would blow the column past its share. */\n.sof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;\n  background:#FCECC780;margin-top:32px}\n.sof-card{background:#0B1A32;display:flex;flex-direction:column;overflow:hidden;\n  min-height:232px}\n.sof-photo{position:relative;width:100%;aspect-ratio:171/160;background:#0F304F;\n  display:flex;align-items:center;justify-content:center;\n  border-bottom:2px solid #FCECC759}\n.sof-photo b{font-family:Fira Mono, ui-monospace, monospace;font-weight:700;font-size:10px;letter-spacing:2px;\n  color:#FCECC766;line-height:1}\n.sof-photo em{font-family:Passion One,Impact,sans-serif;font-weight:900;font-size:72px;\n  font-style:normal;color:#FCECC72E;line-height:1}\n.sof-card-foot{padding:12px 16px 0}\n.sof-name{height:12.9px;display:block}\n.sof-name img{height:100%;width:auto}\n.sof-co{font-family:Arimo, Arial, sans-serif;font-weight:400;font-size:11px;color:#FBEFD6;\n  margin-top:6px;line-height:1.2}\n.sof-co--tba{color:#FBEFD699}\n\n/* ===================== 5 \u00b7 FORMATS (870:214 / 870:638) ================= */\n.sof-formats{background:#0B1A32;padding-top:64px;padding-bottom:64px}\n.sof-eyebrow{display:flex;align-items:center;gap:12px}\n.sof-eyebrow b{font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:13px;\n  letter-spacing:.28em;color:#FBEFD6;line-height:1.2;white-space:nowrap}\n.sof-eyebrow i{display:block;height:2px;width:96px;flex:0 0 96px;\n  background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%)}\n.sof-t-d{display:none}\n.sof-t-m{display:block}\n.sof-ftitle{margin-top:16px}\n.sof-ftitle .sof-art{margin-left:0;margin-right:auto}\n.sof-ft1{max-width:342px}\n.sof-ft2{max-width:255px;margin-top:10px}\n.sof-subline{font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:18px;line-height:110%;\n  color:#FBEFD6;margin-top:16px}\n.sof-fcards{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:32px}\n.sof-fcard{background:#041C32;border:2px solid #FBEFD6;border-radius:16px;\n  overflow:hidden;display:flex;flex-direction:column}\n.sof-fcard-img{position:relative;width:100%;aspect-ratio:342/200}\n.sof-fcard-img img{width:100%;height:100%;object-fit:cover}\n.sof-fcard-img i{position:absolute;left:0;right:0;bottom:0;height:6px;\n  background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%)}\n.sof-fcard-body{padding:24px}\n.sof-fkick{font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:12px;letter-spacing:.2em;\n  color:#FCCF44;line-height:1.2}\n.sof-fhead{font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:28px;line-height:96%;\n  color:#FBEFD6;margin-top:12px}\n.sof-fbody{font-family:Inter, InterFallback, Arial, sans-serif;font-weight:500;font-size:14px;line-height:145%;\n  color:#FBEFD6D9;margin-top:12px;overflow-wrap:anywhere}\n\n/* ===================== 6 \u00b7 YOU DECIDE (870:261 / 870:686) ============== */\n.sof-decide{background:#FCECC7 url(https://assets.lightfunnels.com/account-90380/images_library/76696ef1-efaf-405f-ad30-d6ec521cb45e.webp) repeat;background-size:1024px 1024px;\n  padding-top:40px;padding-bottom:40px;min-height:980px}\n.sof-decide-bg{position:absolute;left:0;right:0;top:180px;bottom:0;width:100%;\n  height:800px;object-fit:cover}\n.sof-decide-wash{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;\n  background:linear-gradient(180deg,#FCECC7 0%,#FCECC7ED 45%,#FCECC78C 61.48%,\n  #FCECC700 66%)}\n.sof-decide .sof-in{z-index:2}\n.sof-kicker{font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:18px;letter-spacing:.02em;\n  color:#041C32;line-height:1.2}\n.sof-decide-art{display:none;margin:0}\n.sof-decide-body{font-family:Inter, InterFallback, Arial, sans-serif;font-weight:500;font-size:15.5px;\n  line-height:22px;letter-spacing:-0.003em;color:#041C32;overflow-wrap:anywhere}\n.sof-decide-intro{margin-top:202px}\n.sof-decide-promise{margin-top:16px}\n.sof-only-d{display:none}\n.sof-only-m{display:block}\n\n/* ===================== 7 \u00b7 TOPICS (870:299 / 870:716) ================== */\n.sof-topics{background:#0D1422 url(https://assets.lightfunnels.com/account-90380/images_library/a9508466-35ab-465d-b160-19bbbb813818.webp) repeat;background-size:1024px 1024px;\n  padding-top:58px;padding-bottom:50.76px}\n.sof-topics .sof-art{max-width:344px;margin-left:0}\n.sof-subtitle{font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:15.5px;\n  line-height:118%;letter-spacing:.6px;color:#FBEFD6;text-align:center;\n  width:100%;max-width:297px;margin:5.63px auto 0}\n.sof-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8.19px 8px;\n  margin-top:28px}\n.sof-chip{position:relative;background:#061A2C;border:1.085px solid #FBEFD6;\n  border-radius:7px;padding:4.46px;aspect-ratio:167/57.34}\n.sof-chip-panel{position:relative;overflow:hidden;border-radius:3px;height:100%;\n  background:#FBEFD6 url(https://assets.lightfunnels.com/account-90380/images_library/76696ef1-efaf-405f-ad30-d6ec521cb45e.webp) repeat;background-size:512px 512px;\n  display:flex;align-items:center;justify-content:center}\n.sof-chip-tab{position:absolute;left:0;top:0;width:24.25px;height:21.92px;\n  clip-path:polygon(0 0,100% 0,0 100%)}\n.sof-chip-tab--y{background:#FCCF44}\n.sof-chip-tab--r{background:#D10721}\n.sof-chip span{position:relative;font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;\n  font-size:24.45px;line-height:100%;letter-spacing:-0.015em;color:#041C32;\n  text-align:center;white-space:nowrap}\n\n/* ===================== 8 \u00b7 TICKETS (870:370 / 870:782) ================= */\n.sof-tickets{background:#FCECC7;padding-top:61.5px;padding-bottom:64px}\n.sof-ttitle .sof-art{margin:0 auto}\n.sof-tt1{max-width:207px}\n.sof-tt2{max-width:305px;margin-top:5px}\n.sof-tdate{font-family:Fira Mono, ui-monospace, monospace;font-weight:700;font-size:13.99px;letter-spacing:.02em;\n  color:#041C32;text-align:center;margin-top:25.25px;line-height:1.2}\n.sof-tcards{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:29px}\n.sof-tcard{position:relative;display:flex;flex-direction:column;background:#FBEFD6;\n  border:3px solid #041C32;border-radius:20px;padding:24px;overflow:hidden}\n.sof-badges{display:flex;flex-direction:column;align-items:flex-start;gap:8px}\n.sof-badge{display:inline-flex;align-items:center;justify-content:center;height:28px;\n  padding:0 16px;border-radius:14px;\n  background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%);\n  font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;\n  color:#FFFFFF;line-height:1;white-space:nowrap}\n.sof-badge--urgent{background:#FCCF44;border:2px solid #041C32;color:#041C32}\n.sof-tname{font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:48px;line-height:90%;\n  letter-spacing:-0.02em;color:#041C32;margin-top:16px}\n.sof-tname--vip{color:#C70824}\n.sof-tprice{font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:48px;line-height:90%;\n  letter-spacing:-0.01em;color:#041C32;margin-top:4px}\n.sof-tlist{list-style:none;margin:24px 0 0;padding:0}\n.sof-tlist li{position:relative;padding-left:18px;font-family:Inter, InterFallback, Arial, sans-serif;\n  font-weight:500;font-size:15px;line-height:1.2;color:#041C32;margin-top:10px;\n  overflow-wrap:anywhere}\n.sof-tlist li:first-child{margin-top:0}\n.sof-tlist li::before{content:\"\";position:absolute;left:0;top:5px;width:8px;height:8px;\n  border-radius:50%;background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%)}\n.sof-tmore{display:block;font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:14px;\n  letter-spacing:.03em;text-decoration:underline;color:#C70824;margin-top:14px;\n  line-height:1.2}\n.sof-tbtn{position:relative;display:block;width:100%;max-width:294px;height:64px;\n  margin-top:24px}\n.sof-tbtn i{position:absolute;left:0;right:0;top:4px;height:60px;border-radius:30px;\n  background:#041C32}\n.sof-tbtn span{position:absolute;left:0;right:0;top:0;height:60px;border-radius:30px;\n  background:#FCCF44;border:3px solid #041C32;display:flex;align-items:center;\n  justify-content:center;font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:24px;\n  color:#041C32;line-height:1;white-space:pre}\n.sof-sticker{display:none}\n\n/* ===================== 9 \u00b7 SPONSOR (870:416 / 870:828) ================= */\n.sof-sponsor{background:#041C32;padding-top:64px;padding-bottom:64px;text-align:center}\n.sof-partner{font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:13px;letter-spacing:.28em;\n  color:#FCCF44;line-height:1.2}\n.sof-sponsor-rule{width:48px;height:3px;margin:8px auto 0;\n  background:linear-gradient(90deg,#A3051B 0%,#D14A14 100%)}\n.sof-powered{font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:48px;line-height:92%;\n  letter-spacing:-0.01em;color:#FBEFD6;margin-top:13px}\n.sof-plate{width:100%;max-width:368px;height:105px;margin:40px auto 0;\n  border-radius:16px;background:#FBEFD614;border:1px solid #FBEFD62E;\n  display:flex;align-items:center;justify-content:center}\n.sof-plate img{width:320px;height:57px;object-fit:contain}\n\n/* ===================== 10 \u00b7 FOOTER (870:422 / 870:834) ================= */\n.sof-footer{background:#070E1A;border-top:2px solid #FBEFD626;padding-top:40px;\n  padding-bottom:40px}\n.sof-footer-in{display:flex;flex-direction:column;align-items:flex-start}\n.sof-fbrand{font-family:Barlow Condensed, Arial Narrow, sans-serif;font-weight:900;font-size:16px;\n  letter-spacing:.02em;color:#FBEFD6;line-height:1.2}\n.sof-fdate{font-family:Fira Mono, ui-monospace, monospace;font-weight:700;font-size:7px;letter-spacing:.06em;\n  color:#FBEFD6;opacity:.6;margin-top:6px;line-height:1.2}\n.sof-fnav{display:flex;flex-direction:column;align-items:flex-start;gap:12px;\n  margin-top:28px}\n.sof-fnav a{font-family:Fira Sans Condensed, Arial Narrow, sans-serif;font-weight:700;font-size:10px;letter-spacing:.08em;\n  color:#FBEFD6;line-height:1.2}\n.sof-fnav a.sof-gold{color:#FCCF44}\n.sof-fcopy{font-family:Inter, InterFallback, Arial, sans-serif;font-weight:500;font-size:8px;color:#FBEFD6;\n  opacity:.5;margin-top:28px;line-height:1.2;overflow-wrap:anywhere}\n\n/* ======================================================================== */\n/* DESKTOP \u2014 frame 870:6, 1920 wide. Every value below is measured off that  */\n/* frame; nothing here is a scaled-up guess at the mobile numbers.           */\n/* ======================================================================== */\n@media (min-width:768px){\n  .sof-sec{padding-left:120px;padding-right:120px}\n  .sof-h1 .a{font-size:204.74px}\n  .sof-h1 .b{font-size:85.55px}\n  .sof-h1 .c{font-size:200px}\n\n  /* 1 \u00b7 header */\n  .sof-promo{height:88px}\n  .sof-promo span{font-size:43.5px}\n  .sof-nav{height:144px}\n  .sof-nav-m,.sof-menu,.sof-menu-cb:checked ~ .sof-menu{display:none}\n  .sof-nav-d{display:flex;width:100%}\n  .sof-nav-d .sof-navcell{font-size:42.6px;letter-spacing:0}\n  .sof-nav-d .sof-navcell--rule{border-right-width:3px}\n  /* measured cell widths 348 / 416 / 322 / 435 / 399 of 1920 */\n  .sof-nav-d .sof-navcell:nth-child(1){flex:348 0 0}\n  .sof-nav-d .sof-navcell:nth-child(2){flex:416 0 0}\n  .sof-nav-d .sof-navcell:nth-child(3){flex:322 0 0}\n  .sof-nav-d .sof-navcell:nth-child(4){flex:435 0 0}\n  .sof-nav-d .sof-navcell:nth-child(5){flex:399 0 0}\n\n  /* 2 \u00b7 hero \u2014 desktop paints art -> shade -> wash (mobile flips the top two) */\n  .sof-hero-m{display:none}\n  .sof-hero-d{display:block;position:relative;z-index:3;min-height:1088px;\n    padding:118px 120px 0}\n  .sof-hero-wash{z-index:2;background:linear-gradient(90deg,\n    #FCECC7F2 0%,#FCECC7E5 30%,#FCECC773 44%,#FCECC700 56%)}\n  .sof-hero-shade{z-index:1;height:288px}\n  .sof-hero-col{width:100%;max-width:760px}\n  .sof-date{font-size:36px;max-width:760px;margin-left:-44px}\n  /* render 696.67 wide vs a 672.39 node box -> 12.14 of stroke bleed each side */\n  .sof-lockup{width:696.67px;margin:-9px 0 0 -12.14px}\n  .sof-tag{max-width:672px;height:72px;border-radius:37.5px;border-width:4px;\n    margin:-36px 0 0;box-shadow:0 6px 14px #0000004D}\n  .sof-tag span{font-size:32px;letter-spacing:3.8px}\n  .sof-cta{max-width:672px;height:120px;margin-top:48px}\n  .sof-cta i{top:8px;height:112px;border-radius:56px}\n  .sof-cta span{height:112px;border-radius:56px;border-width:6px;font-size:54px}\n  .sof-pow{max-width:576px;height:80px;margin:40px 0 0;gap:15px;justify-content:flex-start}\n  .sof-pow b{font-size:18px}\n  .sof-pow img{width:448px;height:80px;margin-left:0}\n  .sof-hosts{position:absolute;right:0;bottom:16px;width:1064px;max-width:100%;\n    margin:0;padding:16px 43px 16px 16px;z-index:4}\n  .sof-hosts span{font-size:41px;letter-spacing:-0.2px;line-height:49px}\n  .sof-hero-shadeblur{position:absolute;right:-64px;top:944px;width:1104px;height:192px;\n    border-radius:95px;background:#061A2C99;filter:blur(60px);z-index:3;display:block}\n\n  /* 3 \u00b7 stats */\n  .sof-stats{background:#041C32;border-top-width:2px;border-bottom-width:2px}\n  .sof-stats-row{gap:160px;padding:46px 0}\n  .sof-stat{width:272px;height:176px;padding-top:24px}\n  .sof-stat .sof-num{height:75.5px}\n  .sof-stat .sof-lab{height:30px;margin-top:20.5px}\n  .sof-statdiv{width:2px;height:128px;flex:0 0 2px;background:#FBEFD659}\n\n  /* 4 \u00b7 speakers */\n  .sof-speakers{padding-top:120px;padding-bottom:120px}\n  .sof-speakers .sof-art{max-width:961px;margin:0 auto}\n  .sof-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px 3px;\n    background:#FBEFD680;margin-top:64px}\n  .sof-card{min-height:432px}\n  .sof-photo{aspect-ratio:336/328;border-bottom-color:#FBEFD659}\n  .sof-photo b{font-size:16px;letter-spacing:3px;color:#FBEFD666}\n  .sof-photo em{font-size:150px;color:#FBEFD62E}\n  .sof-card-foot{padding:14px 24px 0}\n  .sof-name{height:25.8px}\n  .sof-co{font-size:22px;margin-top:6px}\n\n  /* 5 \u00b7 formats \u2014 the design's own arithmetic puts the third 552px card at\n     x=1824, so this one section's right gutter is 96, not 120. As drawn. */\n  .sof-formats{padding-top:120px;padding-bottom:120px;padding-right:96px}\n  .sof-formats .sof-in{max-width:1704px}\n  .sof-eyebrow{gap:21px}\n  .sof-eyebrow b{font-size:26px}\n  .sof-eyebrow i{height:3px;width:224px;flex:0 0 224px}\n  .sof-t-d{display:block}\n  .sof-t-m{display:none}\n  .sof-ftitle{margin-top:29.44px}\n  .sof-ftitle .sof-art{max-width:1522.33px}\n  .sof-subline{font-size:34px;letter-spacing:.01em;line-height:1.2;margin-top:34.47px}\n  .sof-fcards{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:31px}\n  .sof-fcard{border-width:3px;border-radius:24px;min-height:664px}\n  .sof-fcard-img{aspect-ratio:552/320}\n  .sof-fcard-img i{height:8px}\n  .sof-fcard-body{padding:32px}\n  .sof-fkick{font-size:20px}\n  .sof-fhead{font-size:46px;letter-spacing:.01em;margin-top:16px}\n  .sof-fbody{font-size:20px;letter-spacing:-0.003em;margin-top:16px}\n\n  /* 6 \u00b7 you decide */\n  .sof-decide{padding-top:135px;padding-bottom:135px;min-height:1168px}\n  .sof-decide-bg{top:0;height:100%}\n  .sof-decide-wash{display:none}\n  .sof-kicker{font-size:37px}\n  /* Group 10's node box starts at x=-59.91, outside the frame, and the section\n     clips it. The export is the VISIBLE 927.67px, so it hangs off the content\n     column's left edge by exactly the 120px gutter. */\n  .sof-decide-art{display:block;width:927.67px;margin:-21px 0 0 -120px}\n  .sof-decide-body{font-size:29px;line-height:40px;letter-spacing:-0.005em;\n    max-width:700px}\n  .sof-decide-intro{margin-top:25.33px}\n  .sof-decide-promise{margin-top:23px}\n  .sof-only-d{display:block}\n  .sof-only-m{display:none}\n\n  /* 7 \u00b7 topics */\n  .sof-topics{background-color:#041C32;padding-top:116px;padding-bottom:134px}\n  .sof-topics .sof-art{max-width:1550.67px;margin:0 auto}\n  /* The node box is 1245 and this line measures 1246 in Chrome at the node's\n     own 41px / 2.2px tracking -- one pixel over, so it wrapped to two lines.\n     The fix is the container, never the type: the box goes to 1280 (still well\n     inside the 1680 column) and the line stays single, as drawn. */\n  .sof-subtitle{font-size:41px;line-height:100%;letter-spacing:2.2px;max-width:1280px;\n    margin-top:49.21px}\n  .sof-chips{grid-template-columns:repeat(4,minmax(0,1fr));gap:23.64px 16px;\n    margin-top:31.77px}\n  .sof-chip{background:#041C32;border-width:2.6px;border-radius:16px;\n    padding:10.93px;aspect-ratio:408/133.985}\n  .sof-chip-panel{border-radius:6px;background-size:1024px 1024px}\n  .sof-chip-tab{width:59.19px;height:51.22px}\n  .sof-chip span{font-size:58.6px}\n\n  /* 8 \u00b7 tickets */\n  .sof-tickets{padding-top:120px;padding-bottom:120px}\n  .sof-ttitle .sof-art{max-width:1129.67px}\n  .sof-tdate{font-size:31.03px;letter-spacing:.04em;margin-top:8px}\n  .sof-tcards{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;margin-top:34px}\n  .sof-tcard{border-width:4px;border-radius:28px;padding:48px;min-height:752px}\n  .sof-badges{flex-direction:row;align-items:center;gap:16px}\n  .sof-badge{height:44px;border-radius:22px;padding:0 46px;font-size:20px}\n  .sof-badge--urgent{padding:0 24px;border-width:3px}\n  .sof-tname{font-size:88px;margin-top:20px}\n  .sof-tprice{font-size:88px;margin-top:8px}\n  .sof-tlist{margin-top:40px}\n  .sof-tlist li{font-size:24px;padding-left:28px;margin-top:11px}\n  .sof-tlist li::before{width:12px;height:12px;top:9px}\n  /* EARLY BIRD has four bullets and VIP five, yet the design pins BOTH cards'\n     link and button to the same y. min-height + auto reproduces that. */\n  .sof-tmore{font-size:22px;margin-top:auto;padding-top:19px}\n  .sof-tbtn{max-width:720px;height:112px;margin-top:40px}\n  .sof-tbtn i{top:8px;height:104px;border-radius:52px}\n  .sof-tbtn span{height:104px;border-radius:52px;border-width:6px;font-size:54px;\n    letter-spacing:.01em}\n  .sof-sticker{display:block;position:absolute;right:33px;top:41px;width:278px;\n    height:278px;z-index:2}\n\n  /* 9 \u00b7 sponsor */\n  .sof-sponsor{padding-top:120px;padding-bottom:120px}\n  .sof-partner{font-size:26px}\n  .sof-sponsor-rule{width:96px;margin-top:16px}\n  .sof-powered{font-size:96px;margin-top:29px}\n  .sof-plate{max-width:736px;height:210px;border-radius:24px;border-width:2px;\n    margin-top:72px}\n  .sof-plate img{width:640px;height:114px}\n\n  /* 10 \u00b7 footer */\n  .sof-footer{padding-top:64px;padding-bottom:64px}\n  .sof-footer-in{flex-direction:row;align-items:flex-start;justify-content:space-between}\n  .sof-fbrand{font-size:32px}\n  .sof-fdate{font-size:14px;margin-top:8px}\n  .sof-fnav{flex-direction:row;align-items:center;justify-content:center;gap:40px;\n    margin-top:8px;flex:1}\n  .sof-fnav a{font-size:20px}\n  .sof-fcopy{font-size:16px;margin-top:8px;text-align:right;white-space:nowrap}\n}\n\n/* Full-bleed bands: the header, the hero plate and the navy stats strip run\n   edge to edge at every width, so they opt out of the page gutter. Declared\n   LAST so it beats the gutter rule inside the desktop media block (a media\n   query adds no specificity -- only source order decides). */\n.sof-sec--bleed{padding-left:0;padding-right:0}\n</style>\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Scaling or Failing 2026 \u2014 Bangkok, Dec 7\u20138\">\n<meta name=\"twitter:description\" content=\"Two days in Bangkok with the operators actually running the brands. Live interviews, unreleased playbooks and open-mic Q&amp;A. Early Bird $1,997.\">\n<meta name=\"twitter:image\" content=\"https://assets.lightfunnels.com/account-90380/images_library/9a58fabc-5c63-47e2-b1b7-b776ad40ea4b.jpg\">\n"
+  }
+ },
+ "visual": {
+  "x": 524.2190697232686,
+  "y": 90
+ },
+ "body": {
+  "id": "724de14b-06c2-4375-9f54-c72536decbeb",
+  "t": "Root",
+  "version": 11,
+  "styles": [
+   {
+    "prop": "pageWidth",
+    "value": "1680px"
+   },
+   {
+    "prop": "backgroundColor",
+    "value": {
+     "r": 252,
+     "g": 236,
+     "b": 199,
+     "a": 1
+    }
+   }
+  ],
+  "p": {
+   "children": [
+    {
+     "t": "Section",
+     "id": "2f932b69-c476-47a2-ad6e-87d73f836ebf",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "bf02b1a4-5460-4294-88c5-4eaa9a8fa081",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-head sof-sec--bleed\"><a class=\"sof-promo\" href=\"#tickets\"><span>Get Early Bird Ticket &amp; Save $1000</span></a><input type=\"checkbox\" id=\"sof-menu\" class=\"sof-menu-cb\" aria-hidden=\"true\" tabindex=\"-1\"><nav class=\"sof-nav sof-nav-d\" aria-label=\"Main\"><a class=\"sof-navcell sof-navcell--rule\" href=\"#about\">ABOUT</a><a class=\"sof-navcell sof-navcell--rule\" href=\"#speakers\">SPEAKERS</a><a class=\"sof-navcell sof-navcell--rule\" href=\"#topics\">TOPICS</a><a class=\"sof-navcell sof-navcell--rule sof-navcell--gold\" href=\"#tickets\">GET TICKET</a><a class=\"sof-navcell\" href=\"#contact\">CONTACT</a></nav><nav class=\"sof-nav sof-nav-m\" aria-label=\"Main\"><label class=\"sof-navcell sof-navcell--rule\" for=\"sof-menu\"><span class=\"sof-burger\" aria-hidden=\"true\"><i></i><i></i><i></i></span>MENU</label><a class=\"sof-navcell sof-navcell--gold\" href=\"#tickets\">GET TICKET</a></nav><div class=\"sof-menu\"><a href=\"#about\">ABOUT</a><a href=\"#speakers\">SPEAKERS</a><a href=\"#topics\">TOPICS</a><a href=\"#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"#contact\">CONTACT</a></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "769daf0b-21c0-48cb-b76e-a45b1fcc67be",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "02cfba54-0297-41a9-a842-b4f129d6140c",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-hero sof-sec--bleed\"><picture class=\"sof-hero-pic\"><source media=\"(max-width:767px)\" srcset=\"https://assets.lightfunnels.com/account-90380/images_library/95277d6e-f234-49d5-ab29-166c110822d4.webp\"><img class=\"sof-hero-plate\" src=\"https://assets.lightfunnels.com/account-90380/images_library/bc343abc-8d0c-4347-8ae2-84d9c796a531.webp\" alt=\"\" aria-hidden=\"true\" fetchpriority=\"high\" decoding=\"async\"></picture><div class=\"sof-hero-wash\" aria-hidden=\"true\"></div><div class=\"sof-hero-shade\" aria-hidden=\"true\"></div><h1 class=\"sof-vh sof-h1\"><span class=\"a\">SCALINg</span> <span class=\"b\">OR</span> <span class=\"c\">FAILING</span></h1><div class=\"sof-hero-m\"><p class=\"sof-date\">DECEMBER 7\u20138, 2026 \u2022 BANGKOK, THAILAND</p><div class=\"sof-lockup\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/54fba04c-c30b-4f8c-937a-96e0fd20b7ee.webp\" alt=\"\" fetchpriority=\"high\" decoding=\"async\"></div><div class=\"sof-tag\"><span>BANGKOK XMAS EVENT</span></div><a class=\"sof-cta\" href=\"#tickets\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a><div class=\"sof-pow\"><b>POWERED BY</b><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div><div class=\"sof-hosts\"><span>RYAN TALMADGE</span><span>NICK SHACKELFORD</span><span>TOPI HEINONEN</span></div></div><div class=\"sof-hero-d\"><div class=\"sof-hero-col\"><p class=\"sof-date\">DECEMBER 7\u20138, 2026 \u2022 BANGKOK, THAILAND</p><div class=\"sof-lockup\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/18934721-4035-4a86-96be-78ffbff65c4e.webp\" alt=\"\" fetchpriority=\"high\" decoding=\"async\"></div><div class=\"sof-tag\"><span>BANGKOK XMAS EVENT</span></div><a class=\"sof-cta\" href=\"#tickets\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a><div class=\"sof-pow\"><b>POWERED BY</b><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div></div><div class=\"sof-hero-shadeblur\" aria-hidden=\"true\"></div><div class=\"sof-hosts\"><span>RYAN TALMADGE</span><span>NICK SHACKELFORD</span><span>TOPI HEINONEN</span></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "711ee9a1-2094-4b35-ac5e-577df02b4b24",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "e5c89c9b-ed05-4ace-8e3b-1b31d6d9c4bc",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-stats sof-sec--bleed\"><div class=\"sof-stats-row\"><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ba802fe5-df70-4037-a5ea-4a01bdc754f5.webp\" alt=\"300+\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/5d3c6d64-0aaf-4b3e-a988-4552527360ca.webp\" alt=\"OPERATORS\" loading=\"lazy\" decoding=\"async\"></span></div><span class=\"sof-statdiv\" aria-hidden=\"true\"></span><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/26a7dd29-97df-4f5e-b75b-291de467b982.webp\" alt=\"12\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/5d95c2ab-d356-485b-b193-7571bc665f0f.webp\" alt=\"SPEAKERS\" loading=\"lazy\" decoding=\"async\"></span></div><span class=\"sof-statdiv\" aria-hidden=\"true\"></span><div class=\"sof-stat\"><span class=\"sof-num\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f8c8dbae-4046-46d6-8899-6165817f6076.webp\" alt=\"2\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-lab\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/e44df19b-7c08-406f-994d-cd013a8a8ed0.webp\" alt=\"DAYS\" loading=\"lazy\" decoding=\"async\"></span></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "5c6837b8-a206-4804-9ceb-3df271db2e00",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "b3aced53-fd27-4658-9326-a1ffb1b59a0b",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-speakers\" id=\"speakers\"><div class=\"sof-in\"><h2><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9484b3c3-493d-4fd0-8f43-1396740a0a9f.webp\" alt=\"How the best are scaling right now\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0d2cad2c-421e-4efc-9a93-2fd48db13260.webp\" alt=\"How the best are scaling right now\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">How the best are scaling right now</span></h2><div class=\"sof-grid\"><div class=\"sof-card\"><div class=\"sof-photo\"><b>PHOTO</b></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/bdf5b292-8bee-4154-8aa7-021181402373.webp\" alt=\"Gonzalo\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co\">Brand Owner \u00b7 $600K+ Days</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><b>PHOTO</b></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f53dade4-8dd6-4c73-b361-21b5cdb8eb1f.webp\" alt=\"Ronak Shah\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co\">Founder of Obvi</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><b>PHOTO</b></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/fcaf9e5e-39ba-492a-9679-23e271082fa7.webp\" alt=\"Alex Fedotoff\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co\">Ecom Legend</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9ebe7800-cd23-419f-95f2-0f7874f78320.webp\" alt=\"TBA\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co sof-co--tba\">Announced soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9ebe7800-cd23-419f-95f2-0f7874f78320.webp\" alt=\"TBA\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co sof-co--tba\">Announced soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9ebe7800-cd23-419f-95f2-0f7874f78320.webp\" alt=\"TBA\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co sof-co--tba\">Announced soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9ebe7800-cd23-419f-95f2-0f7874f78320.webp\" alt=\"TBA\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co sof-co--tba\">Announced soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9ebe7800-cd23-419f-95f2-0f7874f78320.webp\" alt=\"TBA\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co sof-co--tba\">Announced soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9ebe7800-cd23-419f-95f2-0f7874f78320.webp\" alt=\"TBA\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co sof-co--tba\">Announced soon</p></div></div><div class=\"sof-card\"><div class=\"sof-photo\"><em aria-hidden=\"true\">?</em></div><div class=\"sof-card-foot\"><span class=\"sof-name\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/9ebe7800-cd23-419f-95f2-0f7874f78320.webp\" alt=\"TBA\" loading=\"lazy\" decoding=\"async\"></span><p class=\"sof-co sof-co--tba\">Announced soon</p></div></div></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "01b544ab-2647-474d-b74a-4d8c9cdada17",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "3972d5c5-3dac-4151-9d06-15f6f74ad392",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-formats\"><div class=\"sof-in\"><div class=\"sof-eyebrow\"><b>HOW THE TWO DAYS RUN</b><i aria-hidden=\"true\"></i></div><h2 class=\"sof-ftitle\"><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/b50aa558-ce47-44c3-aa2f-c49be669068b.webp\" alt=\"Three formats. Zero filler.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-ft1\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f869ac78-4594-477a-b6a6-76dfb04b46d2.webp\" alt=\"Three formats.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-ft2\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/3a64a4ae-ebd6-41ba-9c48-bb3dcaec7636.webp\" alt=\"Zero filler.\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">Three formats. Zero filler.</span></h2><p class=\"sof-subline\">EVERY SESSION IS BUILT TO SEND YOU HOME WITH SOMETHING YOU CAN SHIP ON MONDAY.</p><div class=\"sof-fcards\"><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/accb3199-6a39-45cf-b27c-0e0af19f88e0.webp\" alt=\"Two operators on stage mid-interview\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">01 \u00b7 LIVE INTERVIEWS</p><p class=\"sof-fhead\">OPERATORS GRILLED ON STAGE.</p><p class=\"sof-fbody sof-rich\">Unscripted conversations with the people actually running brands. Real numbers, real mistakes, and what they\u2019d do differently. Nothing pre-approved, nothing polished.</p></div></div><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ec6957c2-1e6f-40b3-8e01-27a87d62d2db.webp\" alt=\"A speaker presenting a system on the main stage\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">02 \u00b7 EXCLUSIVE PRESENTATIONS</p><p class=\"sof-fhead\">PLAYBOOKS YOU WON\u2019T FIND ON X.</p><p class=\"sof-fbody sof-rich\">A select few speakers take the stage solo to open up one system that\u2019s working right now. The exact creatives, funnels and margins behind it. Shown for the first time, in this room only.</p></div></div><div class=\"sof-fcard\"><div class=\"sof-fcard-img\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ec0635f7-b5ad-4bd9-af3a-ceff26d028c4.webp\" alt=\"An attendee asking a question from the audience\" loading=\"lazy\" decoding=\"async\"><i aria-hidden=\"true\"></i></div><div class=\"sof-fcard-body\"><p class=\"sof-fkick\">03 \u00b7 Q&amp;A WITH THE AUDIENCE</p><p class=\"sof-fhead\">GET ANSWER TO YOUR EXACT QUESTIONS.</p><p class=\"sof-fbody sof-rich\">Open mic after every session. Ask about your store, your ads, your cash flow. Get a straight answer from someone who has already solved it.</p></div></div></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "aeedfee6-1d5e-4dfa-b268-c8e98b2fd87b",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "14586e8b-eb54-4e6a-955e-982bfe970282",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-decide\" id=\"about\"><img class=\"sof-decide-bg\" src=\"https://assets.lightfunnels.com/account-90380/images_library/8cf38f3b-bde6-433c-b13d-b702aa2e012e.webp\" alt=\"\" aria-hidden=\"true\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-decide-wash\" aria-hidden=\"true\"></div><div class=\"sof-in\"><p class=\"sof-kicker\">YOU DECIDE:</p><h2 class=\"sof-decide-art\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/f64efc74-3371-4e53-a6fd-713db30541b7.webp\" alt=\"Are you scaling or failing?\" loading=\"lazy\" decoding=\"async\"><span class=\"sof-vh\">Are you scaling or failing?</span></h2><p class=\"sof-decide-body sof-decide-intro sof-only-d sof-rich\">Scaling or Failing has been our underground community since 2024. <br><br>Behind closed doors, it\u2019s helped countless <br>brands hit six, even seven-figure days.</p><p class=\"sof-decide-body sof-decide-intro sof-only-m sof-rich\">Scaling or Failing has been our underground community for over two years. Behind closed doors, it\u2019s helped countless brands hit six, even seven-figure days.</p><p class=\"sof-decide-body sof-decide-promise sof-rich\">Until now, every mastermind has been private. <br>This December we go live, big time. <br><br>Cu in Bangkok! </p></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "67660c3b-2f44-44c3-af2d-bc8ae4c171b6",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "dd5c9b03-76fc-4806-871b-95db45dbc166",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-topics\" id=\"topics\"><div class=\"sof-in\"><h2><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/606fc2b4-d500-4b99-b1cc-f58169c5a5d7.webp\" alt=\"Let\u2019s talk topics\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/58545cd6-6cf9-4d09-8c9d-5d4749a593a2.webp\" alt=\"Let\u2019s talk topics\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">Let\u2019s talk topics</span></h2><p class=\"sof-subtitle\">THE CHANNELS, OFFERS AND CREATIVE SYSTEMS THAT MOVE THE NEEDLE.</p><div class=\"sof-chips\"><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--y\" aria-hidden=\"true\"></span><span>FACEBOOK</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--r\" aria-hidden=\"true\"></span><span>ADVERTORIALS</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--y\" aria-hidden=\"true\"></span><span>CREATIVES</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--r\" aria-hidden=\"true\"></span><span>TIKTOK SHOPS</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--y\" aria-hidden=\"true\"></span><span>TIKTOK</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--r\" aria-hidden=\"true\"></span><span>YOUTUBE</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--y\" aria-hidden=\"true\"></span><span>GOOGLE</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--y\" aria-hidden=\"true\"></span><span>SNAPCHAT</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--r\" aria-hidden=\"true\"></span><span>NATIVE ADS</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--r\" aria-hidden=\"true\"></span><span>OPERATIONS</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--y\" aria-hidden=\"true\"></span><span>PAYMENTS</span></div></div><div class=\"sof-chip\"><div class=\"sof-chip-panel\"><span class=\"sof-chip-tab sof-chip-tab--r\" aria-hidden=\"true\"></span><span>HIRING</span></div></div></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "43f49905-039f-4a88-a623-458fae18c4be",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "e163fae2-11bd-4f23-9179-c31da3f57f60",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-tickets\" id=\"tickets\"><div class=\"sof-in\"><h2 class=\"sof-ttitle\"><span class=\"sof-art sof-t-d\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/e1e18c26-70ca-49b0-91f2-af4c0e2ba453.webp\" alt=\"Get your ticket today\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-tt1\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/389a6489-fb35-439f-8f13-a656c368df45.webp\" alt=\"Get your\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-art sof-t-m sof-tt2\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/ccde0bdb-24fe-4fea-83c8-07611e42e54c.webp\" alt=\"ticket today\" loading=\"lazy\" decoding=\"async\"></span><span class=\"sof-vh\">Get your ticket today</span></h2><p class=\"sof-tdate\">DECEMBER 7\u20138, 2026 \u00b7 BANGKOK, THAILAND</p><div class=\"sof-tcards\"><div class=\"sof-tcard\"><div class=\"sof-badges\"><span class=\"sof-badge\">SAVE $1,000 \u00b7 EARLY BIRD</span><span class=\"sof-badge sof-badge--urgent\">PRICE INCREASES ANY DAY!</span></div><p class=\"sof-tname\">EARLY BIRD</p><p class=\"sof-tprice\">$1,997</p><ul class=\"sof-tlist\"><li>Full 2-day event access</li><li>Every session + live Q&amp;A</li><li>Food &amp; drinks both days</li><li>Event recordings + takeaways</li></ul><a class=\"sof-tmore\" href=\"#tickets\">See everything included</a><a class=\"sof-tbtn\" href=\"#tickets\"><i aria-hidden=\"true\"></i><span>GET EARLY BIRD TICKET  \u2192</span></a></div><div class=\"sof-tcard\"><img class=\"sof-sticker\" src=\"https://assets.lightfunnels.com/account-90380/images_library/3e14af5e-fdf8-442b-9317-1d0b608d4125.webp\" alt=\"Scalizard recommends\" loading=\"lazy\" decoding=\"async\"><div class=\"sof-badges\"><span class=\"sof-badge\">LIMITED SEATS</span></div><p class=\"sof-tname sof-tname--vip\">VIP</p><p class=\"sof-tprice\">$6,497</p><ul class=\"sof-tlist\"><li>Front row seating</li><li>First access to speaker Q&amp;A</li><li>Hotel suite + airport pickup</li><li>3rd-day villa mastermind &amp; dinner</li><li>All recordings + takeaways</li></ul><a class=\"sof-tmore\" href=\"#tickets\">See everything included</a><a class=\"sof-tbtn\" href=\"#tickets\"><i aria-hidden=\"true\"></i><span>GET VIP TICKET  \u2192</span></a></div></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "dc1ee59c-2c8c-4399-9483-695c64abdf5a",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "9bfa3c83-a81a-4280-9f97-a59840dff286",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-sponsor\"><div class=\"sof-in\"><p class=\"sof-partner\">MAIN PARTNER</p><div class=\"sof-sponsor-rule\" aria-hidden=\"true\"></div><h2 class=\"sof-powered\">POWERED BY</h2><div class=\"sof-plate\"><img src=\"https://assets.lightfunnels.com/account-90380/images_library/0bb7d7c2-7847-4a31-bad5-c3accecff78a.webp\" alt=\"BestFulfill\" loading=\"lazy\" decoding=\"async\"></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "t": "Section",
+     "id": "73307d48-4f72-41ff-ba33-a7efecf16a6d",
+     "styles": [
+      {
+       "prop": "padding",
+       "value": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+       }
+      }
+     ],
+     "p": {
+      "layout": "",
+      "dividerPosition": [
+       "top"
+      ],
+      "horizontalFlip": false,
+      "embedded_video": {
+       "src": "",
+       "video_size": "stretch",
+       "video_position": "center"
+      },
+      "children": [
+       {
+        "t": "HtmlElement",
+        "id": "90933763-94c9-4631-bd64-716d3feae0a3",
+        "p": {
+         "content": "<div class=\"sof sof-sec sof-footer\" id=\"contact\"><div class=\"sof-in\"><div class=\"sof-footer-in\"><div><p class=\"sof-fbrand\">SCALING OR FAILING</p><p class=\"sof-fdate\">BANGKOK \u00b7 DEC 7\u20138, 2026</p></div><nav class=\"sof-fnav\" aria-label=\"Footer\"><a href=\"#about\">ABOUT</a><a href=\"#speakers\">SPEAKERS</a><a href=\"#topics\">TOPICS</a><a href=\"#tickets\" class=\"sof-gold\">GET TICKET</a><a href=\"#contact\">CONTACT</a></nav><p class=\"sof-fcopy sof-rich\">\u00a9 2026 Scaling or Failing  \u00b7  Privacy  \u00b7  Terms</p></div></div></div>"
+        },
+        "styles": [
+         {
+          "prop": "width",
+          "value": "100%"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

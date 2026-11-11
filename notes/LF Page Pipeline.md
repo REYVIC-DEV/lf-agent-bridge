@@ -21,6 +21,7 @@ its own note with its full history.
 ## Pages
 
 <!-- pages -->
+- [[scaling-or-failing-event]]
 - [[best-health-gadgets-over-60]]
 - [[docs-webforge-sop]]
 - [[email-exclusive-route-move]]
@@ -35,6 +36,7 @@ its own note with its full history.
 ## Sessions
 
 <!-- sessions -->
+- 2026-10-06 — [[2026-10-06-scaling-or-failing-event]] — Scaling or Failing event page: build, 2 QA passes, 2 fix cycles → [[scaling-or-failing-event]]
 - 2026-09-29 — [[2026-09-29-best-health-gadgets-over-60]] — V-B over-60s gadgets: control + B5 lead swap built → [[best-health-gadgets-over-60]]
 - 2026-08-26 — [[2026-08-26-docs-webforge-sop]] — README, SOP and ARCHITECTURE updated for the second target → [[docs-webforge-sop]]
 - 2026-08-26 — [[2026-08-26-email-exclusive-route-move]] — email-exclusive moved to /blog/template, and the routing rule written down → [[email-exclusive-route-move]]
