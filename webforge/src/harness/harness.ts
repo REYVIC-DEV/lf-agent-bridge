@@ -28,6 +28,22 @@ import { PipelineStateMachine, type Stage } from "./state-machine";
 
 const WEBFORGE = path.resolve(__dirname, "..", "..");
 const REPO = path.resolve(WEBFORGE, "..");
+/**
+ * The Python interpreter that runs the QA judges.
+ *
+ * ⚠️ On Windows this MUST be `py`, not `python3`. Windows ships a Microsoft
+ * Store app-execution alias at `python3.exe`, so `python3` resolves to a stub
+ * that prints "Python was not found; run without arguments to install from the
+ * Microsoft Store" and exits non-zero — in Git Bash AND in PowerShell. The
+ * failure therefore reads as "Python is not installed on this machine" when a
+ * working 3.14 is sitting behind the `py` launcher.
+ *
+ * Same class of bug as `have()` below: a POSIX assumption that fails loudly on
+ * the wrong platform and blames the wrong thing. Measured here: `py --version`
+ * gives 3.14.5, `python3 --version` gives the Store stub.
+ */
+const PYTHON = process.platform === "win32" ? "py" : "python3";
+
 const CONTEXT = path.join(WEBFORGE, "CONTEXT.md");
 const MEMORY = path.join(WEBFORGE, "MEMORY.md");
 const PROGRESS = path.join(WEBFORGE, "PROGRESS.md");
@@ -400,7 +416,7 @@ function main(): void {
     // the local gate is structural only: links, meta, four viewports, console errors,
     // accessibility, and the design-fidelity diff. Speed is a deploy-time check.
     const qa = run(
-      "python3",
+      PYTHON,
       [
         path.join(REPO, "pagescore", "qa_runner.py"),
         localUrl,
@@ -413,7 +429,7 @@ function main(): void {
     const design = path.join(WEBFORGE, "runs", args.runId, "design.json");
     if (fs.existsSync(design)) {
       run(
-        "python3",
+        PYTHON,
         [
           path.join(REPO, "pagescore", "design_diff.py"),
           design,

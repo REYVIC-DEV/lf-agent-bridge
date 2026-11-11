@@ -7,14 +7,14 @@ scratchpad for the run in flight, not as history — history lives in `MEMORY.md
 
 | | |
 |---|---|
-| Run ID | `real-dry-001` |
-| Started | `2026-08-26 08:22:21Z` |
-| Figma URL | https://www.figma.com/design/SQojKD0axInUMkypByxBmG/HLTH?node-id=235-958 |
-| File key | `SQojKD0axInUMkypByxBmG` |
-| Node ID | `235:958` |
-| Component | `HlthLanding` |
-| Project | `/Users/randellbenedictcalilung/hlth-site` |
-| Target path | `components/figma/HlthLanding.tsx` |
+| Run ID | `2026-10-23T07-58` |
+| Started | `2026-10-23 07:58:26Z` |
+| Figma URL | https://www.figma.com/design/bVC8kipVE06kOme5GfbK3z/HLTH-New-Branding?node-id=956-339 |
+| File key | `bVC8kipVE06kOme5GfbK3z` |
+| Node ID | `956:339` |
+| Component | `ScienceSleepProbe` |
+| Project | `C:\Users\Joshua Reyes\Documents\Codes\Work\Headless Shopify\HLTH NextTheme\hlth-shopify-frontend` |
+| Target path | `components/figma/ScienceSleepProbe.tsx` |
 
 ## Phase
 
@@ -27,7 +27,7 @@ scratchpad for the run in flight, not as history — history lives in `MEMORY.md
 ## Design spec
 
 ```
-runs/real-dry-001/design.json
+runs/2026-10-23T07-58/design.json
 ```
 
 ## Errors

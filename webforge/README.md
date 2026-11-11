@@ -23,6 +23,13 @@ python3 -m playwright install chromium      # ~130 MB, one time
 
 Verified on **Python 3.9.6** with playwright 1.60 and Pillow 11.3.
 
+> ⚠️ **On Windows, every `python3` in this file is `py`.** Windows ships a Microsoft
+> Store app-execution alias at `python3.exe`, so `python3` resolves to a stub that
+> prints *"Python was not found…"* and exits non-zero, in Git Bash and PowerShell
+> alike. It reads as "Python is not installed" when a working 3.14 is sitting behind
+> the `py` launcher. The harness handles this itself (`PYTHON` in
+> `src/harness/harness.ts`); the commands you type by hand do not.
+
 ### 2. The site repo, as a SIBLING of this one
 
 ```bash
@@ -39,6 +46,22 @@ put it under `webforge/`, `webforge/.gitignore` already blocks `site/` and `site
 limit the damage — but a sibling is still correct.
 
 The default path everything assumes is `~/hlth-site`. Anywhere else, pass `--project`.
+
+**On Joshua's machine there is no `~/hlth-site`** and cloning a second copy would be a
+mistake: the storefront already lives in the multi-project workspace, and a second clone
+means two working trees that silently disagree about which branch has the work. Point
+the harness at the real one instead:
+
+```bash
+npm run harness -- \
+  --project "C:/Users/Joshua Reyes/Documents/Codes/Work/Headless Shopify/HLTH NextTheme/hlth-shopify-frontend" \
+  --figma-url <url> --component-name <Name>
+```
+
+Verified end to end on 2026-10-23: paths resolve, the three gates run, nothing is
+hardcoded to `~/hlth-site`. ⚠️ Note that tree is **not** always on `staging` — science
+work sits on `pending/*` branches off `main`. The harness runs no git command, so it
+builds whatever is checked out; check the branch yourself before trusting a run.
 
 Node 22 and npm 10 are what this was verified against.
 
