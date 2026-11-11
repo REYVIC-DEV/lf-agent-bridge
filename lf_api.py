@@ -4,6 +4,7 @@ lf_api.py - Low-level Lightfunnels GraphQL client.
 Single endpoint, single auth header. Everything funnels through `gql()`.
 No third-party deps (stdlib only) so an agent can run it on any box.
 """
+import os
 import json
 import urllib.request
 import urllib.error
@@ -24,7 +25,6 @@ def gql(access_token, query, variables=None, extra_headers=None):
     """
     body = json.dumps({"query": query, "variables": variables or {}}).encode("utf-8")
     headers = {
-        "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json",
         "Accept": "application/json",
         # Cloudflare fronts the API and 403s the default Python-urllib UA.
@@ -34,6 +34,48 @@ def gql(access_token, query, variables=None, extra_headers=None):
     }
     if extra_headers:
         headers.update(extra_headers)
+    # The dashboard stopped sending `Authorization: Bearer` some time before
+    # 2026-10-06; it now authenticates to this same endpoint with the lf_session
+    # cookie plus an `account-id` header. Captured from a real browser:
+    #     POST services.lightfunnels.com/api/v2
+    #     account-id: 90380 · version: 1 · lang · referer      (no Authorization)
+    # So a cookie, when we have one, IS the credential, and sending a stale
+    # bearer alongside it only invites a 401. Send one or the other.
+    has_cookie = any(k.lower() == "cookie" for k in headers)
+    if not has_cookie:
+        # Fall back to the SAVED session before the dead bearer. Seven helpers
+        # in this file (get_funnel_meta, update_step, publish_funnel,
+        # get_header_scripts, update_funnel_fields, delete_funnels,
+        # list_funnels) never took an `extra_headers` argument, so they could
+        # not pass the cookie even when one existed, and every one of them had
+        # silently become unusable -- get_header_scripts failed on 2026-10-08
+        # with "Please clear your browser cache or update to the latest app
+        # version", which reads like a client problem and is really just the
+        # bearer being gone. Rather than change seven signatures and every
+        # call site, the credential is resolved here: a saved session is the
+        # credential whenever the caller did not supply one.
+        try:
+            ck = cookie_header()
+        except Exception:
+            ck = ""
+        if ck:
+            headers["Cookie"] = ck
+            headers.setdefault("version", "1")
+            headers.setdefault("lang", "en-US")
+            headers.setdefault("Origin", "https://app.lightfunnels.com")
+            headers.setdefault("Referer", "https://app.lightfunnels.com/")
+            if not any(k.lower() == "account-id" for k in headers):
+                try:
+                    acct_file = os.path.join(
+                        os.path.dirname(os.path.abspath(__file__)), ".lf_account")
+                    with open(acct_file, encoding="utf-8") as f:
+                        acct = f.read().strip()
+                    if acct:
+                        headers["account-id"] = acct
+                except OSError:
+                    pass
+        else:
+            headers["Authorization"] = f"Bearer {access_token}"
     req = urllib.request.Request(
         API_URL,
         data=body,
@@ -62,13 +104,47 @@ def gql(access_token, query, variables=None, extra_headers=None):
 # bodies, which app tokens cannot (verified 2026-07-22). It needs the same
 # extra headers the Lightfunnels dashboard sends.
 # ---------------------------------------------------------------------------
-def session_headers(account_id):
-    return {
+STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".lf_state.json")
+
+
+def cookie_header(state_file=STATE_FILE):
+    """Build a Cookie header from the Playwright session saved by `lf.py login`.
+
+    Returns "" when there is no saved state, which leaves the caller on the old
+    bearer path rather than failing outright.
+
+    The credential is `lf_session` (plus `lf_admin_set`) on
+    services.lightfunnels.com. We send every lightfunnels.com cookie rather than
+    cherry-picking, because which one carries the session has already changed
+    once and a whitelist would silently break the next time it does.
+    """
+    try:
+        with open(state_file, encoding="utf-8") as f:
+            cookies = (json.load(f) or {}).get("cookies") or []
+    except (OSError, ValueError):
+        return ""
+    jar = [c for c in cookies if "lightfunnels.com" in (c.get("domain") or "")]
+    return "; ".join("%s=%s" % (c["name"], c["value"])
+                     for c in jar if c.get("name") and c.get("value") is not None)
+
+
+def session_headers(account_id, state_file=STATE_FILE):
+    """Headers that make the API answer as the signed-in dashboard would.
+
+    `account-id` and `version` are not optional: the API returns someone else's
+    account, or nothing, without them.
+    """
+    h = {
         "account-id": str(account_id),
         "version": "1",
+        "lang": "en-US",
         "Origin": "https://app.lightfunnels.com",
         "Referer": "https://app.lightfunnels.com/",
     }
+    ck = cookie_header(state_file)
+    if ck:
+        h["Cookie"] = ck
+    return h
 
 
 def get_funnel_steps(access_token, funnel_id, extra_headers=None):
@@ -171,7 +247,7 @@ def assert_steps_renderable(access_token, funnel_id, extra_headers=None):
 # Create: scaffold a new funnel with empty pages by StepType.
 # ---------------------------------------------------------------------------
 def create_funnel(access_token, name, slug, funnel_steps, currency="USD",
-                  lang="en", style_id=None, product_id=None):
+                  lang="en", style_id=None, product_id=None, extra_headers=None):
     """
     funnel_steps: list of StepType strings, e.g.
         ["squeeze_page", "checkout_page", "thank_you_page"]
@@ -196,7 +272,8 @@ def create_funnel(access_token, name, slug, funnel_steps, currency="USD",
         node["style_id"] = style_id
     if product_id is not None:
         node["product_id"] = product_id
-    return gql(access_token, mutation, {"node": node})["createFunnel"]
+    return gql(access_token, mutation, {"node": node},
+               extra_headers=extra_headers)["createFunnel"]
 
 
 # ---------------------------------------------------------------------------

@@ -208,6 +208,33 @@ Full mechanics + copy-paste example: `references/block-schema.md` §
 "Brand-new funnel from scratch". (The bare `create` command still makes an empty
 shell; prefer the recipe above or `pagescore/build_*.py`-style scripts for real pages.)
 
+**⚠️ 4. Set `favicon_id` — a new funnel does NOT inherit one.** This is a
+funnel-level field, not header code, and a funnel without it serves
+`<link rel="icon" href="data:image/x-icon;,">`. That empty data URI is worse
+than no tag at all: it is a valid declaration, so the browser honours it and
+never falls back to `/favicon.ico` (which 404s on techunboxed.co anyway). The
+tab shows a blank page icon and nothing in the page source looks wrong.
+
+```python
+M = ('mutation($id:ID!,$node:InputFunnel!){'
+     'updateFunnel(id:$id,node:$node){id favicon_id}}')
+lf_api.gql(tok, M, {"id": FID, "node": {"favicon_id": FAVICON_ID}},
+           extra_headers=HH)
+```
+
+TechUnboxed site favicon: `img_H_5N7Xpw7rdSj9Y7Gl1f0`. No step write is needed;
+the live `<head>` picks it up within seconds on a healthy funnel. Verify by
+reading the served page, not by assuming:
+
+```bash
+curl -s <live-url> | grep -o '<link[^>]*rel="icon"[^>]*>'
+```
+
+Do this **as part of creating the funnel**, not as a later sweep. It was missed
+on `sleep-masks` (2026-10-26) and only caught because Joshua remembered; the
+whole account had to be swept once already on 2026-10-08 for the same reason.
+Script and the full account history: `funnels/_registry/favicon/`.
+
 ### 3. Edit page copy (the agentic-editing loop)
 
 Save the `texts` output into the funnel's workspace first — it's the before-state
