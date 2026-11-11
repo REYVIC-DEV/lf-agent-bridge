@@ -14,8 +14,103 @@ making the entry forward rather than swapping a URL.
 | `comparison-1` | **ENTRY.** Ad destination. Now a 100% redirect to `dMs4WkOYD` |
 | `dMs4WkOYD` | the live winner. Receives all Google paid traffic |
 | `dMs4WkOYD-fx` | `noindex` copy of the winner, carrying the dynamic-currency work |
+| `jFrY0DhRi` | "HLTH vs Smartwatch". Also carries dynamic currency since 2026-10-29 |
 
 ## Log
+
+- `2026-10-29` — **Smooth scroll died whenever the cursor sat over a video.** Ryan:
+  *"it's jumpy and not smooth."* Script: `pagescore/fix_lenis_video_pointer.py`
+  (cross-funnel, so it lives in `pagescore/`, not here). Rollback:
+  `pagescore/header_backups/article.pre-video-pointer-2026-10-29.html`.
+
+  **A cross-origin iframe swallows the wheel.** The browser does not deliver wheel
+  events from an embedded site up to the page embedding it, so Lenis never heard
+  the wheel while the pointer was over a Cloudflare Stream video and the browser
+  fell back to its own instant scroll. Measured on the live page, same wheel tick,
+  only the cursor position different: **58 scroll positions drawn over the text,
+  2 over a video.** All four videos. The videos are 382px wide against a 416px
+  text column, so close to half the article's width was a band where the easing
+  silently switched off and the page teleported.
+
+  Fix is one CSS rule inserted into the funnel's `header_scripts`, next to the
+  inlined Lenis CSS:
+  `html.lenis iframe[src*="cloudflarestream.com"][src*="controls=false"] { pointer-events: none; }`
+  Verified live after the write: 2 → 47-58 positions on all four, videos still
+  playing (sampled the same pixel region 1.2s apart and it changed), currency
+  tags still 4/6, one pre-existing console error and no new one.
+
+  ⚠️ **The selector carries its own guards, which is why it cannot break a video.**
+  `html.lenis` means desktop only and only while Lenis is actually running —
+  confirmed inert at 390px, where `<html>` has no class and the iframes compute
+  `pointer-events: auto`. `controls=false` means only a decorative muted autoplay
+  loop with nothing to click; a video a visitor is meant to operate keeps its
+  pointer with no list to maintain. All 43 Cloudflare videos in the account were
+  checked first and every one is `controls=false`.
+
+  ⚠️ **Three funnels got it, and the other two could not be browser-verified.**
+  `Native funnels - UK` carries three videos on `zQkAffXHg`, but that step
+  client-side redirects to `Od-Yphefq` before anything renders, so no visitor
+  reaches them; the rule is installed and serving on all three of its steps.
+  `Garlic Funnel` has 33 videos on `lp-1` and no `preferred_domain`, so it has no
+  URL to test — read-back from the API is the only proof there.
+  `LISTICLES [ON DEV]` has 10 videos across 3 pages and was deliberately SKIPPED:
+  it carries no Lenis at all, so there is no easing to break.
+
+  ⚠️ **`snippets/` was NOT updated, so a NEW funnel will have the bug again.**
+  The two tracker snippets are byte-exact reference copies and all three live
+  headers already differ from them (google-uk 28,924 chars against the snippet's
+  26,796), which is also why this was a surgical insert rather than an overwrite:
+  writing a snippet over any of these would have reverted everything since
+  2026-10-04.
+
+- `2026-10-29` — **Trustpilot link overlapped the paragraph above it on `jFrY0DhRi`,
+  but ONLY between 768px and 991px wide.** Section 9: "That's what tipped me over
+  the edge." and "Read Trustpilot reviews" drawn on top of each other, 18px
+  overlap measured at a 973px viewport. Script:
+  `fix-jFrY0DhRi-tp-overlap-2026-10-29.py`. Rollback:
+  `steps/jFrY0DhRi.pre-overlap-fix-2026-10-29.json`.
+
+  **A BREAKPOINT MISMATCH, not a spacing value.** Block `c633f9b4` set
+  `gridColumnSpan: auto` at **991** but cancelled its `margin-top: -40px` only at
+  **767**. So across a 224px band the grid had already collapsed to one column
+  while the pull was still applied. Its two siblings in the same article
+  (`fba0fed7` at -30px, `5cdb135b` at -75px, the very paragraph it collided with)
+  both reset at 991, which is what identified the intended value. Fix was to move
+  that one override from 767 to 991.
+
+  ⚠️ **This is the shape of bug that survives a normal check.** Desktop was fine
+  and phone was fine; only the tablet band was broken, so testing 390 and 1440
+  proves nothing here. Verified after the fix at 761, 973 and 1433: zero
+  overlapping text blocks anywhere on the page, and the -40px still active above
+  991 where the desktop layout relies on it.
+
+  ⚠️ **The videos mount lazily and a full-page screenshot taken too early shows
+  four EMPTY columns.** Sections 3, 6, 8 and 9 are Cloudflare Stream blocks, not
+  images. They only attach their iframe once scrolled into view, so an immediate
+  `fullPage` capture renders them as blank 382x382 placeholders and looks exactly
+  like four missing images. Scroll the whole page first, then capture. Half an
+  hour went into "missing images" that were never missing.
+
+- `2026-10-29` — **dynamic currency on `jFrY0DhRi`.** Ryan's request. 10 money
+  figures, two distinct values, counted twice (block tree and rendered page both
+  gave 10): `£79` x4 → `data-price="price"` (our band, Shopify feed, exact) and
+  `£500` x6 → `data-fx-gbp="500"` (the smartwatch the author ditched: editorial,
+  so mid-market FX is the only figure available and the right one). No
+  compare-at on this page. Script: `tag-jFrY0DhRi-currency-2026-10-29.py`.
+  Rollback: `steps/jFrY0DhRi.pre-tag-2026-10-29.json`.
+  QA'd on the real host at `?country=PH` (₱2,450 / ₱42,543), `?country=GB`
+  (unchanged £79 / £500) and `?country=DE` (€79 / €597). Nothing overflowed at
+  390px and no element stayed hidden.
+  ⚠️ **This step's `custom_html.header` was EMPTY before this** — the GTM /
+  PostHog / Lenis universal block is funnel-level `header_scripts`, so an empty
+  step header is normal here and is not a missing-tracking signal.
+  ⚠️ **Installed the PAGE TAG, not the inline block.** Since 2026-09-27 the
+  logic is hosted at `hlthtrack.com/dynamic-currency.js`; the header carries only
+  the anti-flash stub and a deferred `<script src>`. `tag-dMs4WkOYD-fx-2026-09-21.py`
+  predates that and installs the inline version — do not copy it verbatim.
+  The install assertion must count the `<script src=` string, **not** the url:
+  `dynamic-currency.js` appears twice in one correct copy because the comment
+  names it too, exactly the way `api/prices` did in the old block.
 
 - `2026-09-21` — **ended PostHog experiment 91531** and shipped the `test` arm.
   Conclusion recorded as `inconclusive`: the primary metric (orders) was +37%
