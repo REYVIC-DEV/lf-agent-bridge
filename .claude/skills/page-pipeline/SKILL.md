@@ -78,13 +78,15 @@ It measures the frame node by node through figwright, copies text verbatim, and 
 as polish: one `h1`, full `settings.seo` with a 1200×630 social image, `twitter:*` tags,
 `alt` on every content image, the font-preload + `InterFallback` block, no `href="#"`,
 `overflow-wrap: anywhere` on rich text, one node per paragraph of body copy (never several
-paragraphs joined by a bare `\n` in one text node), and on any TechUnboxed/SOF advertorial,
-dynamic-currency tags on every money figure from the first draft. See
-`.claude/rules/lf-advertorial-pages.md` for all three.
+paragraphs joined by a bare `\n` in one text node), and on any TechUnboxed advertorial,
+dynamic-currency tags on every money figure from the first draft. **Scaling or Failing
+(SOF) is exempt from all of this** — it's a one-time event funnel, not an ongoing
+advertorial. See `.claude/rules/lf-advertorial-pages.md` for all three.
 
-**A brand-new funnel also needs the tracker header before any page goes in it** — GTM +
-PostHog + Lenis in funnel-level `header_scripts`, picked by channel (Meta/Native vs.
-Google), never per-step. Same rules file, section 3. Skipping this is silent: the page
+**A brand-new TechUnboxed funnel also needs the tracker header before any page goes in
+it** — GTM + PostHog + Lenis in funnel-level `header_scripts`, picked by channel
+(Meta/Native vs. Google), never per-step. Same rules file, section 3. Skipping this is
+silent: the page
 renders and QA passes with zero analytics running.
 
 It saves the frame dump to `pagescore/runs/<run-id>/design.json` — **stage 2 cannot check

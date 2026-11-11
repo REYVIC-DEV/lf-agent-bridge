@@ -1,8 +1,17 @@
-# Building LF advertorial pages (TechUnboxed, Scaling or Failing, and similar)
+# Building TechUnboxed advertorial pages
 
-Applies to every `pagescore/build_*.py` builder that ships a TechUnboxed, SOF,
-or other advertorial-style funnel page — not the hlth-site Next.js app
-(`.claude/rules/component-architecture.md` and friends cover that).
+Applies to every `pagescore/build_*.py` builder that ships a **TechUnboxed**
+advertorial page — not the hlth-site Next.js app (`.claude/rules/component-
+architecture.md` and friends cover that).
+
+⚠️ **Scaling or Failing (SOF) is exempt from every rule in this file.**
+Joshua, 2026-11-12: "no SOF is exempt only on techunboxed will the rules
+apply" — then, on why: "SOF is an event one time tech is for adverts that
+is the diff." SOF is a one-time event (ticketing, its own checkout/payment
+wiring under `funnels/sof/`); TechUnboxed is the ongoing advertorial brand
+these rules were written for. None of the three rules below — paragraph
+spacing, dynamic pricing, or the tracker header — carry over to SOF. Don't
+apply these to a SOF build without asking first.
 
 ## 1. Body copy: every real paragraph is its own node
 
@@ -37,7 +46,7 @@ this has to be checked on the rendered page.
 
 ## 2. Dynamic (convertible) pricing is mandatory on every new page
 
-Every money figure on every new TechUnboxed / SOF / advertorial page ships
+Every money figure on every new TechUnboxed page ships
 tagged for the dynamic-currency script from the first draft, not as a
 later retrofit. This was Joshua's standing instruction (2026-11-04,
 referencing ClickUp task z941abzmhy) and it is restated here so it lives in
@@ -69,10 +78,11 @@ the repo, not only in session memory.
 both rules above — read its intro-copy section and its buybox/review-card
 pricing section before starting a new builder.
 
-## 3. Every funnel needs the tracker header, GTM + PostHog + Lenis
+## 3. Every new TechUnboxed funnel needs the tracker header, GTM + PostHog + Lenis
 
-A new funnel gets the house universal header installed in its **funnel-level**
-`header_scripts` before any page is built — not per step, and not optional.
+A new TechUnboxed funnel gets the house universal header installed in its
+**funnel-level** `header_scripts` before any page is built — not per step,
+and not optional.
 Without it the page has zero analytics (no GTM, no PostHog) even though it
 renders and passes QA, which is exactly the failure mode that let two PostHog
 experiments sit "ready" while recording nothing.
