@@ -89,12 +89,22 @@ DECISIONS -- things the design did not settle, resolved here and flagged:
  2. "Qualifier questions" is hidden in A and shown in B, exactly as the frames say.
     A's three questions are therefore NOT on variant A at all.
 
- 3. CTA DESTINATION IS UNKNOWN, so the CTA is not a link. The Figma node
-    `button · CHECK AVAILABILITY` (983:2861) is a plain frame with no hyperlink, and
-    no sleep-mask product URL exists anywhere in this repo. Rather than invent a
-    destination or ship `href="#"` (banned), the button is built as a styled
-    Container that matches the design pixel-for-pixel but navigates nowhere. This
-    needs a human answer before the page takes traffic.
+ 3. ⚠️ SUPERSEDED 2026-11-12: CTA NOW LINKS TO THE REAL PDP. Originally built as
+    a styled Container with no destination (reasoning below, still correct for
+    why it waited). Joshua then gave the PDP directly: "oh pdp is here for mask
+    https://hlthtrack.com/products/hlth-sleep-mask". The button is now a
+    `BlockLink` node (same pattern as the CTA in build_hlth.py/
+    build_oura_hlth.py/build_test2.py/build_test3.py: `p.destination =
+    {"type": "static", "value": PDP}`, `target: "_blank"`), same visual styling
+    as before, wrapping to PDP in a new tab.
+
+    Superseded reasoning (why it waited, still accurate as of when it was
+    written): the Figma node `button · CHECK AVAILABILITY` (983:2861) is a
+    plain frame with no hyperlink, and no sleep-mask product URL existed
+    anywhere in this repo at build time. Rather than invent a destination or
+    ship `href="#"` (banned), the button was built as a styled Container that
+    matched the design pixel-for-pixel but navigated nowhere, pending a human
+    answer.
 
  4. BREADCRUMB ITEMS ARE NOT LINKS. "Home" and "Sleep" are plain TEXT nodes with no
     hyperlink in either frame, and no destinations are given. Reproduced as text.
@@ -157,6 +167,12 @@ HH = {"account-id": ACCT, "version": "1",
       "Origin": "https://app.lightfunnels.com", "Referer": "https://app.lightfunnels.com/"}
 def sgql(q, v=None): return lf_api.gql(tok, q, v, extra_headers=HH)
 def nid(): return str(uuid.uuid4())
+
+# Real PDP, same convention as PDP in build_hlth.py / build_oura_hlth.py / build_test2.py /
+# build_test3.py -- plain hlthtrack.com link (never .co.uk, see
+# dynamic-currency-links-to-hlthtrack-com), confirmed live 2026-11-12 (Joshua:
+# "oh pdp is here for mask") -- see superseded decision 1 and decision 3.
+PDP = "https://hlthtrack.com/products/hlth-sleep-mask"
 
 FUNNEL = os.environ.get("SM_FUNNEL", "fun_lqsXwH8BnCdqs44RJzEEf")
 VARIANT = os.environ.get("SM_VARIANT", "a").strip().lower()
@@ -953,16 +969,19 @@ buy_details = col([
         gap="6px"),
 ] + [text(esc(f).replace("  ", "&nbsp; "), fs="14px", lh="17px", color=BODY)
      for f in BUY_FEATURES] + [
-    # CTA: a styled box, not a link -- the design gives no destination (decision 3).
-    container([text(esc(BUY_CTA), fs="16px", lh="19px", weight="700", color=WHITE,
-                    auto=True)],
-              [{"prop": "backgroundColor", "value": RED},
+    # CTA: now a real BlockLink to the PDP (decision 3, superseded 2026-11-12).
+    # Same node shape as the CTA in build_hlth.py/build_oura_hlth.py.
+    {"t": "BlockLink", "id": nid(),
+     "p": {"destination": {"type": "static", "value": PDP}, "target": "_blank",
+           "children": [text(esc(BUY_CTA), fs="16px", lh="19px", weight="700",
+                             color=WHITE, auto=True)]},
+     "styles": [{"prop": "backgroundColor", "value": RED},
                {"prop": "borderRadius", "value": "6px"},
                {"prop": "padding", "value": pad(16, 0, 16, 0)},
                {"prop": "lfDisplay", "value": "flex"},
                {"prop": "alignItems", "value": "center"},
                {"prop": "justifyContent", "value": "center"},
-               {"prop": "width", "value": "100%"}]),
+               {"prop": "width", "value": "100%"}]},
     text(esc(BUY_GUARANTEE), fs="12px", lh="15px", color=MUTED, align="center"),
 ], gap="10px", styles=[{"prop": "flex", "value": "1"},
                        {"prop": "minWidth", "value": "0"}])
