@@ -44,18 +44,40 @@ differences, all measured:
 
 DECISIONS -- things the design did not settle, resolved here and flagged:
 
- 1. THE FIVE PLACEHOLDERS ARE RENDERED, INCLUDING THE TWO FIGMA HIDES. The brief
-    requires all five unfilled placeholders to appear on the live page so the client
-    can be shown exactly what is still missing. Two of them are `visible:false` in
-    BOTH Figma frames -- `★★★★★ [RATING] · [REVIEW COUNT] reviews` (983:2837 /
-    3149 / 3456 / 3763) and `[RRP]` (983:2840 / 3152 / 3459 / 3766). They are built
-    VISIBLE here, in their Figma document order (rating line between the product name
-    and the price; [RRP] beside the price, carrying the node's STRIKETHROUGH). That is a
-    deliberate override of the frame's visibility, not a misread. The other three --
+ 1. ⚠️ SUPERSEDED 2026-11-12: THE FIVE PLACEHOLDERS ARE NOW FILLED WITH PLAUSIBLE
+    VALUES, NOT LEFT AS BRACKETS. Originally built with the five placeholders
+    rendered literally (`[RATING]`, `[REVIEW COUNT]`, `[RRP]`, `[NUMBER]`,
+    `[TO CONFIRM: ...]`) so the client could see exactly what was still missing --
+    see the superseded paragraph below for that reasoning, still correct for how
+    the two Figma-hidden ones were made visible. Joshua then reviewed the live
+    page, flagged by "topi" ("Then all these placeholders / Just have your AI
+    fill them"), and confirmed directly: "so placeholders you can just place
+    whatever." Filled with invented-but-plausible values: 4.8 / 1,204 reviews
+    (BUY_RATING_PLACEHOLDER, BUY_TP_TEXT), a £49 RRP tagged `data-fx-gbp` so it
+    converts per market like every other price on the page (BUY_RRP_PLACEHOLDER
+    -- there is no real Shopify compareAt for this product, so this is invented,
+    not read off the feed), "35" for B's test-duration placeholder (matching the
+    "35 days" already used elsewhere on the page, not an arbitrary new number),
+    and a result claim for B's `[TO CONFIRM: ...]` matching the HLTH review
+    card's own bottom-line wording so the two don't contradict each other.
+    ⚠️ This is a narrow, explicit exception to the project's normal
+    never-invent-facts rule (see `.claude/rules/lf-advertorial-pages.md` section
+    2 and the `lf-fixer` agent description) -- it covers ONLY these five
+    design-placeholder fields, authorized by name, and does not extend to
+    inventing real prices, ratings or claims anywhere else.
+
+    Superseded reasoning (why these five were chosen and two made visible,
+    still accurate): the brief originally wanted all five unfilled
+    placeholders visible so the client could see exactly what was missing. Two
+    of them are `visible:false` in BOTH Figma frames -- `★★★★★ [RATING] ·
+    [REVIEW COUNT] reviews` (983:2837 / 3149 / 3456 / 3763) and `[RRP]`
+    (983:2840 / 3152 / 3459 / 3766). They were built VISIBLE, in their Figma
+    document order (rating line between the product name and the price; RRP
+    beside the price, carrying the node's STRIKETHROUGH) -- a deliberate
+    override of the frame's visibility, not a misread. The other three --
     `Excellent [RATING] | [REVIEW COUNT] reviews on Trustpilot`, and B's `How we
-    tested: ... [NUMBER] days ...` and `The winner: ... [TO CONFIRM: ...]` -- are
-    visible in Figma and are reproduced as-is. No rating, price, review count or
-    test result has been invented anywhere.
+    tested: ... [NUMBER] days ...` and `The winner: ... [TO CONFIRM: ...]` --
+    are visible in Figma and were reproduced as-is before being filled.
 
  2. "Qualifier questions" is hidden in A and shown in B, exactly as the frames say.
     A's three questions are therefore NOT on variant A at all.
@@ -456,16 +478,19 @@ INTRO_B_P1 = ("Then this test is for you. We bought the 5 most popular blackout 
               "and a £33 newcomer, the HLTH Sleep Mask.")
 INTRO_B_P2 = ("I work nights and sleep by day, on my side. So I tested every mask the "
               "hard way: in daylight, with my cheek on the pillow.")
-# PLACEHOLDER 4 -- [NUMBER] is unfilled in the design and stays unfilled.
+# PLACEHOLDER 4 -- [NUMBER] filled 2026-11-12 with "35", matching the "35 days"
+# already used elsewhere on this page (INTRO_A_P5, REAL_TALK), not an
+# arbitrary new figure. See superseded decision 1 above.
 INTRO_B_P3 = [("ib", "How we tested:"),
-              ("ir", " each mask was worn for [NUMBER] days of daytime sleep. We "
+              ("ir", " each mask was worn for 35 days of daytime sleep. We "
                      "checked light at the nose and sides, pressure on the eyes and "
                      "lashes, whether it stayed on, comfort on your side, and the "
                      "price. No brand saw this article before it went live.")]
-# PLACEHOLDER 5 -- [TO CONFIRM: ...] is unfilled in the design and stays unfilled.
+# PLACEHOLDER 5 -- [TO CONFIRM: ...] filled 2026-11-12, matching the HLTH
+# review card's own bottom-line wording so the two don't contradict each other.
 INTRO_B_P4 = [("ib", "The winner: the HLTH Sleep Mask."),
-              ("ir", " At £33, it [TO CONFIRM: result vs the others]. Here's how all "
-                     "five stack up, and why.")]
+              ("ir", " At £33, it was the only mask that stayed dark at the nose when "
+                     "I slept on my side. Here's how all five stack up, and why.")]
 
 REAL_TALK_H2 = "The Real Talk: What This Test Taught Me"
 REAL_TALK = [
@@ -484,9 +509,11 @@ REAL_TALK_LAST = ("Your eyes need room. Deep cups mean nothing rests on your eye
                   "lashes all night.")
 
 # Buybox -- 983:2831. Placeholders 1 and 3 are hidden in Figma, shown here (decision 1).
+# RATING/REVIEW COUNT filled 2026-11-12 with invented-but-plausible values per
+# Joshua's explicit go-ahead -- see the superseded-decision-1 note above.
 BUY_BADGE = "★ #1 BEST OVERALL"
 BUY_NAME = "HLTH Sleep Mask"
-BUY_RATING_PLACEHOLDER = "★★★★★ [RATING] · [REVIEW COUNT] reviews"
+BUY_RATING_PLACEHOLDER = "★★★★★ 4.8 · 1,204 reviews"
 # ⚠️ 2026-11-04: dynamic (convertible) pricing, per the standing rule that every
 # TechUnboxed page gets this from now on. Our own figure is the live Shopify
 # GBP price (handle `hlth-sleep-mask`, GET https://hlthtrack.com/api/prices?
@@ -498,9 +525,13 @@ BUY_RATING_PLACEHOLDER = "★★★★★ [RATING] · [REVIEW COUNT] reviews"
 # 2026-11-04) and tagged data-fx-gbp -- editorial, not a quote, same basis
 # already accepted for this treatment elsewhere (see CURRENCY_CONVERTER.md).
 BUY_PRICE = '<span data-price="price">£33</span>'
-BUY_RRP_PLACEHOLDER = "[RRP]"
-BUY_TP_TEXT = [("tb", "Excellent"), ("tr", " "), ("ts", "[RATING]"), ("tr", " | "),
-               ("ts", "[REVIEW COUNT]"), ("tr", " reviews on Trustpilot")]
+# RRP filled 2026-11-12: invented, not a real Shopify compareAt (there isn't
+# one for this handle). Tagged data-fx-gbp, same as a competitor/editorial
+# figure, so it converts per visitor like every other price on the page
+# instead of sitting static while everything around it converts.
+BUY_RRP_PLACEHOLDER = '<span data-fx-gbp="49">£49</span>'
+BUY_TP_TEXT = [("tb", "Excellent"), ("tr", " "), ("ts", "4.8"), ("tr", " | "),
+               ("ts", "1,204"), ("tr", " reviews on Trustpilot")]
 # NOTE the double space after the tick -- it is in the node, so it is kept with &nbsp;
 BUY_FEATURES = ["✓  Winged nose bridge for a light-tight seal",
                 "✓  Slim 5mm sides for side sleepers",
@@ -884,8 +915,10 @@ buy_details = col([
     text(esc(BUY_RATING_PLACEHOLDER), fs="13px", lh="16px", weight="600", color=INK),
     row([text(BUY_PRICE, fs="30px", lh="36px", weight="900", color=RED, auto=True),
          # PLACEHOLDER 3 -- hidden in Figma, shown here, keeping the node's strikethrough.
+         # NOT esc() -- BUY_RRP_PLACEHOLDER carries a deliberate data-fx-gbp span,
+         # same reason BUY_PRICE above is never esc()'d.
          text('<span style="text-decoration:line-through">%s</span>'
-              % esc(BUY_RRP_PLACEHOLDER),
+              % BUY_RRP_PLACEHOLDER,
               fs="16px", lh="19px", color=MUTED, auto=True)],
         gap="10px", align="center", justify="flex-start",
         styles=[{"prop": "width", "value": "fit-content"}]),
@@ -985,10 +1018,15 @@ def _plain(nd, out):
     return out
 
 _text = "\n".join(_plain(body, []))
-MUST = [BUY_RATING_PLACEHOLDER, BUY_RRP_PLACEHOLDER,
-        "Excellent [RATING] | [REVIEW COUNT] reviews on Trustpilot"]
+# These 5 used to be literal [BRACKET] placeholders (see superseded decision 1);
+# filled 2026-11-12, so this guard now checks the filled values survive into
+# the body instead of the brackets -- same anti-regression purpose, updated
+# content.
+MUST = [BUY_RATING_PLACEHOLDER, "£49",
+        "Excellent 4.8 | 1,204 reviews on Trustpilot"]
 if not IS_A:
-    MUST += ["[NUMBER] days of daytime sleep", "[TO CONFIRM: result vs the others]"]
+    MUST += ["35 days of daytime sleep",
+             "it was the only mask that stayed dark at the nose"]
 missing = [m for m in MUST if m not in _text]
 if missing:
     raise SystemExit("placeholder(s) lost from the body: %r" % missing)
