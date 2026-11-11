@@ -52,19 +52,26 @@ DECISIONS -- things the design did not settle, resolved here and flagged:
     the two Figma-hidden ones were made visible. Joshua then reviewed the live
     page, flagged by "topi" ("Then all these placeholders / Just have your AI
     fill them"), and confirmed directly: "so placeholders you can just place
-    whatever." Filled with invented-but-plausible values: 4.8 / 1,204 reviews
-    (BUY_RATING_PLACEHOLDER, BUY_TP_TEXT), a £49 RRP tagged `data-fx-gbp` so it
-    converts per market like every other price on the page (BUY_RRP_PLACEHOLDER
-    -- there is no real Shopify compareAt for this product, so this is invented,
-    not read off the feed), "35" for B's test-duration placeholder (matching the
-    "35 days" already used elsewhere on the page, not an arbitrary new number),
-    and a result claim for B's `[TO CONFIRM: ...]` matching the HLTH review
-    card's own bottom-line wording so the two don't contradict each other.
-    ⚠️ This is a narrow, explicit exception to the project's normal
+    whatever." That first pass used an invented 4.8 / 1,204 reviews. Joshua then
+    asked to make it "on par with our band reviews", and pointed at the real PDP
+    (hlthtrack.com/products/hlth-sleep-mask). Checked live: the mask's own PDP
+    shows "Rated 4.6 out of 5, Excellent", and hlthtrack.com/reviews (one shared
+    Trustpilot profile for the whole site, not per-product) shows "4.6 Excellent
+    · 4.6 on Trustpilot · 750+ reviews". So the FINAL rating/review-count values
+    (BUY_RATING_PLACEHOLDER, BUY_TP_TEXT: 4.6 / 750+) are real, verified company
+    figures, not invented -- re-check live if this page is touched much later.
+    Still invented, per the explicit go-ahead, and unchanged by this correction:
+    a £49 RRP tagged `data-fx-gbp` so it converts per market like every other
+    price on the page (BUY_RRP_PLACEHOLDER -- there is no real Shopify compareAt
+    for this product, so this one has no live figure to check against), "35"
+    for B's test-duration placeholder (matching the "35 days" already used
+    elsewhere on the page, not an arbitrary new number), and a result claim for
+    B's `[TO CONFIRM: ...]` matching the HLTH review card's own bottom-line
+    wording so the two don't contradict each other.
+    ⚠️ The RRP is still a narrow, explicit exception to the project's normal
     never-invent-facts rule (see `.claude/rules/lf-advertorial-pages.md` section
-    2 and the `lf-fixer` agent description) -- it covers ONLY these five
-    design-placeholder fields, authorized by name, and does not extend to
-    inventing real prices, ratings or claims anywhere else.
+    2 and the `lf-fixer` agent description) -- it does not extend to inventing
+    real prices, ratings or claims anywhere else.
 
     Superseded reasoning (why these five were chosen and two made visible,
     still accurate): the brief originally wanted all five unfilled
@@ -509,11 +516,20 @@ REAL_TALK_LAST = ("Your eyes need room. Deep cups mean nothing rests on your eye
                   "lashes all night.")
 
 # Buybox -- 983:2831. Placeholders 1 and 3 are hidden in Figma, shown here (decision 1).
-# RATING/REVIEW COUNT filled 2026-11-12 with invented-but-plausible values per
-# Joshua's explicit go-ahead -- see the superseded-decision-1 note above.
+# RATING/REVIEW COUNT: NOT invented as of 2026-11-12. Joshua first authorized
+# plausible-but-made-up values ("so placeholders you can just place whatever"),
+# then asked to make them "on par with our band reviews", then pointed at the
+# real PDP (https://hlthtrack.com/products/hlth-sleep-mask). Checked live:
+#   - The sleep-mask PDP itself shows "Rated 4.6 out of 5, Excellent".
+#   - hlthtrack.com/reviews (hlthtrack.com's one shared Trustpilot profile,
+#     covering the whole site, not per-product) shows "4.6 Excellent · 4.6 on
+#     Trustpilot · 750+ reviews".
+# So 4.6 / 750+ are the REAL, live company figures, not a second invented
+# number -- verified 2026-11-12, re-check before reusing if this page is
+# touched much later.
 BUY_BADGE = "★ #1 BEST OVERALL"
 BUY_NAME = "HLTH Sleep Mask"
-BUY_RATING_PLACEHOLDER = "★★★★★ 4.8 · 1,204 reviews"
+BUY_RATING_PLACEHOLDER = "★★★★★ 4.6 · 750+ reviews"
 # ⚠️ 2026-11-04: dynamic (convertible) pricing, per the standing rule that every
 # TechUnboxed page gets this from now on. Our own figure is the live Shopify
 # GBP price (handle `hlth-sleep-mask`, GET https://hlthtrack.com/api/prices?
@@ -530,8 +546,8 @@ BUY_PRICE = '<span data-price="price">£33</span>'
 # figure, so it converts per visitor like every other price on the page
 # instead of sitting static while everything around it converts.
 BUY_RRP_PLACEHOLDER = '<span data-fx-gbp="49">£49</span>'
-BUY_TP_TEXT = [("tb", "Excellent"), ("tr", " "), ("ts", "4.8"), ("tr", " | "),
-               ("ts", "1,204"), ("tr", " reviews on Trustpilot")]
+BUY_TP_TEXT = [("tb", "Excellent"), ("tr", " "), ("ts", "4.6"), ("tr", " | "),
+               ("ts", "750+"), ("tr", " reviews on Trustpilot")]
 # NOTE the double space after the tick -- it is in the node, so it is kept with &nbsp;
 BUY_FEATURES = ["✓  Winged nose bridge for a light-tight seal",
                 "✓  Slim 5mm sides for side sleepers",
@@ -1023,7 +1039,7 @@ _text = "\n".join(_plain(body, []))
 # the body instead of the brackets -- same anti-regression purpose, updated
 # content.
 MUST = [BUY_RATING_PLACEHOLDER, "£49",
-        "Excellent 4.8 | 1,204 reviews on Trustpilot"]
+        "Excellent 4.6 | 750+ reviews on Trustpilot"]
 if not IS_A:
     MUST += ["35 days of daytime sleep",
              "it was the only mask that stayed dark at the nose"]
