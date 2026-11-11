@@ -68,3 +68,28 @@ the repo, not only in session memory.
 `pagescore/build_sleep_masks.py` is the current reference implementation for
 both rules above — read its intro-copy section and its buybox/review-card
 pricing section before starting a new builder.
+
+## 3. Every funnel needs the tracker header, GTM + PostHog + Lenis
+
+A new funnel gets the house universal header installed in its **funnel-level**
+`header_scripts` before any page is built — not per step, and not optional.
+Without it the page has zero analytics (no GTM, no PostHog) even though it
+renders and passes QA, which is exactly the failure mode that let two PostHog
+experiments sit "ready" while recording nothing.
+
+- The block also carries **Lenis** smooth scroll (desktop only — mobile
+  already scrolls natively). It lives in the funnel header, not in a
+  per-step script: a page that also installs its own Lenis runs two rAF
+  loops against the same `scrollTop`.
+- Two tracker variants exist and are not interchangeable — Meta/Native/
+  everything else vs. Google (different PostHog project wiring, different
+  pixel counts). Pick by the funnel's channel.
+- Canonical copies are kept in the repo so an install is checked by sha, not
+  by eye: `snippets/tracker-header-meta-block.html`,
+  `snippets/tracker-header-google-block.html`, `snippets/README.md`. Audit
+  with `python pagescore/check_tracker_headers.py` before installing — it
+  flags a funnel that already carries an older variant or a double
+  `posthog.init`, both unsafe to just append to.
+- Verify in a browser, not in the stored HTML: `document.documentElement
+  .classList.contains('lenis')`, `window.__lenis`, and that GTM/PostHog
+  actually fire on the served page.
